@@ -1,2 +1,5 @@
 scripts/.itemdb-cache.json
 .DS_Store
+# snapshot do dia anterior: vive no cache do Actions, nao no git
+# (1 MB/dia commitado viraria ~365 MB/ano de historico)
+data/snapshot.*.json

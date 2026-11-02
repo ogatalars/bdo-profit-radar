@@ -24,7 +24,9 @@ colunas que a API não entrega prontas:
 - **variação**: preço de hoje contra o de ontem.
 
 `data/snapshot.<regiao>.json` guarda só preço e total de vendas por item, para o
-diff do dia seguinte. É o único estado que existe.
+diff do dia seguinte. É o único estado que existe, e vive no cache do Actions —
+não no git, que ficaria ~1 MB mais pesado por dia. Se o cache expirar, o build
+perde um dia de variação e segue.
 
 ## Rodando local
 

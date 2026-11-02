@@ -21,6 +21,17 @@ jobs:
         with:
           node-version: 22
 
+      # O snapshot de ontem e o unico estado do projeto e serve so para o diff
+      # de hoje. Fica no cache para nao inchar o git em ~1 MB por dia.
+      # Se o cache evaporar, o build volta a "primeiro snapshot" e perde um dia
+      # de variacao, nada alem disso.
+      - name: restaurar snapshot anterior
+        uses: actions/cache@v4
+        with:
+          path: data/snapshot.*.json
+          key: market-snapshot-${{ github.run_id }}
+          restore-keys: market-snapshot-
+
       - name: gerar snapshots
         run: |
           failed=""
