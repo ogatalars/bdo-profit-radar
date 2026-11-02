@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "note": "yield = media de saida por craft. Processing no BDO devolve 1-3 por batch; ~2.5 e a media de Master/Guru. Ajuste 'yield' para o seu nivel. craftsPerHour assume uso continuo com o material em maos.",
+    "calibratedAt": "2026-11-02"
+  },
+  "recipes": [
+    { "id": "wheat-flour", "name": "Wheat Flour", "job": "Processing (Moagem)", "output": "Wheat Flour", "yield": 2.5, "craftsPerHour": 450,
+      "inputs": [ { "item": "Wheat", "qty": 5 } ] },
+
+    { "id": "beer", "name": "Beer", "job": "Cooking", "output": "Beer", "yield": 2.5, "craftsPerHour": 400,
+      "inputs": [ { "item": "Wheat", "qty": 5 }, { "item": "Mineral Water", "qty": 6 },
+                  { "item": "Leavening Agent", "qty": 1 }, { "item": "Sugar", "qty": 2 } ] },
+
+    { "id": "melted-iron", "name": "Melted Iron Shard", "job": "Processing (Aquecimento)", "output": "Melted Iron Shard", "yield": 2.5, "craftsPerHour": 450,
+      "inputs": [ { "item": "Iron Ore", "qty": 5 } ] },
+
+    { "id": "iron-ingot", "name": "Iron Ingot", "job": "Processing (Aquecimento)", "output": "Iron Ingot", "yield": 2.5, "craftsPerHour": 450,
+      "inputs": [ { "item": "Melted Iron Shard", "qty": 5 } ] },
+
+    { "id": "steel", "name": "Steel", "job": "Processing (Aquecimento)", "output": "Steel", "yield": 2.5, "craftsPerHour": 450,
+      "inputs": [ { "item": "Melted Iron Shard", "qty": 5 }, { "item": "Coal", "qty": 5 } ] },
+
+    { "id": "melted-zinc", "name": "Melted Zinc Shard", "job": "Processing (Aquecimento)", "output": "Melted Zinc Shard", "yield": 2.5, "craftsPerHour": 450,
+      "inputs": [ { "item": "Zinc Ore", "qty": 5 } ] },
+
+    { "id": "melted-copper", "name": "Melted Copper Shard", "job": "Processing (Aquecimento)", "output": "Melted Copper Shard", "yield": 2.5, "craftsPerHour": 450,
+      "inputs": [ { "item": "Copper Ore", "qty": 5 } ] },
+
+    { "id": "brass-ingot", "name": "Brass Ingot", "job": "Processing (Aquecimento)", "output": "Brass Ingot", "yield": 2.5, "craftsPerHour": 450,
+      "inputs": [ { "item": "Melted Copper Shard", "qty": 5 }, { "item": "Melted Zinc Shard", "qty": 5 } ] },
+
+    { "id": "pine-plank", "name": "Pine Plank", "job": "Processing (Corte)", "output": "Pine Plank", "yield": 2.5, "craftsPerHour": 450,
+      "inputs": [ { "item": "Pine Timber", "qty": 5 } ] },
+
+    { "id": "maple-plank", "name": "Maple Plank", "job": "Processing (Corte)", "output": "Maple Plank", "yield": 2.5, "craftsPerHour": 450,
+      "inputs": [ { "item": "Maple Timber", "qty": 5 } ] },
+
+    { "id": "birch-plank", "name": "Birch Plank", "job": "Processing (Corte)", "output": "Birch Plank", "yield": 2.5, "craftsPerHour": 450,
+      "inputs": [ { "item": "Birch Timber", "qty": 5 } ] },
+
+    { "id": "ash-plank", "name": "Ash Plank", "job": "Processing (Corte)", "output": "Ash Plank", "yield": 2.5, "craftsPerHour": 450,
+      "inputs": [ { "item": "Ash Timber", "qty": 5 } ] },
+
+    { "id": "cedar-plank", "name": "Cedar Plank", "job": "Processing (Corte)", "output": "Cedar Plank", "yield": 2.5, "craftsPerHour": 450,
+      "inputs": [ { "item": "Cedar Timber", "qty": 5 } ] },
+
+    { "id": "clear-liquid", "name": "Clear Liquid Reagent", "job": "Alchemy", "output": "Clear Liquid Reagent", "yield": 2.5, "craftsPerHour": 400,
+      "inputs": [ { "item": "Weeds", "qty": 3 }, { "item": "Purified Water", "qty": 1 }, { "item": "Salt", "qty": 1 } ] },
+
+    { "id": "pure-powder", "name": "Pure Powder Reagent", "job": "Alchemy", "output": "Pure Powder Reagent", "yield": 2.5, "craftsPerHour": 400,
+      "inputs": [ { "item": "Sunrise Herb", "qty": 3 }, { "item": "Purified Water", "qty": 1 }, { "item": "Salt", "qty": 1 } ] }
+  ]
+}

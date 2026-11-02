@@ -1,0 +1,47 @@
+name: snapshot diario do mercado
+
+on:
+  schedule:
+    - cron: "0 5 * * *"   # 05:00 UTC = 02:00 BRT
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: gerar snapshots
+        run: |
+          failed=""
+          for region in na eu sa; do
+            echo "::group::$region"
+            # Uma regiao que falha nao derruba as outras: o site continua
+            # servindo o snapshot de ontem para ela.
+            REGION=$region node scripts/build-daily.js || failed="$failed $region"
+            echo "::endgroup::"
+          done
+          [ -n "$failed" ] && echo "::warning::regioes sem atualizacao hoje:$failed"
+          exit 0
+
+      - name: validar os dados gerados
+        run: node scripts/test.js
+
+      - name: commitar
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet && echo "nada mudou" && exit 0
+          git commit -m "chore: snapshot do mercado $(date -u +%Y-%m-%d)"
+          git push

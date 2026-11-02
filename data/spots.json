@@ -1,0 +1,338 @@
+{
+  "_meta": {
+    "note": "perHour e trashPerHour sao ESTIMATIVAS da comunidade para uma hora limpa, sem buff de drop (Agris/Item Collection Increase). Preco vem ao vivo do mercado; a taxa de drop nao. Calibre aqui se o seu numero divergir. Itens fora do mercado central (ex: Ancient Spirit Dust) estao contabilizados dentro de trashPerHour.",
+    "apKind": "ap_buffado",
+    "trashUnitDefault": 3000,
+    "calibratedAt": "2026-11-02"
+  },
+  "spots": [
+    {
+      "id": "orc-camp",
+      "name": "Quint Hill / Orc Camp",
+      "zone": "Calpheon",
+      "ap": 180,
+      "dp": 180,
+      "aoe": "medio",
+      "trashPerHour": 950,
+      "drops": [
+        {
+          "item": "Black Stone",
+          "perHour": 9
+        },
+        {
+          "item": "Ancient Relic Crystal Shard",
+          "perHour": 2.2
+        }
+      ],
+      "note": "Spot de entrada. Relic shard carrega boa parte da renda."
+    },
+    {
+      "id": "crescent-shrine",
+      "name": "Crescent Shrine",
+      "zone": "Valencia",
+      "ap": 200,
+      "dp": 200,
+      "aoe": "alto",
+      "trashPerHour": 1250,
+      "drops": [
+        {
+          "item": "Black Stone",
+          "perHour": 11
+        },
+        {
+          "item": "Ring of Crescent Guardian",
+          "perHour": 0.09
+        },
+        {
+          "item": "Ancient Relic Crystal Shard",
+          "perHour": 2.0
+        }
+      ],
+      "note": "Anel de Crescent e o jackpot; sem ele a hora cai bastante."
+    },
+    {
+      "id": "cadry-ruins",
+      "name": "Cadry Ruins",
+      "zone": "Valencia",
+      "ap": 220,
+      "dp": 210,
+      "aoe": "alto",
+      "trashPerHour": 1400,
+      "drops": [
+        {
+          "item": "Black Stone",
+          "perHour": 10
+        },
+        {
+          "item": "Ring of Cadry Guardian",
+          "perHour": 0.08
+        },
+        {
+          "item": "Forbidden Book",
+          "perHour": 1.1
+        }
+      ],
+      "note": "Densidade alta, bom para classes de AoE."
+    },
+    {
+      "id": "gahaz",
+      "name": "Gahaz Bandit's Lair",
+      "zone": "Valencia",
+      "ap": 230,
+      "dp": 220,
+      "aoe": "alto",
+      "trashPerHour": 1620,
+      "drops": [
+        {
+          "item": "Black Stone",
+          "perHour": 12
+        },
+        {
+          "item": "Sharp Black Crystal Shard",
+          "perHour": 0.16
+        }
+      ],
+      "note": "Trash loot pesado; renda bem estavel."
+    },
+    {
+      "id": "desert-naga",
+      "name": "Desert Naga Temple",
+      "zone": "Valencia",
+      "ap": 220,
+      "dp": 220,
+      "aoe": "medio",
+      "trashPerHour": 1610,
+      "drops": [
+        {
+          "item": "Black Stone",
+          "perHour": 10
+        }
+      ],
+      "note": "Alternativa a Gahaz com menos competicao."
+    },
+    {
+      "id": "manshaum",
+      "name": "Manshaum Forest",
+      "zone": "Kamasylvia",
+      "ap": 245,
+      "dp": 230,
+      "aoe": "alto",
+      "trashPerHour": 1450,
+      "drops": [
+        {
+          "item": "Black Stone",
+          "perHour": 11
+        },
+        {
+          "item": "Forest Fury",
+          "perHour": 0.55
+        },
+        {
+          "item": "Sharp Black Crystal Shard",
+          "perHour": 0.2
+        }
+      ],
+      "note": "Forest Fury e o grosso do lucro variavel."
+    },
+    {
+      "id": "blood-wolf",
+      "name": "Blood Wolf Settlement",
+      "zone": "Drieghan",
+      "ap": 250,
+      "dp": 250,
+      "aoe": "alto",
+      "trashPerHour": 1700,
+      "drops": [
+        {
+          "item": "Black Stone",
+          "perHour": 12
+        },
+        {
+          "item": "Sharp Black Crystal Shard",
+          "perHour": 0.22
+        },
+        {
+          "item": "Caphras Stone",
+          "perHour": 2.4
+        }
+      ],
+      "note": "DP importa aqui: os lobos batem forte."
+    },
+    {
+      "id": "aakman",
+      "name": "Aakman Temple",
+      "zone": "Valencia",
+      "ap": 250,
+      "dp": 230,
+      "aoe": "alto",
+      "trashPerHour": 2400,
+      "drops": [
+        {
+          "item": "Forbidden Book",
+          "perHour": 1.4
+        }
+      ],
+      "note": "Renda quase toda em Ancient Spirit Dust: muito sensivel ao preco."
+    },
+    {
+      "id": "hystria",
+      "name": "Hystria Ruins",
+      "zone": "Valencia",
+      "ap": 269,
+      "dp": 250,
+      "aoe": "alto",
+      "trashPerHour": 3000,
+      "drops": [
+        {
+          "item": "Narc Ear Accessory",
+          "perHour": 0.035
+        }
+      ],
+      "note": "Mesma logica do Aakman, com mais volume."
+    },
+    {
+      "id": "stars-end",
+      "name": "Star's End",
+      "zone": "Drieghan",
+      "ap": 261,
+      "dp": 300,
+      "aoe": "medio",
+      "trashPerHour": 1600,
+      "drops": [
+        {
+          "item": "Black Distortion Earring",
+          "perHour": 0.03
+        },
+        {
+          "item": "Caphras Stone",
+          "perHour": 3.2
+        },
+        {
+          "item": "Sharp Black Crystal Shard",
+          "perHour": 0.25
+        }
+      ],
+      "note": "DP alto e obrigatorio. Brinco e o jackpot."
+    },
+    {
+      "id": "sycraia",
+      "name": "Sycraia Underwater Ruins (Upper)",
+      "zone": "Margoria",
+      "ap": 269,
+      "dp": 260,
+      "aoe": "alto",
+      "trashPerHour": 2100,
+      "drops": [
+        {
+          "item": "Caphras Stone",
+          "perHour": 3.0
+        },
+        {
+          "item": "Sharp Black Crystal Shard",
+          "perHour": 0.3
+        }
+      ],
+      "note": "Trash loot altissimo; renda pouco dependente do mercado."
+    },
+    {
+      "id": "thornwood",
+      "name": "Thornwood Forest",
+      "zone": "Mountain of Eternal Winter",
+      "ap": 280,
+      "dp": 300,
+      "aoe": "medio",
+      "trashPerHour": 2000,
+      "drops": [
+        {
+          "item": "Caphras Stone",
+          "perHour": 3.5
+        },
+        {
+          "item": "Ring of Crescent Guardian",
+          "perHour": 0.05
+        }
+      ],
+      "note": "Mobs duros, exige DP."
+    },
+    {
+      "id": "crypt",
+      "name": "Crypt of Resting Thoughts",
+      "zone": "Mountain of Eternal Winter",
+      "ap": 290,
+      "dp": 300,
+      "aoe": "alto",
+      "trashPerHour": 2300,
+      "drops": [
+        {
+          "item": "Caphras Stone",
+          "perHour": 4.0
+        },
+        {
+          "item": "Tungrad Earring",
+          "perHour": 0.006
+        }
+      ],
+      "note": "Jackpot raro de Tungrad; a media depende muito da sorte."
+    },
+    {
+      "id": "gyfin-underground",
+      "name": "Gyfin Rhasia Temple (Underground)",
+      "zone": "Kamasylvia",
+      "ap": 300,
+      "dp": 310,
+      "aoe": "alto",
+      "trashPerHour": 2600,
+      "drops": [
+        {
+          "item": "Caphras Stone",
+          "perHour": 4.5
+        },
+        {
+          "item": "Sharp Black Crystal Shard",
+          "perHour": 0.35
+        }
+      ],
+      "note": "Um dos melhores por trash loot puro."
+    },
+    {
+      "id": "olun",
+      "name": "Olun's Valley",
+      "zone": "Odyllita",
+      "ap": 280,
+      "dp": 290,
+      "aoe": "alto",
+      "trashPerHour": 2200,
+      "drops": [
+        {
+          "item": "Caphras Stone",
+          "perHour": 3.8
+        },
+        {
+          "item": "Black Stone",
+          "perHour": 14
+        }
+      ],
+      "note": "Boa densidade, exige mobilidade."
+    },
+    {
+      "id": "tunkuta",
+      "name": "Tunkuta",
+      "zone": "Ulukita",
+      "ap": 300,
+      "dp": 320,
+      "aoe": "alto",
+      "trashPerHour": 2800,
+      "drops": [
+        {
+          "item": "Caphras Stone",
+          "perHour": 4.2
+        },
+        {
+          "item": "Sharp Black Crystal Shard",
+          "perHour": 0.4
+        }
+      ],
+      "note": "Endgame. DP alto obrigatorio."
+    }
+  ]
+}

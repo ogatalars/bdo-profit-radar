@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BDO Profit Radar</title>
+<meta name="description" content="Itens em alta, profissoes lucrativas e melhores spots de grind do dia em Black Desert Online.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128176;</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>BDO <span>Profit Radar</span></h1>
+  <p class="sub" id="status">carregando...</p>
+</header>
+<main>
+  <nav role="tablist">
+    <button role="tab" data-tab="market" aria-selected="true">Mercado do dia</button>
+    <button role="tab" data-tab="jobs" aria-selected="false">Profissoes</button>
+    <button role="tab" data-tab="spots" aria-selected="false">Spots de grind</button>
+  </nav>
+
+  <div class="controls">
+    <label class="inline"><input type="checkbox" id="vp" checked> Value Pack (+30%)</label>
+    <label class="inline"><input type="checkbox" id="ring" checked> Rich Merchant Ring (+5%)</label>
+    <label>Regiao
+      <select id="region"><option value="na">NA</option><option value="eu">EU</option>
+      <option value="sa">SA</option></select>
+    </label>
+    <span class="dim" style="font-size:12px">voce recebe <b id="netpct">84,5%</b> do preco de venda</span>
+  </div>
+
+  <section id="tab-market">
+    <div class="note">
+      <b>Procura do dia</b> = itens negociados nas ultimas 24h, medido pela diferenca do total de vendas
+      entre o snapshot de hoje e o de ontem. <b>Variacao</b> compara o preco de hoje com o de ontem.
+    </div>
+    <div class="grid2">
+      <div><h3>Maior procura (24h)</h3><table id="t-demand"><thead><tr>
+        <th>Item</th><th class="num">Preco</th><th class="num">Vendidos 24h</th><th class="num">Giro</th>
+      </tr></thead><tbody></tbody></table></div>
+      <div><h3>Maiores altas e quedas</h3><table id="t-movers"><thead><tr>
+        <th>Item</th><th class="num">Preco</th><th class="num">Variacao</th><th class="num">Estoque</th>
+      </tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <section id="tab-jobs" hidden>
+    <div class="note">
+      Lucro por hora assumindo que voce <b>compra os insumos no mercado</b> e vende o produto no mercado.
+      Se voce mesmo coleta o material, o lucro real e maior (o custo vira seu tempo).
+      Rendimento medio configuravel em <code>data/recipes.json</code>.
+    </div>
+    <table id="t-jobs"><thead><tr>
+      <th>Produto</th><th>Profissao</th><th class="num">Custo insumos</th>
+      <th class="num">Receita liquida</th><th class="num">Margem</th><th class="num">Lucro/hora</th>
+    </tr></thead><tbody></tbody></table>
+  </section>
+
+  <section id="tab-spots" hidden>
+    <div class="controls">
+      <label>Classe <select id="cls"></select></label>
+      <label>AP com cristais <input type="number" id="apBuff" value="269" min="0" max="400"></label>
+      <label>AP base <input type="number" id="apBase" value="240" min="0" max="400"></label>
+      <label>DP <input type="number" id="dp" value="330" min="0" max="500"></label>
+      <label class="inline"><input type="checkbox" id="hideLocked"> esconder bloqueados</label>
+    </div>
+    <div class="note">
+      O requisito do spot usa o <b>AP com cristais</b> (o numero que aparece no seu perfil com os buffs ativos).
+      O AP base entra so como aviso de spots que exigem dano real alto.
+      <b>Trash loot</b> e vendido ao NPC a preco fixo, entao nao sofre taxa de mercado nem varia com o dia.
+    </div>
+    <div id="spot-list"></div>
+  </section>
+</main>
+<footer>
+  Precos: <a href="https://api.arsha.io" target="_blank" rel="noopener">Arsha API</a> (mercado central do BDO).
+  Taxas de drop e rendimento sao estimativas da comunidade, calibraveis nos arquivos em <code>data/</code>.
+  Projeto sem fins lucrativos, nao afiliado a Pearl Abyss.
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
