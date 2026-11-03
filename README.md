@@ -70,6 +70,16 @@ listadas em `any` a de menor preço no dia. O card mostra qual foi escolhido.
 Se um número do site não bate com a sua hora real de grind, o errado é a taxa no
 JSON, não o preço. Ajuste e mande PR.
 
+## Quando as fontes divergem
+
+Fontes públicas discordam entre si (Saunil Camp aparece como 250 AP num guia e
+270 noutro; Hexe Sanctuary rende "650M a 1,2B por hora"). A regra aqui é ficar
+com **o valor mais baixo**: requisito menor não impede ninguém de tentar, e
+silver menor não promete o que a hora não entrega.
+
+Onde não existe medição pública de silver/hora, o campo fica **vazio** e o site
+mostra "sem medição pública" — em vez de um número estimado com cara de fato.
+
 ## Os dois números de stat
 
 As zonas modernas não olham o AP do seu perfil. Elas olham o **Total Stat** — a
@@ -78,6 +88,10 @@ soma de AP com cristais, elixires e buffs — que hoje chega a 2570 no endgame
 e o site pede as duas, porque confundir uma com a outra trava a zona errada.
 
 O mesmo vale para DP: Event Horizon pede 505 DP exibido / 870 DP em Total Stat.
+
+Zonas mais antigas — **todo o Elvia Realm** — nunca foram publicadas em Total
+Stat. Nelas `stat` é `null` e o gate passa a ser o AP exibido, o que o card diz
+explicitamente. Inventar um Total Stat equivalente travaria a zona errada.
 
 Cada zona tem ainda um **teto** (`statCap`): AP acima dele conta só 70% — e 30%
 em Darkseeker's Retreat. Por isso empilhar AP além do teto da zona não aumenta
@@ -117,7 +131,8 @@ Vale saber antes de confiar no número:
 - **Spots**: [Grumpy Green](https://grumpygreen.cricket/bdo-grinding-spots/) para
   silver/hora medido e AP caps; [BDFoundry](https://www.blackdesertfoundry.com/edania-monster-zones-guide/)
   para os requisitos de Edania Outer e
-  [Inner](https://www.blackdesertfoundry.com/edania-inner-monster-zones-guide/).
+  [Inner](https://www.blackdesertfoundry.com/edania-inner-monster-zones-guide/) e
+  [Elvia Calpheon](https://www.blackdesertfoundry.com/calpheon-elvias-realm-guide/).
 - **Classes**: [BDO Class Hub](https://bdoclasshub.com/tierlist.html) para tier
   de PvE, AoE, conforto e resistência por spec (lista do expert Choice);
   [Grumpy Green](https://grumpygreen.cricket/bdo-class-guide/) para armas.

@@ -48,15 +48,20 @@ export function recipeProfit(r, { priceOf, isNpc }, rate) {
 // com cristais e buffs). O Total Stat e o que a zona realmente checa.
 // Acima de statCap, o AP excedente rende so capPct% — por isso empilhar AP
 // alem do teto da zona nao aumenta silver proporcionalmente.
+// Zonas de Elvia e anteriores nunca foram publicadas em Total Stat: a fonte so
+// da o AP exibido. Nesse caso o gate e o AP exibido, e dizemos isso na UI em
+// vez de inventar um Total Stat equivalente.
 export function spotFit(s, { stat, ap, dp }) {
-  const missStat = Math.max(0, s.stat - stat);
-  const missDp = Math.max(0, s.dp - dp);
+  const usesStat = s.stat != null;
+  const missStat = usesStat ? Math.max(0, s.stat - stat) : 0;
   const missAp = Math.max(0, s.ap - ap);
+  const missDp = Math.max(0, s.dp - dp);
+  const gateMiss = usesStat ? missStat : missAp;
   return {
-    locked: missStat > 0 || missDp > 0,
-    missStat, missDp, missAp,
-    overCap: stat > s.statCap,
-    headroom: s.statCap - stat,
+    usesStat, missStat, missAp, missDp,
+    locked: gateMiss > 0 || missDp > 0,
+    overCap: usesStat && s.statCap != null && stat > s.statCap,
+    headroom: usesStat && s.statCap != null ? s.statCap - stat : null,
   };
 }
 

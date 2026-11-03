@@ -1,8 +1,8 @@
 {
  "_meta": {
   "note": {
-   "pt": "ap = AP exibido no perfil. stat = Total Stat (soma com cristais e buffs), que e o gate real das zonas modernas. statCap = teto da zona: AP acima disso rende so capPct%. dp = DP exibido (gate usado aqui). dpStat = DP em Total Stat, publicado so para as zonas de Edania.",
-   "en": "ap = displayed AP. stat = Total Stat (AP summed with crystals and buffs), the real gate for modern zones. statCap = zone ceiling: AP above it only counts capPct%. dp = displayed DP (the gate used here). dpStat = DP in Total Stat, published only for Edania zones."
+   "pt": "ap = AP exibido no perfil. stat = Total Stat (soma com cristais e buffs), que e o gate real das zonas modernas. statCap = teto da zona: AP acima disso rende so capPct%. dp = DP exibido (gate usado aqui). dpStat = DP em Total Stat, publicado so para as zonas de Edania. Zonas de Elvia nao tem Total Stat publicado: nelas stat = null e o gate passa a ser o AP exibido. Quando as fontes divergem, fica o valor mais baixo. Sem medicao publica de silver/hora, o campo fica vazio em vez de estimado.",
+   "en": "ap = displayed AP. stat = Total Stat (AP summed with crystals and buffs), the real gate for modern zones. statCap = zone ceiling: AP above it only counts capPct%. dp = displayed DP (the gate used here). dpStat = DP in Total Stat, published only for Edania zones. Elvia zones have no published Total Stat: there stat = null and the gate becomes displayed AP. When sources disagree, the lower value wins. With no public silver/hour measurement, the field stays empty instead of estimated."
   },
   "silver": {
    "pt": "silver/hora de referencia. 'medido' = sessoes reais de jogadores (Grumpy Green / Garmoth). 'derivado' = calculado do valor do trash da zona, ancorado na sessao medida de Aetherion Castle. Nenhum dos dois e garantia: depende de buffs, Agris, pets e da sua rotacao.",
@@ -969,6 +969,270 @@
     "en": "Hardest zone in the game. Trash worth 196k per item."
    },
    "dpStat": 870
+  },
+  {
+   "id": "elvia-saunil",
+   "name": "Saunil Camp [Elvia]",
+   "region": "Elvia Calpheon",
+   "party": "Solo",
+   "ap": 250,
+   "dp": 330,
+   "stat": null,
+   "statCap": null,
+   "capPct": 70,
+   "dpStat": null,
+   "silver": 300000000,
+   "silverSource": "medido",
+   "items": [
+    "Black Stone",
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Entrada do Elvia. Dois tipos de trash, ~25 mil cada. Fontes divergem no AP (250-270): vale o menor.",
+    "en": "Elvia entry point. Two trash types, ~25k each. Sources differ on AP (250-270): the lower one applies."
+   }
+  },
+  {
+   "id": "elvia-rhutum",
+   "name": "Rhutum Garrison [Elvia]",
+   "region": "Elvia Calpheon",
+   "party": "Solo",
+   "ap": 260,
+   "dp": 360,
+   "stat": null,
+   "statCap": null,
+   "capPct": 70,
+   "dpStat": null,
+   "silver": 330000000,
+   "silverSource": "medido",
+   "items": [
+    "Black Stone",
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Degrau acima de Saunil, mesmo loot base.",
+    "en": "One step above Saunil, same base loot."
+   }
+  },
+  {
+   "id": "elvia-gehaku",
+   "name": "Gehaku Plain [Elvia]",
+   "region": "Elvia Calpheon",
+   "party": "Solo",
+   "ap": 290,
+   "dp": 370,
+   "stat": null,
+   "statCap": null,
+   "capPct": 70,
+   "dpStat": null,
+   "silver": 350000000,
+   "silverSource": "medido",
+   "items": [
+    "Black Stone",
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Area aberta, favorece classes moveis.",
+    "en": "Open area, favors mobile classes."
+   }
+  },
+  {
+   "id": "elvia-hexe",
+   "name": "Hexe Sanctuary [Elvia]",
+   "region": "Elvia Calpheon",
+   "party": "Solo",
+   "ap": 300,
+   "dp": 390,
+   "stat": null,
+   "statCap": null,
+   "capPct": 70,
+   "dpStat": null,
+   "silver": 650000000,
+   "silverSource": "medido",
+   "items": [
+    "Black Stone",
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "O melhor do Elvia Calpheon e um dos spots mais duros do jogo. A faixa medida vai de 650 mi a 1,2 bi por hora; aqui fica o piso.",
+    "en": "Best of Elvia Calpheon and one of the game's hardest spots. Measured range is 650M to 1.2B per hour; the floor is shown here."
+   }
+  },
+  {
+   "id": "elvia-quint",
+   "name": "Quint Hill [Elvia]",
+   "region": "Elvia Calpheon",
+   "party": "Solo",
+   "ap": 310,
+   "dp": 400,
+   "stat": null,
+   "statCap": null,
+   "capPct": 70,
+   "dpStat": null,
+   "silver": null,
+   "silverSource": null,
+   "items": [
+    "Black Stone",
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Trolls com o trash mais caro do Elvia Calpheon (~96 mil por item), mas sem medicao publica de silver/hora.",
+    "en": "Trolls with the priciest trash in Elvia Calpheon (~96k per item), but no public silver/hour measurement."
+   }
+  },
+  {
+   "id": "elvia-orc",
+   "name": "Orc Camp [Elvia]",
+   "region": "Elvia Serendia",
+   "party": "Solo",
+   "ap": 280,
+   "dp": 340,
+   "stat": null,
+   "statCap": null,
+   "capPct": 70,
+   "dpStat": null,
+   "silver": null,
+   "silverSource": null,
+   "items": [
+    "Black Stone",
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Atributo Valtarra. Faixa de AP publicada e 280-320: vale o menor.",
+    "en": "Valtarra attribute. Published AP range is 280-320: the lower one applies."
+   }
+  },
+  {
+   "id": "elvia-monastery",
+   "name": "Bloody Monastery [Elvia]",
+   "region": "Elvia Serendia",
+   "party": "Solo",
+   "ap": 260,
+   "dp": 340,
+   "stat": null,
+   "statCap": null,
+   "capPct": 70,
+   "dpStat": null,
+   "silver": null,
+   "silverSource": null,
+   "items": [
+    "Black Stone",
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Cultistas em area fechada.",
+    "en": "Cultists in a closed area."
+   }
+  },
+  {
+   "id": "elvia-naga",
+   "name": "Swamp Naga [Elvia]",
+   "region": "Elvia Serendia",
+   "party": "Solo",
+   "ap": 260,
+   "dp": 320,
+   "stat": null,
+   "statCap": null,
+   "capPct": 70,
+   "dpStat": null,
+   "silver": null,
+   "silverSource": null,
+   "items": [
+    "Black Stone",
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Atributo Narc. Faixa publicada 260-280.",
+    "en": "Narc attribute. Published range 260-280."
+   }
+  },
+  {
+   "id": "elvia-fogan",
+   "name": "Swamp Fogan [Elvia]",
+   "region": "Elvia Serendia",
+   "party": "Solo",
+   "ap": 260,
+   "dp": 320,
+   "stat": null,
+   "statCap": null,
+   "capPct": 70,
+   "dpStat": null,
+   "silver": null,
+   "silverSource": null,
+   "items": [
+    "Black Stone",
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Atributo Okiara, vizinho dos Naga.",
+    "en": "Okiara attribute, neighbors the Nagas."
+   }
+  },
+  {
+   "id": "elvia-biraghi",
+   "name": "Biraghi Den [Elvia]",
+   "region": "Elvia Serendia",
+   "party": "Solo",
+   "ap": 240,
+   "dp": 310,
+   "stat": null,
+   "statCap": null,
+   "capPct": 70,
+   "dpStat": null,
+   "silver": null,
+   "silverSource": null,
+   "items": [
+    "Black Stone",
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Atributo Narc. Faixa publicada 240-270.",
+    "en": "Narc attribute. Published range 240-270."
+   }
+  },
+  {
+   "id": "elvia-castle",
+   "name": "Castle Ruins [Elvia]",
+   "region": "Elvia Serendia",
+   "party": "3P",
+   "ap": 250,
+   "dp": 320,
+   "stat": null,
+   "statCap": null,
+   "capPct": 70,
+   "dpStat": null,
+   "silver": null,
+   "silverSource": null,
+   "items": [
+    "Black Stone",
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Conteudo de trio. Atributo Valtarra.",
+    "en": "Trio content. Valtarra attribute."
+   }
+  },
+  {
+   "id": "elvia-altar",
+   "name": "Altar Imp Habitat [Elvia]",
+   "region": "Elvia Serendia",
+   "party": "2P",
+   "ap": 220,
+   "dp": 310,
+   "stat": null,
+   "statCap": null,
+   "capPct": 70,
+   "dpStat": null,
+   "silver": null,
+   "silverSource": null,
+   "items": [
+    "Black Stone",
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "O mais acessivel do Elvia. Dupla recomendada.",
+    "en": "Most accessible Elvia zone. Duo recommended."
+   }
   }
  ]
 }

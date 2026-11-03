@@ -81,7 +81,10 @@
   "tank_muito-resistente": "muito resistente",
   "footerSources": "Preços: <a href=\"https://api.arsha.io\" target=\"_blank\" rel=\"noopener\">Arsha API</a> · Spots: <a href=\"https://grumpygreen.cricket/bdo-grinding-spots/\" target=\"_blank\" rel=\"noopener\">Grumpy Green</a> e <a href=\"https://www.blackdesertfoundry.com/edania-monster-zones-guide/\" target=\"_blank\" rel=\"noopener\">BDFoundry</a> · Classes: <a href=\"https://bdoclasshub.com/tierlist.html\" target=\"_blank\" rel=\"noopener\">BDO Class Hub</a>. Projeto sem fins lucrativos, não afiliado à Pearl Abyss.",
   "src_medido": "medido",
-  "src_derivado": "derivado"
+  "src_derivado": "derivado",
+  "noSilver": "sem medição pública",
+  "gateAp": "pede <b>{ap}</b> AP exibido e <b>{dp}</b> DP",
+  "noTotalStat": "esta zona não publica Total Stat"
  },
  "en": {
   "lang": "English",
@@ -165,6 +168,9 @@
   "tank_muito-resistente": "very tanky",
   "footerSources": "Prices: <a href=\"https://api.arsha.io\" target=\"_blank\" rel=\"noopener\">Arsha API</a> · Spots: <a href=\"https://grumpygreen.cricket/bdo-grinding-spots/\" target=\"_blank\" rel=\"noopener\">Grumpy Green</a> and <a href=\"https://www.blackdesertfoundry.com/edania-monster-zones-guide/\" target=\"_blank\" rel=\"noopener\">BDFoundry</a> · Classes: <a href=\"https://bdoclasshub.com/tierlist.html\" target=\"_blank\" rel=\"noopener\">BDO Class Hub</a>. Non-profit project, not affiliated with Pearl Abyss.",
   "src_medido": "measured",
-  "src_derivado": "derived"
+  "src_derivado": "derived",
+  "noSilver": "no public measurement",
+  "gateAp": "asks for <b>{ap}</b> displayed AP and <b>{dp}</b> DP",
+  "noTotalStat": "this zone publishes no Total Stat"
  }
 }

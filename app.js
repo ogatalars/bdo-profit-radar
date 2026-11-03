@@ -35,11 +35,14 @@ async function load() {
   $("#status").textContent = t("loading");
   const bust = `?v=${Date.now()}`;
   const [daily, spots, recipes, classes, i18n] = await Promise.all([
+    // Todo JSON de dados leva cache-bust: o Pages serve com max-age=600 e, sem
+    // isso, uma edicao em spots/recipes/classes so aparecia 10 min depois — ou
+    // nem isso, se a aba ficasse aberta.
     fetch(`data/daily.${region}.json${bust}`).then((r) => (r.ok ? r.json() : null)),
-    fetch(`data/spots.json`).then((r) => r.json()),
-    fetch(`data/recipes.json`).then((r) => r.json()),
-    fetch(`data/classes.json`).then((r) => r.json()),
-    I18N ? Promise.resolve(I18N) : fetch(`data/i18n.json`).then((r) => r.json()),
+    fetch(`data/spots.json${bust}`).then((r) => r.json()),
+    fetch(`data/recipes.json${bust}`).then((r) => r.json()),
+    fetch(`data/classes.json${bust}`).then((r) => r.json()),
+    I18N ? Promise.resolve(I18N) : fetch(`data/i18n.json${bust}`).then((r) => r.json()),
   ]);
   I18N = i18n;
   if (!daily) { applyStatic(); $("#status").textContent = t("noSnapshot", { r: region.toUpperCase() }); return; }
@@ -135,7 +138,7 @@ function renderSpots() {
   const me = { stat: +$("#stat").value, ap: +$("#ap").value, dp: +$("#dp").value };
   const spec = CLASSES.specs.find((c) => c.id === $("#cls").value);
   const rows = SPOTS.spots.map((s) => ({ s, ...spotFit(s, me), ...spotToday(s, p, DAILY.changes || {}) }))
-    .sort((a, b) => (a.locked - b.locked) || (b.s.silver - a.s.silver));
+    .sort((a, b) => (a.locked - b.locked) || ((b.s.silver ?? -1) - (a.s.silver ?? -1)));
   const visible = $("#hideLocked").checked ? rows.filter((x) => !x.locked) : rows;
   const best = visible.find((x) => !x.locked);
 
@@ -149,7 +152,10 @@ function renderSpots() {
 
   $("#spot-list").innerHTML = head + (visible.map((x) => {
     const s = x.s;
-    const miss = [x.missStat && `${x.missStat} Total Stat`, x.missDp && `${x.missDp} DP`].filter(Boolean).join(` ${t("and")} `);
+    const miss = [
+      x.usesStat ? x.missStat && `${x.missStat} Total Stat` : x.missAp && `${x.missAp} AP`,
+      x.missDp && `${x.missDp} DP`,
+    ].filter(Boolean).join(` ${t("and")} `);
     const itemsTxt = x.items.map((i) =>
       `${esc(i.name)} ${fmt(i.price)}${i.change != null
         ? ` <span class="${i.change >= 0 ? "up" : "down"}">${pct(i.change)}</span>` : ""}`).join(" &middot; ")
@@ -160,11 +166,15 @@ function renderSpots() {
         ${x.locked ? `<span class="tag no">${t("missing")} ${miss}</span>` : ""}
         ${x.overCap && !x.locked ? `<span class="tag">${t("overCap")}</span>` : ""}</h3>
       <div class="meta">${esc(s.region)} &middot; ${esc(s.party)} &middot;
-        ${t("asks")} <b>${s.stat}</b> Total Stat ${t("and")} <b>${s.dp}</b> DP &middot;
-        ${t("apShown")} ${s.ap}${s.dpStat ? ` &middot; ${t("dpInStat")} ${s.dpStat}` : ""} &middot;
-        ${t("cap")} ${s.statCap} (${t("capRest", { p: s.capPct })})</div>
-      <div class="big">${fmt(s.silver)} <span style="font-size:13px;color:var(--dim)">${t("silverHour")}
-        <span class="tag">${t("src_" + s.silverSource)}</span></span></div>
+        ${x.usesStat
+          ? `${t("asks")} <b>${s.stat}</b> Total Stat ${t("and")} <b>${s.dp}</b> DP &middot;
+             ${t("apShown")} ${s.ap}${s.dpStat ? ` &middot; ${t("dpInStat")} ${s.dpStat}` : ""} &middot;
+             ${t("cap")} ${s.statCap} (${t("capRest", { p: s.capPct })})`
+          : `${t("gateAp", { ap: s.ap, dp: s.dp })} &middot; <i>${t("noTotalStat")}</i>`}</div>
+      <div class="big">${s.silver
+        ? `${fmt(s.silver)} <span style="font-size:13px;color:var(--dim)">${t("silverHour")}
+             <span class="tag">${t("src_" + s.silverSource)}</span></span>`
+        : `<span class="dim" style="font-size:15px">${t("noSilver")}</span>`}</div>
       ${x.drift != null ? `<div class="breakdown">${t("dropsToday")}
         <b class="${x.drift >= 0 ? "up" : "down"}">${pct(x.drift)}</b> ${t("onAverage")}</div>` : ""}
       <div class="breakdown">${itemsTxt}</div>
