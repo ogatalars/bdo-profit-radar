@@ -32,7 +32,10 @@ const big = (s) => {
   return isNaN(n) ? null : Math.round(mult ? n * mult : n);
 };
 const spotId = (line) => line.match(/best-grind-spots\/(\d+)/)?.[1] || null;
-const spotName = (line) => line.match(/\[([^\]]+)\]\(https:\/\/garmoth/)?.[1]?.replace(/\\/g, "").trim() || null;
+// O nome pode conter colchetes escapados — "[\\[Dehkia\\] Mirumok Ruins](...)" —
+// entao a captura precisa atravessar \] em vez de parar no primeiro ].
+const spotName = (line) =>
+  line.match(/\[((?:\\.|[^\]])*)\]\(https:\/\/garmoth/)?.[1]?.replace(/\\/g, "").trim() || null;
 
 // --- silver: usa o arquivo SEM filtro de tier. Os ?tier=high/top mostram o que
 // um jogador melhor extrai; o piso e o numero mais honesto para quem chega.
@@ -153,6 +156,20 @@ const out = [...spots.values()]
       source: "garmoth",
     };
   });
+
+// Dois spots diferentes nao podem virar o mesmo id: foi assim que 16 zonas
+// [Dehkia] colapsaram numa so quando o nome vinha truncado.
+const seen = new Map();
+const collisions = [];
+for (const s of out) {
+  if (seen.has(s.id)) collisions.push(`${s.id}: garmothId ${seen.get(s.id)} e ${s.garmothId}`);
+  else seen.set(s.id, s.garmothId);
+}
+if (collisions.length) {
+  console.error(`\nIDs COLIDINDO (${collisions.length}) — nomes provavelmente truncados:`);
+  collisions.forEach((c) => console.error("  " + c));
+  process.exit(1);
+}
 
 const today = new Date().toISOString().slice(0, 10);
 const doc = {

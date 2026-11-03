@@ -355,6 +355,48 @@
    "source": "garmoth"
   },
   {
+   "id": "elvia-orzekea",
+   "garmothId": 169,
+   "name": {
+    "pt": "[Elvia] Orzekea",
+    "en": "[Elvia] Orzekea"
+   },
+   "tier": "Meta",
+   "stat": 1595,
+   "dpStat": 700,
+   "silver": 1894113945,
+   "trashPerHour": 1595,
+   "xp": 131300000,
+   "xpPct": 1.81,
+   "level": 66,
+   "toLevel": "55h 19m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "dehkia-gyfin-rhasia-temple-upper",
+   "garmothId": 198,
+   "name": {
+    "pt": "[Dehkia] Gyfin Rhasia Temple (Upper)",
+    "en": "[Dehkia] Gyfin Rhasia Temple (Upper)"
+   },
+   "tier": "Competitive",
+   "stat": 1680,
+   "dpStat": 715,
+   "silver": 1711334372,
+   "trashPerHour": 1680,
+   "xp": 140200000,
+   "xpPct": 1.93,
+   "level": 67,
+   "toLevel": "51h 48m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
    "id": "nymphamare-castle",
    "garmothId": 184,
    "name": {
@@ -390,7 +432,7 @@
    "tier": "Competitive",
    "stat": 1595,
    "dpStat": 615,
-   "silver": 1596244461,
+   "silver": 1618136816,
    "trashPerHour": 1595,
    "xp": 126100000,
    "xpPct": 1.74,
@@ -403,6 +445,53 @@
    "note": {
     "pt": "Porta de entrada de Edania. Trash vale 105 mil por item.",
     "en": "Edania's entry point. Trash is worth 105k per item."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "dehkia-mirumok-ruins",
+   "garmothId": 199,
+   "name": {
+    "pt": "[Dehkia] Mirumok Ruins",
+    "en": "[Dehkia] Mirumok Ruins"
+   },
+   "tier": "Competitive",
+   "stat": 1595,
+   "dpStat": 615,
+   "silver": 1596244461,
+   "trashPerHour": 1595,
+   "xp": 148900000,
+   "xpPct": 2.05,
+   "level": 66,
+   "toLevel": "48h 47m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "tungrad-ruins",
+   "garmothId": 148,
+   "name": {
+    "pt": "Ruínas de Tungrad",
+    "en": "Tungrad Ruins"
+   },
+   "tier": "Meta",
+   "stat": 1395,
+   "dpStat": 450,
+   "silver": 1570087298,
+   "trashPerHour": 1395,
+   "xp": 61400000,
+   "xpPct": 0.85,
+   "level": 64,
+   "toLevel": "118h 14m",
+   "party": "Solo",
+   "items": [
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Topo do Ulukita. Ultimo degrau antes de Edania.",
+    "en": "Top of Ulukita. Last step before Edania."
    },
    "source": "garmoth"
   },
@@ -430,6 +519,48 @@
     "pt": "Atencao: cap de 30%, nao 70%. AP extra rende muito menos aqui.",
     "en": "Careful: 30% cap, not 70%. Extra AP is worth far less here."
    },
+   "source": "garmoth"
+  },
+  {
+   "id": "dehkia-ii-ash-forest",
+   "garmothId": 162,
+   "name": {
+    "pt": "[Dehkia II] Floresta Cinzenta",
+    "en": "[Dehkia II] Ash Forest"
+   },
+   "tier": "Competitive",
+   "stat": 1540,
+   "dpStat": 540,
+   "silver": 1450564086,
+   "trashPerHour": 1540,
+   "xp": 115900000,
+   "xpPct": 1.6,
+   "level": 65,
+   "toLevel": "62h 39m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "dehkia-ii-olun-s-valley",
+   "garmothId": 161,
+   "name": {
+    "pt": "[Dehkia II] Cachoeira de Olun",
+    "en": "[Dehkia II] Olun's Valley"
+   },
+   "tier": "Competitive",
+   "stat": 1490,
+   "dpStat": 540,
+   "silver": 1394469037,
+   "trashPerHour": 1490,
+   "xp": 95500000,
+   "xpPct": 1.31,
+   "level": 65,
+   "toLevel": "76h 5m",
+   "party": null,
+   "items": [],
+   "note": null,
    "source": "garmoth"
   },
   {
@@ -472,6 +603,32 @@
    "party": null,
    "items": [],
    "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "yzrahid-highlands",
+   "garmothId": 157,
+   "name": {
+    "pt": "Planície de Yzrahid",
+    "en": "Yzrahid Highlands"
+   },
+   "tier": "Competitive",
+   "stat": 1180,
+   "dpStat": 460,
+   "silver": 1310141167,
+   "trashPerHour": 1180,
+   "xp": 78300000,
+   "xpPct": 1.08,
+   "level": 63,
+   "toLevel": "92h 46m",
+   "party": "Solo",
+   "items": [
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Mobs do tipo animal, area aberta. Bom para classes de mobilidade.",
+    "en": "Animal-type mobs, open area. Good for mobile classes."
+   },
    "source": "garmoth"
   },
   {
@@ -559,55 +716,171 @@
    "source": "garmoth"
   },
   {
-   "id": "tungrad-ruins",
-   "garmothId": 148,
+   "id": "dehkia-ash-forest",
+   "garmothId": 143,
    "name": {
-    "pt": "Ruínas de Tungrad",
-    "en": "Tungrad Ruins"
+    "pt": "[Dehkia] Floresta Cinzenta",
+    "en": "[Dehkia] Ash Forest"
+   },
+   "tier": null,
+   "stat": 1350,
+   "dpStat": 440,
+   "silver": 1024180741,
+   "trashPerHour": 1350,
+   "xp": 83600000,
+   "xpPct": 1.15,
+   "level": 63,
+   "toLevel": "86h 54m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "dehkia-thornwood-forest",
+   "garmothId": 146,
+   "name": {
+    "pt": "[Dehkia] Floresta Espinheiro",
+    "en": "[Dehkia] Thornwood Forest"
+   },
+   "tier": "Competitive",
+   "stat": 1180,
+   "dpStat": 440,
+   "silver": 1014964343,
+   "trashPerHour": 1180,
+   "xp": 60500000,
+   "xpPct": 0.83,
+   "level": 63,
+   "toLevel": "120h 8m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "dehkia-cadry-ruins",
+   "garmothId": 163,
+   "name": {
+    "pt": "[Dehkia] Ruínas Cadry",
+    "en": "[Dehkia] Cadry Ruins"
    },
    "tier": null,
    "stat": 1395,
    "dpStat": 440,
    "silver": 993557469,
    "trashPerHour": 1395,
-   "xp": 61400000,
-   "xpPct": 0.85,
+   "xp": 62700000,
+   "xpPct": 0.86,
    "level": 64,
-   "toLevel": "118h 14m",
-   "party": "Solo",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Topo do Ulukita. Ultimo degrau antes de Edania.",
-    "en": "Top of Ulukita. Last step before Edania."
-   },
+   "toLevel": "115h 46m",
+   "party": null,
+   "items": [],
+   "note": null,
    "source": "garmoth"
   },
   {
-   "id": "yzrahid-highlands",
-   "garmothId": 157,
+   "id": "dehkia-cyclops-land",
+   "garmothId": 151,
    "name": {
-    "pt": "Planície de Yzrahid",
-    "en": "Yzrahid Highlands"
+    "pt": "[Dehkia] Terra dos Ciclopes",
+    "en": "[Dehkia] Cyclops Land"
+   },
+   "tier": null,
+   "stat": 1180,
+   "dpStat": 440,
+   "silver": 982926544,
+   "trashPerHour": 1180,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "dehkia-crescent-shrine",
+   "garmothId": 160,
+   "name": {
+    "pt": "[Dehkia] Santuário Lua crescente",
+    "en": "[Dehkia] Crescent Shrine"
+   },
+   "tier": null,
+   "stat": 1350,
+   "dpStat": 440,
+   "silver": 964624437,
+   "trashPerHour": 1350,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "dehkia-tunkuta",
+   "garmothId": 145,
+   "name": {
+    "pt": "[Dehkia] Tunkta",
+    "en": "[Dehkia] Tunkuta"
    },
    "tier": null,
    "stat": 1180,
    "dpStat": 440,
    "silver": 849415064,
    "trashPerHour": 1180,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "dehkia-hystria-ruins",
+   "garmothId": 156,
+   "name": {
+    "pt": "[Dehkia] Ruínas de Hystria",
+    "en": "[Dehkia] Hystria Ruins"
+   },
+   "tier": null,
+   "stat": 1130,
+   "dpStat": 440,
+   "silver": 804663229,
+   "trashPerHour": 1130,
    "xp": 78300000,
    "xpPct": 1.08,
-   "level": 63,
-   "toLevel": "92h 46m",
-   "party": "Solo",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Mobs do tipo animal, area aberta. Bom para classes de mobilidade.",
-    "en": "Animal-type mobs, open area. Good for mobile classes."
+   "level": 62,
+   "toLevel": "92h 47m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "dehkia-roud-sulfur-mine",
+   "garmothId": 158,
+   "name": {
+    "pt": "[Dehkia] Roud Sulfur Mine",
+    "en": "[Dehkia] Roud Sulfur Mine"
    },
+   "tier": null,
+   "stat": 1130,
+   "dpStat": 440,
+   "silver": 803013856,
+   "trashPerHour": 1130,
+   "xp": 73200000,
+   "xpPct": 1.01,
+   "level": 62,
+   "toLevel": "99h 11m",
+   "party": null,
+   "items": [],
+   "note": null,
    "source": "garmoth"
   },
   {
@@ -626,6 +899,48 @@
    "xpPct": 1.05,
    "level": 62,
    "toLevel": "95h 12m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "dehkia-aakman-temple",
+   "garmothId": 155,
+   "name": {
+    "pt": "[Dehkia] Templo Aakman",
+    "en": "[Dehkia] Aakman Temple"
+   },
+   "tier": null,
+   "stat": 1130,
+   "dpStat": 440,
+   "silver": 778188061,
+   "trashPerHour": 1130,
+   "xp": 74900000,
+   "xpPct": 1.03,
+   "level": 62,
+   "toLevel": "97h 2m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "sycraia-underwater-ruins-upper",
+   "garmothId": 202,
+   "name": {
+    "pt": "Camada Superior das Ruínas de Sikraia",
+    "en": "Sycraia Underwater Ruins (Upper)"
+   },
+   "tier": null,
+   "stat": 1130,
+   "dpStat": 440,
+   "silver": 773790650,
+   "trashPerHour": 1130,
+   "xp": 54400000,
+   "xpPct": 0.75,
+   "level": 62,
+   "toLevel": "133h 25m",
    "party": null,
    "items": [],
    "note": null,
@@ -763,21 +1078,21 @@
    "source": "garmoth"
   },
   {
-   "id": "sycraia-underwater-ruins-upper",
-   "garmothId": 202,
+   "id": "dehkia-pila-ku-jail",
+   "garmothId": 159,
    "name": {
-    "pt": "Camada Superior das Ruínas de Sikraia",
-    "en": "Sycraia Underwater Ruins (Upper)"
+    "pt": "[Dehkia] Pila Ku Jail",
+    "en": "[Dehkia] Pila Ku Jail"
    },
    "tier": null,
    "stat": 1130,
    "dpStat": 440,
    "silver": 651843605,
    "trashPerHour": 1130,
-   "xp": 54400000,
-   "xpPct": 0.75,
+   "xp": 65900000,
+   "xpPct": 0.91,
    "level": 62,
-   "toLevel": "133h 25m",
+   "toLevel": "110h 10m",
    "party": null,
    "items": [],
    "note": null,
@@ -900,6 +1215,27 @@
    "dpStat": 290,
    "silver": 542884446,
    "trashPerHour": 13916,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "dehkia-olun-s-valley",
+   "garmothId": 144,
+   "name": {
+    "pt": "[Dehkia] Cachoeira de Olun",
+    "en": "[Dehkia] Olun's Valley"
+   },
+   "tier": null,
+   "stat": 1350,
+   "dpStat": 440,
+   "silver": 531999269,
+   "trashPerHour": 1350,
    "xp": null,
    "xpPct": null,
    "level": null,
@@ -1120,11 +1456,11 @@
    "source": "garmoth"
   },
   {
-   "id": "ilha-de-padix",
+   "id": "padix-island",
    "garmothId": 10,
    "name": {
     "pt": "Ilha de Padix",
-    "en": "Ilha de Padix"
+    "en": "Padix Island"
    },
    "tier": null,
    "stat": 825,
@@ -1141,11 +1477,11 @@
    "source": "garmoth"
   },
   {
-   "id": "santuario-lua-crescente",
+   "id": "crescent-shrine",
    "garmothId": 85,
    "name": {
     "pt": "Santuário Lua Crescente",
-    "en": "Santuário Lua Crescente"
+    "en": "Crescent Shrine"
    },
    "tier": null,
    "stat": 245,
@@ -1162,11 +1498,11 @@
    "source": "garmoth"
   },
   {
-   "id": "tunkta",
+   "id": "tunkuta",
    "garmothId": 4,
    "name": {
     "pt": "Tunkta",
-    "en": "Tunkta"
+    "en": "Tunkuta"
    },
    "tier": null,
    "stat": 825,
@@ -1225,11 +1561,11 @@
    "source": "garmoth"
   },
   {
-   "id": "floresta-espinheiro",
+   "id": "thornwood-forest",
    "garmothId": 7,
    "name": {
     "pt": "Floresta Espinheiro",
-    "en": "Floresta Espinheiro"
+    "en": "Thornwood Forest"
    },
    "tier": null,
    "stat": 756,
@@ -1293,11 +1629,11 @@
    "source": "garmoth"
   },
   {
-   "id": "multidao-de-centauro",
+   "id": "centaurus-herd",
    "garmothId": 90,
    "name": {
     "pt": "Multidão de Centauro",
-    "en": "Multidão de Centauro"
+    "en": "Centaurus Herd"
    },
    "tier": null,
    "stat": 312,
@@ -1314,11 +1650,11 @@
    "source": "garmoth"
   },
   {
-   "id": "ruinas-cadry",
+   "id": "cadry-ruins",
    "garmothId": 86,
    "name": {
     "pt": "Ruínas Cadry",
-    "en": "Ruínas Cadry"
+    "en": "Cadry Ruins"
    },
    "tier": null,
    "stat": 245,
@@ -1383,11 +1719,11 @@
    "source": "garmoth"
   },
   {
-   "id": "ruina-de-tshira",
+   "id": "tshira-ruins",
    "garmothId": 24,
    "name": {
     "pt": "Ruína de Tshira",
-    "en": "Ruína de Tshira"
+    "en": "Tshira Ruins"
    },
    "tier": null,
    "stat": 245,
@@ -1514,11 +1850,11 @@
    "source": "garmoth"
   },
   {
-   "id": "monasterio-abandonado",
+   "id": "abandoned-monastery",
    "garmothId": 11,
    "name": {
     "pt": "Monastério Abandonado",
-    "en": "Monastério Abandonado"
+    "en": "Abandoned Monastery"
    },
    "tier": null,
    "stat": 856,
@@ -1556,11 +1892,11 @@
    "source": "garmoth"
   },
   {
-   "id": "ruinas-hystria",
+   "id": "hystria-ruins",
    "garmothId": 3,
    "name": {
     "pt": "Ruínas Hystria",
-    "en": "Ruínas Hystria"
+    "en": "Hystria Ruins"
    },
    "tier": null,
    "stat": 756,
@@ -1666,11 +2002,11 @@
    "source": "garmoth"
   },
   {
-   "id": "prisao-de-pila-kan",
+   "id": "pila-ku-jail",
    "garmothId": 92,
    "name": {
     "pt": "Prisão de Pila Kan",
-    "en": "Prisão de Pila Kan"
+    "en": "Pila Ku Jail"
    },
    "tier": null,
    "stat": 365,
@@ -1687,11 +2023,11 @@
    "source": "garmoth"
   },
   {
-   "id": "tumulo-do-traidor",
+   "id": "traitor-s-grave",
    "garmothId": 72,
    "name": {
     "pt": "Túmulo do Traidor",
-    "en": "Túmulo do Traidor"
+    "en": "Traitor's Grave"
    },
    "tier": null,
    "stat": 255,

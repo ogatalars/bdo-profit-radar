@@ -1,5 +1,5 @@
 {
- "importedAt": "2026-11-03T03:25:33.862Z",
+ "importedAt": "2026-11-03T19:21:42.707Z",
  "source": "https://garmoth.com/grind-tracker/best-grind-spots",
  "spots": [
   {
@@ -177,17 +177,30 @@
    "toLevel": "46h 53m"
   },
   {
-   "garmothId": 183,
-   "name": "Castelo de Aetherion",
-   "tier": "Competitive",
+   "garmothId": 169,
+   "name": "[Elvia] Orzekea",
+   "tier": "Meta",
    "stat": 1595,
-   "dpStat": 615,
-   "silver": 1596244461,
+   "dpStat": 700,
+   "silver": 1894113945,
    "trashPerHour": 1595,
-   "xp": 126100000,
-   "xpPct": 1.74,
+   "xp": 131300000,
+   "xpPct": 1.81,
    "level": 66,
-   "toLevel": "57h 34m"
+   "toLevel": "55h 19m"
+  },
+  {
+   "garmothId": 198,
+   "name": "[Dehkia] Gyfin Rhasia Temple (Upper)",
+   "tier": "Competitive",
+   "stat": 1680,
+   "dpStat": 715,
+   "silver": 1711334372,
+   "trashPerHour": 1680,
+   "xp": 140200000,
+   "xpPct": 1.93,
+   "level": 67,
+   "toLevel": "51h 48m"
   },
   {
    "garmothId": 184,
@@ -203,12 +216,38 @@
    "toLevel": "50h 29m"
   },
   {
+   "garmothId": 183,
+   "name": "Castelo de Aetherion",
+   "tier": "Competitive",
+   "stat": 1595,
+   "dpStat": 615,
+   "silver": 1618136816,
+   "trashPerHour": 1595,
+   "xp": 126100000,
+   "xpPct": 1.74,
+   "level": 66,
+   "toLevel": "57h 34m"
+  },
+  {
+   "garmothId": 199,
+   "name": "[Dehkia] Mirumok Ruins",
+   "tier": "Competitive",
+   "stat": 1595,
+   "dpStat": 615,
+   "silver": 1596244461,
+   "trashPerHour": 1595,
+   "xp": 148900000,
+   "xpPct": 2.05,
+   "level": 66,
+   "toLevel": "48h 47m"
+  },
+  {
    "garmothId": 148,
    "name": "Ruínas de Tungrad",
-   "tier": null,
+   "tier": "Meta",
    "stat": 1395,
-   "dpStat": 440,
-   "silver": 993557469,
+   "dpStat": 450,
+   "silver": 1570087298,
    "trashPerHour": 1395,
    "xp": 61400000,
    "xpPct": 0.85,
@@ -229,17 +268,30 @@
    "toLevel": "84h 7m"
   },
   {
-   "garmothId": 168,
-   "name": "Caverna Dourada de Porco Sem Sorte",
-   "tier": null,
+   "garmothId": 162,
+   "name": "[Dehkia II] Floresta Cinzenta",
+   "tier": "Competitive",
    "stat": 1540,
-   "dpStat": 670,
-   "silver": 1260916794,
+   "dpStat": 540,
+   "silver": 1450564086,
    "trashPerHour": 1540,
-   "xp": 82900000,
-   "xpPct": 1.14,
+   "xp": 115900000,
+   "xpPct": 1.6,
    "level": 65,
-   "toLevel": "87h 40m"
+   "toLevel": "62h 39m"
+  },
+  {
+   "garmothId": 161,
+   "name": "[Dehkia II] Cachoeira de Olun",
+   "tier": "Competitive",
+   "stat": 1490,
+   "dpStat": 540,
+   "silver": 1394469037,
+   "trashPerHour": 1490,
+   "xp": 95500000,
+   "xpPct": 1.31,
+   "level": 65,
+   "toLevel": "76h 5m"
   },
   {
    "garmothId": 167,
@@ -270,10 +322,10 @@
   {
    "garmothId": 157,
    "name": "Planície de Yzrahid",
-   "tier": null,
+   "tier": "Competitive",
    "stat": 1180,
-   "dpStat": 440,
-   "silver": 849415064,
+   "dpStat": 460,
+   "silver": 1310141167,
    "trashPerHour": 1180,
    "xp": 78300000,
    "xpPct": 1.08,
@@ -292,6 +344,19 @@
    "xpPct": 0.92,
    "level": 63,
    "toLevel": "108h 48m"
+  },
+  {
+   "garmothId": 168,
+   "name": "Caverna Dourada de Porco Sem Sorte",
+   "tier": null,
+   "stat": 1540,
+   "dpStat": 670,
+   "silver": 1260916794,
+   "trashPerHour": 1540,
+   "xp": 82900000,
+   "xpPct": 1.14,
+   "level": 65,
+   "toLevel": "87h 40m"
   },
   {
    "garmothId": 166,
@@ -320,17 +385,96 @@
    "toLevel": "96h 21m"
   },
   {
-   "garmothId": 202,
-   "name": "Camada Superior das Ruínas de Sikraia",
+   "garmothId": 143,
+   "name": "[Dehkia] Floresta Cinzenta",
+   "tier": null,
+   "stat": 1350,
+   "dpStat": 440,
+   "silver": 1024180741,
+   "trashPerHour": 1350,
+   "xp": 83600000,
+   "xpPct": 1.15,
+   "level": 63,
+   "toLevel": "86h 54m"
+  },
+  {
+   "garmothId": 146,
+   "name": "[Dehkia] Floresta Espinheiro",
+   "tier": "Competitive",
+   "stat": 1180,
+   "dpStat": 440,
+   "silver": 1014964343,
+   "trashPerHour": 1180,
+   "xp": 60500000,
+   "xpPct": 0.83,
+   "level": 63,
+   "toLevel": "120h 8m"
+  },
+  {
+   "garmothId": 163,
+   "name": "[Dehkia] Ruínas Cadry",
+   "tier": null,
+   "stat": 1395,
+   "dpStat": 440,
+   "silver": 993557469,
+   "trashPerHour": 1395,
+   "xp": 62700000,
+   "xpPct": 0.86,
+   "level": 64,
+   "toLevel": "115h 46m"
+  },
+  {
+   "garmothId": 151,
+   "name": "[Dehkia] Terra dos Ciclopes",
+   "tier": null,
+   "stat": 1180,
+   "dpStat": 440,
+   "silver": 982926544,
+   "trashPerHour": 1180
+  },
+  {
+   "garmothId": 160,
+   "name": "[Dehkia] Santuário Lua crescente",
+   "tier": null,
+   "stat": 1350,
+   "dpStat": 440,
+   "silver": 964624437,
+   "trashPerHour": 1350
+  },
+  {
+   "garmothId": 145,
+   "name": "[Dehkia] Tunkta",
+   "tier": null,
+   "stat": 1180,
+   "dpStat": 440,
+   "silver": 849415064,
+   "trashPerHour": 1180
+  },
+  {
+   "garmothId": 156,
+   "name": "[Dehkia] Ruínas de Hystria",
    "tier": null,
    "stat": 1130,
    "dpStat": 440,
-   "silver": 651843605,
+   "silver": 804663229,
    "trashPerHour": 1130,
-   "xp": 54400000,
-   "xpPct": 0.75,
+   "xp": 78300000,
+   "xpPct": 1.08,
    "level": 62,
-   "toLevel": "133h 25m"
+   "toLevel": "92h 47m"
+  },
+  {
+   "garmothId": 158,
+   "name": "[Dehkia] Roud Sulfur Mine",
+   "tier": null,
+   "stat": 1130,
+   "dpStat": 440,
+   "silver": 803013856,
+   "trashPerHour": 1130,
+   "xp": 73200000,
+   "xpPct": 1.01,
+   "level": 62,
+   "toLevel": "99h 11m"
   },
   {
    "garmothId": 27,
@@ -344,6 +488,32 @@
    "xpPct": 1.05,
    "level": 62,
    "toLevel": "95h 12m"
+  },
+  {
+   "garmothId": 155,
+   "name": "[Dehkia] Templo Aakman",
+   "tier": null,
+   "stat": 1130,
+   "dpStat": 440,
+   "silver": 778188061,
+   "trashPerHour": 1130,
+   "xp": 74900000,
+   "xpPct": 1.03,
+   "level": 62,
+   "toLevel": "97h 2m"
+  },
+  {
+   "garmothId": 202,
+   "name": "Camada Superior das Ruínas de Sikraia",
+   "tier": null,
+   "stat": 1130,
+   "dpStat": 440,
+   "silver": 773790650,
+   "trashPerHour": 1130,
+   "xp": 54400000,
+   "xpPct": 0.75,
+   "level": 62,
+   "toLevel": "133h 25m"
   },
   {
    "garmothId": 110,
@@ -416,6 +586,19 @@
    "toLevel": "339h 47m"
   },
   {
+   "garmothId": 159,
+   "name": "[Dehkia] Pila Ku Jail",
+   "tier": null,
+   "stat": 1130,
+   "dpStat": 440,
+   "silver": 651843605,
+   "trashPerHour": 1130,
+   "xp": 65900000,
+   "xpPct": 0.91,
+   "level": 62,
+   "toLevel": "110h 10m"
+  },
+  {
    "garmothId": 88,
    "name": "Ninho de Waragon",
    "tier": null,
@@ -480,6 +663,15 @@
    "dpStat": 290,
    "silver": 542884446,
    "trashPerHour": 13916
+  },
+  {
+   "garmothId": 144,
+   "name": "[Dehkia] Cachoeira de Olun",
+   "tier": null,
+   "stat": 1350,
+   "dpStat": 440,
+   "silver": 531999269,
+   "trashPerHour": 1350
   },
   {
    "garmothId": 13,
@@ -888,134 +1080,6 @@
    "level": 74,
    "toLevel": "26h 51m",
    "dpStat": 850,
-   "dpInferred": true
-  },
-  {
-   "garmothId": 199,
-   "name": null,
-   "stat": 1595,
-   "xp": 148900000,
-   "xpPct": 2.05,
-   "level": 66,
-   "toLevel": "48h 47m",
-   "dpStat": 615,
-   "dpInferred": true
-  },
-  {
-   "garmothId": 198,
-   "name": null,
-   "stat": 1680,
-   "xp": 140200000,
-   "xpPct": 1.93,
-   "level": 67,
-   "toLevel": "51h 48m"
-  },
-  {
-   "garmothId": 169,
-   "name": null,
-   "stat": 1595,
-   "xp": 131300000,
-   "xpPct": 1.81,
-   "level": 66,
-   "toLevel": "55h 19m",
-   "dpStat": 615,
-   "dpInferred": true
-  },
-  {
-   "garmothId": 162,
-   "name": null,
-   "stat": 1540,
-   "xp": 115900000,
-   "xpPct": 1.6,
-   "level": 65,
-   "toLevel": "62h 39m",
-   "dpStat": 670,
-   "dpInferred": true
-  },
-  {
-   "garmothId": 161,
-   "name": null,
-   "stat": 1490,
-   "xp": 95500000,
-   "xpPct": 1.31,
-   "level": 65,
-   "toLevel": "76h 5m",
-   "dpStat": 540,
-   "dpInferred": true
-  },
-  {
-   "garmothId": 143,
-   "name": null,
-   "stat": 1350,
-   "xp": 83600000,
-   "xpPct": 1.15,
-   "level": 63,
-   "toLevel": "86h 54m"
-  },
-  {
-   "garmothId": 156,
-   "name": null,
-   "stat": 1130,
-   "xp": 78300000,
-   "xpPct": 1.08,
-   "level": 62,
-   "toLevel": "92h 47m",
-   "dpStat": 430,
-   "dpInferred": true
-  },
-  {
-   "garmothId": 155,
-   "name": null,
-   "stat": 1130,
-   "xp": 74900000,
-   "xpPct": 1.03,
-   "level": 62,
-   "toLevel": "97h 2m",
-   "dpStat": 430,
-   "dpInferred": true
-  },
-  {
-   "garmothId": 158,
-   "name": null,
-   "stat": 1130,
-   "xp": 73200000,
-   "xpPct": 1.01,
-   "level": 62,
-   "toLevel": "99h 11m",
-   "dpStat": 430,
-   "dpInferred": true
-  },
-  {
-   "garmothId": 159,
-   "name": null,
-   "stat": 1130,
-   "xp": 65900000,
-   "xpPct": 0.91,
-   "level": 62,
-   "toLevel": "110h 10m",
-   "dpStat": 430,
-   "dpInferred": true
-  },
-  {
-   "garmothId": 163,
-   "name": null,
-   "stat": 1395,
-   "xp": 62700000,
-   "xpPct": 0.86,
-   "level": 64,
-   "toLevel": "115h 46m",
-   "dpStat": 440,
-   "dpInferred": true
-  },
-  {
-   "garmothId": 146,
-   "name": null,
-   "stat": 1180,
-   "xp": 60500000,
-   "xpPct": 0.83,
-   "level": 63,
-   "toLevel": "120h 8m",
-   "dpStat": 440,
    "dpInferred": true
   }
  ]
