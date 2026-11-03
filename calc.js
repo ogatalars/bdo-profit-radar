@@ -27,12 +27,32 @@ export function recipeProfit(r, { priceOf, isNpc }, rate) {
   };
 }
 
-export function spotIncome(s, trashUnit, { priceOf, isNpc }, rate, classAdj = 1) {
-  const trash = s.trashPerHour * trashUnit;
-  const drops = s.drops.map((d) => ({
-    name: d.item, perHour: d.perHour,
-    value: d.perHour * priceOf(d.item) * (isNpc(d.item) ? 1 : rate),
-  }));
-  const market = drops.reduce((a, d) => a + d.value, 0);
-  return { trash, market, drops, total: (trash + market) * classAdj };
+// Zonas modernas tem dois gates: o AP exibido no perfil e o Total Stat (soma
+// com cristais e buffs). O Total Stat e o que a zona realmente checa.
+// Acima de statCap, o AP excedente rende so capPct% — por isso empilhar AP
+// alem do teto da zona nao aumenta silver proporcionalmente.
+export function spotFit(s, { stat, ap, dp }) {
+  const missStat = Math.max(0, s.stat - stat);
+  const missDp = Math.max(0, s.dp - dp);
+  const missAp = Math.max(0, s.ap - ap);
+  return {
+    locked: missStat > 0 || missDp > 0,
+    missStat, missDp, missAp,
+    overCap: stat > s.statCap,
+    headroom: s.statCap - stat,
+  };
+}
+
+// O silver/hora e a referencia da zona; o que varia com o dia e o preco dos
+// drops de mercado dela. Devolvemos os dois lados separados, sem misturar
+// numero medido com estimativa de preco.
+export function spotToday(s, { priceOf }, movers = {}) {
+  const items = (s.items || []).map((name) => ({
+    name, price: priceOf(name), change: movers[name] ?? null,
+  })).filter((i) => i.price > 0);
+  const tracked = items.filter((i) => i.change != null);
+  const drift = tracked.length
+    ? tracked.reduce((a, i) => a + i.change, 0) / tracked.length
+    : null;
+  return { items, drift };
 }

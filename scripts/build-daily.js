@@ -39,7 +39,7 @@ async function scanMarket() {
   const rows = [];
   let { retry, absent } = await pass(combos, rows, 8);
   // Segunda e terceira passadas, mais lentas, so no que falhou.
-  for (const wait of [3000, 8000]) {
+  for (const wait of [3000, 8000, 15000, 25000]) {
     if (!retry.length) break;
     console.log(`  retentando ${retry.length} categorias em ${wait / 1000}s...`);
     await new Promise((r) => setTimeout(r, wait));
@@ -71,18 +71,24 @@ console.log(`  ${byId.size} itens, ${byName.size} nomes unicos`);
 
 const spots = read("spots.json"), recipes = read("recipes.json");
 const npc = read("npc-prices.json").prices;
-const wanted = new Set();
-for (const s of spots.spots) for (const d of s.drops) wanted.add(d.item);
-for (const r of recipes.recipes) { wanted.add(r.output); for (const i of r.inputs) wanted.add(i.item); }
+// Receitas precisam de preco para a conta fechar; itens de spot sao
+// informativos (o silver/hora vem de sessoes medidas), entao nao sao fatais.
+const required = new Set();
+for (const r of recipes.recipes) { required.add(r.output); for (const i of r.inputs) required.add(i.item); }
+const optional = new Set();
+for (const s of spots.spots) for (const it of s.items || []) if (!required.has(it)) optional.add(it);
+const wanted = new Set([...required, ...optional]);
 
-const names = {}, missing = [];
+const names = {}, missing = [], absentItems = [];
 for (const n of wanted) {
   const hit = byName.get(n);
   if (hit && hit.basePrice > 0) names[n] = hit.id;
-  else if (npc[n] == null) missing.push(n);
+  else if (npc[n] == null && required.has(n)) missing.push(n);
+  else if (npc[n] == null) absentItems.push(n);
 }
+if (absentItems.length) console.warn(`  itens de spot fora do mercado (${absentItems.length}): ${absentItems.join(", ")}`);
 if (missing.length) {
-  console.error(`  SEM PRECO (${missing.length}): ${missing.join(", ")}`);
+  console.error(`  SEM PRECO em receita (${missing.length}): ${missing.join(", ")}`);
   console.error("  adicione em data/npc-prices.json ou remova dos dados.");
   process.exit(1);
 }
@@ -110,6 +116,13 @@ const movers = diffs.filter((d) => Math.abs(d.dp) >= 1 && d.sold * d.price >= MI
   .sort((a, b) => Math.abs(b.dp) - Math.abs(a.dp)).slice(0, 40)
   .sort((a, b) => b.dp - a.dp);
 
+// Variacao do dia indexada por nome, para a pagina cruzar com os itens de cada spot.
+const dpById = new Map(diffs.map((d) => [d.id, d.dp]));
+const changes = {};
+for (const [name, id] of Object.entries(names)) {
+  if (dpById.has(id)) changes[name] = +dpById.get(id).toFixed(2);
+}
+
 const keep = new Set([...Object.values(names), ...demand.map((d) => d.id), ...movers.map((d) => d.id)]);
 const items = {};
 for (const id of keep) {
@@ -120,7 +133,7 @@ for (const id of keep) {
 const now = new Date().toISOString();
 write(`daily.${REGION}.json`, {
   generatedAt: now, prevAt: prev?.generatedAt || null, region: REGION,
-  items, names, npc, coverage,
+  items, names, npc, coverage, changes,
   demand: demand.map((d) => ({ id: d.id, sold: d.sold })),
   movers: movers.map((d) => ({ id: d.id, dp: +d.dp.toFixed(2) })),
 });

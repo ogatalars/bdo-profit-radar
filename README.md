@@ -1,8 +1,8 @@
 # BDO Profit Radar
 
 Site estático que mostra, para Black Desert Online: o que o mercado central está
-negociando hoje, quais profissões estão dando lucro, e qual spot de grind rende
-mais para o seu AP/DP.
+negociando hoje, quais profissões estão dando lucro, qual spot de grind rende
+mais para os seus stats, e um guia de cada uma das 30 classes.
 
 Sem backend, sem banco, sem custo. Um workflow do GitHub Actions tira um snapshot
 do mercado por dia e commita um JSON; o GitHub Pages serve a página, que só lê
@@ -45,26 +45,43 @@ comunidade e ficam todas em JSON para você corrigir:
 
 | arquivo | o que ajustar |
 |---|---|
-| `data/spots.json` | `trashPerHour`, `perHour` de cada drop, AP/DP exigidos |
+| `data/spots.json` | `silver` por hora, `stat`/`dp` exigidos, `statCap` |
 | `data/recipes.json` | `yield` (rendimento por craft) e `craftsPerHour` |
+| `data/classes.json` | guia escrito de cada classe |
 | `data/npc-prices.json` | itens que não passam pelo mercado central |
 
 Se um número do site não bate com a sua hora real de grind, o errado é a taxa no
 JSON, não o preço. Ajuste e mande PR.
 
+## Os dois números de stat
+
+As zonas modernas não olham o AP do seu perfil. Elas olham o **Total Stat** — a
+soma de AP com cristais, elixires e buffs — que hoje chega a 2570 no endgame
+(Event Horizon). O **AP exibido** no perfil para em ~420. São escalas diferentes
+e o site pede as duas, porque confundir uma com a outra trava a zona errada.
+
+O mesmo vale para DP: Event Horizon pede 505 DP exibido / 870 DP em Total Stat.
+
+Cada zona tem ainda um **teto** (`statCap`): AP acima dele conta só 70% — e 30%
+em Darkseeker's Retreat. Por isso empilhar AP além do teto da zona não aumenta
+silver proporcionalmente, e o site avisa quando você passou dele.
+
 ## O que este projeto não sabe
 
 Vale saber antes de confiar no número:
 
-- **Taxa de drop é estimativa.** O preço é ao vivo, a quantidade por hora não.
-  Dois jogadores com o mesmo AP fazem horas diferentes no mesmo spot.
+- **Silver/hora é referência, não promessa.** `medido` vem de sessões reais de
+  jogadores; `derivado` é calculado do valor do trash da zona, ancorado na sessão
+  medida de Aetherion Castle. Buffs, Agris Fever, pets, conhecimento e a sua
+  rotação mudam o resultado.
 - **Nem tudo passa pelo mercado.** `Ancient Spirit Dust`, `Trace of Savagery` e
   `Hard Black Crystal Shard` não são negociados no mercado central hoje — estão
   contabilizados dentro do trash loot. Sal, açúcar e água mineral são de vendor,
   com preço fixo em `npc-prices.json`.
-- **O ajuste por classe é heurística**, não medição: ±6% conforme o perfil da
-  classe (AoE amplo x burst) bater ou não com a densidade do spot. Serve para
-  desempatar spots próximos, não para decidir reroll.
+- **A aba de classes não é tier list.** Armas, alcance e estilo são fatos do
+  jogo. Ranking de classe muda a cada balanceamento e as fontes públicas se
+  contradizem entre si, então não há nota numérica aqui de propósito. A classe
+  que você joga bem rende mais que a "melhor" classe que você joga mal.
 - **Jackpot distorce a média.** Spots como Crypt e Star's End dependem de um
   acessório raro. A média por hora existe, a sua hora pode ser zero.
 - **A API oscila.** Categorias do mercado respondem 500 em janelas de minutos. O
@@ -72,7 +89,18 @@ Vale saber antes de confiar no número:
   sem escrever — o site continua com o dado de ontem em vez de mostrar número
   errado.
 
-## Fonte
+## Fontes
 
-Preços do mercado central via [Arsha API](https://api.arsha.io). Projeto sem fins
-lucrativos, não afiliado à Pearl Abyss.
+- **Preços**: [Arsha API](https://api.arsha.io) — mercado central, ao vivo.
+- **Spots**: [Grumpy Green](https://grumpygreen.cricket/bdo-grinding-spots/) para
+  silver/hora medido e AP caps; [BDFoundry](https://www.blackdesertfoundry.com/edania-monster-zones-guide/)
+  para os requisitos de Edania Outer e
+  [Inner](https://www.blackdesertfoundry.com/edania-inner-monster-zones-guide/).
+- **Classes**: [Grumpy Green](https://grumpygreen.cricket/bdo-class-guide/) para
+  armas e estilo.
+
+Não há API pública de grind spots: o Garmoth tem os dados mas bloqueia acesso
+programático, e Arsha/Velia Inn cobrem só o mercado. Por isso spots e classes são
+tabelas mantidas à mão, com a data de atualização em `_meta` de cada arquivo.
+
+Projeto sem fins lucrativos, não afiliado à Pearl Abyss.

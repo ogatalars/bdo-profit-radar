@@ -18,6 +18,7 @@
     <button role="tab" data-tab="market" aria-selected="true">Mercado do dia</button>
     <button role="tab" data-tab="jobs" aria-selected="false">Profissoes</button>
     <button role="tab" data-tab="spots" aria-selected="false">Spots de grind</button>
+    <button role="tab" data-tab="classes" aria-selected="false">Classes</button>
   </nav>
 
   <div class="controls">
@@ -60,17 +61,42 @@
   <section id="tab-spots" hidden>
     <div class="controls">
       <label>Classe <select id="cls"></select></label>
-      <label>AP com cristais <input type="number" id="apBuff" value="269" min="0" max="400"></label>
-      <label>AP base <input type="number" id="apBase" value="240" min="0" max="400"></label>
-      <label>DP <input type="number" id="dp" value="330" min="0" max="500"></label>
-      <label class="inline"><input type="checkbox" id="hideLocked"> esconder bloqueados</label>
+      <label>Total Stat (com cristais) <input type="number" id="stat" value="900" min="0" max="3000" step="10"></label>
+      <label>AP exibido <input type="number" id="ap" value="310" min="0" max="500"></label>
+      <label>DP <input type="number" id="dp" value="400" min="0" max="900"></label>
+      <label class="inline"><input type="checkbox" id="hideLocked" checked> so o que eu consigo</label>
     </div>
     <div class="note">
-      O requisito do spot usa o <b>AP com cristais</b> (o numero que aparece no seu perfil com os buffs ativos).
-      O AP base entra so como aviso de spots que exigem dano real alto.
-      <b>Trash loot</b> e vendido ao NPC a preco fixo, entao nao sofre taxa de mercado nem varia com o dia.
+      As zonas modernas checam o <b>Total Stat</b> — a soma de AP com cristais, elixires e buffs,
+      que hoje passa de 2000 no endgame. O <b>AP exibido</b> e o numero do seu perfil e serve de
+      referencia secundaria. Cada zona tem um <b>teto</b>: AP acima dele rende so uma fracao
+      (70% na maioria, 30% em Darkseeker's Retreat), entao empilhar AP alem do teto nao aumenta
+      silver proporcionalmente.
+      <br><b>Silver/hora</b> e referencia de sessoes reais, nao promessa: depende de buffs,
+      Agris Fever, pets, conhecimento e da sua rotacao.
     </div>
     <div id="spot-list"></div>
+  </section>
+
+  <section id="tab-classes" hidden>
+    <div class="note">
+      Guia descritivo, <b>nao tier list</b>. Armas, alcance e estilo sao fatos do jogo; ranking de
+      classe muda a cada balanceamento e as fontes publicas se contradizem, entao nao ha nota aqui.
+      <b>Perfil</b> diz como a classe limpa: <i>AoE</i> acerta grupos inteiros, <i>burst</i>
+      concentra dano em poucos alvos, <i>suporte</i> potencializa o grupo.
+      <b>Dificuldade</b> e exigencia de execucao, nao forca.
+    </div>
+    <div class="controls">
+      <label>Buscar <input type="search" id="clsSearch" placeholder="nome ou arma"></label>
+      <label>Perfil <select id="clsProfile">
+        <option value="">todos</option><option value="aoe">AoE</option>
+        <option value="burst">Burst</option><option value="suporte">Suporte</option>
+        <option value="equilibrado">Equilibrado</option></select></label>
+      <label>Dificuldade <select id="clsDiff">
+        <option value="">todas</option><option value="facil">Facil</option>
+        <option value="medio">Medio</option><option value="dificil">Dificil</option></select></label>
+    </div>
+    <div id="class-list"></div>
   </section>
 </main>
 <footer>

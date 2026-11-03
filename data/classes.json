@@ -1,0 +1,313 @@
+{
+ "_meta": {
+  "note": "Guia descritivo, nao tier list. Armas, alcance e estilo sao fatos do jogo. 'perfil' indica como a classe limpa: aoe (area ampla), burst (dano concentrado), suporte. 'dificuldade' e sobre exigencia de execucao, nao sobre forca.",
+  "aviso": "Tier lists de classe mudam a cada balanceamento e as fontes publicas se contradizem. Por isso aqui nao ha ranking numerico: a classe que voce joga bem rende mais que a classe 'melhor' que voce joga mal.",
+  "sources": [
+   "https://grumpygreen.cricket/bdo-class-guide/",
+   "https://www.blackdesertfoundry.com/guide-list/"
+  ],
+  "updatedAt": "2026-11-02"
+ },
+ "classes": [
+  {
+   "id": "warrior",
+   "name": "Warrior",
+   "weapon": "Longsword",
+   "awakening": "Greatsword",
+   "range": "corpo",
+   "difficulty": "medio",
+   "profile": "equilibrado",
+   "note": "Equilibrio entre ataque e defesa, com escudo para sobreviver a erro. Aguenta spot acima do AP recomendado melhor que a media, mas limpa devagar."
+  },
+  {
+   "id": "berserker",
+   "name": "Berserker",
+   "weapon": "Axe",
+   "awakening": "Iron Buster",
+   "range": "corpo",
+   "difficulty": "facil",
+   "profile": "aoe",
+   "note": "Das classes mais faceis e a de maior defesa. Agarra e explode grupos inteiros; otimo primeiro personagem para aprender rotacao sem morrer."
+  },
+  {
+   "id": "valkyrie",
+   "name": "Valkyrie",
+   "weapon": "Longsword",
+   "awakening": "Lancia",
+   "range": "corpo",
+   "difficulty": "facil",
+   "profile": "aoe",
+   "note": "Maior defesa entre as femininas e cura propria. Perdoa erro de posicionamento, o que importa muito em Dehkia e Edania."
+  },
+  {
+   "id": "guardian",
+   "name": "Guardian",
+   "weapon": "Battle Axe",
+   "awakening": "Jordun",
+   "range": "corpo",
+   "difficulty": "facil",
+   "profile": "aoe",
+   "note": "A escolha mais segura para quem esta comecando: cura sustentavel, dano alto em area e mecanica direta. Forte do inicio ao endgame."
+  },
+  {
+   "id": "witch",
+   "name": "Witch",
+   "weapon": "Staff",
+   "awakening": "Aad Sphera",
+   "range": "distancia",
+   "difficulty": "facil",
+   "profile": "aoe",
+   "note": "Magia elemental de area ampla a distancia. Limpa grupos densos sem entrar no meio, o que reduz muito o risco em zona acima do seu AP."
+  },
+  {
+   "id": "wizard",
+   "name": "Wizard",
+   "weapon": "Staff",
+   "awakening": "Godr Sphera",
+   "range": "distancia",
+   "difficulty": "facil",
+   "profile": "aoe",
+   "note": "Versao masculina da Witch, mesmo papel. Um dos melhores pares AoE + seguranca para grind longo."
+  },
+  {
+   "id": "sorceress",
+   "name": "Sorceress",
+   "weapon": "Amulet",
+   "awakening": "Scythe",
+   "range": "corpo",
+   "difficulty": "dificil",
+   "profile": "aoe",
+   "note": "Alta mobilidade com teleporte e dano em area. Combo exigente: rende muito na mao de quem domina, pouco na mao de quem nao."
+  },
+  {
+   "id": "ranger",
+   "name": "Ranger",
+   "weapon": "Longbow",
+   "awakening": "Kamasylven Sword",
+   "range": "hibrido",
+   "difficulty": "medio",
+   "profile": "burst",
+   "note": "Comeca a distancia e troca para corpo a corpo na awakening. Defesa baixa compensada por evasao; erro custa caro."
+  },
+  {
+   "id": "archer",
+   "name": "Archer",
+   "weapon": "Crossbow",
+   "awakening": "Greatbow",
+   "range": "distancia",
+   "difficulty": "medio",
+   "profile": "burst",
+   "note": "Dano concentrado a distancia, ja comeca com as duas armas. Melhor em alvo unico e chefe do que em grupo denso."
+  },
+  {
+   "id": "deadeye",
+   "name": "Deadeye",
+   "weapon": "Revolvers",
+   "awakening": "Lil' Devil",
+   "range": "distancia",
+   "difficulty": "medio",
+   "profile": "burst",
+   "note": "Pistoleira, uma das classes mais recentes. Foco em dano preciso a distancia, prefere spots de mobs espalhados."
+  },
+  {
+   "id": "tamer",
+   "name": "Tamer",
+   "weapon": "Shortsword",
+   "awakening": "Celestial Bo Staff",
+   "range": "corpo",
+   "difficulty": "medio",
+   "profile": "burst",
+   "note": "Luta junto com a fera. Combo longo e divertido, mas limpeza de area mais lenta que as classes de AoE puro."
+  },
+  {
+   "id": "shai",
+   "name": "Shai",
+   "weapon": "Florang",
+   "awakening": "Sol",
+   "range": "distancia",
+   "difficulty": "facil",
+   "profile": "suporte",
+   "note": "A classe de menor dificuldade e a unica de suporte real. Buffa o grupo; sozinha rende menos, em grupo multiplica o dos outros."
+  },
+  {
+   "id": "maehwa",
+   "name": "Maehwa",
+   "weapon": "Blade",
+   "awakening": "Kerispear",
+   "range": "corpo",
+   "difficulty": "medio",
+   "profile": "burst",
+   "note": "Especialista em 1v1 com muita mobilidade. No grind funciona, mas nao e onde ela brilha."
+  },
+  {
+   "id": "musa",
+   "name": "Musa",
+   "weapon": "Blade",
+   "awakening": "Crescent Blade",
+   "range": "corpo",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Irmao da Maehwa com foco em area e deslocamento rapido. Boa escolha para spots abertos e grandes."
+  },
+  {
+   "id": "ninja",
+   "name": "Ninja",
+   "weapon": "Shortsword",
+   "awakening": "Sura Katana",
+   "range": "corpo",
+   "difficulty": "dificil",
+   "profile": "burst",
+   "note": "Referencia em 1v1. No PvE depende de execucao precisa: altissimo teto, exige dominio do combo."
+  },
+  {
+   "id": "kunoichi",
+   "name": "Kunoichi",
+   "weapon": "Shortsword",
+   "awakening": "Sah Chakram",
+   "range": "corpo",
+   "difficulty": "dificil",
+   "profile": "burst",
+   "note": "Equilibrada em quase tudo menos defesa. Rapida e mortal, mas nao perdoa erro de posicionamento."
+  },
+  {
+   "id": "striker",
+   "name": "Striker",
+   "weapon": "Gauntlet",
+   "awakening": "Gardbrace",
+   "range": "corpo",
+   "difficulty": "dificil",
+   "profile": "aoe",
+   "note": "Artes marciais com agarrao e combo denso. Curva de aprendizado alta, resultado excelente para quem persiste."
+  },
+  {
+   "id": "mystic",
+   "name": "Mystic",
+   "weapon": "Gauntlet",
+   "awakening": "Cestus",
+   "range": "corpo",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Versao feminina do Striker, com mais sustentacao propria. Mais perdoavel e muito solida para grind longo."
+  },
+  {
+   "id": "lahn",
+   "name": "Lahn",
+   "weapon": "Crescent Pendulum",
+   "awakening": "Crimson Glaives",
+   "range": "corpo",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Muita mobilidade aerea e evasao. Atravessa mapa rapido, o que ajuda em spot de rotacao longa."
+  },
+  {
+   "id": "dark-knight",
+   "name": "Dark Knight",
+   "weapon": "Kriegsmesser",
+   "awakening": "Vediant",
+   "range": "corpo",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Hibrido de dano fisico e magico com bom alcance. Limpa area bem e tem mobilidade acima da media."
+  },
+  {
+   "id": "nova",
+   "name": "Nova",
+   "weapon": "Morning Star",
+   "awakening": "Sting",
+   "range": "hibrido",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Defesa alta baseada em escudo e dano em area com guardas invocados. Resistente, ritmo mais lento."
+  },
+  {
+   "id": "hashashin",
+   "name": "Hashashin",
+   "weapon": "Shamshir",
+   "awakening": "Dual Glaives",
+   "range": "hibrido",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Magia de areia com deslocamento fluido. Forte no deserto por bonus proprios; bom em area."
+  },
+  {
+   "id": "sage",
+   "name": "Sage",
+   "weapon": "Kyve",
+   "awakening": "Kibelius",
+   "range": "hibrido",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Manipula tempo e espaco, com teleporte e area grande. Das classes mais versateis do jogo para PvE."
+  },
+  {
+   "id": "corsair",
+   "name": "Corsair",
+   "weapon": "Serenaca",
+   "awakening": "Patraca",
+   "range": "corpo",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Combos encadeados com corda e boa mobilidade, inclusive na agua. Confortavel em spot aquatico."
+  },
+  {
+   "id": "drakania",
+   "name": "Drakania",
+   "weapon": "Slayer",
+   "awakening": "Trion",
+   "range": "corpo",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Ataque alto com poder draconico e golpes amplos. Limpa rapido, defesa mediana."
+  },
+  {
+   "id": "woosa",
+   "name": "Woosa",
+   "weapon": "Fan",
+   "awakening": "Soul Tome",
+   "range": "distancia",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Magia de tempestade a distancia com area muito ampla. Segura em zona dificil por nao precisar entrar no meio."
+  },
+  {
+   "id": "maegu",
+   "name": "Maegu",
+   "weapon": "Foxspirit Charm",
+   "awakening": "Foxtail Fans",
+   "range": "distancia",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Trabalha com espiritos raposa a distancia. Dano continuo em area, boa para rotacao longa."
+  },
+  {
+   "id": "scholar",
+   "name": "Scholar",
+   "weapon": "Hammers",
+   "awakening": "Sledgehammer",
+   "range": "corpo",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Manipula gravidade para agrupar inimigos e bater em todos juntos. Defesa alta."
+  },
+  {
+   "id": "dosa",
+   "name": "Dosa",
+   "weapon": "Hwando",
+   "awakening": "Enlightened Blade",
+   "range": "corpo",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Usa energia Taeguk com skills que mudam conforme a estacao. Mecanica propria, dano alto em area."
+  },
+  {
+   "id": "wukong",
+   "name": "Wukong",
+   "weapon": "Power Pole",
+   "awakening": "Jade Pillar",
+   "range": "corpo",
+   "difficulty": "medio",
+   "profile": "aoe",
+   "note": "Classe masculina mais recente. Mobilidade sobre nuvem e alcance bom com o bastao."
+  }
+ ]
+}
