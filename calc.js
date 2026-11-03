@@ -15,15 +15,32 @@ export function pricer(daily) {
   return { priceOf, isNpc };
 }
 
+// Um ingrediente generico ("Grain") aceita varios itens; quem cozinha usa o
+// mais barato do dia, entao a conta faz o mesmo.
+export function resolveInput(i, priceOf) {
+  const options = i.any?.length ? i.any : [i.item];
+  let best = null;
+  for (const name of options) {
+    const price = priceOf(name);
+    if (price > 0 && (!best || price < best.price)) best = { name, price };
+  }
+  return best ? { ...best, qty: i.qty, generic: i.any?.length ? i.item : null }
+              : { name: i.item, price: 0, qty: i.qty, generic: null };
+}
+
 export function recipeProfit(r, { priceOf, isNpc }, rate) {
-  const cost = r.inputs.reduce((s, i) => s + priceOf(i.item) * i.qty, 0);
-  const revenue = r.yield * priceOf(r.output) * (isNpc(r.output) ? 1 : rate);
+  const parts = r.inputs.map((i) => resolveInput(i, priceOf));
+  const cost = parts.reduce((s, p) => s + p.price * p.qty, 0);
+  const outPrice = priceOf(r.output);
+  const revenue = r.yield * outPrice * (isNpc(r.output) ? 1 : rate);
   const perCraft = revenue - cost;
+  const missing = parts.filter((p) => p.price <= 0).map((p) => p.name);
   return {
-    cost, revenue, perCraft,
+    parts, cost, revenue, perCraft,
     hour: perCraft * r.craftsPerHour,
     margin: cost > 0 ? (perCraft / cost) * 100 : 0,
-    priced: priceOf(r.output) > 0 && r.inputs.every((i) => priceOf(i.item) > 0),
+    missing: outPrice > 0 ? missing : [...missing, r.output],
+    priced: outPrice > 0 && missing.length === 0,
   };
 }
 

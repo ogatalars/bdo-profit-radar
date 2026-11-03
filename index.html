@@ -4,106 +4,103 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BDO Profit Radar</title>
-<meta name="description" content="Itens em alta, profissoes lucrativas e melhores spots de grind do dia em Black Desert Online.">
+<meta name="description" content="Itens em alta, receitas lucrativas, melhores spots de grind e guia de classes de Black Desert Online.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128176;</text></svg>">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-  <h1>BDO <span>Profit Radar</span></h1>
-  <p class="sub" id="status">carregando...</p>
+  <div class="topbar">
+    <h1>BDO <span>Profit Radar</span></h1>
+    <select id="lang" aria-label="idioma / language">
+      <option value="pt">Português</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+  <p class="sub" id="status"></p>
 </header>
 <main>
   <nav role="tablist">
-    <button role="tab" data-tab="market" aria-selected="true">Mercado do dia</button>
-    <button role="tab" data-tab="jobs" aria-selected="false">Profissoes</button>
-    <button role="tab" data-tab="spots" aria-selected="false">Spots de grind</button>
-    <button role="tab" data-tab="classes" aria-selected="false">Classes</button>
+    <button role="tab" data-tab="market" aria-selected="true" data-i18n="tabMarket"></button>
+    <button role="tab" data-tab="recipes" aria-selected="false" data-i18n="tabRecipes"></button>
+    <button role="tab" data-tab="spots" aria-selected="false" data-i18n="tabSpots"></button>
+    <button role="tab" data-tab="classes" aria-selected="false" data-i18n="tabClasses"></button>
   </nav>
 
   <div class="controls">
-    <label class="inline"><input type="checkbox" id="vp" checked> Value Pack (+30%)</label>
-    <label class="inline"><input type="checkbox" id="ring" checked> Rich Merchant Ring (+5%)</label>
-    <label>Regiao
+    <label class="inline"><input type="checkbox" id="vp" checked> <span data-i18n="valuePack"></span></label>
+    <label class="inline"><input type="checkbox" id="ring" checked> <span data-i18n="ring"></span></label>
+    <label><span data-i18n="region"></span>
       <select id="region"><option value="na">NA</option><option value="eu">EU</option>
       <option value="sa">SA</option></select>
     </label>
-    <span class="dim" style="font-size:12px">voce recebe <b id="netpct">84,5%</b> do preco de venda</span>
+    <span class="dim" style="font-size:12px" id="netpct"></span>
   </div>
 
   <section id="tab-market">
-    <div class="note">
-      <b>Procura do dia</b> = itens negociados nas ultimas 24h, medido pela diferenca do total de vendas
-      entre o snapshot de hoje e o de ontem. <b>Variacao</b> compara o preco de hoje com o de ontem.
-    </div>
+    <div class="note" data-i18n="marketNote"></div>
     <div class="grid2">
-      <div><h3>Maior procura (24h)</h3><table id="t-demand"><thead><tr>
-        <th>Item</th><th class="num">Preco</th><th class="num">Vendidos 24h</th><th class="num">Giro</th>
+      <div><h3 data-i18n="demandTitle"></h3><table id="t-demand"><thead><tr>
+        <th data-i18n="item"></th><th class="num" data-i18n="price"></th>
+        <th class="num" data-i18n="sold24"></th><th class="num" data-i18n="turnover"></th>
       </tr></thead><tbody></tbody></table></div>
-      <div><h3>Maiores altas e quedas</h3><table id="t-movers"><thead><tr>
-        <th>Item</th><th class="num">Preco</th><th class="num">Variacao</th><th class="num">Estoque</th>
+      <div><h3 data-i18n="moversTitle"></h3><table id="t-movers"><thead><tr>
+        <th data-i18n="item"></th><th class="num" data-i18n="price"></th>
+        <th class="num" data-i18n="change"></th><th class="num" data-i18n="stock"></th>
       </tr></thead><tbody></tbody></table></div>
     </div>
   </section>
 
-  <section id="tab-jobs" hidden>
-    <div class="note">
-      Lucro por hora assumindo que voce <b>compra os insumos no mercado</b> e vende o produto no mercado.
-      Se voce mesmo coleta o material, o lucro real e maior (o custo vira seu tempo).
-      Rendimento medio configuravel em <code>data/recipes.json</code>.
+  <section id="tab-recipes" hidden>
+    <div class="note" data-i18n="recipesNote"></div>
+    <div class="controls">
+      <label><span data-i18n="search"></span><input type="search" id="recSearch"></label>
+      <label><span data-i18n="job"></span><select id="recJob">
+        <option value="" data-i18n="all"></option>
+        <option value="cooking" data-i18n="cooking"></option>
+        <option value="alchemy" data-i18n="alchemy"></option>
+        <option value="processing" data-i18n="processing"></option></select></label>
+      <label><span data-i18n="sortBy"></span><select id="recSort">
+        <option value="profit" data-i18n="sortProfit"></option>
+        <option value="name" data-i18n="sortName"></option></select></label>
     </div>
-    <table id="t-jobs"><thead><tr>
-      <th>Produto</th><th>Profissao</th><th class="num">Custo insumos</th>
-      <th class="num">Receita liquida</th><th class="num">Margem</th><th class="num">Lucro/hora</th>
-    </tr></thead><tbody></tbody></table>
+    <div id="recipe-list"></div>
   </section>
 
   <section id="tab-spots" hidden>
     <div class="controls">
-      <label>Classe <select id="cls"></select></label>
-      <label>Total Stat (com cristais) <input type="number" id="stat" value="900" min="0" max="3000" step="10"></label>
-      <label>AP exibido <input type="number" id="ap" value="310" min="0" max="500"></label>
-      <label>DP <input type="number" id="dp" value="400" min="0" max="900"></label>
-      <label class="inline"><input type="checkbox" id="hideLocked"> so o que eu consigo</label>
+      <label><span data-i18n="class"></span><select id="cls"></select></label>
+      <label><span data-i18n="totalStat"></span><input type="number" id="stat" value="900" min="0" max="3000" step="10"></label>
+      <label><span data-i18n="apShown"></span><input type="number" id="ap" value="310" min="0" max="500"></label>
+      <label><span data-i18n="dp"></span><input type="number" id="dp" value="400" min="0" max="900"></label>
+      <label class="inline"><input type="checkbox" id="hideLocked"> <span data-i18n="onlyMine"></span></label>
     </div>
-    <div class="note">
-      As zonas modernas checam o <b>Total Stat</b> — a soma de AP com cristais, elixires e buffs,
-      que hoje passa de 2000 no endgame. O <b>AP exibido</b> e o numero do seu perfil e serve de
-      referencia secundaria. Cada zona tem um <b>teto</b>: AP acima dele rende so uma fracao
-      (70% na maioria, 30% em Darkseeker's Retreat), entao empilhar AP alem do teto nao aumenta
-      silver proporcionalmente.
-      <br><b>Silver/hora</b> e referencia de sessoes reais, nao promessa: depende de buffs,
-      Agris Fever, pets, conhecimento e da sua rotacao.
-    </div>
+    <div class="note" data-i18n="spotsNote"></div>
     <div id="spot-list"></div>
   </section>
 
   <section id="tab-classes" hidden>
-    <div class="note">
-      Guia descritivo, <b>nao tier list</b>. Armas, alcance e estilo sao fatos do jogo; ranking de
-      classe muda a cada balanceamento e as fontes publicas se contradizem, entao nao ha nota aqui.
-      <b>Perfil</b> diz como a classe limpa: <i>AoE</i> acerta grupos inteiros, <i>burst</i>
-      concentra dano em poucos alvos, <i>suporte</i> potencializa o grupo.
-      <b>Dificuldade</b> e exigencia de execucao, nao forca.
-    </div>
+    <div class="note" id="classesNote"></div>
     <div class="controls">
-      <label>Buscar <input type="search" id="clsSearch" placeholder="nome ou arma"></label>
-      <label>Perfil <select id="clsProfile">
-        <option value="">todos</option><option value="aoe">AoE</option>
-        <option value="burst">Burst</option><option value="suporte">Suporte</option>
-        <option value="equilibrado">Equilibrado</option></select></label>
-      <label>Dificuldade <select id="clsDiff">
-        <option value="">todas</option><option value="facil">Facil</option>
-        <option value="medio">Medio</option><option value="dificil">Dificil</option></select></label>
+      <label><span data-i18n="search"></span><input type="search" id="clsSearch"></label>
+      <label><span data-i18n="tier"></span><select id="clsTier">
+        <option value="" data-i18n="all"></option><option>S</option><option>A+</option>
+        <option>A</option><option>B</option><option>C</option></select></label>
+      <label><span data-i18n="aoe"></span><select id="clsAoe">
+        <option value="" data-i18n="all"></option>
+        <option value="enorme" data-i18n="aoe_enorme"></option>
+        <option value="medio" data-i18n="aoe_medio"></option>
+        <option value="pequeno" data-i18n="aoe_pequeno"></option></select></label>
+      <label><span data-i18n="tankiness"></span><select id="clsTank">
+        <option value="" data-i18n="all"></option>
+        <option value="muito-resistente" data-i18n="tank_muito-resistente"></option>
+        <option value="resistente" data-i18n="tank_resistente"></option>
+        <option value="fragil" data-i18n="tank_fragil"></option></select></label>
     </div>
     <div id="class-list"></div>
   </section>
 </main>
-<footer>
-  Precos: <a href="https://api.arsha.io" target="_blank" rel="noopener">Arsha API</a> (mercado central do BDO).
-  Taxas de drop e rendimento sao estimativas da comunidade, calibraveis nos arquivos em <code>data/</code>.
-  Projeto sem fins lucrativos, nao afiliado a Pearl Abyss.
-</footer>
+<footer data-i18n="footerSources"></footer>
 <script type="module" src="app.js"></script>
 </body>
 </html>

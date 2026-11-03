@@ -62,3 +62,25 @@ a { color: var(--accent); }
 #class-list .card { margin-bottom: 0; }
 #class-list .card h3 { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .card h3 .tag { margin-left: 0; }
+
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.topbar select { min-width: 0; padding: 5px 8px; font-size: 13px; }
+
+ul.ing { list-style: none; margin: 8px 0 10px; padding: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2px 14px; }
+ul.ing li { font-size: 13px; padding: 2px 0; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+ul.ing li b { color: var(--accent); font-variant-numeric: tabular-nums; }
+
+.recipe-num { display: flex; gap: 18px; flex-wrap: wrap; font-size: 13px;
+  border-top: 1px solid var(--line); padding-top: 9px; margin-top: 4px; color: var(--dim); }
+.recipe-num b { font-variant-numeric: tabular-nums; color: var(--fg); }
+
+.tag.tier-S  { color: #ffd45e; border-color: #6b561a; background: #2a2412; }
+.tag.tier-Ap { color: #7ee08a; border-color: #2a5631; background: #16251a; }
+.tag.tier-A  { color: #7fc5f0; border-color: #24495f; background: #142128; }
+.tag.tier-B  { color: #c3a0e8; border-color: #45345c; background: #1e1826; }
+.tag.tier-C  { color: #e8998f; border-color: #5c3330; background: #261a18; }
+
+#recipe-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 12px; }
+#recipe-list .card { margin-bottom: 0; }
+@media (max-width: 760px) { #recipe-list, #class-list { grid-template-columns: 1fr; } }

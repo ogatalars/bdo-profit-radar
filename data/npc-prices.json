@@ -1,11 +1,14 @@
 {
-  "_meta": "Itens que NAO passam pelo mercado central: comprados ou vendidos direto no NPC a preco fixo. Sem taxa de mercado. Valores de vendor, calibraveis.",
-  "prices": {
-    "Mineral Water": 30,
-    "Leavening Agent": 30,
-    "Sugar": 40,
-    "Salt": 30,
-    "Olive Oil": 50,
-    "Purified Water": 50
-  }
+ "_meta": "Itens que NAO passam pelo mercado central: comprados no NPC a preco fixo (sem taxa) ou coletados. Valores de vendor, calibraveis.",
+ "prices": {
+  "Mineral Water": 30,
+  "Leavening Agent": 30,
+  "Sugar": 40,
+  "Salt": 30,
+  "Olive Oil": 50,
+  "Purified Water": 50,
+  "Cooking Wine": 50,
+  "Deep Frying Oil": 50,
+  "River Water": 30
+ }
 }

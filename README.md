@@ -1,8 +1,9 @@
 # BDO Profit Radar
 
-Site estático que mostra, para Black Desert Online: o que o mercado central está
-negociando hoje, quais profissões estão dando lucro, qual spot de grind rende
-mais para os seus stats, e um guia de cada uma das 30 classes.
+Site estático em **português** (com inglês opcional) que mostra, para Black Desert
+Online: o que o mercado central está negociando hoje, uma wiki de receitas de
+culinária, alquimia e processamento com o lucro de cada uma, qual spot de grind
+rende mais para os seus stats, e o tier de PvE de cada spec de classe.
 
 Sem backend, sem banco, sem custo. Um workflow do GitHub Actions tira um snapshot
 do mercado por dia e commita um JSON; o GitHub Pages serve a página, que só lê
@@ -46,9 +47,25 @@ comunidade e ficam todas em JSON para você corrigir:
 | arquivo | o que ajustar |
 |---|---|
 | `data/spots.json` | `silver` por hora, `stat`/`dp` exigidos, `statCap` |
-| `data/recipes.json` | `yield` (rendimento por craft) e `craftsPerHour` |
-| `data/classes.json` | guia escrito de cada classe |
+| `data/recipes.json` | `yield` (rendimento por craft), `craftsPerHour`, ingredientes |
+| `data/classes.json` | tier e ratings por spec |
 | `data/npc-prices.json` | itens que não passam pelo mercado central |
+| `data/i18n.json` | textos da interface em pt e en |
+
+## Idiomas
+
+Português é o padrão. O seletor no topo troca para inglês e grava a escolha no
+navegador; `?lang=en` força o idioma pela URL. Nomes de item ficam sempre em
+inglês porque é assim que o mercado os devolve — traduzir quebraria a busca.
+
+Os testes falham se uma chave existir em um idioma e faltar no outro, ou se um
+campo bilingue dos dados (`{pt, en}`) vier pela metade.
+
+## Ingredientes genéricos
+
+Receitas como Cerveja pedem "Grão", não um grão específico. No jogo você usa o
+mais barato que tiver; o site faz o mesmo, escolhendo entre as alternativas
+listadas em `any` a de menor preço no dia. O card mostra qual foi escolhido.
 
 Se um número do site não bate com a sua hora real de grind, o errado é a taxa no
 JSON, não o preço. Ajuste e mande PR.
@@ -78,10 +95,15 @@ Vale saber antes de confiar no número:
   `Hard Black Crystal Shard` não são negociados no mercado central hoje — estão
   contabilizados dentro do trash loot. Sal, açúcar e água mineral são de vendor,
   com preço fixo em `npc-prices.json`.
-- **A aba de classes não é tier list.** Armas, alcance e estilo são fatos do
-  jogo. Ranking de classe muda a cada balanceamento e as fontes públicas se
-  contradizem entre si, então não há nota numérica aqui de propósito. A classe
-  que você joga bem rende mais que a "melhor" classe que você joga mal.
+- **O tier de classe é por spec e tem autor.** Vem do BDO Class Hub, lista do
+  expert Choice, com data. A mesma classe muda de tier entre Awakening,
+  Succession e especialização própria — Ninja é S em Succession e C em
+  Awakening. A+ fica em torno de 95% do desempenho do S, então a diferença
+  prática entre os tiers altos é menor do que a letra sugere. E a classe que
+  você joga bem rende mais que a "melhor" que você joga mal.
+- **A wiki não cobre o jogo inteiro.** São 46 receitas das mais usadas, não as
+  centenas que existem. Receita sem preço de mercado (peixe, massa, óleo de
+  baleia) aparece na wiki mas fica fora do ranking de lucro.
 - **Jackpot distorce a média.** Spots como Crypt e Star's End dependem de um
   acessório raro. A média por hora existe, a sua hora pode ser zero.
 - **A API oscila.** Categorias do mercado respondem 500 em janelas de minutos. O
@@ -96,8 +118,11 @@ Vale saber antes de confiar no número:
   silver/hora medido e AP caps; [BDFoundry](https://www.blackdesertfoundry.com/edania-monster-zones-guide/)
   para os requisitos de Edania Outer e
   [Inner](https://www.blackdesertfoundry.com/edania-inner-monster-zones-guide/).
-- **Classes**: [Grumpy Green](https://grumpygreen.cricket/bdo-class-guide/) para
-  armas e estilo.
+- **Classes**: [BDO Class Hub](https://bdoclasshub.com/tierlist.html) para tier
+  de PvE, AoE, conforto e resistência por spec (lista do expert Choice);
+  [Grumpy Green](https://grumpygreen.cricket/bdo-class-guide/) para armas.
+- **Receitas**: [Incendar](https://incendar.com/bdocookingrecipes.php) e
+  [BDO Codex](https://bdocodex.com) para ingredientes e quantidades.
 
 Não há API pública de grind spots: o Garmoth tem os dados mas bloqueia acesso
 programático, e Arsha/Velia Inn cobrem só o mercado. Por isso spots e classes são

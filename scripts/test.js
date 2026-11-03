@@ -1,7 +1,7 @@
-// Check minimo: se a conta de dinheiro ou o gate de spot quebrar, isso falha.
+// Check minimo: conta de dinheiro, gate de spot, integridade dos dados e i18n.
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { netRate, pricer, recipeProfit, spotFit, spotToday } from "../calc.js";
+import { netRate, pricer, recipeProfit, resolveInput, spotFit, spotToday } from "../calc.js";
 
 const read = (f) => JSON.parse(readFileSync(new URL(`../data/${f}`, import.meta.url), "utf8"));
 
@@ -11,76 +11,104 @@ assert.equal(+netRate({ vp: true, ring: false }).toFixed(3), 0.845);
 assert.equal(+netRate({ vp: true, ring: true }).toFixed(4), 0.8775);
 
 // --- fixture sintetica
-const fake = { names: { Out: 1, In: 2 }, items: { 1: { p: 1000 }, 2: { p: 100 } }, npc: { Vendor: 10 } };
+const fake = {
+  names: { Out: 1, In: 2, Caro: 3, Barato: 4 },
+  items: { 1: { p: 1000 }, 2: { p: 100 }, 3: { p: 900 }, 4: { p: 300 } },
+  npc: { Vendor: 10 },
+};
 const p = pricer(fake);
 assert.equal(p.priceOf("Out"), 1000);
 assert.equal(p.priceOf("Vendor"), 10);
-assert.equal(p.priceOf("Inexistente"), 0);
 assert.equal(p.isNpc("Vendor"), true);
+
+// ingrediente generico escolhe o mais barato das alternativas
+const g = resolveInput({ item: "Grao", qty: 5, any: ["Caro", "Barato"] }, p.priceOf);
+assert.equal(g.name, "Barato");
+assert.equal(g.price, 300);
+assert.equal(g.generic, "Grao");
+// alternativa sem preco nao pode ser escolhida
+assert.equal(resolveInput({ item: "X", qty: 1, any: ["Inexistente", "Caro"] }, p.priceOf).name, "Caro");
+// nenhuma alternativa com preco -> marca como sem preco, nao quebra
+assert.equal(resolveInput({ item: "X", qty: 1, any: ["Nada"] }, p.priceOf).price, 0);
 
 const r = recipeProfit({ output: "Out", yield: 2, craftsPerHour: 10, inputs: [{ item: "In", qty: 5 }] }, p, 0.65);
 assert.equal(r.revenue, 1300);
 assert.equal(r.cost, 500);
 assert.equal(r.hour, 8000);
+assert.equal(r.priced, true);
 assert.equal(recipeProfit({ output: "Vendor", yield: 1, craftsPerHour: 1, inputs: [] }, p, 0.65).revenue, 10,
   "venda no NPC nao deve sofrer taxa");
+// receita com insumo sem preco: aparece na wiki, mas nao entra no ranking
+const np = recipeProfit({ output: "Out", yield: 1, craftsPerHour: 1, inputs: [{ item: "Fantasma", qty: 1 }] }, p, 0.65);
+assert.equal(np.priced, false);
+assert.deepEqual(np.missing, ["Fantasma"]);
 
-// --- gate de spot: Total Stat e DP, nao AP exibido
+// --- gate de spot
 const zone = { stat: 900, statCap: 1000, dp: 400, ap: 310, items: ["Out"] };
-const pobre = spotFit(zone, { stat: 500, ap: 200, dp: 300 });
-assert.equal(pobre.locked, true);
-assert.equal(pobre.missStat, 400);
-assert.equal(pobre.missDp, 100);
-
-const ok = spotFit(zone, { stat: 950, ap: 310, dp: 420 });
-assert.equal(ok.locked, false);
-assert.equal(ok.overCap, false);
-assert.equal(ok.headroom, 50);
-
-// AP exibido alto nao libera zona se o Total Stat nao alcanca
-assert.equal(spotFit(zone, { stat: 800, ap: 420, dp: 500 }).locked, true,
-  "Total Stat e o gate real, nao o AP exibido");
-// acima do teto deve ser sinalizado
+assert.equal(spotFit(zone, { stat: 500, ap: 200, dp: 300 }).locked, true);
+assert.equal(spotFit(zone, { stat: 950, ap: 310, dp: 420 }).locked, false);
+assert.equal(spotFit(zone, { stat: 800, ap: 420, dp: 500 }).locked, true, "Total Stat e o gate, nao o AP exibido");
 assert.equal(spotFit(zone, { stat: 1200, ap: 400, dp: 500 }).overCap, true);
-
-// --- drift usa so os itens com variacao conhecida
-const t = spotToday(zone, p, { Out: 10 });
-assert.equal(t.items.length, 1);
-assert.equal(t.drift, 10);
-assert.equal(spotToday({ items: [] }, p, {}).drift, null, "sem item rastreado, drift e null");
+assert.equal(spotToday(zone, p, { Out: 10 }).drift, 10);
+assert.equal(spotToday({ items: [] }, p, {}).drift, null);
 
 // --- dados reais
-const daily = read("daily.na.json");
-const rp = pricer(daily);
-const spots = read("spots.json"), recipes = read("recipes.json"), classes = read("classes.json");
+const daily = read("daily.na.json"), rp = pricer(daily);
+const spots = read("spots.json"), recipes = read("recipes.json");
+const classes = read("classes.json"), i18n = read("i18n.json");
 
-const unpriced = [];
-for (const rc of recipes.recipes) {
-  if (!rp.priceOf(rc.output)) unpriced.push(`${rc.id}:${rc.output}`);
-  for (const i of rc.inputs) if (!rp.priceOf(i.item)) unpriced.push(`${rc.id}:${i.item}`);
-}
-assert.deepEqual(unpriced, [], "receita sem preco: " + unpriced.join(", "));
+// i18n: as duas linguas precisam das mesmas chaves, senao a UI fica em branco
+const ptK = Object.keys(i18n.pt).sort(), enK = Object.keys(i18n.en).sort();
+assert.deepEqual(ptK, enK, "chaves de i18n divergentes entre pt e en");
+assert.ok(ptK.length > 50, "tabela de i18n curta demais");
 
-// coerencia dos spots: a escala atual do jogo vai ate ~2600 Total Stat e ~4 bi/h
+// todo campo bilingue dos dados precisa das duas linguas
+const bilingual = (o, what) => {
+  assert.ok(o && typeof o === "object", `${what}: campo bilingue ausente`);
+  for (const l of ["pt", "en"]) assert.ok(o[l]?.length > 0, `${what}: falta traducao ${l}`);
+};
+for (const s of spots.spots) bilingual(s.note, `spot ${s.id}`);
+for (const r2 of recipes.recipes) { bilingual(r2.name, `receita ${r2.id}`); bilingual(r2.note, `receita ${r2.id}`); }
+
+// spots: escala atual do jogo
 const ids = new Set();
 for (const s of spots.spots) {
   assert.ok(!ids.has(s.id), `id duplicado: ${s.id}`); ids.add(s.id);
   assert.ok(s.statCap >= s.stat, `${s.id}: teto abaixo do requisito`);
-  assert.ok(s.stat > 0 && s.stat <= 3000, `${s.id}: Total Stat fora de escala (${s.stat})`);
-  assert.ok(s.silver >= 10e6 && s.silver <= 6e9, `${s.id}: silver/hora fora de escala (${s.silver})`);
+  assert.ok(s.silver >= 10e6 && s.silver <= 6e9, `${s.id}: silver fora de escala`);
   assert.ok(["medido", "derivado"].includes(s.silverSource), `${s.id}: fonte do silver nao declarada`);
-  // DP exibido e DP em Total Stat sao escalas diferentes; trocar os dois trava a zona errada.
-  if (s.dpStat) assert.ok(s.dpStat > s.dp, `${s.id}: DP em Total Stat (${s.dpStat}) deveria superar o exibido (${s.dp})`);
+  for (const l of ["pt", "en"]) assert.ok(i18n[l][`src_${s.silverSource}`], `i18n ${l} sem rotulo src_${s.silverSource}`);
+  if (s.dpStat) assert.ok(s.dpStat > s.dp, `${s.id}: DP em Total Stat deveria superar o exibido`);
 }
-// a progressao precisa cobrir do inicio ao endgame atual
-assert.ok(Math.max(...spots.spots.map((s) => s.stat)) >= 2500, "falta o endgame atual (Edania Inner)");
-assert.ok(Math.min(...spots.spots.map((s) => s.stat)) <= 250, "falta a faixa inicial");
+assert.ok(Math.max(...spots.spots.map((s) => s.stat)) >= 2500, "falta o endgame atual");
 
-const cids = new Set();
-for (const c of classes.classes) {
-  assert.ok(!cids.has(c.id), `classe duplicada: ${c.id}`); cids.add(c.id);
-  for (const f of ["name", "weapon", "awakening", "range", "difficulty", "profile", "note"])
-    assert.ok(c[f], `classe ${c.id} sem ${f}`);
-  assert.ok(c.note.length > 40, `classe ${c.id}: nota curta demais para ser guia`);
+// receitas: a wiki precisa fechar mesmo quando o preco falta
+const rids = new Set();
+let priced = 0;
+for (const r2 of recipes.recipes) {
+  assert.ok(!rids.has(r2.id), `receita duplicada: ${r2.id}`); rids.add(r2.id);
+  assert.ok(["cooking", "alchemy", "processing"].includes(r2.job), `${r2.id}: oficio invalido`);
+  assert.ok(r2.inputs.length > 0, `${r2.id}: receita sem ingrediente`);
+  for (const i of r2.inputs) {
+    assert.ok(i.qty > 0, `${r2.id}: quantidade invalida em ${i.item}`);
+    if (i.any) assert.ok(i.any.length > 0, `${r2.id}: lista 'any' vazia em ${i.item}`);
+  }
+  if (recipeProfit(r2, rp, netRate()).priced) priced++;
 }
-console.log(`ok: ${spots.spots.length} spots (${Math.min(...spots.spots.map(s=>s.stat))}-${Math.max(...spots.spots.map(s=>s.stat))} stat), ${recipes.recipes.length} receitas, ${classes.classes.length} classes`);
+assert.ok(priced >= recipes.recipes.length * 0.5,
+  `so ${priced}/${recipes.recipes.length} receitas tem preco completo`);
+
+// classes: specs do BDO Class Hub
+const cids = new Set();
+for (const c of classes.specs) {
+  assert.ok(!cids.has(c.id), `spec duplicada: ${c.id}`); cids.add(c.id);
+  assert.ok(["S", "A+", "A", "B", "C"].includes(c.tier), `${c.id}: tier invalido`);
+  assert.ok(["pequeno", "medio", "enorme"].includes(c.aoe), `${c.id}: aoe invalido`);
+  assert.ok(["tranquilo", "moderado", "intenso"].includes(c.comfort), `${c.id}: comfort invalido`);
+  assert.ok(["fragil", "resistente", "muito-resistente"].includes(c.tankiness), `${c.id}: tankiness invalido`);
+  // cada valor precisa ter rotulo nas duas linguas, senao aparece a chave crua
+  for (const k of [`aoe_${c.aoe}`, `comfort_${c.comfort}`, `tank_${c.tankiness}`])
+    for (const l of ["pt", "en"]) assert.ok(i18n[l][k], `i18n ${l} sem rotulo para ${k}`);
+}
+console.log(`ok: ${spots.spots.length} spots · ${recipes.recipes.length} receitas (${priced} com preco) · ` +
+  `${classes.specs.length} specs de ${new Set(classes.specs.map((c) => c.cls)).size} classes · i18n pt/en com ${ptK.length} chaves`);

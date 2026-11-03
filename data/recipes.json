@@ -1,53 +1,1409 @@
 {
-  "_meta": {
-    "note": "yield = media de saida por craft. Processing no BDO devolve 1-3 por batch; ~2.5 e a media de Master/Guru. Ajuste 'yield' para o seu nivel. craftsPerHour assume uso continuo com o material em maos.",
-    "calibratedAt": "2026-11-02"
+ "_meta": {
+  "note": {
+   "pt": "Rendimento (yield) medio de 2,5 por craft vale para Processing em nivel Mestre/Guru; ajuste para o seu nivel. Ingrediente com 'any' aceita varios itens: o site usa o mais barato do dia.",
+   "en": "Average yield of 2.5 per craft applies to Master/Guru Processing; adjust for your level. An ingredient with 'any' accepts several items: the site picks the cheapest of the day."
   },
-  "recipes": [
-    { "id": "wheat-flour", "name": "Wheat Flour", "job": "Processing (Moagem)", "output": "Wheat Flour", "yield": 2.5, "craftsPerHour": 450,
-      "inputs": [ { "item": "Wheat", "qty": 5 } ] },
-
-    { "id": "beer", "name": "Beer", "job": "Cooking", "output": "Beer", "yield": 2.5, "craftsPerHour": 400,
-      "inputs": [ { "item": "Wheat", "qty": 5 }, { "item": "Mineral Water", "qty": 6 },
-                  { "item": "Leavening Agent", "qty": 1 }, { "item": "Sugar", "qty": 2 } ] },
-
-    { "id": "melted-iron", "name": "Melted Iron Shard", "job": "Processing (Aquecimento)", "output": "Melted Iron Shard", "yield": 2.5, "craftsPerHour": 450,
-      "inputs": [ { "item": "Iron Ore", "qty": 5 } ] },
-
-    { "id": "iron-ingot", "name": "Iron Ingot", "job": "Processing (Aquecimento)", "output": "Iron Ingot", "yield": 2.5, "craftsPerHour": 450,
-      "inputs": [ { "item": "Melted Iron Shard", "qty": 5 } ] },
-
-    { "id": "steel", "name": "Steel", "job": "Processing (Aquecimento)", "output": "Steel", "yield": 2.5, "craftsPerHour": 450,
-      "inputs": [ { "item": "Melted Iron Shard", "qty": 5 }, { "item": "Coal", "qty": 5 } ] },
-
-    { "id": "melted-zinc", "name": "Melted Zinc Shard", "job": "Processing (Aquecimento)", "output": "Melted Zinc Shard", "yield": 2.5, "craftsPerHour": 450,
-      "inputs": [ { "item": "Zinc Ore", "qty": 5 } ] },
-
-    { "id": "melted-copper", "name": "Melted Copper Shard", "job": "Processing (Aquecimento)", "output": "Melted Copper Shard", "yield": 2.5, "craftsPerHour": 450,
-      "inputs": [ { "item": "Copper Ore", "qty": 5 } ] },
-
-    { "id": "brass-ingot", "name": "Brass Ingot", "job": "Processing (Aquecimento)", "output": "Brass Ingot", "yield": 2.5, "craftsPerHour": 450,
-      "inputs": [ { "item": "Melted Copper Shard", "qty": 5 }, { "item": "Melted Zinc Shard", "qty": 5 } ] },
-
-    { "id": "pine-plank", "name": "Pine Plank", "job": "Processing (Corte)", "output": "Pine Plank", "yield": 2.5, "craftsPerHour": 450,
-      "inputs": [ { "item": "Pine Timber", "qty": 5 } ] },
-
-    { "id": "maple-plank", "name": "Maple Plank", "job": "Processing (Corte)", "output": "Maple Plank", "yield": 2.5, "craftsPerHour": 450,
-      "inputs": [ { "item": "Maple Timber", "qty": 5 } ] },
-
-    { "id": "birch-plank", "name": "Birch Plank", "job": "Processing (Corte)", "output": "Birch Plank", "yield": 2.5, "craftsPerHour": 450,
-      "inputs": [ { "item": "Birch Timber", "qty": 5 } ] },
-
-    { "id": "ash-plank", "name": "Ash Plank", "job": "Processing (Corte)", "output": "Ash Plank", "yield": 2.5, "craftsPerHour": 450,
-      "inputs": [ { "item": "Ash Timber", "qty": 5 } ] },
-
-    { "id": "cedar-plank", "name": "Cedar Plank", "job": "Processing (Corte)", "output": "Cedar Plank", "yield": 2.5, "craftsPerHour": 450,
-      "inputs": [ { "item": "Cedar Timber", "qty": 5 } ] },
-
-    { "id": "clear-liquid", "name": "Clear Liquid Reagent", "job": "Alchemy", "output": "Clear Liquid Reagent", "yield": 2.5, "craftsPerHour": 400,
-      "inputs": [ { "item": "Weeds", "qty": 3 }, { "item": "Purified Water", "qty": 1 }, { "item": "Salt", "qty": 1 } ] },
-
-    { "id": "pure-powder", "name": "Pure Powder Reagent", "job": "Alchemy", "output": "Pure Powder Reagent", "yield": 2.5, "craftsPerHour": 400,
-      "inputs": [ { "item": "Sunrise Herb", "qty": 3 }, { "item": "Purified Water", "qty": 1 }, { "item": "Salt", "qty": 1 } ] }
-  ]
+  "sources": [
+   "https://incendar.com/bdocookingrecipes.php",
+   "https://incendar.com/bdoalchemyrecipes.php",
+   "https://bdocodex.com"
+  ],
+  "updatedAt": "2026-11-03"
+ },
+ "recipes": [
+  {
+   "id": "melted-iron",
+   "name": {
+    "pt": "Fragmento de Ferro Derretido",
+    "en": "Melted Iron Shard"
+   },
+   "output": "Melted Iron Shard",
+   "job": "processing",
+   "method": "aquecimento",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Iron Ore",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Primeiro passo de todo metal: minerio vira fragmento.",
+    "en": "First step for every metal: ore becomes shards."
+   }
+  },
+  {
+   "id": "iron-ingot",
+   "name": {
+    "pt": "Lingote de Ferro",
+    "en": "Iron Ingot"
+   },
+   "output": "Iron Ingot",
+   "job": "processing",
+   "method": "aquecimento",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Melted Iron Shard",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Fragmento vira lingote. A cadeia completa e minerio -> fragmento -> lingote.",
+    "en": "Shards become ingots. The full chain is ore -> shard -> ingot."
+   }
+  },
+  {
+   "id": "steel",
+   "name": {
+    "pt": "Aco",
+    "en": "Steel"
+   },
+   "output": "Steel",
+   "job": "processing",
+   "method": "aquecimento",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Melted Iron Shard",
+     "qty": 5
+    },
+    {
+     "item": "Coal",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Liga de ferro com carvao, usada em equipamento e barco.",
+    "en": "Iron and coal alloy, used in gear and ships."
+   }
+  },
+  {
+   "id": "melted-copper",
+   "name": {
+    "pt": "Fragmento de Cobre Derretido",
+    "en": "Melted Copper Shard"
+   },
+   "output": "Melted Copper Shard",
+   "job": "processing",
+   "method": "aquecimento",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Copper Ore",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Base do latao e do bronze.",
+    "en": "Base for brass and bronze."
+   }
+  },
+  {
+   "id": "copper-ingot",
+   "name": {
+    "pt": "Lingote de Cobre",
+    "en": "Copper Ingot"
+   },
+   "output": "Copper Ingot",
+   "job": "processing",
+   "method": "aquecimento",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Melted Copper Shard",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Usado em ferramentas e moveis.",
+    "en": "Used in tools and furniture."
+   }
+  },
+  {
+   "id": "melted-zinc",
+   "name": {
+    "pt": "Fragmento de Zinco Derretido",
+    "en": "Melted Zinc Shard"
+   },
+   "output": "Melted Zinc Shard",
+   "job": "processing",
+   "method": "aquecimento",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Zinc Ore",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "So serve para latao, mas o latao paga bem.",
+    "en": "Only useful for brass, but brass pays well."
+   }
+  },
+  {
+   "id": "zinc-ingot",
+   "name": {
+    "pt": "Lingote de Zinco",
+    "en": "Zinc Ingot"
+   },
+   "output": "Zinc Ingot",
+   "job": "processing",
+   "method": "aquecimento",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Melted Zinc Shard",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Intermediario de zinco.",
+    "en": "Zinc intermediate."
+   }
+  },
+  {
+   "id": "brass-ingot",
+   "name": {
+    "pt": "Lingote de Latao",
+    "en": "Brass Ingot"
+   },
+   "output": "Brass Ingot",
+   "job": "processing",
+   "method": "aquecimento",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Melted Copper Shard",
+     "qty": 5
+    },
+    {
+     "item": "Melted Zinc Shard",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Liga de cobre e zinco. Costuma ser a mais lucrativa da fundicao.",
+    "en": "Copper and zinc alloy. Usually the most profitable smelt."
+   }
+  },
+  {
+   "id": "melted-tin",
+   "name": {
+    "pt": "Fragmento de Estanho Derretido",
+    "en": "Melted Tin Shard"
+   },
+   "output": "Melted Tin Shard",
+   "job": "processing",
+   "method": "aquecimento",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Tin Ore",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Base do bronze.",
+    "en": "Base for bronze."
+   }
+  },
+  {
+   "id": "bronze-ingot",
+   "name": {
+    "pt": "Lingote de Bronze",
+    "en": "Bronze Ingot"
+   },
+   "output": "Bronze Ingot",
+   "job": "processing",
+   "method": "aquecimento",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Melted Copper Shard",
+     "qty": 5
+    },
+    {
+     "item": "Melted Tin Shard",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Liga de cobre e estanho.",
+    "en": "Copper and tin alloy."
+   }
+  },
+  {
+   "id": "melted-silver",
+   "name": {
+    "pt": "Fragmento de Prata Derretido",
+    "en": "Melted Silver Shard"
+   },
+   "output": "Melted Silver Shard",
+   "job": "processing",
+   "method": "aquecimento",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Silver Ore",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Metal nobre, usado em joias e alquimia.",
+    "en": "Precious metal, used in jewelry and alchemy."
+   }
+  },
+  {
+   "id": "silver-ingot",
+   "name": {
+    "pt": "Lingote de Prata",
+    "en": "Silver Ingot"
+   },
+   "output": "Silver Ingot",
+   "job": "processing",
+   "method": "aquecimento",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Melted Silver Shard",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Caro e de giro lento.",
+    "en": "Expensive and slow to sell."
+   }
+  },
+  {
+   "id": "ash-plank",
+   "name": {
+    "pt": "Tabua de Freixo",
+    "en": "Ash Plank"
+   },
+   "output": "Ash Plank",
+   "job": "processing",
+   "method": "corte",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Ash Timber",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Madeira vira tabua. Toda tabua segue a mesma regra: 5 toras.",
+    "en": "Timber becomes planks. Every plank follows the same rule: 5 timber."
+   }
+  },
+  {
+   "id": "birch-plank",
+   "name": {
+    "pt": "Tabua de Betula",
+    "en": "Birch Plank"
+   },
+   "output": "Birch Plank",
+   "job": "processing",
+   "method": "corte",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Birch Timber",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Betula costuma ter boa margem por ser menos farmada.",
+    "en": "Birch often has good margin because fewer people farm it."
+   }
+  },
+  {
+   "id": "cedar-plank",
+   "name": {
+    "pt": "Tabua de Cedro",
+    "en": "Cedar Plank"
+   },
+   "output": "Cedar Plank",
+   "job": "processing",
+   "method": "corte",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Cedar Timber",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Cedro e das tabuas mais caras.",
+    "en": "Cedar is one of the pricier planks."
+   }
+  },
+  {
+   "id": "fir-plank",
+   "name": {
+    "pt": "Tabua de Abeto",
+    "en": "Fir Plank"
+   },
+   "output": "Fir Plank",
+   "job": "processing",
+   "method": "corte",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Fir Timber",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Usada em barcos e moveis.",
+    "en": "Used in ships and furniture."
+   }
+  },
+  {
+   "id": "maple-plank",
+   "name": {
+    "pt": "Tabua de Bordo",
+    "en": "Maple Plank"
+   },
+   "output": "Maple Plank",
+   "job": "processing",
+   "method": "corte",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Maple Timber",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Volume alto, margem media.",
+    "en": "High volume, average margin."
+   }
+  },
+  {
+   "id": "pine-plank",
+   "name": {
+    "pt": "Tabua de Pinho",
+    "en": "Pine Plank"
+   },
+   "output": "Pine Plank",
+   "job": "processing",
+   "method": "corte",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Pine Timber",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "A mais comum; margem costuma ser apertada.",
+    "en": "The most common; margin is usually tight."
+   }
+  },
+  {
+   "id": "acacia-plank",
+   "name": {
+    "pt": "Tabua de Acacia",
+    "en": "Acacia Plank"
+   },
+   "output": "Acacia Plank",
+   "job": "processing",
+   "method": "corte",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Acacia Timber",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Madeira de deserto.",
+    "en": "Desert wood."
+   }
+  },
+  {
+   "id": "white-cedar-plank",
+   "name": {
+    "pt": "Tabua de Cedro Branco",
+    "en": "White Cedar Plank"
+   },
+   "output": "White Cedar Plank",
+   "job": "processing",
+   "method": "corte",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "White Cedar Timber",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Mais rara que o cedro comum.",
+    "en": "Rarer than regular cedar."
+   }
+  },
+  {
+   "id": "wheat-flour",
+   "name": {
+    "pt": "Farinha de Trigo",
+    "en": "Wheat Flour"
+   },
+   "output": "Wheat Flour",
+   "job": "processing",
+   "method": "moagem",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Wheat",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Trigo moido. Farinha e a base de metade da culinaria.",
+    "en": "Ground wheat. Flour is the base of half the cooking recipes."
+   }
+  },
+  {
+   "id": "barley-flour",
+   "name": {
+    "pt": "Farinha de Cevada",
+    "en": "Barley Flour"
+   },
+   "output": "Barley Flour",
+   "job": "processing",
+   "method": "moagem",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Barley",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Alternativa a farinha de trigo.",
+    "en": "Alternative to wheat flour."
+   }
+  },
+  {
+   "id": "corn-flour",
+   "name": {
+    "pt": "Farinha de Milho",
+    "en": "Corn Flour"
+   },
+   "output": "Corn Flour",
+   "job": "processing",
+   "method": "moagem",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Corn",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Milho moido.",
+    "en": "Ground corn."
+   }
+  },
+  {
+   "id": "potato-flour",
+   "name": {
+    "pt": "Farinha de Batata",
+    "en": "Potato Flour"
+   },
+   "output": "Potato Flour",
+   "job": "processing",
+   "method": "moagem",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "Potato",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Batata moida.",
+    "en": "Ground potato."
+   }
+  },
+  {
+   "id": "purified-water",
+   "name": {
+    "pt": "Agua Purificada",
+    "en": "Purified Water"
+   },
+   "output": "Purified Water",
+   "job": "processing",
+   "method": "filtragem",
+   "yield": 2.5,
+   "craftsPerHour": 450,
+   "inputs": [
+    {
+     "item": "River Water",
+     "qty": 5
+    }
+   ],
+   "note": {
+    "pt": "Agua de rio filtrada. Insumo obrigatorio de quase toda alquimia.",
+    "en": "Filtered river water. Mandatory input for almost all alchemy."
+   }
+  },
+  {
+   "id": "beer",
+   "name": {
+    "pt": "Cerveja",
+    "en": "Beer"
+   },
+   "output": "Beer",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Grain",
+     "qty": 5,
+     "any": [
+      "Wheat",
+      "Barley",
+      "Corn",
+      "Potato",
+      "Sweet Potato"
+     ]
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 6
+    },
+    {
+     "item": "Sugar",
+     "qty": 1
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 2
+    }
+   ],
+   "note": {
+    "pt": "A receita mais feita do jogo: alimenta os trabalhadores. O grao pode ser qualquer um, entao use o mais barato do dia.",
+    "en": "The most crafted recipe in the game: it feeds workers. Any grain works, so use the cheapest of the day."
+   }
+  },
+  {
+   "id": "meat-stew",
+   "name": {
+    "pt": "Ensopado de Carne",
+    "en": "Meat Stew"
+   },
+   "output": "Meat Stew",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Meat",
+     "qty": 5,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat"
+     ]
+    },
+    {
+     "item": "Flour",
+     "qty": 2,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 3
+    },
+    {
+     "item": "Cooking Wine",
+     "qty": 2
+    }
+   ],
+   "note": {
+    "pt": "Prato simples de carne.",
+    "en": "Simple meat dish."
+   }
+  },
+  {
+   "id": "fried-fish",
+   "name": {
+    "pt": "Peixe Frito",
+    "en": "Fried Fish"
+   },
+   "output": "Fried Fish",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fish",
+     "qty": 1
+    },
+    {
+     "item": "Flour",
+     "qty": 3,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Deep Frying Oil",
+     "qty": 2
+    }
+   ],
+   "note": {
+    "pt": "Bom destino para peixe de pesca propria.",
+    "en": "Good use for fish you caught yourself."
+   }
+  },
+  {
+   "id": "stir-fried-veg",
+   "name": {
+    "pt": "Legumes Refogados",
+    "en": "Stir-Fried Vegetables"
+   },
+   "output": "Stir-Fried Vegetables",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Vegetable",
+     "qty": 5,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot"
+     ]
+    },
+    {
+     "item": "Hot Pepper",
+     "qty": 2
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 2
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    }
+   ],
+   "note": {
+    "pt": "Entra no Balenos Meal.",
+    "en": "Goes into the Balenos Meal."
+   }
+  },
+  {
+   "id": "meat-croquette",
+   "name": {
+    "pt": "Croquete de Carne",
+    "en": "Meat Croquette"
+   },
+   "output": "Meat Croquette",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Meat",
+     "qty": 8,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat"
+     ]
+    },
+    {
+     "item": "Flour",
+     "qty": 5,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Egg",
+     "qty": 2
+    },
+    {
+     "item": "Cheese",
+     "qty": 2
+    },
+    {
+     "item": "Deep Frying Oil",
+     "qty": 4
+    }
+   ],
+   "note": {
+    "pt": "Receita de varios ingredientes; entra no Balenos Meal.",
+    "en": "Multi-ingredient recipe; goes into the Balenos Meal."
+   }
+  },
+  {
+   "id": "cheese-pie",
+   "name": {
+    "pt": "Torta de Queijo",
+    "en": "Cheese Pie"
+   },
+   "output": "Cheese Pie",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Dough",
+     "qty": 4
+    },
+    {
+     "item": "Cheese",
+     "qty": 7
+    },
+    {
+     "item": "Butter",
+     "qty": 3
+    },
+    {
+     "item": "Egg",
+     "qty": 3
+    }
+   ],
+   "note": {
+    "pt": "Usa muito queijo; so vale com leite proprio.",
+    "en": "Uses a lot of cheese; only worth it with your own milk."
+   }
+  },
+  {
+   "id": "milk-tea",
+   "name": {
+    "pt": "Cha com Leite",
+    "en": "Milk Tea"
+   },
+   "output": "Milk Tea",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Tea With Fine Scent",
+     "qty": 2
+    },
+    {
+     "item": "Flour",
+     "qty": 2,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Milk",
+     "qty": 3
+    },
+    {
+     "item": "Honey",
+     "qty": 3,
+     "any": [
+      "Cooking Honey"
+     ]
+    }
+   ],
+   "note": {
+    "pt": "Buff de lifeskill muito usado. Leite vem de ordenha, nao do mercado.",
+    "en": "Popular lifeskill buff. Milk comes from milking cows, not the market."
+   }
+  },
+  {
+   "id": "honey-wine",
+   "name": {
+    "pt": "Vinho de Mel",
+    "en": "Honey Wine"
+   },
+   "output": "Honey Wine",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Honey",
+     "qty": 3,
+     "any": [
+      "Cooking Honey"
+     ]
+    },
+    {
+     "item": "Essence of Liquor",
+     "qty": 2
+    },
+    {
+     "item": "Sugar",
+     "qty": 2
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 6
+    }
+   ],
+   "note": {
+    "pt": "Bebida de mel, usada em quests e buffs.",
+    "en": "Honey drink, used in quests and buffs."
+   }
+  },
+  {
+   "id": "fruit-wine",
+   "name": {
+    "pt": "Vinho de Fruta",
+    "en": "Fruit Wine"
+   },
+   "output": "Fruit Wine",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fruit",
+     "qty": 5,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry"
+     ]
+    },
+    {
+     "item": "Makgeolli",
+     "qty": 1
+    },
+    {
+     "item": "Essence of Liquor",
+     "qty": 3
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 2
+    }
+   ],
+   "note": {
+    "pt": "Entra no Serendia Meal.",
+    "en": "Goes into the Serendia Meal."
+   }
+  },
+  {
+   "id": "steak",
+   "name": {
+    "pt": "Bife",
+    "en": "Steak"
+   },
+   "output": "Steak",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Meat",
+     "qty": 8,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat"
+     ]
+    },
+    {
+     "item": "Red Sauce",
+     "qty": 2
+    },
+    {
+     "item": "Garlic",
+     "qty": 2
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    }
+   ],
+   "note": {
+    "pt": "Carne simples, boa para subir nivel de culinaria.",
+    "en": "Simple meat dish, good for leveling cooking."
+   }
+  },
+  {
+   "id": "grilled-bird",
+   "name": {
+    "pt": "Carne de Ave Grelhada",
+    "en": "Grilled Bird Meat"
+   },
+   "output": "Grilled Bird Meat",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Bird Meat",
+     "qty": 2
+    },
+    {
+     "item": "Deep Frying Oil",
+     "qty": 6
+    },
+    {
+     "item": "Cooking Wine",
+     "qty": 2
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    }
+   ],
+   "note": {
+    "pt": "Usa carne de ave de fazenda ou caca.",
+    "en": "Uses bird meat from farms or hunting."
+   }
+  },
+  {
+   "id": "balenos-meal",
+   "name": {
+    "pt": "Refeicao de Balenos",
+    "en": "Balenos Meal"
+   },
+   "output": "Balenos Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 120,
+   "inputs": [
+    {
+     "item": "Cheese Gratin",
+     "qty": 1
+    },
+    {
+     "item": "Meat Croquette",
+     "qty": 1
+    },
+    {
+     "item": "Smoked Fish Steak",
+     "qty": 1
+    },
+    {
+     "item": "Stir-Fried Vegetables",
+     "qty": 2
+    },
+    {
+     "item": "Beer",
+     "qty": 2
+    }
+   ],
+   "note": {
+    "pt": "Refeicao composta: feita de outros pratos. Buff de combate por 2 horas.",
+    "en": "Composite meal: made from other dishes. Two-hour combat buff."
+   }
+  },
+  {
+   "id": "serendia-meal",
+   "name": {
+    "pt": "Refeicao de Serendia",
+    "en": "Serendia Meal"
+   },
+   "output": "Serendia Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 120,
+   "inputs": [
+    {
+     "item": "Ham Sandwich",
+     "qty": 1
+    },
+    {
+     "item": "Meat Pie",
+     "qty": 1
+    },
+    {
+     "item": "Honeycomb Cookie",
+     "qty": 1
+    },
+    {
+     "item": "Boiled Bird Eggs",
+     "qty": 2
+    },
+    {
+     "item": "Fruit Wine",
+     "qty": 2
+    }
+   ],
+   "note": {
+    "pt": "Refeicao composta de Serendia.",
+    "en": "Serendia composite meal."
+   }
+  },
+  {
+   "id": "valencia-meal",
+   "name": {
+    "pt": "Refeicao de Valencia",
+    "en": "Valencia Meal"
+   },
+   "output": "Valencia Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 120,
+   "inputs": [
+    {
+     "item": "Teff Sandwich",
+     "qty": 1
+    },
+    {
+     "item": "King of Jungle Hamburg",
+     "qty": 1
+    },
+    {
+     "item": "Couscous",
+     "qty": 1
+    },
+    {
+     "item": "Fig Pie",
+     "qty": 2
+    },
+    {
+     "item": "Date Palm Wine",
+     "qty": 2
+    }
+   ],
+   "note": {
+    "pt": "Refeicao de deserto, a mais cara de montar.",
+    "en": "Desert meal, the most expensive to assemble."
+   }
+  },
+  {
+   "id": "clear-liquid",
+   "name": {
+    "pt": "Reagente Liquido Claro",
+    "en": "Clear Liquid Reagent"
+   },
+   "output": "Clear Liquid Reagent",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Salt",
+     "qty": 1
+    },
+    {
+     "item": "Sunrise Herb",
+     "qty": 1
+    },
+    {
+     "item": "Weeds",
+     "qty": 1
+    },
+    {
+     "item": "Purified Water",
+     "qty": 1
+    }
+   ],
+   "note": {
+    "pt": "Reagente base da alquimia: 1 de cada ingrediente. Entra em quase todo elixir.",
+    "en": "Base alchemy reagent: 1 of each ingredient. Goes into almost every elixir."
+   }
+  },
+  {
+   "id": "pure-powder",
+   "name": {
+    "pt": "Reagente em Po Puro",
+    "en": "Pure Powder Reagent"
+   },
+   "output": "Pure Powder Reagent",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Sugar",
+     "qty": 1
+    },
+    {
+     "item": "Silver Azalea",
+     "qty": 1
+    },
+    {
+     "item": "Weeds",
+     "qty": 1
+    },
+    {
+     "item": "Purified Water",
+     "qty": 1
+    }
+   ],
+   "note": {
+    "pt": "O outro reagente base. Mesma estrutura do liquido claro.",
+    "en": "The other base reagent. Same structure as the clear liquid one."
+   }
+  },
+  {
+   "id": "elixir-life",
+   "name": {
+    "pt": "Elixir da Vida",
+    "en": "Elixir of Life"
+   },
+   "output": "Elixir of Life",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Silver Azalea",
+     "qty": 3
+    },
+    {
+     "item": "Blood",
+     "qty": 5,
+     "any": [
+      "Deer Blood",
+      "Pig Blood",
+      "Bear Blood",
+      "Ox Blood",
+      "Wolf Blood"
+     ]
+    },
+    {
+     "item": "HP Potion (Small)",
+     "qty": 3
+    }
+   ],
+   "note": {
+    "pt": "Elixir de cura. Blood aceita varios tipos de sangue.",
+    "en": "Healing elixir. Blood accepts several blood types."
+   }
+  },
+  {
+   "id": "elixir-will",
+   "name": {
+    "pt": "Elixir da Vontade",
+    "en": "Elixir of Will"
+   },
+   "output": "Elixir of Will",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Sunrise Herb",
+     "qty": 4
+    },
+    {
+     "item": "Blood",
+     "qty": 6,
+     "any": [
+      "Deer Blood",
+      "Pig Blood",
+      "Bear Blood",
+      "Ox Blood",
+      "Wolf Blood"
+     ]
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    }
+   ],
+   "note": {
+    "pt": "Elixir de recursos.",
+    "en": "Resource elixir."
+   }
+  },
+  {
+   "id": "oil-corruption",
+   "name": {
+    "pt": "Oleo da Corrupcao",
+    "en": "Oil of Corruption"
+   },
+   "output": "Oil of Corruption",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Sinner's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Spirit's Leaf",
+     "qty": 1
+    },
+    {
+     "item": "Fruit of Nature",
+     "qty": 1
+    },
+    {
+     "item": "Powder of Darkness",
+     "qty": 1
+    }
+   ],
+   "note": {
+    "pt": "Oleo base de varios elixires avancados. 1 de cada.",
+    "en": "Base oil for several advanced elixirs. 1 of each."
+   }
+  },
+  {
+   "id": "perfume-courage",
+   "name": {
+    "pt": "Perfume da Coragem",
+    "en": "Perfume of Courage"
+   },
+   "output": "Perfume of Courage",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 300,
+   "inputs": [
+    {
+     "item": "Blue Whale Oil",
+     "qty": 1
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 3
+    },
+    {
+     "item": "Bloody Tree Knot",
+     "qty": 6
+    },
+    {
+     "item": "Purified Water",
+     "qty": 4
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 2
+    }
+   ],
+   "note": {
+    "pt": "Buff de combate caro, muito usado em grind de endgame.",
+    "en": "Expensive combat buff, heavily used in endgame grinding."
+   }
+  },
+  {
+   "id": "elixir-frenzy",
+   "name": {
+    "pt": "Elixir do Frenesi",
+    "en": "Elixir of Frenzy"
+   },
+   "output": "Elixir of Frenzy",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 300,
+   "inputs": [
+    {
+     "item": "Oil of Regeneration",
+     "qty": 1
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 5
+    },
+    {
+     "item": "Cedar Sap",
+     "qty": 5
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 3
+    },
+    {
+     "item": "Ghost Mushroom",
+     "qty": 2
+    }
+   ],
+   "note": {
+    "pt": "Elixir de dano. Consome 5 reagentes por craft.",
+    "en": "Damage elixir. Burns 5 reagents per craft."
+   }
+  }
+ ]
 }

@@ -73,25 +73,34 @@ const spots = read("spots.json"), recipes = read("recipes.json");
 const npc = read("npc-prices.json").prices;
 // Receitas precisam de preco para a conta fechar; itens de spot sao
 // informativos (o silver/hora vem de sessoes medidas), entao nao sao fatais.
-const required = new Set();
-for (const r of recipes.recipes) { required.add(r.output); for (const i of r.inputs) required.add(i.item); }
-const optional = new Set();
-for (const s of spots.spots) for (const it of s.items || []) if (!required.has(it)) optional.add(it);
-const wanted = new Set([...required, ...optional]);
+// A wiki mostra a receita mesmo sem preco; so o ranking de lucro exige preco.
+// Por isso nenhum item isolado e fatal — o guard agora e "a resolucao geral caiu".
+const wanted = new Set();
+for (const r of recipes.recipes) {
+  wanted.add(r.output);
+  for (const i of r.inputs) {
+    // "Grain"/"Meat" sao categorias, nao itens: o que tem preco sao as alternativas.
+    if (i.any?.length) for (const a of i.any) wanted.add(a);
+    else wanted.add(i.item);
+  }
+}
+for (const s of spots.spots) for (const it of s.items || []) wanted.add(it);
 
-const names = {}, missing = [], absentItems = [];
+const names = {}, absentItems = [];
 for (const n of wanted) {
   const hit = byName.get(n);
   if (hit && hit.basePrice > 0) names[n] = hit.id;
-  else if (npc[n] == null && required.has(n)) missing.push(n);
   else if (npc[n] == null) absentItems.push(n);
 }
-if (absentItems.length) console.warn(`  itens de spot fora do mercado (${absentItems.length}): ${absentItems.join(", ")}`);
-if (missing.length) {
-  console.error(`  SEM PRECO em receita (${missing.length}): ${missing.join(", ")}`);
-  console.error("  adicione em data/npc-prices.json ou remova dos dados.");
+const resolvedPct = Object.keys(names).length / wanted.size;
+if (absentItems.length) console.warn(`  sem preco de mercado (${absentItems.length}): ${absentItems.slice(0, 12).join(", ")}${absentItems.length > 12 ? "..." : ""}`);
+// Um item ou outro fora do mercado e normal (vendor, trash, item ligado).
+// Metade da lista sumindo significa varredura quebrada, nao jogo mudado.
+if (resolvedPct < 0.5) {
+  console.error(`  so ${(resolvedPct * 100).toFixed(0)}% dos itens resolveram: varredura suspeita, abortando.`);
   process.exit(1);
 }
+console.log(`  itens com preco: ${Object.keys(names).length}/${wanted.size} (${(resolvedPct * 100).toFixed(0)}%)`);
 
 const snapFile = `snapshot.${REGION}.json`;
 const prev = existsSync(new URL(snapFile, DATA)) ? read(snapFile) : null;
