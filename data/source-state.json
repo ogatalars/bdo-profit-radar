@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-11-03T03:13:49.856Z",
+ "checkedAt": "2026-11-03T03:16:38.767Z",
  "sources": {
   "grumpygreen": {
    "url": "https://grumpygreen.cricket/bdo-grinding-spots/",
@@ -50,7 +50,7 @@
   },
   "bdocodex.com": {
    "url": "https://bdocodex.com",
-   "hash": "76c60cdac4751143",
+   "hash": "55a10d699fdd75eb",
    "published": null,
    "dataset": "recipes.json"
   }
