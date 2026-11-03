@@ -84,7 +84,10 @@
   "src_derivado": "derivado",
   "noSilver": "sem medição pública",
   "gateAp": "pede <b>{ap}</b> AP exibido e <b>{dp}</b> DP",
-  "noTotalStat": "esta zona não publica Total Stat"
+  "noTotalStat": "esta zona não publica Total Stat",
+  "sourceFrom": "fonte de {d}",
+  "sourceOld": "fonte desatualizada",
+  "staleWarn": "<b>Atenção à idade do dado.</b> Não existe API pública de grind spots, então estas tabelas são copiadas à mão de guias da comunidade. O guia que sustenta as zonas antigas, Dehkia e Ulukita não é atualizado desde <b>agosto de 2024</b>, e o BDO infla as recompensas com o tempo — trate esses silver/hora como <b>piso</b>. Edania e Elvia vêm de guias de 2026. Cada card mostra a data da sua fonte."
  },
  "en": {
   "lang": "English",
@@ -171,6 +174,9 @@
   "src_derivado": "derived",
   "noSilver": "no public measurement",
   "gateAp": "asks for <b>{ap}</b> displayed AP and <b>{dp}</b> DP",
-  "noTotalStat": "this zone publishes no Total Stat"
+  "noTotalStat": "this zone publishes no Total Stat",
+  "sourceFrom": "source from {d}",
+  "sourceOld": "outdated source",
+  "staleWarn": "<b>Mind the data age.</b> There is no public grind spot API, so these tables are copied by hand from community guides. The guide behind the older, Dehkia and Ulukita zones has not been updated since <b>August 2024</b>, and BDO inflates rewards over time — treat those silver/hour figures as a <b>floor</b>. Edania and Elvia come from 2026 guides. Each card shows its source date."
  }
 }

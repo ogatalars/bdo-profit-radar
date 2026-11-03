@@ -1,0 +1,58 @@
+{
+ "checkedAt": "2026-11-03T03:13:49.856Z",
+ "sources": {
+  "grumpygreen": {
+   "url": "https://grumpygreen.cricket/bdo-grinding-spots/",
+   "hash": "61787ac0f82b366b",
+   "published": "Aug 24, 2024",
+   "dataset": "spots.json",
+   "ageDays": 801
+  },
+  "bdf-elvia": {
+   "url": "https://www.blackdesertfoundry.com/calpheon-elvias-realm-guide/",
+   "hash": "8232d44990e7196b",
+   "published": "2026-07-01",
+   "dataset": "spots.json",
+   "ageDays": 125
+  },
+  "bdf-outer": {
+   "url": "https://www.blackdesertfoundry.com/edania-monster-zones-guide/",
+   "hash": "05ce13eddc1ba795",
+   "published": "2026-08-12",
+   "dataset": "spots.json",
+   "ageDays": 83
+  },
+  "bdf-inner": {
+   "url": "https://www.blackdesertfoundry.com/edania-inner-monster-zones-guide/",
+   "hash": "1e05f206c327e799",
+   "published": "2026-09-07",
+   "dataset": "spots.json",
+   "ageDays": 57
+  },
+  "classhub": {
+   "url": "https://bdoclasshub.com/tierlist.html",
+   "hash": "f362a1d67de25353",
+   "published": null,
+   "dataset": "classes.json",
+   "ageDays": 4
+  },
+  "incendar.com/bdocookingrecip": {
+   "url": "https://incendar.com/bdocookingrecipes.php",
+   "hash": "11fe25a198aadb0d",
+   "published": null,
+   "dataset": "recipes.json"
+  },
+  "incendar.com/bdoalchemyrecip": {
+   "url": "https://incendar.com/bdoalchemyrecipes.php",
+   "hash": "70ff4470f14ba5b9",
+   "published": null,
+   "dataset": "recipes.json"
+  },
+  "bdocodex.com": {
+   "url": "https://bdocodex.com",
+   "hash": "76c60cdac4751143",
+   "published": null,
+   "dataset": "recipes.json"
+  }
+ }
+}

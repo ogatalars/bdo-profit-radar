@@ -70,6 +70,49 @@ listadas em `any` a de menor preço no dia. O card mostra qual foi escolhido.
 Se um número do site não bate com a sua hora real de grind, o errado é a taxa no
 JSON, não o preço. Ajuste e mande PR.
 
+## Atualizando os spots (o ponto fraco do projeto)
+
+**Preços se atualizam sozinhos. Spots, classes e receitas não.** O cron diário só
+mexe em `data/daily.*.json`; as outras tabelas são copiadas à mão de guias da
+comunidade e envelhecem paradas.
+
+Não existe API pública de grind spots. Verificado: o Garmoth tem
+(`api.garmoth.com/api/grind-tracker/getGrindSpots`), mas responde **403 por
+Cloudflare** para qualquer cliente que não seja navegador, então nem CI nem
+scraper alcançam. Arsha e Velia Inn cobrem só o mercado.
+
+O caminho que funciona é um humano abrir o Garmoth, exportar a tabela e importar:
+
+```bash
+node scripts/import-spots.js garmoth.md --dry   # mostra o que mudaria
+node scripts/import-spots.js garmoth.md         # grava
+node scripts/test.js
+```
+
+O importador aceita markdown, TSV ou CSV, acha as colunas pelo cabeçalho (ordem
+não importa), entende `1.45B` e `466M`, e **preserva as notas em pt/en** — só os
+números são sobrescritos. Zonas que ele não reconhece são listadas à parte, para
+você escrever a nota antes de incluí-las.
+
+Enquanto isso não acontece, `scripts/check-sources.js` roda toda segunda-feira,
+compara as páginas-fonte com o último hash visto e **abre uma issue** quando uma
+delas muda ou passa de 180 dias parada. O objetivo não é atualizar sozinho — é
+não deixar o dado apodrecer em silêncio.
+
+### Idade das fontes hoje
+
+| fonte | cobre | atualizada em |
+|---|---|---|
+| Grumpy Green | 33 zonas (antigas, Dehkia, Ulukita) | **ago/2024** ⚠️ |
+| BDFoundry Elvia | 12 zonas | jul/2026 |
+| BDFoundry Edania Outer | 6 zonas | ago/2026 |
+| BDFoundry Edania Inner | 6 zonas | set/2026 |
+| BDO Class Hub | 58 specs | out/2026 |
+
+Os silver/hora vindos do Grumpy Green têm mais de dois anos e o BDO infla
+recompensas com o tempo — **trate-os como piso, não como estimativa atual**. O
+site mostra a data da fonte em cada card e avisa quando passa de um ano.
+
 ## Quando as fontes divergem
 
 Fontes públicas discordam entre si (Saunil Camp aparece como 250 AP num guia e

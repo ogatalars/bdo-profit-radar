@@ -1,0 +1,58 @@
+name: checar fontes de spots e classes
+
+# Precos se atualizam sozinhos pelo cron diario. Spots, classes e receitas sao
+# tabelas copiadas a mao de paginas de terceiros (nao existe API publica de
+# grind spots). Este job nao atualiza nada: ele avisa quando a fonte mexeu ou
+# quando ficou velha demais, abrindo uma issue, para o dado nao apodrecer calado.
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # segunda-feira, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - id: check
+        run: node scripts/check-sources.js
+
+      - name: commitar o estado das fontes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/source-state.json
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: estado das fontes $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: abrir issue de revisao
+        if: steps.check.outputs.needs_review == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPORT: ${{ steps.check.outputs.report }}
+        run: |
+          title="Revisar dados de spots/classes ($(date -u +%Y-%m-%d))"
+          # Nao empilhar uma issue por semana sobre a mesma coisa.
+          if gh issue list --state open --search "$title in:title" --json number -q '.[0].number' | grep -q .; then
+            echo "ja existe issue aberta"; exit 0
+          fi
+          gh issue create --title "$title" --body "$(cat <<EOB
+          As fontes de \`data/spots.json\` e \`data/classes.json\` precisam de olhada:
+
+          $REPORT
+
+          Não há API pública de grind spots, então a atualização é manual:
+          reabrir a fonte, conferir a tabela e ajustar o JSON correspondente.
+
+          Verificado por \`scripts/check-sources.js\`.
+          EOB
+          )"

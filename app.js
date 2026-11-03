@@ -137,7 +137,13 @@ function renderSpots() {
   const p = P();
   const me = { stat: +$("#stat").value, ap: +$("#ap").value, dp: +$("#dp").value };
   const spec = CLASSES.specs.find((c) => c.id === $("#cls").value);
-  const rows = SPOTS.spots.map((s) => ({ s, ...spotFit(s, me), ...spotToday(s, p, DAILY.changes || {}) }))
+  const srcs = SPOTS._meta.sources || {};
+  const rows = SPOTS.spots.map((s) => {
+    const src = srcs[s.source];
+    const srcAge = src?.date ? Math.floor((Date.now() - new Date(src.date)) / 864e5) : null;
+    return { s, srcDate: src?.date ?? null, srcAge,
+             ...spotFit(s, me), ...spotToday(s, p, DAILY.changes || {}) };
+  })
     .sort((a, b) => (a.locked - b.locked) || ((b.s.silver ?? -1) - (a.s.silver ?? -1)));
   const visible = $("#hideLocked").checked ? rows.filter((x) => !x.locked) : rows;
   const best = visible.find((x) => !x.locked);
@@ -150,7 +156,9 @@ function renderSpots() {
     ${spec.weapon ? `<br><span class="dim">${esc(spec.weapon)} &rarr; ${esc(spec.awakening)}</span>` : ""}
     </div>` : "";
 
-  $("#spot-list").innerHTML = head + (visible.map((x) => {
+  const stale = rows.some((x) => x.srcAge != null && x.srcAge > 365);
+  const warn = stale ? `<div class="note warn">${t("staleWarn")}</div>` : "";
+  $("#spot-list").innerHTML = warn + head + (visible.map((x) => {
     const s = x.s;
     const miss = [
       x.usesStat ? x.missStat && `${x.missStat} Total Stat` : x.missAp && `${x.missAp} AP`,
@@ -164,7 +172,8 @@ function renderSpots() {
       <h3>${esc(s.name)}
         ${x === best ? `<span class="tag ok">${t("bestForYou")}</span>` : ""}
         ${x.locked ? `<span class="tag no">${t("missing")} ${miss}</span>` : ""}
-        ${x.overCap && !x.locked ? `<span class="tag">${t("overCap")}</span>` : ""}</h3>
+        ${x.overCap && !x.locked ? `<span class="tag">${t("overCap")}</span>` : ""}
+        ${x.srcAge != null && x.srcAge > 365 ? `<span class="tag old">${t("sourceOld")}</span>` : ""}</h3>
       <div class="meta">${esc(s.region)} &middot; ${esc(s.party)} &middot;
         ${x.usesStat
           ? `${t("asks")} <b>${s.stat}</b> Total Stat ${t("and")} <b>${s.dp}</b> DP &middot;
@@ -179,6 +188,7 @@ function renderSpots() {
         <b class="${x.drift >= 0 ? "up" : "down"}">${pct(x.drift)}</b> ${t("onAverage")}</div>` : ""}
       <div class="breakdown">${itemsTxt}</div>
       <div class="breakdown"><i>${esc(tr(s.note))}</i></div>
+      ${x.srcDate ? `<div class="breakdown dim">${t("sourceFrom", { d: x.srcDate })}</div>` : ""}
     </div>`;
   }).join("") || `<p class="dim">${t("noSpots")}</p>`);
 }

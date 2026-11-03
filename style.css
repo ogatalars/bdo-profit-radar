@@ -84,3 +84,6 @@ ul.ing li b { color: var(--accent); font-variant-numeric: tabular-nums; }
 #recipe-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 12px; }
 #recipe-list .card { margin-bottom: 0; }
 @media (max-width: 760px) { #recipe-list, #class-list { grid-template-columns: 1fr; } }
+
+.note.warn { border-left-color: var(--down); }
+.tag.old { color: var(--down); border-color: #4e2220; }

@@ -1,20 +1,32 @@
 {
  "_meta": {
   "note": {
-   "pt": "ap = AP exibido no perfil. stat = Total Stat (soma com cristais e buffs), que e o gate real das zonas modernas. statCap = teto da zona: AP acima disso rende so capPct%. dp = DP exibido (gate usado aqui). dpStat = DP em Total Stat, publicado so para as zonas de Edania. Zonas de Elvia nao tem Total Stat publicado: nelas stat = null e o gate passa a ser o AP exibido. Quando as fontes divergem, fica o valor mais baixo. Sem medicao publica de silver/hora, o campo fica vazio em vez de estimado.",
-   "en": "ap = displayed AP. stat = Total Stat (AP summed with crystals and buffs), the real gate for modern zones. statCap = zone ceiling: AP above it only counts capPct%. dp = displayed DP (the gate used here). dpStat = DP in Total Stat, published only for Edania zones. Elvia zones have no published Total Stat: there stat = null and the gate becomes displayed AP. When sources disagree, the lower value wins. With no public silver/hour measurement, the field stays empty instead of estimated."
+   "pt": "ap = AP exibido no perfil. stat = Total Stat (soma com cristais e buffs), que e o gate real das zonas modernas. statCap = teto da zona: AP acima disso rende so capPct%. dp = DP exibido (gate usado aqui). dpStat = DP em Total Stat, publicado so para as zonas de Edania. Zonas de Elvia nao tem Total Stat publicado: nelas stat = null e o gate passa a ser o AP exibido. Quando as fontes divergem, fica o valor mais baixo. Sem medicao publica de silver/hora, o campo fica vazio em vez de estimado. Cada spot declara em 'source' de qual fonte veio e de quando ela e. A tabela do Grumpy Green nao e atualizada desde ago/2024: os silver/hora das zonas antigas, Dehkia e Ulukita sao dessa epoca e provavelmente estao defasados para baixo.",
+   "en": "ap = displayed AP. stat = Total Stat (AP summed with crystals and buffs), the real gate for modern zones. statCap = zone ceiling: AP above it only counts capPct%. dp = displayed DP (the gate used here). dpStat = DP in Total Stat, published only for Edania zones. Elvia zones have no published Total Stat: there stat = null and the gate becomes displayed AP. When sources disagree, the lower value wins. With no public silver/hour measurement, the field stays empty instead of estimated. Each spot declares in 'source' which source it came from and how old that source is. The Grumpy Green table has not been updated since Aug/2024: silver/hour for the older, Dehkia and Ulukita zones dates from then and is likely understated."
   },
   "silver": {
    "pt": "silver/hora de referencia. 'medido' = sessoes reais de jogadores (Grumpy Green / Garmoth). 'derivado' = calculado do valor do trash da zona, ancorado na sessao medida de Aetherion Castle. Nenhum dos dois e garantia: depende de buffs, Agris, pets e da sua rotacao.",
    "en": "Reference silver per hour. 'medido' = real player sessions (Grumpy Green / Garmoth). 'derivado' = computed from the zone's trash value, anchored on the measured Aetherion Castle session. Neither is a guarantee: buffs, Agris, pets and your rotation all move it."
   },
-  "sources": [
-   "https://grumpygreen.cricket/bdo-grinding-spots/",
-   "https://www.blackdesertfoundry.com/edania-monster-zones-guide/",
-   "https://www.blackdesertfoundry.com/edania-inner-monster-zones-guide/",
-   "https://garmoth.com/grind-tracker/global"
-  ],
-  "updatedAt": "2026-11-02"
+  "updatedAt": "2026-11-02",
+  "sources": {
+   "grumpygreen": {
+    "url": "https://grumpygreen.cricket/bdo-grinding-spots/",
+    "date": "2024-08-24"
+   },
+   "bdf-elvia": {
+    "url": "https://www.blackdesertfoundry.com/calpheon-elvias-realm-guide/",
+    "date": "2026-07-01"
+   },
+   "bdf-outer": {
+    "url": "https://www.blackdesertfoundry.com/edania-monster-zones-guide/",
+    "date": "2026-08-12"
+   },
+   "bdf-inner": {
+    "url": "https://www.blackdesertfoundry.com/edania-inner-monster-zones-guide/",
+    "date": "2026-09-07"
+   }
+  }
  },
  "spots": [
   {
@@ -36,7 +48,8 @@
     "pt": "Spot de transicao pos-level 56. Rende pouco hoje, serve para aprender rotacao.",
     "en": "Post-56 transition spot. Pays little today, good to learn rotations."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "bashim",
@@ -57,7 +70,8 @@
     "pt": "Entrada real de silver. Mobs fracos, rotacao curta e segura.",
     "en": "The real silver entry point. Weak mobs, short and safe rotation."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "naga",
@@ -78,7 +92,8 @@
     "pt": "Melhor custo-beneficio da faixa inicial. Menos disputado que Titium.",
     "en": "Best value in the early range. Less contested than Titium."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "titium",
@@ -99,7 +114,8 @@
     "pt": "Densidade alta e deserto perto da cidade. Leve cha para o calor.",
     "en": "High density and close to town. Bring tea for the desert heat."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "gahaz",
@@ -121,7 +137,8 @@
     "pt": "Classico de AoE. Grupos densos recompensam quem puxa bem.",
     "en": "An AoE classic. Dense packs reward whoever pulls well."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "cadry",
@@ -143,7 +160,8 @@
     "pt": "Anel de Cadry e o jackpot. Mobs de corpo a corpo, DP baixo basta.",
     "en": "The Cadry ring is the jackpot. Melee mobs, low DP is enough."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "crescent",
@@ -165,7 +183,8 @@
     "pt": "Mesma faixa de Cadry. Escolha pelo anel que voce quer.",
     "en": "Same bracket as Cadry. Pick by which ring you want."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "protty",
@@ -186,7 +205,8 @@
     "pt": "Caverna fechada, rotacao curta. Bom para classes de burst.",
     "en": "Enclosed cave, short rotation. Good for burst classes."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "centaurus",
@@ -207,7 +227,8 @@
     "pt": "Mobs rapidos e espalhados. Mobilidade conta mais que AP aqui.",
     "en": "Fast, spread-out mobs. Mobility matters more than AP here."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "pila-ku",
@@ -228,7 +249,8 @@
     "pt": "Rende pouco na versao normal. So vale na versao Dehkia.",
     "en": "Weak in the normal version. Only worth it as Dehkia."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "roud",
@@ -249,7 +271,8 @@
     "pt": "Mesma situacao de Pila Ku: existe pela versao Dehkia.",
     "en": "Same story as Pila Ku: it exists for the Dehkia version."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "manshaum",
@@ -271,7 +294,8 @@
     "pt": "Forest Fury e o drop que paga. Mobs se curam, mate rapido.",
     "en": "Forest Fury is the drop that pays. Mobs self-heal, kill fast."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "mirumok",
@@ -292,7 +316,8 @@
     "pt": "Conteudo de grupo. Rende por rotacao coordenada, nao por AP bruto.",
     "en": "Group content. Pays through coordinated rotation, not raw AP."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "sycraia-up",
@@ -313,7 +338,8 @@
     "pt": "Subaquatico, exige item de respiracao. Trash loot pesado.",
     "en": "Underwater, needs a breathing item. Heavy trash loot."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "aakman",
@@ -334,7 +360,8 @@
     "pt": "Teleporte entre salas. Renda quase toda em trash loot.",
     "en": "Teleports between rooms. Income is almost all trash loot."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "hystria",
@@ -355,7 +382,8 @@
     "pt": "Irmao do Aakman com mais volume e mobs mais duros.",
     "en": "Aakman's sibling with more volume and tougher mobs."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "thornwood",
@@ -376,7 +404,8 @@
     "pt": "Mobs com muita vida. Precisa de DP real, nao so AP.",
     "en": "High-HP mobs. Needs real DP, not just AP."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "sycraia-low",
@@ -397,7 +426,8 @@
     "pt": "Melhor da faixa 240. Exige resistencia a knockback.",
     "en": "Best of the 240 bracket. Requires knockback resistance."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "tunkuta",
@@ -418,7 +448,8 @@
     "pt": "Dupla fixa rende bem mais que solo improvisado.",
     "en": "A fixed duo earns far more than an improvised one."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "gyfin-up",
@@ -439,7 +470,8 @@
     "pt": "Conteudo de 5 pessoas. Divide loot, mas a hora e estavel.",
     "en": "Five-player content. Loot is split, but the hourly is steady."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "gyfin-under",
@@ -461,7 +493,8 @@
     "pt": "Salto grande de renda. Primeiro spot que exige build de verdade.",
     "en": "Big income jump. First spot that demands a real build."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "olun",
@@ -482,7 +515,8 @@
     "pt": "Trio coordenado. Um puxa, dois limpam.",
     "en": "Coordinated trio. One pulls, two clear."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "aakman-d",
@@ -503,7 +537,8 @@
     "pt": "Dehkia dobra a dificuldade e quase dobra a renda. Precisa da Lanterna.",
     "en": "Dehkia doubles the difficulty and nearly doubles income. Needs the Lantern."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "hystria-d",
@@ -524,7 +559,8 @@
     "pt": "Entrada confortavel no Dehkia se voce ja conhece a rotacao normal.",
     "en": "A comfortable Dehkia entry if you already know the normal rotation."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "crescent-d",
@@ -545,7 +581,8 @@
     "pt": "Melhor dos Dehkia de 300 AP. Muito disputado.",
     "en": "Best of the 300 AP Dehkia spots. Heavily contested."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "pila-ku-d",
@@ -566,7 +603,8 @@
     "pt": "Menos disputado que Crescent, renda um pouco menor.",
     "en": "Less contested than Crescent, slightly lower income."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "roud-d",
@@ -587,7 +625,8 @@
     "pt": "Corredores estreitos, bom para AoE em linha.",
     "en": "Narrow corridors, good for linear AoE."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "olun-d",
@@ -608,7 +647,8 @@
     "pt": "Trio com build pronta. Passa de 1 bilhao por hora.",
     "en": "Trio with a finished build. Clears one billion per hour."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "tunkuta-d",
@@ -629,7 +669,8 @@
     "pt": "Melhor silver/hora em dupla do jogo na faixa 310.",
     "en": "Best duo silver per hour in the game at the 310 bracket."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "thornwood-d",
@@ -650,7 +691,8 @@
     "pt": "Melhor solo da faixa 310. Exige DP alto de verdade.",
     "en": "Best solo of the 310 bracket. Demands genuinely high DP."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "darkseeker",
@@ -671,7 +713,8 @@
     "pt": "Atencao: cap de 30%, nao 70%. AP extra rende muito menos aqui.",
     "en": "Careful: 30% cap, not 70%. Extra AP is worth far less here."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "yzrahid",
@@ -692,7 +735,8 @@
     "pt": "Mobs do tipo animal, area aberta. Bom para classes de mobilidade.",
     "en": "Animal-type mobs, open area. Good for mobile classes."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "tungrad",
@@ -713,7 +757,8 @@
     "pt": "Topo do Ulukita. Ultimo degrau antes de Edania.",
     "en": "Top of Ulukita. Last step before Edania."
    },
-   "dpStat": null
+   "dpStat": null,
+   "source": "grumpygreen"
   },
   {
    "id": "aetherion",
@@ -734,7 +779,8 @@
     "pt": "Porta de entrada de Edania. Trash vale 105 mil por item.",
     "en": "Edania's entry point. Trash is worth 105k per item."
    },
-   "dpStat": 615
+   "dpStat": 615,
+   "source": "bdf-outer"
   },
   {
    "id": "nymphamare",
@@ -755,7 +801,8 @@
     "pt": "Segundo degrau. DP sobe mais que AP: 720 recomendado.",
     "en": "Second step. DP climbs faster than AP: 720 recommended."
    },
-   "dpStat": 720
+   "dpStat": 720,
+   "source": "bdf-outer"
   },
   {
    "id": "orbita",
@@ -776,7 +823,8 @@
     "pt": "Trash de 140 mil por item. Salto real de renda.",
     "en": "Trash worth 140k per item. A real income jump."
    },
-   "dpStat": 760
+   "dpStat": 760,
+   "source": "bdf-outer"
   },
   {
    "id": "floodlands",
@@ -797,7 +845,8 @@
     "pt": "Dois tipos de trash; o Dark Faded Energy e o que paga.",
     "en": "Two trash types; Dark Faded Energy is the one that pays."
    },
-   "dpStat": 760
+   "dpStat": 760,
+   "source": "bdf-outer"
   },
   {
    "id": "tenebraum",
@@ -818,7 +867,8 @@
     "pt": "Melhor trash do Outer: 147 mil por item.",
     "en": "Best trash in Outer: 147k per item."
    },
-   "dpStat": 760
+   "dpStat": 760,
+   "source": "bdf-outer"
   },
   {
    "id": "zephyros",
@@ -839,7 +889,8 @@
     "pt": "Fim do Outer. Exige 800 DP, o maior salto defensivo do jogo.",
     "en": "End of Outer. Demands 800 DP, the biggest defensive jump in the game."
    },
-   "dpStat": 800
+   "dpStat": 800,
+   "source": "bdf-outer"
   },
   {
    "id": "aphrodon",
@@ -861,7 +912,8 @@
     "pt": "Comeco do Inner. 12 rotacoes, mapa longo.",
     "en": "Start of Inner. Twelve rotations, long map."
    },
-   "dpStat": 810
+   "dpStat": 810,
+   "source": "bdf-inner"
   },
   {
    "id": "hermesia",
@@ -882,7 +934,8 @@
     "pt": "So 4 rotacoes: ciclo curto, bom para sessoes de 1 hora.",
     "en": "Only four rotations: short cycle, good for one-hour sessions."
    },
-   "dpStat": 825
+   "dpStat": 825,
+   "source": "bdf-inner"
   },
   {
    "id": "magaia",
@@ -904,7 +957,8 @@
     "pt": "3 rotacoes apenas. Densidade altissima.",
     "en": "Just three rotations. Extremely high density."
    },
-   "dpStat": 840
+   "dpStat": 840,
+   "source": "bdf-inner"
   },
   {
    "id": "aresion",
@@ -925,7 +979,8 @@
     "pt": "Quarto degrau do Inner. Drop de material de Apeiron.",
     "en": "Fourth step of Inner. Drops Apeiron accessory materials."
    },
-   "dpStat": 855
+   "dpStat": 855,
+   "source": "bdf-inner"
   },
   {
    "id": "scales",
@@ -946,7 +1001,8 @@
     "pt": "Conteudo de trio no endgame. Exige build e entrosamento.",
     "en": "Endgame trio content. Needs a build and good coordination."
    },
-   "dpStat": 860
+   "dpStat": 860,
+   "source": "bdf-inner"
   },
   {
    "id": "event-horizon",
@@ -968,7 +1024,8 @@
     "pt": "Zona mais dura do jogo. Trash de 196 mil por item.",
     "en": "Hardest zone in the game. Trash worth 196k per item."
    },
-   "dpStat": 870
+   "dpStat": 870,
+   "source": "bdf-inner"
   },
   {
    "id": "elvia-saunil",
@@ -990,7 +1047,8 @@
    "note": {
     "pt": "Entrada do Elvia. Dois tipos de trash, ~25 mil cada. Fontes divergem no AP (250-270): vale o menor.",
     "en": "Elvia entry point. Two trash types, ~25k each. Sources differ on AP (250-270): the lower one applies."
-   }
+   },
+   "source": "bdf-elvia"
   },
   {
    "id": "elvia-rhutum",
@@ -1012,7 +1070,8 @@
    "note": {
     "pt": "Degrau acima de Saunil, mesmo loot base.",
     "en": "One step above Saunil, same base loot."
-   }
+   },
+   "source": "bdf-elvia"
   },
   {
    "id": "elvia-gehaku",
@@ -1034,7 +1093,8 @@
    "note": {
     "pt": "Area aberta, favorece classes moveis.",
     "en": "Open area, favors mobile classes."
-   }
+   },
+   "source": "bdf-elvia"
   },
   {
    "id": "elvia-hexe",
@@ -1056,7 +1116,8 @@
    "note": {
     "pt": "O melhor do Elvia Calpheon e um dos spots mais duros do jogo. A faixa medida vai de 650 mi a 1,2 bi por hora; aqui fica o piso.",
     "en": "Best of Elvia Calpheon and one of the game's hardest spots. Measured range is 650M to 1.2B per hour; the floor is shown here."
-   }
+   },
+   "source": "bdf-elvia"
   },
   {
    "id": "elvia-quint",
@@ -1078,7 +1139,8 @@
    "note": {
     "pt": "Trolls com o trash mais caro do Elvia Calpheon (~96 mil por item), mas sem medicao publica de silver/hora.",
     "en": "Trolls with the priciest trash in Elvia Calpheon (~96k per item), but no public silver/hour measurement."
-   }
+   },
+   "source": "bdf-elvia"
   },
   {
    "id": "elvia-orc",
@@ -1100,7 +1162,8 @@
    "note": {
     "pt": "Atributo Valtarra. Faixa de AP publicada e 280-320: vale o menor.",
     "en": "Valtarra attribute. Published AP range is 280-320: the lower one applies."
-   }
+   },
+   "source": "bdf-elvia"
   },
   {
    "id": "elvia-monastery",
@@ -1122,7 +1185,8 @@
    "note": {
     "pt": "Cultistas em area fechada.",
     "en": "Cultists in a closed area."
-   }
+   },
+   "source": "bdf-elvia"
   },
   {
    "id": "elvia-naga",
@@ -1144,7 +1208,8 @@
    "note": {
     "pt": "Atributo Narc. Faixa publicada 260-280.",
     "en": "Narc attribute. Published range 260-280."
-   }
+   },
+   "source": "bdf-elvia"
   },
   {
    "id": "elvia-fogan",
@@ -1166,7 +1231,8 @@
    "note": {
     "pt": "Atributo Okiara, vizinho dos Naga.",
     "en": "Okiara attribute, neighbors the Nagas."
-   }
+   },
+   "source": "bdf-elvia"
   },
   {
    "id": "elvia-biraghi",
@@ -1188,7 +1254,8 @@
    "note": {
     "pt": "Atributo Narc. Faixa publicada 240-270.",
     "en": "Narc attribute. Published range 240-270."
-   }
+   },
+   "source": "bdf-elvia"
   },
   {
    "id": "elvia-castle",
@@ -1210,7 +1277,8 @@
    "note": {
     "pt": "Conteudo de trio. Atributo Valtarra.",
     "en": "Trio content. Valtarra attribute."
-   }
+   },
+   "source": "bdf-elvia"
   },
   {
    "id": "elvia-altar",
@@ -1232,7 +1300,8 @@
    "note": {
     "pt": "O mais acessivel do Elvia. Dupla recomendada.",
     "en": "Most accessible Elvia zone. Duo recommended."
-   }
+   },
+   "source": "bdf-elvia"
   }
  ]
 }
