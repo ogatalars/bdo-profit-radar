@@ -1,1021 +1,39 @@
 {
  "_meta": {
   "note": {
-   "pt": "ap = AP exibido no perfil. stat = Total Stat (soma com cristais e buffs), que e o gate real das zonas modernas. statCap = teto da zona: AP acima disso rende so capPct%. dp = DP exibido (gate usado aqui). dpStat = DP em Total Stat, publicado so para as zonas de Edania. Zonas de Elvia nao tem Total Stat publicado: nelas stat = null e o gate passa a ser o AP exibido. Quando as fontes divergem, fica o valor mais baixo. Sem medicao publica de silver/hora, o campo fica vazio em vez de estimado. Cada spot declara em 'source' de qual fonte veio e de quando ela e. A tabela do Grumpy Green nao e atualizada desde ago/2024: os silver/hora das zonas antigas, Dehkia e Ulukita sao dessa epoca e provavelmente estao defasados para baixo.",
-   "en": "ap = displayed AP. stat = Total Stat (AP summed with crystals and buffs), the real gate for modern zones. statCap = zone ceiling: AP above it only counts capPct%. dp = displayed DP (the gate used here). dpStat = DP in Total Stat, published only for Edania zones. Elvia zones have no published Total Stat: there stat = null and the gate becomes displayed AP. When sources disagree, the lower value wins. With no public silver/hour measurement, the field stays empty instead of estimated. Each spot declares in 'source' which source it came from and how old that source is. The Grumpy Green table has not been updated since Aug/2024: silver/hour for the older, Dehkia and Ulukita zones dates from then and is likely understated."
+   "pt": "Dados de sessoes reais do Garmoth. stat e dpStat sao Total Stat (AP e DP ja somados com cristais e buffs), que e o requisito real das zonas. silver e xp sao por hora, medidos.",
+   "en": "Real session data from Garmoth. stat and dpStat are Total Stat (AP and DP already summed with crystals and buffs), which is the zone's real requirement. silver and xp are per hour, measured."
   },
   "silver": {
-   "pt": "silver/hora de referencia. 'medido' = sessoes reais de jogadores (Grumpy Green / Garmoth). 'derivado' = calculado do valor do trash da zona, ancorado na sessao medida de Aetherion Castle. Nenhum dos dois e garantia: depende de buffs, Agris, pets e da sua rotacao.",
-   "en": "Reference silver per hour. 'medido' = real player sessions (Grumpy Green / Garmoth). 'derivado' = computed from the zone's trash value, anchored on the measured Aetherion Castle session. Neither is a guarantee: buffs, Agris, pets and your rotation all move it."
+   "pt": "silver/hora do tier base do Garmoth, sem filtro de gear. Os filtros tier=high e tier=top mostram 20-30% a mais; aqui fica o piso.",
+   "en": "silver/hour from Garmoth's base tier, no gear filter. The tier=high and tier=top filters show 20-30% more; the floor is used here."
   },
-  "updatedAt": "2026-11-02",
   "sources": {
-   "grumpygreen": {
-    "url": "https://grumpygreen.cricket/bdo-grinding-spots/",
-    "date": "2024-08-24"
-   },
-   "bdf-elvia": {
-    "url": "https://www.blackdesertfoundry.com/calpheon-elvias-realm-guide/",
-    "date": "2026-07-01"
-   },
-   "bdf-outer": {
-    "url": "https://www.blackdesertfoundry.com/edania-monster-zones-guide/",
-    "date": "2026-08-12"
-   },
-   "bdf-inner": {
-    "url": "https://www.blackdesertfoundry.com/edania-inner-monster-zones-guide/",
-    "date": "2026-09-07"
+   "garmoth": {
+    "url": "https://garmoth.com/grind-tracker/best-grind-spots",
+    "date": "2026-11-03"
    }
-  }
+  },
+  "updatedAt": "2026-11-03"
  },
  "spots": [
   {
-   "id": "sausans",
-   "name": "Sausans",
-   "region": "Mediah",
-   "party": "Solo",
-   "ap": 100,
-   "dp": 180,
-   "stat": 201,
-   "statCap": 280,
-   "capPct": 0,
-   "silver": 32000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone"
-   ],
-   "note": {
-    "pt": "Spot de transicao pos-level 56. Rende pouco hoje, serve para aprender rotacao.",
-    "en": "Post-56 transition spot. Pays little today, good to learn rotations."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "bashim",
-   "name": "Bashim Base",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 100,
-   "dp": 180,
-   "stat": 158,
-   "statCap": 213,
-   "capPct": 70,
-   "silver": 321000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone"
-   ],
-   "note": {
-    "pt": "Entrada real de silver. Mobs fracos, rotacao curta e segura.",
-    "en": "The real silver entry point. Weak mobs, short and safe rotation."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "naga",
-   "name": "Desert Naga Temple",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 100,
-   "dp": 180,
-   "stat": 158,
-   "statCap": 213,
-   "capPct": 70,
-   "silver": 395000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone"
-   ],
-   "note": {
-    "pt": "Melhor custo-beneficio da faixa inicial. Menos disputado que Titium.",
-    "en": "Best value in the early range. Less contested than Titium."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "titium",
-   "name": "Titium Valley",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 100,
-   "dp": 180,
-   "stat": 158,
-   "statCap": 213,
-   "capPct": 70,
-   "silver": 397000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone"
-   ],
-   "note": {
-    "pt": "Densidade alta e deserto perto da cidade. Leve cha para o calor.",
-    "en": "High density and close to town. Bring tea for the desert heat."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "gahaz",
-   "name": "Gahaz Bandit's Lair",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 140,
-   "dp": 180,
-   "stat": 185,
-   "statCap": 245,
-   "capPct": 70,
-   "silver": 394000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone",
-    "Sharp Black Crystal Shard"
-   ],
-   "note": {
-    "pt": "Classico de AoE. Grupos densos recompensam quem puxa bem.",
-    "en": "An AoE classic. Dense packs reward whoever pulls well."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "cadry",
-   "name": "Cadry Ruins",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 140,
-   "dp": 160,
-   "stat": 179,
-   "statCap": 245,
-   "capPct": 70,
-   "silver": 408000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone",
-    "Ring of Cadry Guardian"
-   ],
-   "note": {
-    "pt": "Anel de Cadry e o jackpot. Mobs de corpo a corpo, DP baixo basta.",
-    "en": "The Cadry ring is the jackpot. Melee mobs, low DP is enough."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "crescent",
-   "name": "Crescent Shrine",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 140,
-   "dp": 160,
-   "stat": 183,
-   "statCap": 245,
-   "capPct": 70,
-   "silver": 396000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone",
-    "Ring of Crescent Guardian"
-   ],
-   "note": {
-    "pt": "Mesma faixa de Cadry. Escolha pelo anel que voce quer.",
-    "en": "Same bracket as Cadry. Pick by which ring you want."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "protty",
-   "name": "Protty Cave",
-   "region": "Ilhas",
-   "party": "Solo",
-   "ap": 170,
-   "dp": 200,
-   "stat": 243,
-   "statCap": 280,
-   "capPct": 70,
-   "silver": 482000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone"
-   ],
-   "note": {
-    "pt": "Caverna fechada, rotacao curta. Bom para classes de burst.",
-    "en": "Enclosed cave, short rotation. Good for burst classes."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "centaurus",
-   "name": "Centaurus Herd",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 180,
-   "dp": 200,
-   "stat": 275,
-   "statCap": 312,
-   "capPct": 70,
-   "silver": 466000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone"
-   ],
-   "note": {
-    "pt": "Mobs rapidos e espalhados. Mobilidade conta mais que AP aqui.",
-    "en": "Fast, spread-out mobs. Mobility matters more than AP here."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "pila-ku",
-   "name": "Pila Ku Jail",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 190,
-   "dp": 240,
-   "stat": 308,
-   "statCap": 365,
-   "capPct": 70,
-   "silver": 255000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone"
-   ],
-   "note": {
-    "pt": "Rende pouco na versao normal. So vale na versao Dehkia.",
-    "en": "Weak in the normal version. Only worth it as Dehkia."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "roud",
-   "name": "Roud Sulfur Mines",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 190,
-   "dp": 240,
-   "stat": 308,
-   "statCap": 365,
-   "capPct": 70,
-   "silver": 242000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone"
-   ],
-   "note": {
-    "pt": "Mesma situacao de Pila Ku: existe pela versao Dehkia.",
-    "en": "Same story as Pila Ku: it exists for the Dehkia version."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "manshaum",
-   "name": "Manshaum Forest",
-   "region": "Kamasylvia",
-   "party": "Solo",
-   "ap": 190,
-   "dp": 260,
-   "stat": 264,
-   "statCap": 410,
-   "capPct": 70,
-   "silver": 443000000,
-   "silverSource": "medido",
-   "items": [
-    "Forest Fury",
-    "Black Stone"
-   ],
-   "note": {
-    "pt": "Forest Fury e o drop que paga. Mobs se curam, mate rapido.",
-    "en": "Forest Fury is the drop that pays. Mobs self-heal, kill fast."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "mirumok",
-   "name": "Mirumok Ruins",
-   "region": "Kamasylvia",
-   "party": "2-3P",
-   "ap": 190,
-   "dp": 270,
-   "stat": 351,
-   "statCap": 380,
-   "capPct": 70,
-   "silver": 400000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone"
-   ],
-   "note": {
-    "pt": "Conteudo de grupo. Rende por rotacao coordenada, nao por AP bruto.",
-    "en": "Group content. Pays through coordinated rotation, not raw AP."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "sycraia-up",
-   "name": "Sycraia Upper",
-   "region": "Ilhas",
-   "party": "Solo",
-   "ap": 200,
-   "dp": 260,
-   "stat": 343,
-   "statCap": 380,
-   "capPct": 70,
-   "silver": 369000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Subaquatico, exige item de respiracao. Trash loot pesado.",
-    "en": "Underwater, needs a breathing item. Heavy trash loot."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "aakman",
-   "name": "Aakman Temple",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 230,
-   "dp": 300,
-   "stat": 348,
-   "statCap": 460,
-   "capPct": 70,
-   "silver": 459000000,
-   "silverSource": "medido",
-   "items": [
-    "Forbidden Book"
-   ],
-   "note": {
-    "pt": "Teleporte entre salas. Renda quase toda em trash loot.",
-    "en": "Teleports between rooms. Income is almost all trash loot."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "hystria",
-   "name": "Hystria Ruins",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 230,
-   "dp": 300,
-   "stat": 385,
-   "statCap": 460,
-   "capPct": 70,
-   "silver": 450000000,
-   "silverSource": "medido",
-   "items": [
-    "Narc Ear Accessory"
-   ],
-   "note": {
-    "pt": "Irmao do Aakman com mais volume e mobs mais duros.",
-    "en": "Aakman's sibling with more volume and tougher mobs."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "thornwood",
-   "name": "Thornwood Forest",
-   "region": "O'dyllita",
-   "party": "Solo",
-   "ap": 230,
-   "dp": 320,
-   "stat": 385,
-   "statCap": 460,
-   "capPct": 70,
-   "silver": 413000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Mobs com muita vida. Precisa de DP real, nao so AP.",
-    "en": "High-HP mobs. Needs real DP, not just AP."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "sycraia-low",
-   "name": "Sycraia Lower Abyssal",
-   "region": "Ilhas",
-   "party": "Solo",
-   "ap": 240,
-   "dp": 330,
-   "stat": 401,
-   "statCap": 490,
-   "capPct": 70,
-   "silver": 667000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Melhor da faixa 240. Exige resistencia a knockback.",
-    "en": "Best of the 240 bracket. Requires knockback resistance."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "tunkuta",
-   "name": "Tunkuta Turos",
-   "region": "O'dyllita",
-   "party": "2P",
-   "ap": 250,
-   "dp": 360,
-   "stat": 401,
-   "statCap": 490,
-   "capPct": 70,
-   "silver": 559000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Dupla fixa rende bem mais que solo improvisado.",
-    "en": "A fixed duo earns far more than an improvised one."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "gyfin-up",
-   "name": "Gyfin Rhasia (Upper)",
-   "region": "Kamasylvia",
-   "party": "5P",
-   "ap": 250,
-   "dp": 320,
-   "stat": 393,
-   "statCap": 475,
-   "capPct": 70,
-   "silver": 525000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Conteudo de 5 pessoas. Divide loot, mas a hora e estavel.",
-    "en": "Five-player content. Loot is split, but the hourly is steady."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "gyfin-under",
-   "name": "Gyfin Rhasia (Underground)",
-   "region": "Kamasylvia",
-   "party": "Solo",
-   "ap": 290,
-   "dp": 380,
-   "stat": 579,
-   "statCap": 800,
-   "capPct": 70,
-   "silver": 857000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone",
-    "Sharp Black Crystal Shard"
-   ],
-   "note": {
-    "pt": "Salto grande de renda. Primeiro spot que exige build de verdade.",
-    "en": "Big income jump. First spot that demands a real build."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "olun",
-   "name": "Olun's Valley",
-   "region": "O'dyllita",
-   "party": "3P",
-   "ap": 290,
-   "dp": 380,
-   "stat": 443,
-   "statCap": 530,
-   "capPct": 70,
-   "silver": 834000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Trio coordenado. Um puxa, dois limpam.",
-    "en": "Coordinated trio. One pulls, two clear."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "aakman-d",
-   "name": "Aakman Temple [Dehkia]",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 300,
-   "dp": 400,
-   "stat": 885,
-   "statCap": 1000,
-   "capPct": 70,
-   "silver": 801000000,
-   "silverSource": "medido",
-   "items": [
-    "Forbidden Book"
-   ],
-   "note": {
-    "pt": "Dehkia dobra a dificuldade e quase dobra a renda. Precisa da Lanterna.",
-    "en": "Dehkia doubles the difficulty and nearly doubles income. Needs the Lantern."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "hystria-d",
-   "name": "Hystria Ruins [Dehkia]",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 300,
-   "dp": 400,
-   "stat": 885,
-   "statCap": 1000,
-   "capPct": 70,
-   "silver": 832000000,
-   "silverSource": "medido",
-   "items": [
-    "Narc Ear Accessory"
-   ],
-   "note": {
-    "pt": "Entrada confortavel no Dehkia se voce ja conhece a rotacao normal.",
-    "en": "A comfortable Dehkia entry if you already know the normal rotation."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "crescent-d",
-   "name": "Crescent Shrine [Dehkia]",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 300,
-   "dp": 400,
-   "stat": 885,
-   "statCap": 1000,
-   "capPct": 70,
-   "silver": 954000000,
-   "silverSource": "medido",
-   "items": [
-    "Ring of Crescent Guardian"
-   ],
-   "note": {
-    "pt": "Melhor dos Dehkia de 300 AP. Muito disputado.",
-    "en": "Best of the 300 AP Dehkia spots. Heavily contested."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "pila-ku-d",
-   "name": "Pila Ku Jail [Dehkia]",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 300,
-   "dp": 400,
-   "stat": 885,
-   "statCap": 1000,
-   "capPct": 70,
-   "silver": 715000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone"
-   ],
-   "note": {
-    "pt": "Menos disputado que Crescent, renda um pouco menor.",
-    "en": "Less contested than Crescent, slightly lower income."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "roud-d",
-   "name": "Roud Sulfur Mines [Dehkia]",
-   "region": "Valencia",
-   "party": "Solo",
-   "ap": 300,
-   "dp": 400,
-   "stat": 885,
-   "statCap": 1000,
-   "capPct": 70,
-   "silver": 806000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone"
-   ],
-   "note": {
-    "pt": "Corredores estreitos, bom para AoE em linha.",
-    "en": "Narrow corridors, good for linear AoE."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "olun-d",
-   "name": "Olun's Valley [Dehkia]",
-   "region": "O'dyllita",
-   "party": "3P",
-   "ap": 310,
-   "dp": 400,
-   "stat": 895,
-   "statCap": 1000,
-   "capPct": 70,
-   "silver": 1007000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Trio com build pronta. Passa de 1 bilhao por hora.",
-    "en": "Trio with a finished build. Clears one billion per hour."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "tunkuta-d",
-   "name": "Tunkuta [Dehkia]",
-   "region": "O'dyllita",
-   "party": "2P",
-   "ap": 310,
-   "dp": 400,
-   "stat": 916,
-   "statCap": 950,
-   "capPct": 70,
-   "silver": 1134000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Melhor silver/hora em dupla do jogo na faixa 310.",
-    "en": "Best duo silver per hour in the game at the 310 bracket."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "thornwood-d",
-   "name": "Thornwood Forest [Dehkia]",
-   "region": "O'dyllita",
-   "party": "Solo",
-   "ap": 310,
-   "dp": 400,
-   "stat": 867,
-   "statCap": 1000,
-   "capPct": 70,
-   "silver": 1104000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Melhor solo da faixa 310. Exige DP alto de verdade.",
-    "en": "Best solo of the 310 bracket. Demands genuinely high DP."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "darkseeker",
-   "name": "Darkseeker's Retreat",
-   "region": "Ulukita",
-   "party": "Solo",
-   "ap": 310,
-   "dp": 420,
-   "stat": 895,
-   "statCap": 1100,
-   "capPct": 30,
-   "silver": 693000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Atencao: cap de 30%, nao 70%. AP extra rende muito menos aqui.",
-    "en": "Careful: 30% cap, not 70%. Extra AP is worth far less here."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "yzrahid",
-   "name": "Yzrahid Highlands",
-   "region": "Ulukita",
-   "party": "Solo",
-   "ap": 310,
-   "dp": 420,
-   "stat": 927,
-   "statCap": 1100,
-   "capPct": 70,
-   "silver": 1000000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Mobs do tipo animal, area aberta. Bom para classes de mobilidade.",
-    "en": "Animal-type mobs, open area. Good for mobile classes."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "tungrad",
-   "name": "Tungrad Ruins",
-   "region": "Ulukita",
-   "party": "Solo",
-   "ap": 320,
-   "dp": 410,
-   "stat": 958,
-   "statCap": 1100,
-   "capPct": 70,
-   "silver": 1137000000,
-   "silverSource": "medido",
-   "items": [
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Topo do Ulukita. Ultimo degrau antes de Edania.",
-    "en": "Top of Ulukita. Last step before Edania."
-   },
-   "dpStat": null,
-   "source": "grumpygreen"
-  },
-  {
-   "id": "aetherion",
-   "name": "Aetherion Castle",
-   "region": "Edania Outer",
-   "party": "Solo",
-   "ap": 350,
-   "dp": 427,
-   "stat": 1565,
-   "statCap": 1595,
-   "capPct": 70,
-   "silver": 2112000000,
-   "silverSource": "medido",
-   "items": [
-    "Primordial Black Stone"
-   ],
-   "note": {
-    "pt": "Porta de entrada de Edania. Trash vale 105 mil por item.",
-    "en": "Edania's entry point. Trash is worth 105k per item."
-   },
-   "dpStat": 615,
-   "source": "bdf-outer"
-  },
-  {
-   "id": "nymphamare",
-   "name": "Nymphamare Castle",
-   "region": "Edania Outer",
-   "party": "Solo",
-   "ap": 370,
-   "dp": 440,
-   "stat": 1660,
-   "statCap": 1690,
-   "capPct": 70,
-   "silver": 2320000000,
-   "silverSource": "derivado",
-   "items": [
-    "Crystallized Energy of Endtimes"
-   ],
-   "note": {
-    "pt": "Segundo degrau. DP sobe mais que AP: 720 recomendado.",
-    "en": "Second step. DP climbs faster than AP: 720 recommended."
-   },
-   "dpStat": 720,
-   "source": "bdf-outer"
-  },
-  {
-   "id": "orbita",
-   "name": "Orbita Castle",
-   "region": "Edania Outer",
-   "party": "Solo",
-   "ap": 380,
-   "dp": 450,
-   "stat": 1770,
-   "statCap": 1800,
-   "capPct": 70,
-   "silver": 2800000000,
-   "silverSource": "derivado",
-   "items": [
-    "Crystallized Energy of Endtimes"
-   ],
-   "note": {
-    "pt": "Trash de 140 mil por item. Salto real de renda.",
-    "en": "Trash worth 140k per item. A real income jump."
-   },
-   "dpStat": 760,
-   "source": "bdf-outer"
-  },
-  {
-   "id": "floodlands",
-   "name": "Dark Energy Floodlands",
-   "region": "Edania Outer",
-   "party": "Solo",
-   "ap": 385,
-   "dp": 450,
-   "stat": 1850,
-   "statCap": 1880,
-   "capPct": 70,
-   "silver": 2600000000,
-   "silverSource": "derivado",
-   "items": [
-    "Herald's Crystal"
-   ],
-   "note": {
-    "pt": "Dois tipos de trash; o Dark Faded Energy e o que paga.",
-    "en": "Two trash types; Dark Faded Energy is the one that pays."
-   },
-   "dpStat": 760,
-   "source": "bdf-outer"
-  },
-  {
-   "id": "tenebraum",
-   "name": "Tenebraum Castle",
-   "region": "Edania Outer",
-   "party": "Solo",
-   "ap": 390,
-   "dp": 450,
-   "stat": 1890,
-   "statCap": 1920,
-   "capPct": 70,
-   "silver": 2940000000,
-   "silverSource": "derivado",
-   "items": [
-    "Herald's Crystal"
-   ],
-   "note": {
-    "pt": "Melhor trash do Outer: 147 mil por item.",
-    "en": "Best trash in Outer: 147k per item."
-   },
-   "dpStat": 760,
-   "source": "bdf-outer"
-  },
-  {
-   "id": "zephyros",
-   "name": "Zephyros Castle",
-   "region": "Edania Outer",
-   "party": "Solo",
-   "ap": 395,
-   "dp": 460,
-   "stat": 1980,
-   "statCap": 2010,
-   "capPct": 70,
-   "silver": 2540000000,
-   "silverSource": "derivado",
-   "items": [
-    "Primordial Black Stone"
-   ],
-   "note": {
-    "pt": "Fim do Outer. Exige 800 DP, o maior salto defensivo do jogo.",
-    "en": "End of Outer. Demands 800 DP, the biggest defensive jump in the game."
-   },
-   "dpStat": 800,
-   "source": "bdf-outer"
-  },
-  {
-   "id": "aphrodon",
-   "name": "Aphrodon Temple",
-   "region": "Edania Inner",
-   "party": "Solo",
-   "ap": 400,
-   "dp": 470,
-   "stat": 2090,
-   "statCap": 2120,
-   "capPct": 70,
-   "silver": 3100000000,
-   "silverSource": "derivado",
-   "items": [
-    "Nev's Fragment",
-    "Fusion Shard"
-   ],
-   "note": {
-    "pt": "Comeco do Inner. 12 rotacoes, mapa longo.",
-    "en": "Start of Inner. Twelve rotations, long map."
-   },
-   "dpStat": 810,
-   "source": "bdf-inner"
-  },
-  {
-   "id": "hermesia",
-   "name": "Hermesia Inner Castle",
-   "region": "Edania Inner",
-   "party": "Solo",
-   "ap": 405,
-   "dp": 485,
-   "stat": 2220,
-   "statCap": 2250,
-   "capPct": 70,
-   "silver": 3210000000,
-   "silverSource": "derivado",
-   "items": [
-    "Nev's Fragment"
-   ],
-   "note": {
-    "pt": "So 4 rotacoes: ciclo curto, bom para sessoes de 1 hora.",
-    "en": "Only four rotations: short cycle, good for one-hour sessions."
-   },
-   "dpStat": 825,
-   "source": "bdf-inner"
-  },
-  {
-   "id": "magaia",
-   "name": "Magaia Temple",
-   "region": "Edania Inner",
-   "party": "Solo",
-   "ap": 410,
-   "dp": 490,
-   "stat": 2340,
-   "statCap": 2370,
-   "capPct": 70,
-   "silver": 3620000000,
-   "silverSource": "derivado",
-   "items": [
-    "Nev's Fragment",
-    "Fusion Shard"
-   ],
-   "note": {
-    "pt": "3 rotacoes apenas. Densidade altissima.",
-    "en": "Just three rotations. Extremely high density."
-   },
-   "dpStat": 840,
-   "source": "bdf-inner"
-  },
-  {
-   "id": "aresion",
-   "name": "Aresion Temple",
-   "region": "Edania Inner",
-   "party": "Solo",
-   "ap": 415,
-   "dp": 495,
-   "stat": 2455,
-   "statCap": 2485,
-   "capPct": 70,
-   "silver": 3420000000,
-   "silverSource": "derivado",
-   "items": [
-    "Fusion Shard"
-   ],
-   "note": {
-    "pt": "Quarto degrau do Inner. Drop de material de Apeiron.",
-    "en": "Fourth step of Inner. Drops Apeiron accessory materials."
-   },
-   "dpStat": 855,
-   "source": "bdf-inner"
-  },
-  {
-   "id": "scales",
-   "name": "Scales of Judgment",
-   "region": "Edania Inner",
-   "party": "3P",
-   "ap": 415,
-   "dp": 500,
-   "stat": 2455,
-   "statCap": 2485,
-   "capPct": 70,
-   "silver": 3730000000,
-   "silverSource": "derivado",
-   "items": [
-    "Nev's Fragment"
-   ],
-   "note": {
-    "pt": "Conteudo de trio no endgame. Exige build e entrosamento.",
-    "en": "Endgame trio content. Needs a build and good coordination."
-   },
-   "dpStat": 860,
-   "source": "bdf-inner"
-  },
-  {
    "id": "event-horizon",
-   "name": "Event Horizon",
-   "region": "Edania Inner",
+   "garmothId": 218,
+   "name": {
+    "pt": "Event Horizon",
+    "en": "Event Horizon"
+   },
+   "tier": "Meta",
+   "stat": 2600,
+   "dpStat": 870,
+   "silver": 4059581734,
+   "trashPerHour": 2600,
+   "xp": 298100000,
+   "xpPct": 4.1,
+   "level": 75,
+   "toLevel": "24h 22m",
    "party": "Solo",
-   "ap": 420,
-   "dp": 505,
-   "stat": 2570,
-   "statCap": 2600,
-   "capPct": 70,
-   "silver": 3930000000,
-   "silverSource": "derivado",
    "items": [
     "Fusion Shard",
     "Nev's Fragment"
@@ -1024,284 +42,1718 @@
     "pt": "Zona mais dura do jogo. Trash de 196 mil por item.",
     "en": "Hardest zone in the game. Trash worth 196k per item."
    },
-   "dpStat": 870,
-   "source": "bdf-inner"
+   "source": "garmoth"
   },
   {
-   "id": "elvia-saunil",
-   "name": "Saunil Camp [Elvia]",
-   "region": "Elvia Calpheon",
-   "party": "Solo",
-   "ap": 250,
-   "dp": 330,
-   "stat": null,
-   "statCap": null,
-   "capPct": 70,
-   "dpStat": null,
-   "silver": 300000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone",
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Entrada do Elvia. Dois tipos de trash, ~25 mil cada. Fontes divergem no AP (250-270): vale o menor.",
-    "en": "Elvia entry point. Two trash types, ~25k each. Sources differ on AP (250-270): the lower one applies."
+   "id": "scales-of-judgment",
+   "garmothId": 217,
+   "name": {
+    "pt": "Scales of Judgment",
+    "en": "Scales of Judgment"
    },
-   "source": "bdf-elvia"
-  },
-  {
-   "id": "elvia-rhutum",
-   "name": "Rhutum Garrison [Elvia]",
-   "region": "Elvia Calpheon",
-   "party": "Solo",
-   "ap": 260,
-   "dp": 360,
-   "stat": null,
-   "statCap": null,
-   "capPct": 70,
-   "dpStat": null,
-   "silver": 330000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone",
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Degrau acima de Saunil, mesmo loot base.",
-    "en": "One step above Saunil, same base loot."
-   },
-   "source": "bdf-elvia"
-  },
-  {
-   "id": "elvia-gehaku",
-   "name": "Gehaku Plain [Elvia]",
-   "region": "Elvia Calpheon",
-   "party": "Solo",
-   "ap": 290,
-   "dp": 370,
-   "stat": null,
-   "statCap": null,
-   "capPct": 70,
-   "dpStat": null,
-   "silver": 350000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone",
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Area aberta, favorece classes moveis.",
-    "en": "Open area, favors mobile classes."
-   },
-   "source": "bdf-elvia"
-  },
-  {
-   "id": "elvia-hexe",
-   "name": "Hexe Sanctuary [Elvia]",
-   "region": "Elvia Calpheon",
-   "party": "Solo",
-   "ap": 300,
-   "dp": 390,
-   "stat": null,
-   "statCap": null,
-   "capPct": 70,
-   "dpStat": null,
-   "silver": 650000000,
-   "silverSource": "medido",
-   "items": [
-    "Black Stone",
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "O melhor do Elvia Calpheon e um dos spots mais duros do jogo. A faixa medida vai de 650 mi a 1,2 bi por hora; aqui fica o piso.",
-    "en": "Best of Elvia Calpheon and one of the game's hardest spots. Measured range is 650M to 1.2B per hour; the floor is shown here."
-   },
-   "source": "bdf-elvia"
-  },
-  {
-   "id": "elvia-quint",
-   "name": "Quint Hill [Elvia]",
-   "region": "Elvia Calpheon",
-   "party": "Solo",
-   "ap": 310,
-   "dp": 400,
-   "stat": null,
-   "statCap": null,
-   "capPct": 70,
-   "dpStat": null,
-   "silver": null,
-   "silverSource": null,
-   "items": [
-    "Black Stone",
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Trolls com o trash mais caro do Elvia Calpheon (~96 mil por item), mas sem medicao publica de silver/hora.",
-    "en": "Trolls with the priciest trash in Elvia Calpheon (~96k per item), but no public silver/hour measurement."
-   },
-   "source": "bdf-elvia"
-  },
-  {
-   "id": "elvia-orc",
-   "name": "Orc Camp [Elvia]",
-   "region": "Elvia Serendia",
-   "party": "Solo",
-   "ap": 280,
-   "dp": 340,
-   "stat": null,
-   "statCap": null,
-   "capPct": 70,
-   "dpStat": null,
-   "silver": null,
-   "silverSource": null,
-   "items": [
-    "Black Stone",
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Atributo Valtarra. Faixa de AP publicada e 280-320: vale o menor.",
-    "en": "Valtarra attribute. Published AP range is 280-320: the lower one applies."
-   },
-   "source": "bdf-elvia"
-  },
-  {
-   "id": "elvia-monastery",
-   "name": "Bloody Monastery [Elvia]",
-   "region": "Elvia Serendia",
-   "party": "Solo",
-   "ap": 260,
-   "dp": 340,
-   "stat": null,
-   "statCap": null,
-   "capPct": 70,
-   "dpStat": null,
-   "silver": null,
-   "silverSource": null,
-   "items": [
-    "Black Stone",
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Cultistas em area fechada.",
-    "en": "Cultists in a closed area."
-   },
-   "source": "bdf-elvia"
-  },
-  {
-   "id": "elvia-naga",
-   "name": "Swamp Naga [Elvia]",
-   "region": "Elvia Serendia",
-   "party": "Solo",
-   "ap": 260,
-   "dp": 320,
-   "stat": null,
-   "statCap": null,
-   "capPct": 70,
-   "dpStat": null,
-   "silver": null,
-   "silverSource": null,
-   "items": [
-    "Black Stone",
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Atributo Narc. Faixa publicada 260-280.",
-    "en": "Narc attribute. Published range 260-280."
-   },
-   "source": "bdf-elvia"
-  },
-  {
-   "id": "elvia-fogan",
-   "name": "Swamp Fogan [Elvia]",
-   "region": "Elvia Serendia",
-   "party": "Solo",
-   "ap": 260,
-   "dp": 320,
-   "stat": null,
-   "statCap": null,
-   "capPct": 70,
-   "dpStat": null,
-   "silver": null,
-   "silverSource": null,
-   "items": [
-    "Black Stone",
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Atributo Okiara, vizinho dos Naga.",
-    "en": "Okiara attribute, neighbors the Nagas."
-   },
-   "source": "bdf-elvia"
-  },
-  {
-   "id": "elvia-biraghi",
-   "name": "Biraghi Den [Elvia]",
-   "region": "Elvia Serendia",
-   "party": "Solo",
-   "ap": 240,
-   "dp": 310,
-   "stat": null,
-   "statCap": null,
-   "capPct": 70,
-   "dpStat": null,
-   "silver": null,
-   "silverSource": null,
-   "items": [
-    "Black Stone",
-    "Caphras Stone"
-   ],
-   "note": {
-    "pt": "Atributo Narc. Faixa publicada 240-270.",
-    "en": "Narc attribute. Published range 240-270."
-   },
-   "source": "bdf-elvia"
-  },
-  {
-   "id": "elvia-castle",
-   "name": "Castle Ruins [Elvia]",
-   "region": "Elvia Serendia",
+   "tier": "Meta",
+   "stat": 2485,
+   "dpStat": 850,
+   "silver": 3560087334,
+   "trashPerHour": 2485,
+   "xp": 258000000,
+   "xpPct": 3.55,
+   "level": 74,
+   "toLevel": "28h 9m",
    "party": "3P",
-   "ap": 250,
-   "dp": 320,
-   "stat": null,
-   "statCap": null,
-   "capPct": 70,
-   "dpStat": null,
-   "silver": null,
-   "silverSource": null,
    "items": [
-    "Black Stone",
-    "Caphras Stone"
+    "Nev's Fragment"
    ],
    "note": {
-    "pt": "Conteudo de trio. Atributo Valtarra.",
-    "en": "Trio content. Valtarra attribute."
+    "pt": "Conteudo de trio no endgame. Exige build e entrosamento.",
+    "en": "Endgame trio content. Needs a build and good coordination."
    },
-   "source": "bdf-elvia"
+   "source": "garmoth"
   },
   {
-   "id": "elvia-altar",
-   "name": "Altar Imp Habitat [Elvia]",
-   "region": "Elvia Serendia",
-   "party": "2P",
-   "ap": 220,
-   "dp": 310,
-   "stat": null,
-   "statCap": null,
-   "capPct": 70,
-   "dpStat": null,
-   "silver": null,
-   "silverSource": null,
+   "id": "magaia-temple",
+   "garmothId": 215,
+   "name": {
+    "pt": "Santuário de Magaia",
+    "en": "Magaia Temple"
+   },
+   "tier": "Meta",
+   "stat": 2370,
+   "dpStat": 840,
+   "silver": 3401264622,
+   "trashPerHour": 2370,
+   "xp": 239900000,
+   "xpPct": 3.3,
+   "level": 73,
+   "toLevel": "30h 17m",
+   "party": "Solo",
    "items": [
-    "Black Stone",
+    "Nev's Fragment",
+    "Fusion Shard"
+   ],
+   "note": {
+    "pt": "3 rotacoes apenas. Densidade altissima.",
+    "en": "Just three rotations. Extremely high density."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "hermesia-inner-castle",
+   "garmothId": 214,
+   "name": {
+    "pt": "Castelo Interno de Hermesia",
+    "en": "Hermesia Inner Castle"
+   },
+   "tier": "Meta",
+   "stat": 2250,
+   "dpStat": 830,
+   "silver": 2937921557,
+   "trashPerHour": 2250,
+   "xp": 291100000,
+   "xpPct": 4.01,
+   "level": 72,
+   "toLevel": "24h 57m",
+   "party": "Solo",
+   "items": [
+    "Nev's Fragment"
+   ],
+   "note": {
+    "pt": "So 4 rotacoes: ciclo curto, bom para sessoes de 1 hora.",
+    "en": "Only four rotations: short cycle, good for one-hour sessions."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "gavinya-coastal-cliff",
+   "garmothId": 212,
+   "name": {
+    "pt": "Gavinya Coastal Cliff",
+    "en": "Gavinya Coastal Cliff"
+   },
+   "tier": "Meta",
+   "stat": 2020,
+   "dpStat": 820,
+   "silver": 2918917723,
+   "trashPerHour": 2009,
+   "xp": 212400000,
+   "xpPct": 2.93,
+   "level": 71,
+   "toLevel": "34h 11m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "aphrodon-temple",
+   "garmothId": 213,
+   "name": {
+    "pt": "Santuário de Aphrodon",
+    "en": "Aphrodon Temple"
+   },
+   "tier": "Meta",
+   "stat": 2120,
+   "dpStat": 810,
+   "silver": 2653960245,
+   "trashPerHour": 2120,
+   "xp": 222000000,
+   "xpPct": 3.06,
+   "level": 71,
+   "toLevel": "32h 43m",
+   "party": "Solo",
+   "items": [
+    "Nev's Fragment",
+    "Fusion Shard"
+   ],
+   "note": {
+    "pt": "Comeco do Inner. 12 rotacoes, mapa longo.",
+    "en": "Start of Inner. Twelve rotations, long map."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "zephyros-castle",
+   "garmothId": 194,
+   "name": {
+    "pt": "Castelo de Zephyros",
+    "en": "Zephyros Castle"
+   },
+   "tier": "Meta",
+   "stat": 2010,
+   "dpStat": 800,
+   "silver": 2595936990,
+   "trashPerHour": 2010,
+   "xp": 148800000,
+   "xpPct": 2.05,
+   "level": 70,
+   "toLevel": "48h 49m",
+   "party": "Solo",
+   "items": [
+    "Primordial Black Stone"
+   ],
+   "note": {
+    "pt": "Fim do Outer. Exige 800 DP, o maior salto defensivo do jogo.",
+    "en": "End of Outer. Demands 800 DP, the biggest defensive jump in the game."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "tenebraum-castle",
+   "garmothId": 193,
+   "name": {
+    "pt": "Castelo de Tenebraum",
+    "en": "Tenebraum Castle"
+   },
+   "tier": "Competitive",
+   "stat": 1920,
+   "dpStat": 760,
+   "silver": 2375057528,
+   "trashPerHour": 1920,
+   "xp": 165900000,
+   "xpPct": 2.28,
+   "level": 69,
+   "toLevel": "43h 47m",
+   "party": "Solo",
+   "items": [
+    "Herald's Crystal"
+   ],
+   "note": {
+    "pt": "Melhor trash do Outer: 147 mil por item.",
+    "en": "Best trash in Outer: 147k per item."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "zephyros-dark-energy-floodlands",
+   "garmothId": 210,
+   "name": {
+    "pt": "(Zephyros) Dark Energy Floodlands",
+    "en": "(Zephyros) Dark Energy Floodlands"
+   },
+   "tier": "Competitive",
+   "stat": 1880,
+   "dpStat": 760,
+   "silver": 2216704388,
+   "trashPerHour": 1880,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "star-s-tomb",
+   "garmothId": 200,
+   "name": {
+    "pt": "Túmulo da Estrela",
+    "en": "Star's Tomb"
+   },
+   "tier": "Meta",
+   "stat": 1950,
+   "dpStat": 800,
+   "silver": 2214716272,
+   "trashPerHour": 1950,
+   "xp": 137000000,
+   "xpPct": 1.89,
+   "level": 70,
+   "toLevel": "53h 1m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "orbita-castle",
+   "garmothId": 185,
+   "name": {
+    "pt": "Castelo de Orbita",
+    "en": "Orbita Castle"
+   },
+   "tier": "Competitive",
+   "stat": 1800,
+   "dpStat": 740,
+   "silver": 2162313879,
+   "trashPerHour": 1800,
+   "xp": 160800000,
+   "xpPct": 2.21,
+   "level": 68,
+   "toLevel": "45h 10m",
+   "party": "Solo",
+   "items": [
+    "Crystallized Energy of Endtimes"
+   ],
+   "note": {
+    "pt": "Trash de 140 mil por item. Salto real de renda.",
+    "en": "Trash worth 140k per item. A real income jump."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "orbita-dark-energy-floodlands",
+   "garmothId": 209,
+   "name": {
+    "pt": "(Orbita) Dark Energy Floodlands",
+    "en": "(Orbita) Dark Energy Floodlands"
+   },
+   "tier": "Competitive",
+   "stat": 1880,
+   "dpStat": 760,
+   "silver": 2144942913,
+   "trashPerHour": 1645,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "great-red-sea-dark-energy-floodlands",
+   "garmothId": 208,
+   "name": {
+    "pt": "(Great Red Sea) Dark Energy Floodlands",
+    "en": "(Great Red Sea) Dark Energy Floodlands"
+   },
+   "tier": "Competitive",
+   "stat": 1880,
+   "dpStat": 760,
+   "silver": 2143753242,
+   "trashPerHour": 1205,
+   "xp": 141200000,
+   "xpPct": 1.94,
+   "level": 69,
+   "toLevel": "51h 26m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "sycraia-underwater-ruins-lower",
+   "garmothId": 201,
+   "name": {
+    "pt": "Camada Inferior das Ruínas de Sikraia",
+    "en": "Sycraia Underwater Ruins (Lower)"
+   },
+   "tier": "Meta",
+   "stat": 1935,
+   "dpStat": 800,
+   "silver": 2072161691,
+   "trashPerHour": 1935,
+   "xp": 154900000,
+   "xpPct": 2.13,
+   "level": 70,
+   "toLevel": "46h 53m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "nymphamare-castle",
+   "garmothId": 184,
+   "name": {
+    "pt": "Castelo de Nymphamare",
+    "en": "Nymphamare Castle"
+   },
+   "tier": "Competitive",
+   "stat": 1690,
+   "dpStat": 720,
+   "silver": 1696682211,
+   "trashPerHour": 1690,
+   "xp": 143900000,
+   "xpPct": 1.98,
+   "level": 67,
+   "toLevel": "50h 29m",
+   "party": "Solo",
+   "items": [
+    "Crystallized Energy of Endtimes"
+   ],
+   "note": {
+    "pt": "Segundo degrau. DP sobe mais que AP: 720 recomendado.",
+    "en": "Second step. DP climbs faster than AP: 720 recommended."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "aetherion-castle",
+   "garmothId": 183,
+   "name": {
+    "pt": "Castelo de Aetherion",
+    "en": "Aetherion Castle"
+   },
+   "tier": "Competitive",
+   "stat": 1595,
+   "dpStat": 615,
+   "silver": 1596244461,
+   "trashPerHour": 1595,
+   "xp": 126100000,
+   "xpPct": 1.74,
+   "level": 66,
+   "toLevel": "57h 34m",
+   "party": "Solo",
+   "items": [
+    "Primordial Black Stone"
+   ],
+   "note": {
+    "pt": "Porta de entrada de Edania. Trash vale 105 mil por item.",
+    "en": "Edania's entry point. Trash is worth 105k per item."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "darkseeker-s-retreat",
+   "garmothId": 153,
+   "name": {
+    "pt": "Berço dos Sectários da Escuridão",
+    "en": "Darkseeker's Retreat"
+   },
+   "tier": "Meta",
+   "stat": 1490,
+   "dpStat": 540,
+   "silver": 1568596963,
+   "trashPerHour": 1490,
+   "xp": 86300000,
+   "xpPct": 1.19,
+   "level": 65,
+   "toLevel": "84h 7m",
+   "party": "Solo",
+   "items": [
     "Caphras Stone"
    ],
    "note": {
-    "pt": "O mais acessivel do Elvia. Dupla recomendada.",
-    "en": "Most accessible Elvia zone. Duo recommended."
+    "pt": "Atencao: cap de 30%, nao 70%. AP extra rende muito menos aqui.",
+    "en": "Careful: 30% cap, not 70%. Extra AP is worth far less here."
    },
-   "source": "bdf-elvia"
+   "source": "garmoth"
+  },
+  {
+   "id": "golden-pig-cave-fortune",
+   "garmothId": 167,
+   "name": {
+    "pt": "Caverna Dourada de Porco Dourado Fortuna",
+    "en": "Golden Pig Cave (Fortune)"
+   },
+   "tier": "Competitive",
+   "stat": 1490,
+   "dpStat": 660,
+   "silver": 1377272703,
+   "trashPerHour": 1490,
+   "xp": 64700000,
+   "xpPct": 0.89,
+   "level": 65,
+   "toLevel": "112h 19m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "hexe-sanctuary",
+   "garmothId": 124,
+   "name": {
+    "pt": "Santuário Hexe",
+    "en": "Hexe Sanctuary"
+   },
+   "tier": "Meta",
+   "stat": 1130,
+   "dpStat": 430,
+   "silver": 1339230056,
+   "trashPerHour": 1130,
+   "xp": 59800000,
+   "xpPct": 0.82,
+   "level": 62,
+   "toLevel": "121h 30m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "quint-hill",
+   "garmothId": 121,
+   "name": {
+    "pt": "Colina de Quint",
+    "en": "Quint Hill"
+   },
+   "tier": "Competitive",
+   "stat": 1295,
+   "dpStat": 440,
+   "silver": 1297454464,
+   "trashPerHour": 1295,
+   "xp": 66800000,
+   "xpPct": 0.92,
+   "level": 63,
+   "toLevel": "108h 48m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "golden-pig-cave-unlucky",
+   "garmothId": 168,
+   "name": {
+    "pt": "Caverna Dourada de Porco Sem Sorte",
+    "en": "Golden Pig Cave (Unlucky)"
+   },
+   "tier": null,
+   "stat": 1540,
+   "dpStat": 670,
+   "silver": 1260916794,
+   "trashPerHour": 1540,
+   "xp": 82900000,
+   "xpPct": 1.14,
+   "level": 65,
+   "toLevel": "87h 40m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "dokkebi-forest",
+   "garmothId": 166,
+   "name": {
+    "pt": "Floresta Dokebi",
+    "en": "Dokkebi Forest"
+   },
+   "tier": "Competitive",
+   "stat": 1445,
+   "dpStat": 530,
+   "silver": 1192774626,
+   "trashPerHour": 1300,
+   "xp": 69400000,
+   "xpPct": 0.96,
+   "level": 64,
+   "toLevel": "104h 41m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "city-of-the-dead",
+   "garmothId": 147,
+   "name": {
+    "pt": "Cidade dos Mortos",
+    "en": "City of the Dead"
+   },
+   "tier": null,
+   "stat": 1295,
+   "dpStat": 410,
+   "silver": 1074985220,
+   "trashPerHour": 1295,
+   "xp": 75400000,
+   "xpPct": 1.04,
+   "level": 63,
+   "toLevel": "96h 21m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "tungrad-ruins",
+   "garmothId": 148,
+   "name": {
+    "pt": "Ruínas de Tungrad",
+    "en": "Tungrad Ruins"
+   },
+   "tier": null,
+   "stat": 1395,
+   "dpStat": 440,
+   "silver": 993557469,
+   "trashPerHour": 1395,
+   "xp": 61400000,
+   "xpPct": 0.85,
+   "level": 64,
+   "toLevel": "118h 14m",
+   "party": "Solo",
+   "items": [
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Topo do Ulukita. Ultimo degrau antes de Edania.",
+    "en": "Top of Ulukita. Last step before Edania."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "yzrahid-highlands",
+   "garmothId": 157,
+   "name": {
+    "pt": "Planície de Yzrahid",
+    "en": "Yzrahid Highlands"
+   },
+   "tier": null,
+   "stat": 1180,
+   "dpStat": 440,
+   "silver": 849415064,
+   "trashPerHour": 1180,
+   "xp": 78300000,
+   "xpPct": 1.08,
+   "level": 63,
+   "toLevel": "92h 46m",
+   "party": "Solo",
+   "items": [
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Mobs do tipo animal, area aberta. Bom para classes de mobilidade.",
+    "en": "Animal-type mobs, open area. Good for mobile classes."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "ash-forest",
+   "garmothId": 27,
+   "name": {
+    "pt": "Floresta Cinzenta",
+    "en": "Ash Forest"
+   },
+   "tier": null,
+   "stat": 1130,
+   "dpStat": 430,
+   "silver": 784096618,
+   "trashPerHour": 1130,
+   "xp": 76300000,
+   "xpPct": 1.05,
+   "level": 62,
+   "toLevel": "95h 12m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "jade-starlight-forest",
+   "garmothId": 110,
+   "name": {
+    "pt": "Floresta Jade Estelar",
+    "en": "Jade Starlight Forest"
+   },
+   "tier": "Competitive",
+   "stat": 950,
+   "dpStat": 370,
+   "silver": 762677167,
+   "trashPerHour": 2362,
+   "xp": 22600000,
+   "xpPct": 0.31,
+   "level": 61,
+   "toLevel": "320h 39m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "winter-tree-fossil-280pa",
+   "garmothId": 149,
+   "name": {
+    "pt": "Fóssil da Árvore de Inverno (280pa)",
+    "en": "Winter Tree Fossil (280pa)"
+   },
+   "tier": null,
+   "stat": 856,
+   "dpStat": 370,
+   "silver": 757307603,
+   "trashPerHour": 23032,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "gyfin-rhasia-temple-underground",
+   "garmothId": 97,
+   "name": {
+    "pt": "Templo de Gyfin Rhasia (Subsolo)",
+    "en": "Gyfin Rhasia Temple (Underground)"
+   },
+   "tier": "Competitive",
+   "stat": 1030,
+   "dpStat": 410,
+   "silver": 730442604,
+   "trashPerHour": 1030,
+   "xp": 53800000,
+   "xpPct": 0.74,
+   "level": 62,
+   "toLevel": "134h 58m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "olun-s-valley",
+   "garmothId": 5,
+   "name": {
+    "pt": "Cachoeira de Olun",
+    "en": "Olun's Valley"
+   },
+   "tier": null,
+   "stat": 1030,
+   "dpStat": 410,
+   "silver": 694001212,
+   "trashPerHour": 1030,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": "3P",
+   "items": [
+    "Caphras Stone"
+   ],
+   "note": {
+    "pt": "Trio coordenado. Um puxa, dois limpam.",
+    "en": "Coordinated trio. One pulls, two clear."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "honglim-base",
+   "garmothId": 165,
+   "name": {
+    "pt": "Base Hong-Nim",
+    "en": "Honglim Base"
+   },
+   "tier": "Competitive",
+   "stat": 950,
+   "dpStat": 390,
+   "silver": 692352558,
+   "trashPerHour": 22136,
+   "xp": 37800000,
+   "xpPct": 0.52,
+   "level": 61,
+   "toLevel": "192h 18m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "giant-s-camp",
+   "garmothId": 120,
+   "name": {
+    "pt": "Acampamento dos Gigantes",
+    "en": "Giant's Camp"
+   },
+   "tier": "Competitive",
+   "stat": 1000,
+   "dpStat": 410,
+   "silver": 662732765,
+   "trashPerHour": 18187,
+   "xp": 21400000,
+   "xpPct": 0.29,
+   "level": 61,
+   "toLevel": "339h 47m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "sycraia-underwater-ruins-upper",
+   "garmothId": 202,
+   "name": {
+    "pt": "Camada Superior das Ruínas de Sikraia",
+    "en": "Sycraia Underwater Ruins (Upper)"
+   },
+   "tier": null,
+   "stat": 1130,
+   "dpStat": 440,
+   "silver": 651843605,
+   "trashPerHour": 1130,
+   "xp": 54400000,
+   "xpPct": 0.75,
+   "level": 62,
+   "toLevel": "133h 25m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "waragon-nest",
+   "garmothId": 88,
+   "name": {
+    "pt": "Ninho de Waragon",
+    "en": "Waragon Nest"
+   },
+   "tier": null,
+   "stat": 250,
+   "dpStat": 160,
+   "silver": 628036999,
+   "trashPerHour": 46974,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "crypt-of-resting-thoughts",
+   "garmothId": 8,
+   "name": {
+    "pt": "Túmulo do Pensamento Adormecido",
+    "en": "Crypt of Resting Thoughts"
+   },
+   "tier": null,
+   "stat": 1130,
+   "dpStat": 440,
+   "silver": 611719233,
+   "trashPerHour": 1130,
+   "xp": 67500000,
+   "xpPct": 0.93,
+   "level": 62,
+   "toLevel": "107h 36m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "mrowek-labyrinth",
+   "garmothId": 111,
+   "name": {
+    "pt": "Labirinto de Mrowek",
+    "en": "Mrowek Labyrinth"
+   },
+   "tier": null,
+   "stat": 856,
+   "dpStat": 370,
+   "silver": 570475060,
+   "trashPerHour": 22512,
+   "xp": 41100000,
+   "xpPct": 0.57,
+   "level": 60,
+   "toLevel": "176h 31m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "rhutum-outstation",
+   "garmothId": 122,
+   "name": {
+    "pt": "Acampamento Rhutum",
+    "en": "Rhutum Outstation"
+   },
+   "tier": null,
+   "stat": 835,
+   "dpStat": 380,
+   "silver": 566652556,
+   "trashPerHour": 16488,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "orc-camp",
+   "garmothId": 17,
+   "name": {
+    "pt": "Acampamento de Orc",
+    "en": "Orc Camp"
+   },
+   "tier": "Competitive",
+   "stat": 856,
+   "dpStat": 350,
+   "silver": 552027210,
+   "trashPerHour": 1642,
+   "xp": 31300000,
+   "xpPct": 0.43,
+   "level": 60,
+   "toLevel": "232h 21m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "swamp-fogan",
+   "garmothId": 14,
+   "name": {
+    "pt": "Habitat de Fogan do Pântano",
+    "en": "Swamp Fogan"
+   },
+   "tier": "Competitive",
+   "stat": 803,
+   "dpStat": 290,
+   "silver": 542884446,
+   "trashPerHour": 13916,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "altar-imp-habitat",
+   "garmothId": 13,
+   "name": {
+    "pt": "Habitat de Diabrete de Altar",
+    "en": "Altar Imp Habitat"
+   },
+   "tier": null,
+   "stat": 753,
+   "dpStat": 280,
+   "silver": 529420216,
+   "trashPerHour": 11620,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "saunil-camp",
+   "garmothId": 123,
+   "name": {
+    "pt": "Acampamento Saunil",
+    "en": "Saunil Camp"
+   },
+   "tier": null,
+   "stat": 813,
+   "dpStat": 330,
+   "silver": 503017654,
+   "trashPerHour": 16545,
+   "xp": 41100000,
+   "xpPct": 0.57,
+   "level": 59,
+   "toLevel": "176h 47m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "gyfin-rhasia-temple-upper",
+   "garmothId": 33,
+   "name": {
+    "pt": "Templo de Gyfin Rhasia (Superfície)",
+    "en": "Gyfin Rhasia Temple (Upper)"
+   },
+   "tier": null,
+   "stat": 825,
+   "dpStat": 280,
+   "silver": 472385994,
+   "trashPerHour": 18606,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "swamp-naga",
+   "garmothId": 15,
+   "name": {
+    "pt": "Habitat de Naga do Pântano",
+    "en": "Swamp Naga"
+   },
+   "tier": null,
+   "stat": 803,
+   "dpStat": 290,
+   "silver": 442402720,
+   "trashPerHour": 11891,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "kratuga-ancient-ruins",
+   "garmothId": 9,
+   "name": {
+    "pt": "Ruínas Antigas de Kratuka",
+    "en": "Kratuga Ancient Ruins"
+   },
+   "tier": null,
+   "stat": 756,
+   "dpStat": 250,
+   "silver": 423647051,
+   "trashPerHour": 28028,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "biraghi-den",
+   "garmothId": 12,
+   "name": {
+    "pt": "Esconderijo Biraghi",
+    "en": "Biraghi Den"
+   },
+   "tier": null,
+   "stat": 753,
+   "dpStat": 280,
+   "silver": 413772696,
+   "trashPerHour": 13566,
+   "xp": 26200000,
+   "xpPct": 0.36,
+   "level": 58,
+   "toLevel": "276h 41m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "blood-wolf-settlement",
+   "garmothId": 22,
+   "name": {
+    "pt": "Aldeia do Lobo Vermelho",
+    "en": "Blood Wolf Settlement"
+   },
+   "tier": null,
+   "stat": 312,
+   "dpStat": 150,
+   "silver": 395390407,
+   "trashPerHour": 9934,
+   "xp": 22500000,
+   "xpPct": 0.31,
+   "level": 57,
+   "toLevel": "323h 21m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "sherekhan-necropolis-day",
+   "garmothId": 23,
+   "name": {
+    "pt": "Sherakhan (Dia)",
+    "en": "Sherekhan Necropolis (Day)"
+   },
+   "tier": null,
+   "stat": 365,
+   "dpStat": 170,
+   "silver": 385866176,
+   "trashPerHour": 15003,
+   "xp": 22100000,
+   "xpPct": 0.3,
+   "level": 57,
+   "toLevel": "328h 41m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "castle-ruins",
+   "garmothId": 16,
+   "name": {
+    "pt": "Ruínas do Castelo",
+    "en": "Castle Ruins"
+   },
+   "tier": null,
+   "stat": 774,
+   "dpStat": 280,
+   "silver": 373633678,
+   "trashPerHour": 10301,
+   "xp": 30300000,
+   "xpPct": 0.42,
+   "level": 58,
+   "toLevel": "239h 36m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "bloody-monastery",
+   "garmothId": 18,
+   "name": {
+    "pt": "Monastério Sangrento",
+    "en": "Bloody Monastery"
+   },
+   "tier": null,
+   "stat": 856,
+   "dpStat": 350,
+   "silver": 370373481,
+   "trashPerHour": 11583,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "ilha-de-padix",
+   "garmothId": 10,
+   "name": {
+    "pt": "Ilha de Padix",
+    "en": "Ilha de Padix"
+   },
+   "tier": null,
+   "stat": 825,
+   "dpStat": 340,
+   "silver": 359641282,
+   "trashPerHour": 1798,
+   "xp": 43600000,
+   "xpPct": 0.6,
+   "level": 59,
+   "toLevel": "166h 30m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "santuario-lua-crescente",
+   "garmothId": 85,
+   "name": {
+    "pt": "Santuário Lua Crescente",
+    "en": "Santuário Lua Crescente"
+   },
+   "tier": null,
+   "stat": 245,
+   "dpStat": 125,
+   "silver": 350382122,
+   "trashPerHour": 22344,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "tunkta",
+   "garmothId": 4,
+   "name": {
+    "pt": "Tunkta",
+    "en": "Tunkta"
+   },
+   "tier": null,
+   "stat": 825,
+   "dpStat": 340,
+   "silver": 348671123,
+   "trashPerHour": 9166,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "floresta-das-fadas-dos-dentes",
+   "garmothId": 26,
+   "name": {
+    "pt": "Floresta das Fadas dos Dentes",
+    "en": "Floresta das Fadas dos Dentes"
+   },
+   "tier": null,
+   "stat": 410,
+   "dpStat": 220,
+   "silver": 347137710,
+   "trashPerHour": 10675,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "vessel-of-inquisition-pillars",
+   "garmothId": 117,
+   "name": {
+    "pt": "Vessel of Inquisition Pillars",
+    "en": "Vessel of Inquisition Pillars"
+   },
+   "tier": null,
+   "stat": 800,
+   "dpStat": 280,
+   "silver": 341180800,
+   "trashPerHour": 10791,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "floresta-espinheiro",
+   "garmothId": 7,
+   "name": {
+    "pt": "Floresta Espinheiro",
+    "en": "Floresta Espinheiro"
+   },
+   "tier": null,
+   "stat": 756,
+   "dpStat": 280,
+   "silver": 317569240,
+   "trashPerHour": 12640,
+   "xp": 14000000,
+   "xpPct": 0.19,
+   "level": 58,
+   "toLevel": "520h 2m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "vessel-of-inquisition",
+   "garmothId": 2,
+   "name": {
+    "pt": "Vessel of Inquisition",
+    "en": "Vessel of Inquisition"
+   },
+   "tier": null,
+   "stat": 800,
+   "dpStat": 280,
+   "silver": 303594952,
+   "trashPerHour": 8133,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "mirumok-ruins",
+   "garmothId": 28,
+   "name": {
+    "pt": "Ruínas de Mirumok",
+    "en": "Mirumok Ruins"
+   },
+   "tier": null,
+   "stat": 560,
+   "dpStat": 220,
+   "silver": 302273785,
+   "trashPerHour": 10983,
+   "xp": 26900000,
+   "xpPct": 0.37,
+   "level": 57,
+   "toLevel": "270h 14m",
+   "party": "2-3P",
+   "items": [
+    "Black Stone"
+   ],
+   "note": {
+    "pt": "Conteudo de grupo. Rende por rotacao coordenada, nao por AP bruto.",
+    "en": "Group content. Pays through coordinated rotation, not raw AP."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "multidao-de-centauro",
+   "garmothId": 90,
+   "name": {
+    "pt": "Multidão de Centauro",
+    "en": "Multidão de Centauro"
+   },
+   "tier": null,
+   "stat": 312,
+   "dpStat": 145,
+   "silver": 296332984,
+   "trashPerHour": 10547,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "ruinas-cadry",
+   "garmothId": 86,
+   "name": {
+    "pt": "Ruínas Cadry",
+    "en": "Ruínas Cadry"
+   },
+   "tier": null,
+   "stat": 245,
+   "dpStat": 125,
+   "silver": 296045775,
+   "trashPerHour": 8933,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "manshaum-forest",
+   "garmothId": 25,
+   "name": {
+    "pt": "Floresta Manshaum",
+    "en": "Manshaum Forest"
+   },
+   "tier": null,
+   "stat": 410,
+   "dpStat": 210,
+   "silver": 285954003,
+   "trashPerHour": 11059,
+   "xp": 23600000,
+   "xpPct": 0.32,
+   "level": 57,
+   "toLevel": "307h 50m",
+   "party": "Solo",
+   "items": [
+    "Forest Fury",
+    "Black Stone"
+   ],
+   "note": {
+    "pt": "Forest Fury e o drop que paga. Mobs se curam, mate rapido.",
+    "en": "Forest Fury is the drop that pays. Mobs self-heal, kill fast."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "habitat-fadus",
+   "garmothId": 38,
+   "name": {
+    "pt": "Habitat Fadus",
+    "en": "Habitat Fadus"
+   },
+   "tier": null,
+   "stat": 280,
+   "dpStat": 140,
+   "silver": 285532841,
+   "trashPerHour": 18867,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "ruina-de-tshira",
+   "garmothId": 24,
+   "name": {
+    "pt": "Ruína de Tshira",
+    "en": "Ruína de Tshira"
+   },
+   "tier": null,
+   "stat": 245,
+   "dpStat": 125,
+   "silver": 271681651,
+   "trashPerHour": 11376,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "aakman-temple",
+   "garmothId": 6,
+   "name": {
+    "pt": "Templo Aakman",
+    "en": "Aakman Temple"
+   },
+   "tier": null,
+   "stat": 600,
+   "dpStat": 250,
+   "silver": 263679473,
+   "trashPerHour": 15873,
+   "xp": 23100000,
+   "xpPct": 0.32,
+   "level": 58,
+   "toLevel": "313h 57m",
+   "party": "Solo",
+   "items": [
+    "Forbidden Book"
+   ],
+   "note": {
+    "pt": "Teleporte entre salas. Renda quase toda em trash loot.",
+    "en": "Teleports between rooms. Income is almost all trash loot."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "floresta-de-polly",
+   "garmothId": 29,
+   "name": {
+    "pt": "Floresta de Polly",
+    "en": "Floresta de Polly"
+   },
+   "tier": null,
+   "stat": 255,
+   "dpStat": 180,
+   "silver": 253262641,
+   "trashPerHour": 17600,
+   "xp": 25900000,
+   "xpPct": 0.36,
+   "level": 57,
+   "toLevel": "280h 50m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "caverna-proty",
+   "garmothId": 37,
+   "name": {
+    "pt": "Caverna Proty",
+    "en": "Caverna Proty"
+   },
+   "tier": null,
+   "stat": 280,
+   "dpStat": 145,
+   "silver": 250543321,
+   "trashPerHour": 15548,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "acampamento-de-bashim",
+   "garmothId": 84,
+   "name": {
+    "pt": "Acampamento de Bashim",
+    "en": "Acampamento de Bashim"
+   },
+   "tier": null,
+   "stat": 213,
+   "dpStat": 140,
+   "silver": 249703688,
+   "trashPerHour": 10767,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "antiga-sicraia-inferior",
+   "garmothId": 1,
+   "name": {
+    "pt": "(Antiga) Sicraia (Inferior)",
+    "en": "(Antiga) Sicraia (Inferior)"
+   },
+   "tier": null,
+   "stat": 800,
+   "dpStat": 290,
+   "silver": 249390057,
+   "trashPerHour": 8228,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "monasterio-abandonado",
+   "garmothId": 11,
+   "name": {
+    "pt": "Monastério Abandonado",
+    "en": "Monastério Abandonado"
+   },
+   "tier": null,
+   "stat": 856,
+   "dpStat": 370,
+   "silver": 245169701,
+   "trashPerHour": 9006,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "caverna-do-bandido-gahaz",
+   "garmothId": 43,
+   "name": {
+    "pt": "Caverna do Bandido Gahaz",
+    "en": "Caverna do Bandido Gahaz"
+   },
+   "tier": null,
+   "stat": 245,
+   "dpStat": 140,
+   "silver": 244782822,
+   "trashPerHour": 8567,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "ruinas-hystria",
+   "garmothId": 3,
+   "name": {
+    "pt": "Ruínas Hystria",
+    "en": "Ruínas Hystria"
+   },
+   "tier": null,
+   "stat": 756,
+   "dpStat": 250,
+   "silver": 235957588,
+   "trashPerHour": 8735,
+   "xp": 12400000,
+   "xpPct": 0.17,
+   "level": 58,
+   "toLevel": "583h 50m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "titium-valley",
+   "garmothId": 83,
+   "name": {
+    "pt": "Vale Titium",
+    "en": "Titium Valley"
+   },
+   "tier": null,
+   "stat": 213,
+   "dpStat": 140,
+   "silver": 215668362,
+   "trashPerHour": 8653,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": "Solo",
+   "items": [
+    "Black Stone"
+   ],
+   "note": {
+    "pt": "Densidade alta e deserto perto da cidade. Leve cha para o calor.",
+    "en": "High density and close to town. Bring tea for the desert heat."
+   },
+   "source": "garmoth"
+  },
+  {
+   "id": "antiga-sicraia-superior",
+   "garmothId": 32,
+   "name": {
+    "pt": "(Antiga) Sicraia (Superior)",
+    "en": "(Antiga) Sicraia (Superior)"
+   },
+   "tier": null,
+   "stat": 380,
+   "dpStat": 210,
+   "silver": 214060467,
+   "trashPerHour": 16810,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "templo-naga-do-deserto",
+   "garmothId": 82,
+   "name": {
+    "pt": "Templo Naga do Deserto",
+    "en": "Templo Naga do Deserto"
+   },
+   "tier": null,
+   "stat": 213,
+   "dpStat": 140,
+   "silver": 184132216,
+   "trashPerHour": 6950,
+   "xp": 3800000,
+   "xpPct": 0.05,
+   "level": 55,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "oficina-da-mina-de-enxofre",
+   "garmothId": 91,
+   "name": {
+    "pt": "Oficina da Mina de Enxofre",
+    "en": "Oficina da Mina de Enxofre"
+   },
+   "tier": null,
+   "stat": 365,
+   "dpStat": 180,
+   "silver": 178635612,
+   "trashPerHour": 6604,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "prisao-de-pila-kan",
+   "garmothId": 92,
+   "name": {
+    "pt": "Prisão de Pila Kan",
+    "en": "Prisão de Pila Kan"
+   },
+   "tier": null,
+   "stat": 365,
+   "dpStat": 180,
+   "silver": 166164475,
+   "trashPerHour": 6574,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "tumulo-do-traidor",
+   "garmothId": 72,
+   "name": {
+    "pt": "Túmulo do Traidor",
+    "en": "Túmulo do Traidor"
+   },
+   "tier": null,
+   "stat": 255,
+   "dpStat": 250,
+   "silver": 133650762,
+   "trashPerHour": 19930,
+   "xp": 41000000,
+   "xpPct": 0.57,
+   "level": 58,
+   "toLevel": "176h 56m",
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "covil-do-basilisco",
+   "garmothId": 89,
+   "name": {
+    "pt": "Covil do Basilisco",
+    "en": "Covil do Basilisco"
+   },
+   "tier": null,
+   "stat": 320,
+   "dpStat": 160,
+   "silver": 116284994,
+   "trashPerHour": 5465,
+   "xp": null,
+   "xpPct": null,
+   "level": null,
+   "toLevel": null,
+   "party": null,
+   "items": [],
+   "note": null,
+   "source": "garmoth"
+  },
+  {
+   "id": "aresion-temple",
+   "garmothId": 216,
+   "name": {
+    "pt": "Santuário de Aresion",
+    "en": "Aresion Temple"
+   },
+   "tier": null,
+   "stat": 2485,
+   "dpStat": 850,
+   "dpInferred": true,
+   "silver": null,
+   "trashPerHour": null,
+   "xp": 270500000,
+   "xpPct": 3.73,
+   "level": 74,
+   "toLevel": "26h 51m",
+   "party": "Solo",
+   "items": [
+    "Fusion Shard"
+   ],
+   "note": {
+    "pt": "Quarto degrau do Inner. Drop de material de Apeiron.",
+    "en": "Fourth step of Inner. Drops Apeiron accessory materials."
+   },
+   "source": "garmoth"
   }
  ]
 }

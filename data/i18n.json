@@ -87,7 +87,20 @@
   "noTotalStat": "esta zona não publica Total Stat",
   "sourceFrom": "fonte de {d}",
   "sourceOld": "fonte desatualizada",
-  "staleWarn": "<b>Atenção à idade do dado.</b> Não existe API pública de grind spots, então estas tabelas são copiadas à mão de guias da comunidade. O guia que sustenta as zonas antigas, Dehkia e Ulukita não é atualizado desde <b>agosto de 2024</b>, e o BDO infla as recompensas com o tempo — trate esses silver/hora como <b>piso</b>. Edania e Elvia vêm de guias de 2026. Cada card mostra a data da sua fonte."
+  "staleWarn": "<b>Atenção à idade do dado.</b> Não existe API pública de grind spots, então estas tabelas são copiadas à mão de guias da comunidade. O guia que sustenta as zonas antigas, Dehkia e Ulukita não é atualizado desde <b>agosto de 2024</b>, e o BDO infla as recompensas com o tempo — trate esses silver/hora como <b>piso</b>. Edania e Elvia vêm de guias de 2026. Cada card mostra a data da sua fonte.",
+  "tabXp": "Spots de XP",
+  "xpNote": "EXP de combate por hora, medido em sessões reais do Garmoth. O <b>nível de referência</b> importa: ganho de EXP cai conforme você sobe, então a mesma zona rende menos para um personagem mais alto. <b>%/h</b> é quanto do nível de referência você faz por hora.",
+  "xpHour": "EXP/hora",
+  "xpPct": "do nível por hora",
+  "refLevel": "medido no Lv.",
+  "toLevel": "para o próximo nível",
+  "totalStatDp": "Total Stat DP",
+  "noXp": "sem medição de EXP",
+  "sortXp": "EXP/hora",
+  "bestXp": "melhor EXP que você alcança",
+  "trashHour": "trash/hora",
+  "tierMeta": "Meta",
+  "tierComp": "Competitivo"
  },
  "en": {
   "lang": "English",
@@ -177,6 +190,19 @@
   "noTotalStat": "this zone publishes no Total Stat",
   "sourceFrom": "source from {d}",
   "sourceOld": "outdated source",
-  "staleWarn": "<b>Mind the data age.</b> There is no public grind spot API, so these tables are copied by hand from community guides. The guide behind the older, Dehkia and Ulukita zones has not been updated since <b>August 2024</b>, and BDO inflates rewards over time — treat those silver/hour figures as a <b>floor</b>. Edania and Elvia come from 2026 guides. Each card shows its source date."
+  "staleWarn": "<b>Mind the data age.</b> There is no public grind spot API, so these tables are copied by hand from community guides. The guide behind the older, Dehkia and Ulukita zones has not been updated since <b>August 2024</b>, and BDO inflates rewards over time — treat those silver/hour figures as a <b>floor</b>. Edania and Elvia come from 2026 guides. Each card shows its source date.",
+  "tabXp": "XP spots",
+  "xpNote": "Combat EXP per hour, measured from real Garmoth sessions. The <b>reference level</b> matters: EXP gain drops as you level, so the same zone yields less for a higher character. <b>%/h</b> is how much of the reference level you clear per hour.",
+  "xpHour": "EXP/hour",
+  "xpPct": "of the level per hour",
+  "refLevel": "measured at Lv.",
+  "toLevel": "to next level",
+  "totalStatDp": "Total Stat DP",
+  "noXp": "no EXP measurement",
+  "sortXp": "EXP/hour",
+  "bestXp": "best XP you can reach",
+  "trashHour": "trash/hour",
+  "tierMeta": "Meta",
+  "tierComp": "Competitive"
  }
 }

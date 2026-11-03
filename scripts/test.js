@@ -43,22 +43,13 @@ const np = recipeProfit({ output: "Out", yield: 1, craftsPerHour: 1, inputs: [{ 
 assert.equal(np.priced, false);
 assert.deepEqual(np.missing, ["Fantasma"]);
 
-// --- gate de spot
-const zone = { stat: 900, statCap: 1000, dp: 400, ap: 310, items: ["Out"] };
-assert.equal(spotFit(zone, { stat: 500, ap: 200, dp: 300 }).locked, true);
-assert.equal(spotFit(zone, { stat: 950, ap: 310, dp: 420 }).locked, false);
-assert.equal(spotFit(zone, { stat: 800, ap: 420, dp: 500 }).locked, true, "Total Stat e o gate, nao o AP exibido");
-assert.equal(spotFit(zone, { stat: 1200, ap: 400, dp: 500 }).overCap, true);
-
-// zona sem Total Stat publicado: o gate passa a ser o AP exibido
-const elvia = { stat: null, statCap: null, dp: 390, ap: 300, items: [] };
-assert.equal(spotFit(elvia, { stat: 99999, ap: 250, dp: 400 }).locked, true,
-  "Total Stat alto nao pode liberar zona que cobra AP exibido");
-assert.equal(spotFit(elvia, { stat: 0, ap: 300, dp: 390 }).locked, false,
-  "AP e DP exibidos suficientes devem liberar a zona");
-assert.equal(spotFit(elvia, { stat: 0, ap: 300, dp: 390 }).usesStat, false);
-assert.equal(spotFit(elvia, { stat: 99999, ap: 300, dp: 390 }).overCap, false,
-  "sem teto publicado nao existe 'acima do teto'");
+// --- gate de spot: Total Stat de AP e DP
+const zone = { stat: 1130, dpStat: 430, items: ["Out"] };
+assert.equal(spotFit(zone, { stat: 900, dpStat: 500 }).locked, true, "AP insuficiente trava");
+assert.equal(spotFit(zone, { stat: 1200, dpStat: 400 }).locked, true, "DP insuficiente trava");
+assert.equal(spotFit(zone, { stat: 1130, dpStat: 430 }).locked, false, "exatamente no requisito libera");
+assert.equal(spotFit(zone, { stat: 900, dpStat: 430 }).missStat, 230);
+assert.equal(spotFit(zone, { stat: 1130, dpStat: 300 }).missDp, 130);
 assert.equal(spotToday(zone, p, { Out: 10 }).drift, 10);
 assert.equal(spotToday({ items: [] }, p, {}).drift, null);
 
@@ -77,27 +68,34 @@ const bilingual = (o, what) => {
   assert.ok(o && typeof o === "object", `${what}: campo bilingue ausente`);
   for (const l of ["pt", "en"]) assert.ok(o[l]?.length > 0, `${what}: falta traducao ${l}`);
 };
-for (const s of spots.spots) bilingual(s.note, `spot ${s.id}`);
+for (const s of spots.spots) if (s.note) bilingual(s.note, `spot ${s.id}`);
 for (const r2 of recipes.recipes) { bilingual(r2.name, `receita ${r2.id}`); bilingual(r2.note, `receita ${r2.id}`); }
 
-// spots: escala atual do jogo
+// spots: schema vindo do Garmoth
 const ids = new Set();
+let withXp = 0, withSilver = 0;
 for (const s of spots.spots) {
   assert.ok(!ids.has(s.id), `id duplicado: ${s.id}`); ids.add(s.id);
-  // Zona sem Total Stat publicado e legitima (Elvia): o gate vira o AP exibido.
-  if (s.stat != null) assert.ok(s.statCap >= s.stat, `${s.id}: teto abaixo do requisito`);
-  assert.ok(s.ap > 0 && s.dp > 0, `${s.id}: precisa de AP e DP exibidos`);
-  // Silver pode faltar, mas se existe precisa de escala e fonte declarada.
+  bilingual(s.name, `spot ${s.id}`);
+  assert.ok(s.garmothId > 0, `${s.id}: sem id do Garmoth para rastrear a origem`);
+  assert.ok(s.stat > 0 && s.stat <= 3000, `${s.id}: Total Stat AP fora de escala (${s.stat})`);
+  assert.ok(s.dpStat > 0 && s.dpStat <= 1200, `${s.id}: Total Stat DP fora de escala (${s.dpStat})`);
   if (s.silver != null) {
-    assert.ok(s.silver >= 10e6 && s.silver <= 6e9, `${s.id}: silver fora de escala`);
-    assert.ok(["medido", "derivado"].includes(s.silverSource), `${s.id}: fonte do silver nao declarada`);
-    for (const l of ["pt", "en"]) assert.ok(i18n[l][`src_${s.silverSource}`], `i18n ${l} sem rotulo src_${s.silverSource}`);
-  } else {
-    assert.equal(s.silverSource, null, `${s.id}: sem silver nao pode declarar fonte`);
+    assert.ok(s.silver >= 1e7 && s.silver <= 1e10, `${s.id}: silver fora de escala (${s.silver})`);
+    withSilver++;
   }
-  if (s.dpStat) assert.ok(s.dpStat > s.dp, `${s.id}: DP em Total Stat deveria superar o exibido`);
+  if (s.xp != null) {
+    assert.ok(s.xp > 0 && s.xp <= 1e9, `${s.id}: xp fora de escala (${s.xp})`);
+    assert.ok(s.level > 0, `${s.id}: xp sem nivel de referencia, o numero fica sem significado`);
+    withXp++;
+  }
 }
-assert.ok(Math.max(...spots.spots.map((s) => s.stat ?? 0)) >= 2500, "falta o endgame atual");
+assert.ok(withSilver >= 50, `poucos spots com silver: ${withSilver}`);
+assert.ok(withXp >= 30, `poucos spots com xp: ${withXp}`);
+assert.ok(Math.max(...spots.spots.map((s) => s.stat)) >= 2500, "falta o endgame atual");
+// AP e DP andam juntos: zona que pede muito AP nao pode pedir DP trivial
+for (const s of spots.spots)
+  if (s.stat > 2000) assert.ok(s.dpStat > 500, `${s.id}: ${s.stat} AP mas so ${s.dpStat} DP, dado suspeito`);
 
 // receitas: a wiki precisa fechar mesmo quando o preco falta
 const rids = new Set();
@@ -127,5 +125,5 @@ for (const c of classes.specs) {
   for (const k of [`aoe_${c.aoe}`, `comfort_${c.comfort}`, `tank_${c.tankiness}`])
     for (const l of ["pt", "en"]) assert.ok(i18n[l][k], `i18n ${l} sem rotulo para ${k}`);
 }
-console.log(`ok: ${spots.spots.length} spots · ${recipes.recipes.length} receitas (${priced} com preco) · ` +
+console.log(`ok: ${spots.spots.length} spots (${withSilver} silver, ${withXp} xp) · ${recipes.recipes.length} receitas (${priced} com preco) · ` +
   `${classes.specs.length} specs de ${new Set(classes.specs.map((c) => c.cls)).size} classes · i18n pt/en com ${ptK.length} chaves`);

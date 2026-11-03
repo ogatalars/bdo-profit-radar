@@ -24,6 +24,7 @@
     <button role="tab" data-tab="market" aria-selected="true" data-i18n="tabMarket"></button>
     <button role="tab" data-tab="recipes" aria-selected="false" data-i18n="tabRecipes"></button>
     <button role="tab" data-tab="spots" aria-selected="false" data-i18n="tabSpots"></button>
+    <button role="tab" data-tab="xp" aria-selected="false" data-i18n="tabXp"></button>
     <button role="tab" data-tab="classes" aria-selected="false" data-i18n="tabClasses"></button>
   </nav>
 
@@ -70,13 +71,22 @@
   <section id="tab-spots" hidden>
     <div class="controls">
       <label><span data-i18n="class"></span><select id="cls"></select></label>
-      <label><span data-i18n="totalStat"></span><input type="number" id="stat" value="900" min="0" max="3000" step="10"></label>
-      <label><span data-i18n="apShown"></span><input type="number" id="ap" value="310" min="0" max="500"></label>
-      <label><span data-i18n="dp"></span><input type="number" id="dp" value="400" min="0" max="900"></label>
+      <label><span data-i18n="totalStat"></span><input type="number" id="stat" value="1130" min="0" max="3000" step="10"></label>
+      <label><span data-i18n="totalStatDp"></span><input type="number" id="dpStat" value="430" min="0" max="1000" step="10"></label>
       <label class="inline"><input type="checkbox" id="hideLocked"> <span data-i18n="onlyMine"></span></label>
     </div>
     <div class="note" data-i18n="spotsNote"></div>
     <div id="spot-list"></div>
+  </section>
+
+  <section id="tab-xp" hidden>
+    <div class="note" data-i18n="xpNote"></div>
+    <div class="controls">
+      <label><span data-i18n="totalStat"></span><input type="number" id="xpStat" value="1130" min="0" max="3000" step="10"></label>
+      <label><span data-i18n="totalStatDp"></span><input type="number" id="xpDp" value="430" min="0" max="1000" step="10"></label>
+      <label class="inline"><input type="checkbox" id="xpHideLocked"> <span data-i18n="onlyMine"></span></label>
+    </div>
+    <div id="xp-list"></div>
   </section>
 
   <section id="tab-classes" hidden>

@@ -1,6 +1,7 @@
 import { netRate as calcNet, pricer, recipeProfit, spotFit, spotToday } from "./calc.js";
 
 const $ = (s) => document.querySelector(s);
+const spotName = (s) => tr(s.name);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 // ?lang=en tem prioridade: serve para compartilhar link ja na lingua certa.
@@ -73,7 +74,7 @@ function renderAll() {
       : `<span class="dim">${t("firstSnapshot")}</span>`);
   $("#netpct").innerHTML = t("youGet", { p: (netRate() * 100).toFixed(1).replace(".", LANG === "pt" ? "," : ".") + "%" });
   $("#classesNote").innerHTML = t("classesNote", { d: CLASSES._meta.listUpdated });
-  renderMarket(); renderRecipes(); renderSpots(); renderClasses();
+  renderMarket(); renderRecipes(); renderSpots(); renderXp(); renderClasses();
 }
 
 function renderMarket() {
@@ -135,15 +136,10 @@ function renderRecipes() {
 
 function renderSpots() {
   const p = P();
-  const me = { stat: +$("#stat").value, ap: +$("#ap").value, dp: +$("#dp").value };
+  const me = { stat: +$("#stat").value, dpStat: +$("#dpStat").value };
   const spec = CLASSES.specs.find((c) => c.id === $("#cls").value);
-  const srcs = SPOTS._meta.sources || {};
-  const rows = SPOTS.spots.map((s) => {
-    const src = srcs[s.source];
-    const srcAge = src?.date ? Math.floor((Date.now() - new Date(src.date)) / 864e5) : null;
-    return { s, srcDate: src?.date ?? null, srcAge,
-             ...spotFit(s, me), ...spotToday(s, p, DAILY.changes || {}) };
-  })
+  const rows = SPOTS.spots.filter((s) => s.silver).map((s) =>
+    ({ s, ...spotFit(s, me), ...spotToday(s, p, DAILY.changes || {}) }))
     .sort((a, b) => (a.locked - b.locked) || ((b.s.silver ?? -1) - (a.s.silver ?? -1)));
   const visible = $("#hideLocked").checked ? rows.filter((x) => !x.locked) : rows;
   const best = visible.find((x) => !x.locked);
@@ -156,41 +152,59 @@ function renderSpots() {
     ${spec.weapon ? `<br><span class="dim">${esc(spec.weapon)} &rarr; ${esc(spec.awakening)}</span>` : ""}
     </div>` : "";
 
-  const stale = rows.some((x) => x.srcAge != null && x.srcAge > 365);
-  const warn = stale ? `<div class="note warn">${t("staleWarn")}</div>` : "";
-  $("#spot-list").innerHTML = warn + head + (visible.map((x) => {
+  $("#spot-list").innerHTML = head + (visible.map((x) => {
     const s = x.s;
-    const miss = [
-      x.usesStat ? x.missStat && `${x.missStat} Total Stat` : x.missAp && `${x.missAp} AP`,
-      x.missDp && `${x.missDp} DP`,
-    ].filter(Boolean).join(` ${t("and")} `);
+    const miss = [x.missStat && `${x.missStat} AP`, x.missDp && `${x.missDp} DP`]
+      .filter(Boolean).join(` ${t("and")} `);
     const itemsTxt = x.items.map((i) =>
       `${esc(i.name)} ${fmt(i.price)}${i.change != null
         ? ` <span class="${i.change >= 0 ? "up" : "down"}">${pct(i.change)}</span>` : ""}`).join(" &middot; ")
       || `<span class="dim">${t("outOfMarket")}</span>`;
     return `<div class="card ${x.locked ? "locked" : ""}">
-      <h3>${esc(s.name)}
+      <h3>${esc(spotName(s))}
         ${x === best ? `<span class="tag ok">${t("bestForYou")}</span>` : ""}
         ${x.locked ? `<span class="tag no">${t("missing")} ${miss}</span>` : ""}
         ${x.overCap && !x.locked ? `<span class="tag">${t("overCap")}</span>` : ""}
         ${x.srcAge != null && x.srcAge > 365 ? `<span class="tag old">${t("sourceOld")}</span>` : ""}</h3>
-      <div class="meta">${esc(s.region)} &middot; ${esc(s.party)} &middot;
-        ${x.usesStat
-          ? `${t("asks")} <b>${s.stat}</b> Total Stat ${t("and")} <b>${s.dp}</b> DP &middot;
-             ${t("apShown")} ${s.ap}${s.dpStat ? ` &middot; ${t("dpInStat")} ${s.dpStat}` : ""} &middot;
-             ${t("cap")} ${s.statCap} (${t("capRest", { p: s.capPct })})`
-          : `${t("gateAp", { ap: s.ap, dp: s.dp })} &middot; <i>${t("noTotalStat")}</i>`}</div>
-      <div class="big">${s.silver
-        ? `${fmt(s.silver)} <span style="font-size:13px;color:var(--dim)">${t("silverHour")}
-             <span class="tag">${t("src_" + s.silverSource)}</span></span>`
-        : `<span class="dim" style="font-size:15px">${t("noSilver")}</span>`}</div>
+      <div class="meta">${t("asks")} <b>${s.stat}</b> AP ${t("and")} <b>${s.dpStat}</b> DP
+        <span class="dim">(Total Stat)</span>${s.trashPerHour ? ` &middot; ${fmt(s.trashPerHour)} ${t("trashHour")}` : ""}
+        ${s.tier ? ` &middot; <span class="tag">${esc(s.tier)}</span>` : ""}</div>
+      <div class="big">${fmt(s.silver)} <span style="font-size:13px;color:var(--dim)">${t("silverHour")}</span>
+        ${s.xp ? `<span class="dim" style="font-size:13px"> &middot; ${fmt(s.xp)} ${t("xpHour")}</span>` : ""}</div>
       ${x.drift != null ? `<div class="breakdown">${t("dropsToday")}
         <b class="${x.drift >= 0 ? "up" : "down"}">${pct(x.drift)}</b> ${t("onAverage")}</div>` : ""}
       <div class="breakdown">${itemsTxt}</div>
-      <div class="breakdown"><i>${esc(tr(s.note))}</i></div>
-      ${x.srcDate ? `<div class="breakdown dim">${t("sourceFrom", { d: x.srcDate })}</div>` : ""}
+      ${s.note ? `<div class="breakdown"><i>${esc(tr(s.note))}</i></div>` : ""}
     </div>`;
   }).join("") || `<p class="dim">${t("noSpots")}</p>`);
+}
+
+function renderXp() {
+  const me = { stat: +$("#xpStat").value, dpStat: +$("#xpDp").value };
+  const rows = SPOTS.spots.filter((s) => s.xp).map((s) => ({ s, ...spotFit(s, me) }))
+    .sort((a, b) => (a.locked - b.locked) || (b.s.xp - a.s.xp));
+  const visible = $("#xpHideLocked").checked ? rows.filter((x) => !x.locked) : rows;
+  const best = visible.find((x) => !x.locked);
+  const top = Math.max(...rows.map((x) => x.s.xp));
+  $("#xp-list").innerHTML = visible.map((x) => {
+    const s = x.s;
+    const miss = [x.missStat && `${x.missStat} AP`, x.missDp && `${x.missDp} DP`]
+      .filter(Boolean).join(` ${t("and")} `);
+    return `<div class="card ${x.locked ? "locked" : ""}">
+      <h3>${esc(spotName(s))}
+        ${x === best ? `<span class="tag ok">${t("bestXp")}</span>` : ""}
+        ${x.locked ? `<span class="tag no">${t("missing")} ${miss}</span>` : ""}</h3>
+      <div class="meta">${t("asks")} <b>${s.stat}</b> AP ${t("and")} <b>${s.dpStat}</b> DP
+        <span class="dim">(Total Stat)</span> &middot; ${t("refLevel")} ${s.level}</div>
+      <div class="big">${fmt(s.xp)} <span style="font-size:13px;color:var(--dim)">${t("xpHour")}</span></div>
+      <div class="bar"><i style="width:${(s.xp / top) * 100}%;background:var(--accent)"></i></div>
+      <div class="breakdown">
+        <span><b>${String(s.xpPct ?? "?").replace(".", LANG === "pt" ? "," : ".")}%</b> ${t("xpPct")}</span>
+        ${s.toLevel ? `<span>${s.toLevel} ${t("toLevel")}</span>` : ""}
+        ${s.silver ? `<span>${fmt(s.silver)} ${t("silverHour")}</span>` : ""}
+      </div>
+    </div>`;
+  }).join("") || `<p class="dim">${t("noSpots")}</p>`;
 }
 
 function renderClasses() {
@@ -211,7 +225,7 @@ function renderClasses() {
     </div>`).join("") || `<p class="dim">${t("noClasses")}</p>`;
 }
 
-const TABS = ["market", "recipes", "spots", "classes"];
+const TABS = ["market", "recipes", "spots", "xp", "classes"];
 function showTab(name) {
   if (!TABS.includes(name)) name = "market";
   document.querySelectorAll("nav button").forEach((o) => o.setAttribute("aria-selected", o.dataset.tab === name));
@@ -228,8 +242,10 @@ $("#lang").addEventListener("change", () => {
   if (DAILY) renderAll(); else applyStatic();
 });
 ["#vp", "#ring"].forEach((s) => $(s).addEventListener("change", () => DAILY && renderAll()));
-["#cls", "#stat", "#ap", "#dp", "#hideLocked"].forEach((s) =>
+["#cls", "#stat", "#dpStat", "#hideLocked"].forEach((s) =>
   $(s).addEventListener("input", () => DAILY && renderSpots()));
+["#xpStat", "#xpDp", "#xpHideLocked"].forEach((s) =>
+  $(s).addEventListener("input", () => DAILY && renderXp()));
 ["#recSearch", "#recJob", "#recSort"].forEach((s) =>
   $(s).addEventListener("input", () => DAILY && renderRecipes()));
 ["#clsSearch", "#clsTier", "#clsAoe", "#clsTank"].forEach((s) =>

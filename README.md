@@ -2,8 +2,9 @@
 
 Site estático em **português** (com inglês opcional) que mostra, para Black Desert
 Online: o que o mercado central está negociando hoje, uma wiki de receitas de
-culinária, alquimia e processamento com o lucro de cada uma, qual spot de grind
-rende mais para os seus stats, e o tier de PvE de cada spec de classe.
+culinária, alquimia e processamento com o lucro de cada uma, qual spot rende mais
+**silver** e qual rende mais **EXP** para os seus stats, e o tier de PvE de cada
+spec de classe.
 
 Sem backend, sem banco, sem custo. Um workflow do GitHub Actions tira um snapshot
 do mercado por dia e commita um JSON; o GitHub Pages serve a página, que só lê
@@ -70,48 +71,42 @@ listadas em `any` a de menor preço no dia. O card mostra qual foi escolhido.
 Se um número do site não bate com a sua hora real de grind, o errado é a taxa no
 JSON, não o preço. Ajuste e mande PR.
 
-## Atualizando os spots (o ponto fraco do projeto)
+## Atualizando os spots
 
-**Preços se atualizam sozinhos. Spots, classes e receitas não.** O cron diário só
-mexe em `data/daily.*.json`; as outras tabelas são copiadas à mão de guias da
-comunidade e envelhecem paradas.
+Spots e XP vêm do **Garmoth**, que publica silver/hora e EXP/hora medidos de
+sessões reais de jogadores. O Garmoth bloqueia acesso de servidor (Cloudflare
+403 em qualquer endpoint, inclusive na API interna), então o caminho é:
 
-Não existe API pública de grind spots. Verificado: o Garmoth tem
-(`api.garmoth.com/api/grind-tracker/getGrindSpots`), mas responde **403 por
-Cloudflare** para qualquer cliente que não seja navegador, então nem CI nem
-scraper alcançam. Arsha e Velia Inn cobrem só o mercado.
+1. Abrir no navegador e salvar o markdown das páginas:
+   - `garmoth.com/grind-tracker/best-grind-spots` → silver/hora, trash, Total Stat
+   - `garmoth.com/grind-tracker/combat-exp` → EXP/hora e nível de referência
+2. `node scripts/import-garmoth.js <pasta-com-os-md>`
+3. `node scripts/test.js`
 
-O caminho que funciona é um humano abrir o Garmoth, exportar a tabela e importar:
+O importador casa os dois arquivos pelo **id numérico da URL do Garmoth**, não
+pelo nome — nome vem traduzido conforme a língua da conta. Ele também:
 
-```bash
-node scripts/import-spots.js garmoth.md --dry   # mostra o que mudaria
-node scripts/import-spots.js garmoth.md         # grava
-node scripts/test.js
-```
+- recupera as linhas em que o clipper perdeu o link, reatribuindo o nome pelo
+  Total Stat (acontece justamente nas zonas mais lucrativas, as primeiras);
+- traduz pt→en via `scripts/garmoth-names.json`, e deixa passar o que já está
+  em inglês;
+- herda o DP de uma zona de mesmo Total Stat quando o spot só aparece na página
+  de EXP (marcado com `dpInferred`);
+- **preserva as notas escritas à mão** — só os números são sobrescritos.
 
-O importador aceita markdown, TSV ou CSV, acha as colunas pelo cabeçalho (ordem
-não importa), entende `1.45B` e `466M`, e **preserva as notas em pt/en** — só os
-números são sobrescritos. Zonas que ele não reconhece são listadas à parte, para
-você escrever a nota antes de incluí-las.
+Use `--dry` para ver o que mudaria antes de gravar.
 
-Enquanto isso não acontece, `scripts/check-sources.js` roda toda segunda-feira,
-compara as páginas-fonte com o último hash visto e **abre uma issue** quando uma
-delas muda ou passa de 180 dias parada. O objetivo não é atualizar sozinho — é
-não deixar o dado apodrecer em silêncio.
+### Por que não é automático
 
-### Idade das fontes hoje
+Não existe API pública de grind spots. Verificado: `api.garmoth.com/api/grind-tracker/getGrindSpots`
+existe e dispensa autenticação, mas responde 403 por Cloudflare para qualquer
+cliente que não seja navegador — CI não alcança. Arsha e Velia Inn cobrem só o
+mercado. O Internet Archive tem snapshot do grind tracker, mas não da página de EXP.
 
-| fonte | cobre | atualizada em |
-|---|---|---|
-| Grumpy Green | 33 zonas (antigas, Dehkia, Ulukita) | **ago/2024** ⚠️ |
-| BDFoundry Elvia | 12 zonas | jul/2026 |
-| BDFoundry Edania Outer | 6 zonas | ago/2026 |
-| BDFoundry Edania Inner | 6 zonas | set/2026 |
-| BDO Class Hub | 58 specs | out/2026 |
-
-Os silver/hora vindos do Grumpy Green têm mais de dois anos e o BDO infla
-recompensas com o tempo — **trate-os como piso, não como estimativa atual**. O
-site mostra a data da fonte em cada card e avisa quando passa de um ano.
+`scripts/check-sources.js` roda toda segunda-feira, compara as páginas-fonte de
+classes e receitas com o último hash visto e **abre uma issue** quando alguma
+muda ou passa de 180 dias. Não atualiza nada: serve para o dado não apodrecer
+em silêncio.
 
 ## Quando as fontes divergem
 
@@ -171,11 +166,9 @@ Vale saber antes de confiar no número:
 ## Fontes
 
 - **Preços**: [Arsha API](https://api.arsha.io) — mercado central, ao vivo.
-- **Spots**: [Grumpy Green](https://grumpygreen.cricket/bdo-grinding-spots/) para
-  silver/hora medido e AP caps; [BDFoundry](https://www.blackdesertfoundry.com/edania-monster-zones-guide/)
-  para os requisitos de Edania Outer e
-  [Inner](https://www.blackdesertfoundry.com/edania-inner-monster-zones-guide/) e
-  [Elvia Calpheon](https://www.blackdesertfoundry.com/calpheon-elvias-realm-guide/).
+- **Spots e XP**: [Garmoth Grind Tracker](https://garmoth.com/grind-tracker/best-grind-spots)
+  — silver/hora, EXP/hora, trash e Total Stat, medidos de sessões reais.
+  Importado via `scripts/import-garmoth.js`.
 - **Classes**: [BDO Class Hub](https://bdoclasshub.com/tierlist.html) para tier
   de PvE, AoE, conforto e resistência por spec (lista do expert Choice);
   [Grumpy Green](https://grumpygreen.cricket/bdo-class-guide/) para armas.

@@ -48,21 +48,25 @@ export function recipeProfit(r, { priceOf, isNpc }, rate) {
 // com cristais e buffs). O Total Stat e o que a zona realmente checa.
 // Acima de statCap, o AP excedente rende so capPct% — por isso empilhar AP
 // alem do teto da zona nao aumenta silver proporcionalmente.
-// Zonas de Elvia e anteriores nunca foram publicadas em Total Stat: a fonte so
-// da o AP exibido. Nesse caso o gate e o AP exibido, e dizemos isso na UI em
-// vez de inventar um Total Stat equivalente.
-export function spotFit(s, { stat, ap, dp }) {
-  const usesStat = s.stat != null;
-  const missStat = usesStat ? Math.max(0, s.stat - stat) : 0;
-  const missAp = Math.max(0, s.ap - ap);
-  const missDp = Math.max(0, s.dp - dp);
-  const gateMiss = usesStat ? missStat : missAp;
+// O Garmoth publica tudo em Total Stat: AP e DP ja somados com cristais e buffs.
+// E esse o requisito real das zonas, entao o gate compara os dois.
+export function spotFit(s, { stat, dpStat }) {
+  const missStat = Math.max(0, (s.stat ?? 0) - stat);
+  const missDp = Math.max(0, (s.dpStat ?? 0) - dpStat);
   return {
-    usesStat, missStat, missAp, missDp,
-    locked: gateMiss > 0 || missDp > 0,
-    overCap: usesStat && s.statCap != null && stat > s.statCap,
-    headroom: usesStat && s.statCap != null ? s.statCap - stat : null,
+    missStat, missDp,
+    locked: missStat > 0 || missDp > 0,
+    // Quanto do requisito voce ja tem; abaixo de 1 a zona ainda e um alvo.
+    ratio: s.stat ? stat / s.stat : 1,
   };
+}
+
+// Silver e EXP vem medidos por hora. Normalizamos para comparar zonas entre si
+// sem esconder que sao escalas diferentes.
+export function rank(spots, metric) {
+  const vals = spots.map((s) => s[metric]).filter((v) => v > 0);
+  const max = Math.max(...vals, 1);
+  return spots.map((s) => ({ ...s, pctOfBest: s[metric] > 0 ? (s[metric] / max) * 100 : null }));
 }
 
 // O silver/hora e a referencia da zona; o que varia com o dia e o preco dos
