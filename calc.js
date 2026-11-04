@@ -82,3 +82,94 @@ export function spotToday(s, { priceOf }, movers = {}) {
     : null;
   return { items, drift };
 }
+
+// --- Calculadora de receitas -------------------------------------------------
+// Expande um item na arvore de tudo que ele precisa. 158 ingredientes do jogo
+// sao eles mesmos produzidos por outra receita, entao a expansao e recursiva.
+
+export const recipeIndex = (recipes) => {
+  const byOutput = new Map();
+  for (const r of recipes) if (!byOutput.has(r.output)) byOutput.set(r.output, r);
+  return byOutput;
+};
+
+const MAX_DEPTH = 10;
+
+// Custo unitario de PRODUZIR um item, memoizado. Null quando nao da para fechar
+// a conta (algum insumo sem preco e sem receita).
+function craftUnitCost(item, index, priceOf, memo, path) {
+  if (memo.has(item)) return memo.get(item);
+  const r = index.get(item);
+  if (!r || path.has(item) || path.size > MAX_DEPTH) return null;
+  path.add(item);
+  let total = 0, ok = true;
+  for (const i of r.inputs) {
+    const picked = resolveInput(i, priceOf);
+    const buy = picked.price > 0 ? picked.price : null;
+    const make = craftUnitCost(picked.name, index, priceOf, memo, path);
+    const unit = buy != null && make != null ? Math.min(buy, make) : (buy ?? make);
+    if (unit == null) { ok = false; break; }
+    total += unit * i.qty;
+  }
+  path.delete(item);
+  const per = ok ? total / r.yield : null;
+  memo.set(item, per);
+  return per;
+}
+
+/**
+ * @returns {{tree, shopping: Array, crafts: Array, cost: number|null, buyPrice: number|null}}
+ * `shopping` sao os itens que voce realmente compra (folhas da decisao),
+ * `crafts` sao os passos intermediarios na ordem de execucao.
+ */
+export function planRecipe(output, qty, index, priceOf, { expandAll = false } = {}) {
+  const memo = new Map();
+  const shopping = new Map();
+  const crafts = new Map();
+
+  const walk = (item, need, depth, path) => {
+    const r = index.get(item);
+    const buy = priceOf(item) || null;
+    const make = r ? craftUnitCost(item, index, priceOf, memo, new Set(path)) : null;
+    const cyclic = path.has(item);
+    // Sem receita, ciclo ou fundo do poco: compra.
+    const mustBuy = !r || cyclic || depth >= MAX_DEPTH;
+    // O item pedido e sempre craftado: quem abriu a calculadora quer a receita,
+    // nao o conselho de comprar pronto. So os intermediarios decidem.
+    const isRoot = depth === 0;
+    const cheaperToBuy = !isRoot && buy != null && make != null && buy <= make;
+    const node = { item, need, buy, make, depth, cyclic, children: [] };
+
+    if (mustBuy || (!expandAll && cheaperToBuy)) {
+      node.action = "buy";
+      const prev = shopping.get(item) || { item, qty: 0, price: buy };
+      prev.qty += need; prev.price = buy;
+      shopping.set(item, prev);
+      return node;
+    }
+    node.action = "craft";
+    const batches = need / r.yield;
+    node.batches = batches;
+    const prev = crafts.get(item) || { item, qty: 0, batches: 0, yield: r.yield, job: r.job, depth, isRoot };
+    prev.qty += need; prev.batches += batches; prev.depth = Math.max(prev.depth, depth);
+    crafts.set(item, prev);
+    const next = new Set(path).add(item);
+    for (const i of r.inputs) {
+      const picked = resolveInput(i, priceOf);
+      node.children.push(walk(picked.name, batches * i.qty, depth + 1, next));
+    }
+    return node;
+  };
+
+  const tree = walk(output, qty, 0, new Set());
+  // Quantidade de compra e inteira: ninguem compra 2,5 de trigo.
+  const list = [...shopping.values()].map((s) => ({ ...s, qty: Math.ceil(s.qty - 1e-9) }));
+  const cost = list.every((s) => s.price > 0)
+    ? list.reduce((a, s) => a + s.price * s.qty, 0) : null;
+  return {
+    tree, shopping: list.sort((a, b) => (b.price * b.qty) - (a.price * a.qty)),
+    // Mais fundo primeiro: e a ordem em que voce de fato craftaria.
+    crafts: [...crafts.values()].filter((c) => c.item !== output || true).sort((a, b) => b.depth - a.depth),
+    cost, buyPrice: priceOf(output) || null,
+  };
+}

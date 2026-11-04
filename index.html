@@ -23,6 +23,7 @@
   <nav role="tablist">
     <button role="tab" data-tab="market" aria-selected="true" data-i18n="tabMarket"></button>
     <button role="tab" data-tab="recipes" aria-selected="false" data-i18n="tabRecipes"></button>
+    <button role="tab" data-tab="calc" aria-selected="false" data-i18n="tabCalc"></button>
     <button role="tab" data-tab="spots" aria-selected="false" data-i18n="tabSpots"></button>
     <button role="tab" data-tab="xp" aria-selected="false" data-i18n="tabXp"></button>
     <button role="tab" data-tab="classes" aria-selected="false" data-i18n="tabClasses"></button>
@@ -66,6 +67,19 @@
         <option value="name" data-i18n="sortName"></option></select></label>
     </div>
     <div id="recipe-list"></div>
+  </section>
+
+  <section id="tab-calc" hidden>
+    <div class="note" data-i18n="calcNote"></div>
+    <div class="controls">
+      <label><span data-i18n="whatToMake"></span>
+        <input list="all-outputs" id="calcItem" autocomplete="off" style="min-width:230px"></label>
+      <datalist id="all-outputs"></datalist>
+      <label><span data-i18n="howMany"></span>
+        <input type="number" id="calcQty" value="100" min="1" max="100000" step="1"></label>
+      <label class="inline"><input type="checkbox" id="calcExpand"> <span data-i18n="expandAll"></span></label>
+    </div>
+    <div id="calc-out"></div>
   </section>
 
   <section id="tab-spots" hidden>

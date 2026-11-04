@@ -9,7 +9,7 @@
    "https://incendar.com/bdoalchemyrecipes.php",
    "https://bdocodex.com"
   ],
-  "updatedAt": "2026-11-03"
+  "updatedAt": "2026-11-04"
  },
  "recipes": [
   {
@@ -587,7 +587,7 @@
    "craftsPerHour": 400,
    "inputs": [
     {
-     "item": "Grain",
+     "item": "Starch",
      "qty": 5,
      "any": [
       "Wheat",
@@ -636,7 +636,8 @@
       "Lamb Meat",
       "Pork",
       "Bird Meat",
-      "Waragon Meat"
+      "Waragon Meat",
+      "Lion Meat"
      ]
     },
     {
@@ -723,7 +724,8 @@
       "Onion",
       "Potato",
       "Tomato",
-      "Carrot"
+      "Carrot",
+      "Wild Herb"
      ]
     },
     {
@@ -765,7 +767,8 @@
       "Lamb Meat",
       "Pork",
       "Bird Meat",
-      "Waragon Meat"
+      "Waragon Meat",
+      "Lion Meat"
      ]
     },
     {
@@ -866,7 +869,8 @@
      "item": "Honey",
      "qty": 3,
      "any": [
-      "Cooking Honey"
+      "Cooking Honey",
+      "Wild Honey"
      ]
     }
    ],
@@ -891,7 +895,8 @@
      "item": "Honey",
      "qty": 3,
      "any": [
-      "Cooking Honey"
+      "Cooking Honey",
+      "Wild Honey"
      ]
     },
     {
@@ -934,7 +939,8 @@
       "Apple",
       "Fig",
       "Pear",
-      "Cherry"
+      "Cherry",
+      "Olive"
      ]
     },
     {
@@ -976,7 +982,8 @@
       "Lamb Meat",
       "Pork",
       "Bird Meat",
-      "Waragon Meat"
+      "Waragon Meat",
+      "Lion Meat"
      ]
     },
     {
@@ -1234,14 +1241,12 @@
      "qty": 3
     },
     {
-     "item": "Blood",
+     "item": "Blood 3",
      "qty": 5,
      "any": [
-      "Deer Blood",
-      "Pig Blood",
       "Bear Blood",
-      "Ox Blood",
-      "Wolf Blood"
+      "Wolf Blood",
+      "Waragon Blood"
      ]
     },
     {
@@ -1275,14 +1280,13 @@
      "qty": 4
     },
     {
-     "item": "Blood",
+     "item": "Blood 1",
      "qty": 6,
      "any": [
-      "Deer Blood",
-      "Pig Blood",
-      "Bear Blood",
-      "Ox Blood",
-      "Wolf Blood"
+      "Chicken Blood",
+      "Sheep Blood",
+      "Lamb Blood",
+      "Goat Blood"
      ]
     },
     {
@@ -1404,6 +1408,9484 @@
     "pt": "Elixir de dano. Consome 5 reagentes por craft.",
     "en": "Damage elixir. Burns 5 reagents per craft."
    }
+  },
+  {
+   "id": "aloe-cookie",
+   "name": {
+    "pt": "Aloe Cookie",
+    "en": "Aloe Cookie"
+   },
+   "output": "Aloe Cookie",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Aloe",
+     "qty": 5
+    },
+    {
+     "item": "Dough",
+     "qty": 7
+    },
+    {
+     "item": "Honey",
+     "qty": 3,
+     "any": [
+      "Cooking Honey",
+      "Wild Honey"
+     ]
+    },
+    {
+     "item": "Sugar",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "aloe-yogurt",
+   "name": {
+    "pt": "Aloe Yogurt",
+    "en": "Aloe Yogurt"
+   },
+   "output": "Aloe Yogurt",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Aloe",
+     "qty": 5
+    },
+    {
+     "item": "Milk",
+     "qty": 2
+    },
+    {
+     "item": "Sugar",
+     "qty": 3
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "assorted-side-dishes",
+   "name": {
+    "pt": "Assorted Side Dishes",
+    "en": "Assorted Side Dishes"
+   },
+   "output": "Assorted Side Dishes",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fried Bird",
+     "qty": 1
+    },
+    {
+     "item": "Seafood",
+     "qty": 2,
+     "any": [
+      "Octopus",
+      "Squid",
+      "Crab Meat",
+      "Shrimp",
+      "Clam Meat",
+      "Oyster"
+     ]
+    },
+    {
+     "item": "Cheese",
+     "qty": 3
+    },
+    {
+     "item": "Fruit",
+     "qty": 5,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "balacs-lunchbox",
+   "name": {
+    "pt": "Balacs Lunchbox",
+    "en": "Balacs Lunchbox"
+   },
+   "output": "Balacs Lunchbox",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Eilton Sandwich",
+     "qty": 2
+    },
+    {
+     "item": "Citron Juice",
+     "qty": 2
+    },
+    {
+     "item": "Citron Candy",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "bean-sprout-salad",
+   "name": {
+    "pt": "Bean Sprout Salad",
+    "en": "Bean Sprout Salad"
+   },
+   "output": "Bean Sprout Salad",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Bean Sprouts",
+     "qty": 6
+    },
+    {
+     "item": "Perilla",
+     "qty": 1
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    },
+    {
+     "item": "Red Pepper Powder",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "boiled-bird-eggs",
+   "name": {
+    "pt": "Boiled Bird Eggs",
+    "en": "Boiled Bird Eggs"
+   },
+   "output": "Boiled Bird Eggs",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Egg",
+     "qty": 3
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 6
+    },
+    {
+     "item": "Cooking Wine",
+     "qty": 1
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "borscht",
+   "name": {
+    "pt": "Borscht",
+    "en": "Borscht"
+   },
+   "output": "Borscht",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fragrant Jerky",
+     "qty": 7
+    },
+    {
+     "item": "Milk",
+     "qty": 3
+    },
+    {
+     "item": "Cinnamon",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "buckwheat-jelly",
+   "name": {
+    "pt": "Buckwheat Jelly",
+    "en": "Buckwheat Jelly"
+   },
+   "output": "Buckwheat Jelly",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Buckwheat",
+     "qty": 5
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    },
+    {
+     "item": "Soy Sauce",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "butter-roasted-lobster",
+   "name": {
+    "pt": "Butter-Roasted Lobster",
+    "en": "Butter-Roasted Lobster"
+   },
+   "output": "Butter-Roasted Lobster",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Lobster",
+     "qty": 1
+    },
+    {
+     "item": "Butter",
+     "qty": 4
+    },
+    {
+     "item": "Salt",
+     "qty": 5
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 5
+    },
+    {
+     "item": "Garlic",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "byeot-county-gukbap",
+   "name": {
+    "pt": "Byeot County Gukbap",
+    "en": "Byeot County Gukbap"
+   },
+   "output": "Byeot County Gukbap",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Napa Cabbage",
+     "qty": 2
+    },
+    {
+     "item": "Cooked Rice",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    },
+    {
+     "item": "Radish",
+     "qty": 2
+    },
+    {
+     "item": "Pork",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "calpheon-meal",
+   "name": {
+    "pt": "Calpheon Meal",
+    "en": "Calpheon Meal"
+   },
+   "output": "Calpheon Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Soft Bread",
+     "qty": 2
+    },
+    {
+     "item": "Milk Tea",
+     "qty": 1
+    },
+    {
+     "item": "Fish Fillet Salad",
+     "qty": 1
+    },
+    {
+     "item": "Cheese Pie",
+     "qty": 1
+    },
+    {
+     "item": "Meat Pasta",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "carrot-confit",
+   "name": {
+    "pt": "Carrot Confit",
+    "en": "Carrot Confit"
+   },
+   "output": "Carrot Confit",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Special Carrot",
+     "qty": 2
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 6
+    },
+    {
+     "item": "Lump of Raw Sugar",
+     "qty": 3
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    },
+    {
+     "item": "Cinnamon",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "chanterelle-and-potato-stew",
+   "name": {
+    "pt": "Chanterelle and Potato Stew",
+    "en": "Chanterelle and Potato Stew"
+   },
+   "output": "Chanterelle and Potato Stew",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Chanterelle",
+     "qty": 2
+    },
+    {
+     "item": "Potato",
+     "qty": 5
+    },
+    {
+     "item": "Onion",
+     "qty": 1
+    },
+    {
+     "item": "Cabbage",
+     "qty": 2
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "chanterelle-porridge",
+   "name": {
+    "pt": "Chanterelle Porridge",
+    "en": "Chanterelle Porridge"
+   },
+   "output": "Chanterelle Porridge",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Chanterelle",
+     "qty": 2
+    },
+    {
+     "item": "Wheat",
+     "qty": 5
+    },
+    {
+     "item": "Onion",
+     "qty": 1
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "chanterelle-risotto",
+   "name": {
+    "pt": "Chanterelle Risotto",
+    "en": "Chanterelle Risotto"
+   },
+   "output": "Chanterelle Risotto",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Chanterelle",
+     "qty": 2
+    },
+    {
+     "item": "Wheat",
+     "qty": 5
+    },
+    {
+     "item": "White Sauce",
+     "qty": 1
+    },
+    {
+     "item": "Butter",
+     "qty": 1
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "chanterelle-stew",
+   "name": {
+    "pt": "Chanterelle Stew",
+    "en": "Chanterelle Stew"
+   },
+   "output": "Chanterelle Stew",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Chanterelle",
+     "qty": 3
+    },
+    {
+     "item": "Hot Pepper",
+     "qty": 1
+    },
+    {
+     "item": "Red Sauce",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "cheese-gratin",
+   "name": {
+    "pt": "Cheese Gratin",
+    "en": "Cheese Gratin"
+   },
+   "output": "Cheese Gratin",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Grilled Sausage",
+     "qty": 1
+    },
+    {
+     "item": "Dough",
+     "qty": 5
+    },
+    {
+     "item": "Vegetable",
+     "qty": 4,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot",
+      "Wild Herb"
+     ]
+    },
+    {
+     "item": "Cheese",
+     "qty": 3
+    },
+    {
+     "item": "Red Sauce",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "chicken-breast-salad",
+   "name": {
+    "pt": "Chicken Breast Salad",
+    "en": "Chicken Breast Salad"
+   },
+   "output": "Chicken Breast Salad",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Chicken Meat",
+     "qty": 5
+    },
+    {
+     "item": "Fruit",
+     "qty": 5,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    },
+    {
+     "item": "Vegetable",
+     "qty": 5,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot",
+      "Wild Herb"
+     ]
+    },
+    {
+     "item": "Vinegar",
+     "qty": 1
+    },
+    {
+     "item": "Cooking Wine",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "chowder",
+   "name": {
+    "pt": "Chowder",
+    "en": "Chowder"
+   },
+   "output": "Chowder",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Dried Pearl Oyster Flesh",
+     "qty": 1
+    },
+    {
+     "item": "Pepper",
+     "qty": 2,
+     "any": [
+      "Hot Pepper",
+      "Chili Pepper"
+     ]
+    },
+    {
+     "item": "Meat",
+     "qty": 2,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Milk",
+     "qty": 1
+    },
+    {
+     "item": "Teff Bread",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "citron-candy",
+   "name": {
+    "pt": "Citron Candy",
+    "en": "Citron Candy"
+   },
+   "output": "Citron Candy",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Citron",
+     "qty": 1
+    },
+    {
+     "item": "Cooking Honey",
+     "qty": 1
+    },
+    {
+     "item": "Raw Sugar",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "citron-cider",
+   "name": {
+    "pt": "Citron Cider",
+    "en": "Citron Cider"
+   },
+   "output": "Citron Cider",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Citron",
+     "qty": 5
+    },
+    {
+     "item": "Essence of Liquor",
+     "qty": 3
+    },
+    {
+     "item": "Sugar",
+     "qty": 1
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "citron-juice",
+   "name": {
+    "pt": "Citron Juice",
+    "en": "Citron Juice"
+   },
+   "output": "Citron Juice",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Citron",
+     "qty": 5
+    },
+    {
+     "item": "Sugar",
+     "qty": 3
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 5
+    },
+    {
+     "item": "Cooking Honey",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "citron-vinegar",
+   "name": {
+    "pt": "Citron Vinegar",
+    "en": "Citron Vinegar"
+   },
+   "output": "Citron Vinegar",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Citron",
+     "qty": 2
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 1
+    },
+    {
+     "item": "Sugar",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "coconut-cocktail",
+   "name": {
+    "pt": "Coconut Cocktail",
+    "en": "Coconut Cocktail"
+   },
+   "output": "Coconut Cocktail",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Coconut",
+     "qty": 2
+    },
+    {
+     "item": "Makgeolli",
+     "qty": 1
+    },
+    {
+     "item": "Essence of Liquor",
+     "qty": 2
+    },
+    {
+     "item": "Fruit",
+     "qty": 1,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "coconut-fried-fish",
+   "name": {
+    "pt": "Coconut Fried Fish",
+    "en": "Coconut Fried Fish"
+   },
+   "output": "Coconut Fried Fish",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Coconut",
+     "qty": 3
+    },
+    {
+     "item": "Fish",
+     "qty": 1
+    },
+    {
+     "item": "Egg",
+     "qty": 2
+    },
+    {
+     "item": "Dough",
+     "qty": 3
+    },
+    {
+     "item": "Deep Frying Oil",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "coconut-pasta",
+   "name": {
+    "pt": "Coconut Pasta",
+    "en": "Coconut Pasta"
+   },
+   "output": "Coconut Pasta",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Coconut",
+     "qty": 2
+    },
+    {
+     "item": "Onion",
+     "qty": 2
+    },
+    {
+     "item": "Garlic",
+     "qty": 4
+    },
+    {
+     "item": "Dough",
+     "qty": 5
+    },
+    {
+     "item": "White Sauce",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "cooked-rice",
+   "name": {
+    "pt": "Cooked Rice",
+    "en": "Cooked Rice"
+   },
+   "output": "Cooked Rice",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Rice",
+     "qty": 5
+    },
+    {
+     "item": "Spring Water",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "couscous",
+   "name": {
+    "pt": "Couscous",
+    "en": "Couscous"
+   },
+   "output": "Couscous",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Freekeh Snake Stew",
+     "qty": 1
+    },
+    {
+     "item": "Teff Flour Dough",
+     "qty": 6
+    },
+    {
+     "item": "Nutmeg",
+     "qty": 3
+    },
+    {
+     "item": "Vegetable",
+     "qty": 4,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot",
+      "Wild Herb"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "dalbeol-gukbap",
+   "name": {
+    "pt": "Dalbeol Gukbap",
+    "en": "Dalbeol Gukbap"
+   },
+   "output": "Dalbeol Gukbap",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Goosefoot Leaf",
+     "qty": 2
+    },
+    {
+     "item": "Cooked Rice",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    },
+    {
+     "item": "Bracken",
+     "qty": 2
+    },
+    {
+     "item": "Red Pepper Powder",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "dark-pudding",
+   "name": {
+    "pt": "Dark Pudding",
+    "en": "Dark Pudding"
+   },
+   "output": "Dark Pudding",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Oatmeal",
+     "qty": 1
+    },
+    {
+     "item": "Pickled Vegetables",
+     "qty": 1
+    },
+    {
+     "item": "Bird Meat",
+     "qty": 5
+    },
+    {
+     "item": "Blood 2",
+     "qty": 7,
+     "any": [
+      "Pig Blood",
+      "Ox Blood",
+      "Deer Blood"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "date-palm-wine",
+   "name": {
+    "pt": "Date Palm Wine",
+    "en": "Date Palm Wine"
+   },
+   "output": "Date Palm Wine",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Date Palm",
+     "qty": 5
+    },
+    {
+     "item": "Essence of Liquor",
+     "qty": 2
+    },
+    {
+     "item": "Sugar",
+     "qty": 1
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "delotia-juice",
+   "name": {
+    "pt": "Delotia Juice",
+    "en": "Delotia Juice"
+   },
+   "output": "Delotia Juice",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Delotia",
+     "qty": 4
+    },
+    {
+     "item": "Fruit",
+     "qty": 5,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    },
+    {
+     "item": "Sugar",
+     "qty": 3
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "delotia-milk-tea",
+   "name": {
+    "pt": "Delotia Milk Tea",
+    "en": "Delotia Milk Tea"
+   },
+   "output": "Delotia Milk Tea",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Delotia",
+     "qty": 4
+    },
+    {
+     "item": "Milk",
+     "qty": 3
+    },
+    {
+     "item": "Cooking Honey",
+     "qty": 3
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "delotia-pudding",
+   "name": {
+    "pt": "Delotia Pudding",
+    "en": "Delotia Pudding"
+   },
+   "output": "Delotia Pudding",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Delotia",
+     "qty": 5
+    },
+    {
+     "item": "Wolf Blood",
+     "qty": 7
+    },
+    {
+     "item": "Honey Wine",
+     "qty": 2
+    },
+    {
+     "item": "Oatmeal",
+     "qty": 1
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "delotia-tart",
+   "name": {
+    "pt": "Delotia Tart",
+    "en": "Delotia Tart"
+   },
+   "output": "Delotia Tart",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Delotia",
+     "qty": 3
+    },
+    {
+     "item": "Milk",
+     "qty": 2
+    },
+    {
+     "item": "Flour",
+     "qty": 5,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Egg",
+     "qty": 1
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "desert-dumpling",
+   "name": {
+    "pt": "Desert Dumpling",
+    "en": "Desert Dumpling"
+   },
+   "output": "Desert Dumpling",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Reptile Meat",
+     "qty": 6
+    },
+    {
+     "item": "Dough",
+     "qty": 6
+    },
+    {
+     "item": "Cinnamon",
+     "qty": 1
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "dongchimi",
+   "name": {
+    "pt": "Dongchimi",
+    "en": "Dongchimi"
+   },
+   "output": "Dongchimi",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Radish",
+     "qty": 5
+    },
+    {
+     "item": "Garlic",
+     "qty": 2
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "dressing",
+   "name": {
+    "pt": "Dressing",
+    "en": "Dressing"
+   },
+   "output": "Dressing",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Egg",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 1
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "eilton-meal",
+   "name": {
+    "pt": "Eilton Meal",
+    "en": "Eilton Meal"
+   },
+   "output": "Eilton Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Chanterelle Risotto",
+     "qty": 1
+    },
+    {
+     "item": "Chanterelle and Potato Stew",
+     "qty": 1
+    },
+    {
+     "item": "Stir-Fried Chanterelle and Meat",
+     "qty": 1
+    },
+    {
+     "item": "Fruit Sherbet",
+     "qty": 2
+    },
+    {
+     "item": "Mesima Rice Wine",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "eilton-sandwich",
+   "name": {
+    "pt": "Eilton Sandwich",
+    "en": "Eilton Sandwich"
+   },
+   "output": "Eilton Sandwich",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Citron",
+     "qty": 2
+    },
+    {
+     "item": "Soft Bread",
+     "qty": 2
+    },
+    {
+     "item": "Egg",
+     "qty": 4
+    },
+    {
+     "item": "Cabbage",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "energizing-cron-meal",
+   "name": {
+    "pt": "Energizing Cron Meal",
+    "en": "Energizing Cron Meal"
+   },
+   "output": "Energizing Cron Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Special Drieghanese Meal",
+     "qty": 1
+    },
+    {
+     "item": "Serendia Meal",
+     "qty": 3
+    },
+    {
+     "item": "Mediah Meal",
+     "qty": 3
+    },
+    {
+     "item": "Ancient Cron Spice",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "essence-of-liquor",
+   "name": {
+    "pt": "Essence of Liquor",
+    "en": "Essence of Liquor"
+   },
+   "output": "Essence of Liquor",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Flour",
+     "qty": 1,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Fruit",
+     "qty": 1,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "exquisite-cron-meal",
+   "name": {
+    "pt": "Exquisite Cron Meal",
+    "en": "Exquisite Cron Meal"
+   },
+   "output": "Exquisite Cron Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Serendia Meal",
+     "qty": 3
+    },
+    {
+     "item": "Special Arehaza Meal",
+     "qty": 1
+    },
+    {
+     "item": "Kamasylvia Meal",
+     "qty": 3
+    },
+    {
+     "item": "Ancient Cron Spice",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fig-pie",
+   "name": {
+    "pt": "Fig Pie",
+    "en": "Fig Pie"
+   },
+   "output": "Fig Pie",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fig",
+     "qty": 5
+    },
+    {
+     "item": "Dough",
+     "qty": 3
+    },
+    {
+     "item": "Sugar",
+     "qty": 3
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fish-fillet-chips",
+   "name": {
+    "pt": "Fish Fillet Chips",
+    "en": "Fish Fillet Chips"
+   },
+   "output": "Fish Fillet Chips",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fish",
+     "qty": 2
+    },
+    {
+     "item": "White Sauce",
+     "qty": 3
+    },
+    {
+     "item": "Flour",
+     "qty": 7,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fish-fillet-salad",
+   "name": {
+    "pt": "Fish Fillet Salad",
+    "en": "Fish Fillet Salad"
+   },
+   "output": "Fish Fillet Salad",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fish",
+     "qty": 2
+    },
+    {
+     "item": "Dressing",
+     "qty": 2
+    },
+    {
+     "item": "Onion",
+     "qty": 3
+    },
+    {
+     "item": "Cheese",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fish-soup",
+   "name": {
+    "pt": "Fish Soup",
+    "en": "Fish Soup"
+   },
+   "output": "Fish Soup",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fish",
+     "qty": 1
+    },
+    {
+     "item": "Flour",
+     "qty": 3,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Cream",
+     "qty": 2,
+     "any": [
+      "Cream",
+      "Milk"
+     ]
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 6
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "five-grain-chicken-porridge",
+   "name": {
+    "pt": "Five-Grain Chicken Porridge",
+    "en": "Five-Grain Chicken Porridge"
+   },
+   "output": "Five-Grain Chicken Porridge",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Ground Bird Meat",
+     "qty": 2
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 2
+    },
+    {
+     "item": "Starch",
+     "qty": 3,
+     "any": [
+      "Wheat",
+      "Barley",
+      "Corn",
+      "Potato",
+      "Sweet Potato"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "frank-sandwich",
+   "name": {
+    "pt": "Frank Sandwich",
+    "en": "Frank Sandwich"
+   },
+   "output": "Frank Sandwich",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Grilled Sausage",
+     "qty": 2
+    },
+    {
+     "item": "Soft Bread",
+     "qty": 1
+    },
+    {
+     "item": "Vegetable",
+     "qty": 2,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot",
+      "Wild Herb"
+     ]
+    },
+    {
+     "item": "Red Sauce",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "freekeh-snake-stew",
+   "name": {
+    "pt": "Freekeh Snake Stew",
+    "en": "Freekeh Snake Stew"
+   },
+   "output": "Freekeh Snake Stew",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Snake Meat",
+     "qty": 3
+    },
+    {
+     "item": "Freekeh",
+     "qty": 6
+    },
+    {
+     "item": "Star Anise",
+     "qty": 2
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fried-bird",
+   "name": {
+    "pt": "Fried Bird",
+    "en": "Fried Bird"
+   },
+   "output": "Fried Bird",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Bird Meat",
+     "qty": 7
+    },
+    {
+     "item": "Flour",
+     "qty": 4,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Egg",
+     "qty": 2
+    },
+    {
+     "item": "Pepper",
+     "qty": 3,
+     "any": [
+      "Hot Pepper",
+      "Chili Pepper"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fried-vegetables",
+   "name": {
+    "pt": "Fried Vegetables",
+    "en": "Fried Vegetables"
+   },
+   "output": "Fried Vegetables",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Vegetable",
+     "qty": 4,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot",
+      "Wild Herb"
+     ]
+    },
+    {
+     "item": "Dough",
+     "qty": 3
+    },
+    {
+     "item": "Egg",
+     "qty": 2
+    },
+    {
+     "item": "Deep Frying Oil",
+     "qty": 6
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fruit-and-vegetable-salad",
+   "name": {
+    "pt": "Fruit and Vegetable Salad",
+    "en": "Fruit and Vegetable Salad"
+   },
+   "output": "Fruit and Vegetable Salad",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fruit",
+     "qty": 4,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    },
+    {
+     "item": "Vegetable",
+     "qty": 4,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot",
+      "Wild Herb"
+     ]
+    },
+    {
+     "item": "Vinegar",
+     "qty": 1
+    },
+    {
+     "item": "Cooking Wine",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fruit-juice",
+   "name": {
+    "pt": "Fruit Juice",
+    "en": "Fruit Juice"
+   },
+   "output": "Fruit Juice",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fruit",
+     "qty": 4,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    },
+    {
+     "item": "Sugar",
+     "qty": 3
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 5
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fruit-pie",
+   "name": {
+    "pt": "Fruit Pie",
+    "en": "Fruit Pie"
+   },
+   "output": "Fruit Pie",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fruit",
+     "qty": 6,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    },
+    {
+     "item": "Dough",
+     "qty": 6
+    },
+    {
+     "item": "Cream",
+     "qty": 3,
+     "any": [
+      "Cream",
+      "Milk"
+     ]
+    },
+    {
+     "item": "Sugar",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fruit-pudding",
+   "name": {
+    "pt": "Fruit Pudding",
+    "en": "Fruit Pudding"
+   },
+   "output": "Fruit Pudding",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fruit",
+     "qty": 5,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    },
+    {
+     "item": "Cream",
+     "qty": 1,
+     "any": [
+      "Cream",
+      "Milk"
+     ]
+    },
+    {
+     "item": "Milk",
+     "qty": 3
+    },
+    {
+     "item": "Sugar",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fruit-sherbet",
+   "name": {
+    "pt": "Fruit Sherbet",
+    "en": "Fruit Sherbet"
+   },
+   "output": "Fruit Sherbet",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Translucent Ice",
+     "qty": 1
+    },
+    {
+     "item": "Apple",
+     "qty": 2
+    },
+    {
+     "item": "Sugar",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "garaetteok",
+   "name": {
+    "pt": "Garaetteok",
+    "en": "Garaetteok"
+   },
+   "output": "Garaetteok",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Rice Flour",
+     "qty": 5
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "ghormeh-sabzi",
+   "name": {
+    "pt": "Ghormeh Sabzi",
+    "en": "Ghormeh Sabzi"
+   },
+   "output": "Ghormeh Sabzi",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Yak Meat",
+     "qty": 5
+    },
+    {
+     "item": "Starch",
+     "qty": 2,
+     "any": [
+      "Wheat",
+      "Barley",
+      "Corn",
+      "Potato",
+      "Sweet Potato"
+     ]
+    },
+    {
+     "item": "Garlic",
+     "qty": 5
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    },
+    {
+     "item": "Milk",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "good-feed",
+   "name": {
+    "pt": "Good Feed",
+    "en": "Good Feed"
+   },
+   "output": "Good Feed",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fish",
+     "qty": 1
+    },
+    {
+     "item": "Meat",
+     "qty": 6,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Flour",
+     "qty": 4,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "grain-soup",
+   "name": {
+    "pt": "Grain Soup",
+    "en": "Grain Soup"
+   },
+   "output": "Grain Soup",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Starch",
+     "qty": 6,
+     "any": [
+      "Wheat",
+      "Barley",
+      "Corn",
+      "Potato",
+      "Sweet Potato"
+     ]
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 3
+    },
+    {
+     "item": "Cooking Wine",
+     "qty": 3
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "grilled-sausage",
+   "name": {
+    "pt": "Grilled Sausage",
+    "en": "Grilled Sausage"
+   },
+   "output": "Grilled Sausage",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Meat",
+     "qty": 6,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Onion",
+     "qty": 1
+    },
+    {
+     "item": "Pepper",
+     "qty": 2,
+     "any": [
+      "Hot Pepper",
+      "Chili Pepper"
+     ]
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "grilled-scorpion",
+   "name": {
+    "pt": "Grilled Scorpion",
+    "en": "Grilled Scorpion"
+   },
+   "output": "Grilled Scorpion",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Scorpion Meat",
+     "qty": 3
+    },
+    {
+     "item": "Butter",
+     "qty": 2
+    },
+    {
+     "item": "Nutmeg",
+     "qty": 3
+    },
+    {
+     "item": "Hot Pepper",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "ham-sandwich",
+   "name": {
+    "pt": "Ham Sandwich",
+    "en": "Ham Sandwich"
+   },
+   "output": "Ham Sandwich",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Soft Bread",
+     "qty": 2
+    },
+    {
+     "item": "Grilled Sausage",
+     "qty": 2
+    },
+    {
+     "item": "Vegetable",
+     "qty": 5,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot",
+      "Wild Herb"
+     ]
+    },
+    {
+     "item": "Egg",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "hard-boiled-shellfish",
+   "name": {
+    "pt": "Hard-Boiled Shellfish",
+    "en": "Hard-Boiled Shellfish"
+   },
+   "output": "Hard-Boiled Shellfish",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Seafood",
+     "qty": 2,
+     "any": [
+      "Octopus",
+      "Squid",
+      "Crab Meat",
+      "Shrimp",
+      "Clam Meat",
+      "Oyster"
+     ]
+    },
+    {
+     "item": "Essence of Liquor",
+     "qty": 3
+    },
+    {
+     "item": "Garlic",
+     "qty": 4
+    },
+    {
+     "item": "Hot Pepper",
+     "qty": 2
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "high-quality-carrot-juice",
+   "name": {
+    "pt": "High-Quality Carrot Juice",
+    "en": "High-Quality Carrot Juice"
+   },
+   "output": "High-Quality Carrot Juice",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "High-Quality Carrot",
+     "qty": 1
+    },
+    {
+     "item": "Flour",
+     "qty": 3,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Sugar",
+     "qty": 3
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "honeycomb-cookie",
+   "name": {
+    "pt": "Honeycomb Cookie",
+    "en": "Honeycomb Cookie"
+   },
+   "output": "Honeycomb Cookie",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Honey",
+     "qty": 6,
+     "any": [
+      "Cooking Honey",
+      "Wild Honey"
+     ]
+    },
+    {
+     "item": "Dough",
+     "qty": 4
+    },
+    {
+     "item": "Egg",
+     "qty": 2
+    },
+    {
+     "item": "Milk",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "hunters-salad",
+   "name": {
+    "pt": "Hunters Salad",
+    "en": "Hunters Salad"
+   },
+   "output": "Hunters Salad",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Soft Whale Meat",
+     "qty": 1
+    },
+    {
+     "item": "Vinegar",
+     "qty": 2
+    },
+    {
+     "item": "Dressing",
+     "qty": 2
+    },
+    {
+     "item": "Garlic",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "jujube-tea",
+   "name": {
+    "pt": "Jujube Tea",
+    "en": "Jujube Tea"
+   },
+   "output": "Jujube Tea",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Jujube",
+     "qty": 5
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    },
+    {
+     "item": "Cooking Honey",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "kamasylvia-meal",
+   "name": {
+    "pt": "Kamasylvia Meal",
+    "en": "Kamasylvia Meal"
+   },
+   "output": "Kamasylvia Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "RB Mushroom Sandwich",
+     "qty": 1
+    },
+    {
+     "item": "Coconut Pasta",
+     "qty": 1
+    },
+    {
+     "item": "Fig Pie",
+     "qty": 1
+    },
+    {
+     "item": "Fruit Wine",
+     "qty": 2
+    },
+    {
+     "item": "RB Mushroom Cheese Melt",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "khalks-fermented-wine",
+   "name": {
+    "pt": "Khalks Fermented Wine",
+    "en": "Khalks Fermented Wine"
+   },
+   "output": "Khalks Fermented Wine",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fugitive Khalks Horn",
+     "qty": 1
+    },
+    {
+     "item": "Honey Wine",
+     "qty": 5
+    },
+    {
+     "item": "Date Palm",
+     "qty": 6
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 6
+    },
+    {
+     "item": "Sugar",
+     "qty": 6
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "king-of-jungle-hamburg",
+   "name": {
+    "pt": "King of Jungle Hamburg",
+    "en": "King of Jungle Hamburg"
+   },
+   "output": "King of Jungle Hamburg",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Lion Meat",
+     "qty": 4
+    },
+    {
+     "item": "Teff Bread",
+     "qty": 4
+    },
+    {
+     "item": "Pickled Vegetables",
+     "qty": 2
+    },
+    {
+     "item": "Nutmeg",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "knight-combat-rations",
+   "name": {
+    "pt": "Knight Combat Rations",
+    "en": "Knight Combat Rations"
+   },
+   "output": "Knight Combat Rations",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Dark Pudding",
+     "qty": 1
+    },
+    {
+     "item": "Ham Sandwich",
+     "qty": 1
+    },
+    {
+     "item": "Meat Croquette",
+     "qty": 1
+    },
+    {
+     "item": "Fruit Wine",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "lean-meat-salad",
+   "name": {
+    "pt": "Lean Meat Salad",
+    "en": "Lean Meat Salad"
+   },
+   "output": "Lean Meat Salad",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Meat",
+     "qty": 8,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Vinegar",
+     "qty": 2
+    },
+    {
+     "item": "Pepper",
+     "qty": 3,
+     "any": [
+      "Hot Pepper",
+      "Chili Pepper"
+     ]
+    },
+    {
+     "item": "Dressing",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "lizard-kebab",
+   "name": {
+    "pt": "Lizard Kebab",
+    "en": "Lizard Kebab"
+   },
+   "output": "Lizard Kebab",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Reptile Meat",
+     "qty": 6
+    },
+    {
+     "item": "Red Sauce",
+     "qty": 2
+    },
+    {
+     "item": "Onion",
+     "qty": 3
+    },
+    {
+     "item": "Starch",
+     "qty": 7,
+     "any": [
+      "Wheat",
+      "Barley",
+      "Corn",
+      "Potato",
+      "Sweet Potato"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "makgeolli",
+   "name": {
+    "pt": "Makgeolli",
+    "en": "Makgeolli"
+   },
+   "output": "Makgeolli",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Dough",
+     "qty": 3
+    },
+    {
+     "item": "Essence of Liquor",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 5
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "margoria-seafood-meal",
+   "name": {
+    "pt": "Margoria Seafood Meal",
+    "en": "Margoria Seafood Meal"
+   },
+   "output": "Margoria Seafood Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Prawn Salad",
+     "qty": 1
+    },
+    {
+     "item": "Steamed Prawn",
+     "qty": 1
+    },
+    {
+     "item": "Pan-Fried Oyster",
+     "qty": 1
+    },
+    {
+     "item": "Butter-Roasted Lobster",
+     "qty": 1
+    },
+    {
+     "item": "Fruit Wine",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "meat-pasta",
+   "name": {
+    "pt": "Meat Pasta",
+    "en": "Meat Pasta"
+   },
+   "output": "Meat Pasta",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Meat",
+     "qty": 5,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Dough",
+     "qty": 4
+    },
+    {
+     "item": "Pepper",
+     "qty": 3,
+     "any": [
+      "Hot Pepper",
+      "Chili Pepper"
+     ]
+    },
+    {
+     "item": "Garlic",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "meat-pie",
+   "name": {
+    "pt": "Meat Pie",
+    "en": "Meat Pie"
+   },
+   "output": "Meat Pie",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Meat",
+     "qty": 4,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Dough",
+     "qty": 6
+    },
+    {
+     "item": "Sugar",
+     "qty": 2
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "meat-sandwich",
+   "name": {
+    "pt": "Meat Sandwich",
+    "en": "Meat Sandwich"
+   },
+   "output": "Meat Sandwich",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Soft Bread",
+     "qty": 1
+    },
+    {
+     "item": "Meat",
+     "qty": 7,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Vegetable",
+     "qty": 6,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot",
+      "Wild Herb"
+     ]
+    },
+    {
+     "item": "Cheese",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "meat-soup",
+   "name": {
+    "pt": "Meat Soup",
+    "en": "Meat Soup"
+   },
+   "output": "Meat Soup",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Meat",
+     "qty": 5,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Pepper",
+     "qty": 1,
+     "any": [
+      "Hot Pepper",
+      "Chili Pepper"
+     ]
+    },
+    {
+     "item": "Cream",
+     "qty": 2,
+     "any": [
+      "Cream",
+      "Milk"
+     ]
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "mediah-meal",
+   "name": {
+    "pt": "Mediah Meal",
+    "en": "Mediah Meal"
+   },
+   "output": "Mediah Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Dark Pudding",
+     "qty": 1
+    },
+    {
+     "item": "Oatmeal",
+     "qty": 1
+    },
+    {
+     "item": "Grilled Sausage",
+     "qty": 2
+    },
+    {
+     "item": "Lean Meat Salad",
+     "qty": 1
+    },
+    {
+     "item": "Makgeolli",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "mesima-chicken-soup",
+   "name": {
+    "pt": "Mesima Chicken Soup",
+    "en": "Mesima Chicken Soup"
+   },
+   "output": "Mesima Chicken Soup",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Mesima",
+     "qty": 3
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 2
+    },
+    {
+     "item": "Garlic",
+     "qty": 1
+    },
+    {
+     "item": "Date Palm",
+     "qty": 1
+    },
+    {
+     "item": "Chicken Meat",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "mesima-rice-wine",
+   "name": {
+    "pt": "Mesima Rice Wine",
+    "en": "Mesima Rice Wine"
+   },
+   "output": "Mesima Rice Wine",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Mesima",
+     "qty": 2
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 3
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 3
+    },
+    {
+     "item": "Wheat",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "moodle-gukbap",
+   "name": {
+    "pt": "Moodle Gukbap",
+    "en": "Moodle Gukbap"
+   },
+   "output": "Moodle Gukbap",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Rice Flour",
+     "qty": 2
+    },
+    {
+     "item": "Cooked Rice",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    },
+    {
+     "item": "Garlic",
+     "qty": 2
+    },
+    {
+     "item": "Pork",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "mungbean-jeon",
+   "name": {
+    "pt": "Mungbean Jeon",
+    "en": "Mungbean Jeon"
+   },
+   "output": "Mungbean Jeon",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Mungbean",
+     "qty": 5
+    },
+    {
+     "item": "Perilla Oil",
+     "qty": 1
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    },
+    {
+     "item": "Pork",
+     "qty": 1
+    },
+    {
+     "item": "Bracken",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "nurungji",
+   "name": {
+    "pt": "Nurungji",
+    "en": "Nurungji"
+   },
+   "output": "Nurungji",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Cooked Rice",
+     "qty": 1
+    },
+    {
+     "item": "Corn Oil",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "o-039-dyllita-meal",
+   "name": {
+    "pt": "O&#039;dyllita Meal",
+    "en": "O&#039;dyllita Meal"
+   },
+   "output": "O&#039;dyllita Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Delotia Pudding",
+     "qty": 1
+    },
+    {
+     "item": "Stir-Fried Bracken and Meat",
+     "qty": 1
+    },
+    {
+     "item": "Delotia Juice",
+     "qty": 2
+    },
+    {
+     "item": "Chicken Breast Salad",
+     "qty": 2
+    },
+    {
+     "item": "Stir-Fried Bird",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "oatmeal",
+   "name": {
+    "pt": "Oatmeal",
+    "en": "Oatmeal"
+   },
+   "output": "Oatmeal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Flour",
+     "qty": 9,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Milk",
+     "qty": 3
+    },
+    {
+     "item": "Onion",
+     "qty": 3
+    },
+    {
+     "item": "Honey",
+     "qty": 2,
+     "any": [
+      "Cooking Honey",
+      "Wild Honey"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "omelet",
+   "name": {
+    "pt": "Omelet",
+    "en": "Omelet"
+   },
+   "output": "Omelet",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Starch",
+     "qty": 5,
+     "any": [
+      "Wheat",
+      "Barley",
+      "Corn",
+      "Potato",
+      "Sweet Potato"
+     ]
+    },
+    {
+     "item": "Egg",
+     "qty": 5
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 2
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "organic-feed",
+   "name": {
+    "pt": "Organic Feed",
+    "en": "Organic Feed"
+   },
+   "output": "Organic Feed",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fish",
+     "qty": 1
+    },
+    {
+     "item": "Oatmeal",
+     "qty": 2
+    },
+    {
+     "item": "Meat",
+     "qty": 5,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Bird Meat",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "pan-fried-oyster",
+   "name": {
+    "pt": "Pan-Fried Oyster",
+    "en": "Pan-Fried Oyster"
+   },
+   "output": "Pan-Fried Oyster",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Oyster",
+     "qty": 3
+    },
+    {
+     "item": "Egg",
+     "qty": 2
+    },
+    {
+     "item": "Flour",
+     "qty": 5,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Vinegar",
+     "qty": 2
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "pickled-citron-and-onions",
+   "name": {
+    "pt": "Pickled Citron and Onions",
+    "en": "Pickled Citron and Onions"
+   },
+   "output": "Pickled Citron and Onions",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Onion",
+     "qty": 2
+    },
+    {
+     "item": "Citron Vinegar",
+     "qty": 2
+    },
+    {
+     "item": "Sugar",
+     "qty": 2
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "pickled-fish",
+   "name": {
+    "pt": "Pickled Fish",
+    "en": "Pickled Fish"
+   },
+   "output": "Pickled Fish",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fish",
+     "qty": 1
+    },
+    {
+     "item": "Vinegar",
+     "qty": 2
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 2
+    },
+    {
+     "item": "Salt",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "pickled-vegetables",
+   "name": {
+    "pt": "Pickled Vegetables",
+    "en": "Pickled Vegetables"
+   },
+   "output": "Pickled Vegetables",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Vegetable",
+     "qty": 8,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot",
+      "Wild Herb"
+     ]
+    },
+    {
+     "item": "Vinegar",
+     "qty": 4
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 2
+    },
+    {
+     "item": "Sugar",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "pistachio-fried-rice",
+   "name": {
+    "pt": "Pistachio Fried Rice",
+    "en": "Pistachio Fried Rice"
+   },
+   "output": "Pistachio Fried Rice",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Pistachio",
+     "qty": 4
+    },
+    {
+     "item": "Teff",
+     "qty": 6
+    },
+    {
+     "item": "Cinnamon",
+     "qty": 2
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "prawn-salad",
+   "name": {
+    "pt": "Prawn Salad",
+    "en": "Prawn Salad"
+   },
+   "output": "Prawn Salad",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Shrimp",
+     "qty": 2
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 3
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    },
+    {
+     "item": "Egg",
+     "qty": 3
+    },
+    {
+     "item": "Fruit and Vegetable Salad",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "rb-mushroom-cheese-melt",
+   "name": {
+    "pt": "RB Mushroom Cheese Melt",
+    "en": "RB Mushroom Cheese Melt"
+   },
+   "output": "RB Mushroom Cheese Melt",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "RB Mushroom",
+     "qty": 1
+    },
+    {
+     "item": "Meat",
+     "qty": 2,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Cheese",
+     "qty": 2
+    },
+    {
+     "item": "Salt",
+     "qty": 3
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "rb-mushroom-sandwich",
+   "name": {
+    "pt": "RB Mushroom Sandwich",
+    "en": "RB Mushroom Sandwich"
+   },
+   "output": "RB Mushroom Sandwich",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "RB Mushroom",
+     "qty": 1
+    },
+    {
+     "item": "Soft Bread",
+     "qty": 1
+    },
+    {
+     "item": "Cream",
+     "qty": 2,
+     "any": [
+      "Cream",
+      "Milk"
+     ]
+    },
+    {
+     "item": "Onion",
+     "qty": 2
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "red-bean-porridge",
+   "name": {
+    "pt": "Red Bean Porridge",
+    "en": "Red Bean Porridge"
+   },
+   "output": "Red Bean Porridge",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Red Bean",
+     "qty": 5
+    },
+    {
+     "item": "Rice Flour",
+     "qty": 5
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "red-bean-sirutteok",
+   "name": {
+    "pt": "Red Bean Sirutteok",
+    "en": "Red Bean Sirutteok"
+   },
+   "output": "Red Bean Sirutteok",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Red Bean",
+     "qty": 4
+    },
+    {
+     "item": "Rice Flour",
+     "qty": 3
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "red-sauce",
+   "name": {
+    "pt": "Red Sauce",
+    "en": "Red Sauce"
+   },
+   "output": "Red Sauce",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Meat",
+     "qty": 1,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Base Sauce",
+     "qty": 1
+    },
+    {
+     "item": "Sugar",
+     "qty": 2
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "roast-marmot",
+   "name": {
+    "pt": "Roast Marmot",
+    "en": "Roast Marmot"
+   },
+   "output": "Roast Marmot",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Marmot Meat",
+     "qty": 5
+    },
+    {
+     "item": "Hot Pepper",
+     "qty": 3
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    },
+    {
+     "item": "Red Sauce",
+     "qty": 1
+    },
+    {
+     "item": "Cooking Wine",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "roasted-ginkgo",
+   "name": {
+    "pt": "Roasted Ginkgo",
+    "en": "Roasted Ginkgo"
+   },
+   "output": "Roasted Ginkgo",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Ginkgo",
+     "qty": 4
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    },
+    {
+     "item": "Perilla Oil",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "savory-cron-meal",
+   "name": {
+    "pt": "Savory Cron Meal",
+    "en": "Savory Cron Meal"
+   },
+   "output": "Savory Cron Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Savory Steak",
+     "qty": 1
+    },
+    {
+     "item": "Balenos Meal",
+     "qty": 3
+    },
+    {
+     "item": "Sute Tea",
+     "qty": 3
+    },
+    {
+     "item": "Ancient Cron Spice",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "savory-steak",
+   "name": {
+    "pt": "Savory Steak",
+    "en": "Savory Steak"
+   },
+   "output": "Savory Steak",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Lion Meat",
+     "qty": 4
+    },
+    {
+     "item": "Fig",
+     "qty": 5
+    },
+    {
+     "item": "Cooking Wine",
+     "qty": 2
+    },
+    {
+     "item": "Pepper",
+     "qty": 3,
+     "any": [
+      "Hot Pepper",
+      "Chili Pepper"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "seafood-cron-meal",
+   "name": {
+    "pt": "Seafood Cron Meal",
+    "en": "Seafood Cron Meal"
+   },
+   "output": "Seafood Cron Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Balenos Meal",
+     "qty": 3
+    },
+    {
+     "item": "Calpheon Meal",
+     "qty": 3
+    },
+    {
+     "item": "Margoria Seafood Meal",
+     "qty": 1
+    },
+    {
+     "item": "Ancient Cron Spice",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "seafood-grilled-with-butter",
+   "name": {
+    "pt": "Seafood Grilled With Butter",
+    "en": "Seafood Grilled With Butter"
+   },
+   "output": "Seafood Grilled With Butter",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Seafood",
+     "qty": 1,
+     "any": [
+      "Octopus",
+      "Squid",
+      "Crab Meat",
+      "Shrimp",
+      "Clam Meat",
+      "Oyster"
+     ]
+    },
+    {
+     "item": "Butter",
+     "qty": 3
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "seafood-mushroom-salad",
+   "name": {
+    "pt": "Seafood Mushroom Salad",
+    "en": "Seafood Mushroom Salad"
+   },
+   "output": "Seafood Mushroom Salad",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Seafood",
+     "qty": 1,
+     "any": [
+      "Octopus",
+      "Squid",
+      "Crab Meat",
+      "Shrimp",
+      "Clam Meat",
+      "Oyster"
+     ]
+    },
+    {
+     "item": "Fortune Teller Mushroom",
+     "qty": 1
+    },
+    {
+     "item": "Dressing",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "seafood-pasta",
+   "name": {
+    "pt": "Seafood Pasta",
+    "en": "Seafood Pasta"
+   },
+   "output": "Seafood Pasta",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Seafood",
+     "qty": 2,
+     "any": [
+      "Octopus",
+      "Squid",
+      "Crab Meat",
+      "Shrimp",
+      "Clam Meat",
+      "Oyster"
+     ]
+    },
+    {
+     "item": "Dough",
+     "qty": 5
+    },
+    {
+     "item": "Garlic",
+     "qty": 3
+    },
+    {
+     "item": "Cooking Wine",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "simple-cron-meal",
+   "name": {
+    "pt": "Simple Cron Meal",
+    "en": "Simple Cron Meal"
+   },
+   "output": "Simple Cron Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Knight Combat Rations",
+     "qty": 1
+    },
+    {
+     "item": "Mediah Meal",
+     "qty": 3
+    },
+    {
+     "item": "Valencia Meal",
+     "qty": 3
+    },
+    {
+     "item": "Ancient Cron Spice",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "single-brewed-mesima-tea",
+   "name": {
+    "pt": "Single-brewed Mesima Tea",
+    "en": "Single-brewed Mesima Tea"
+   },
+   "output": "Single-brewed Mesima Tea",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Mesima",
+     "qty": 5
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "skewer",
+   "name": {
+    "pt": "Skewer",
+    "en": "Skewer"
+   },
+   "output": "Skewer",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Pork",
+     "qty": 5
+    },
+    {
+     "item": "Garaetteok",
+     "qty": 2
+    },
+    {
+     "item": "Matsul",
+     "qty": 1
+    },
+    {
+     "item": "Soy Sauce",
+     "qty": 1
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "skewered-llama-cheese-melt",
+   "name": {
+    "pt": "Skewered Llama Cheese Melt",
+    "en": "Skewered Llama Cheese Melt"
+   },
+   "output": "Skewered Llama Cheese Melt",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Llama Meat",
+     "qty": 5
+    },
+    {
+     "item": "Cheese",
+     "qty": 4
+    },
+    {
+     "item": "Hot Pepper",
+     "qty": 3
+    },
+    {
+     "item": "Pepper",
+     "qty": 1,
+     "any": [
+      "Hot Pepper",
+      "Chili Pepper"
+     ]
+    },
+    {
+     "item": "White Sauce",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "smoked-fish-steak",
+   "name": {
+    "pt": "Smoked Fish Steak",
+    "en": "Smoked Fish Steak"
+   },
+   "output": "Smoked Fish Steak",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fish",
+     "qty": 2
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "soft-bread",
+   "name": {
+    "pt": "Soft Bread",
+    "en": "Soft Bread"
+   },
+   "output": "Soft Bread",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Dough",
+     "qty": 6
+    },
+    {
+     "item": "Egg",
+     "qty": 2
+    },
+    {
+     "item": "Milk",
+     "qty": 3
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "soybean-jjigae",
+   "name": {
+    "pt": "Soybean Jjigae",
+    "en": "Soybean Jjigae"
+   },
+   "output": "Soybean Jjigae",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Soybean Paste",
+     "qty": 3
+    },
+    {
+     "item": "Pork",
+     "qty": 1
+    },
+    {
+     "item": "Garlic",
+     "qty": 2
+    },
+    {
+     "item": "Soy Sauce",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "special-arehaza-meal",
+   "name": {
+    "pt": "Special Arehaza Meal",
+    "en": "Special Arehaza Meal"
+   },
+   "output": "Special Arehaza Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Coconut Cocktail",
+     "qty": 2
+    },
+    {
+     "item": "Coconut Pasta",
+     "qty": 1
+    },
+    {
+     "item": "Coconut Fried Fish",
+     "qty": 1
+    },
+    {
+     "item": "Meat Stew",
+     "qty": 1
+    },
+    {
+     "item": "Steak",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "special-carrot-juice",
+   "name": {
+    "pt": "Special Carrot Juice",
+    "en": "Special Carrot Juice"
+   },
+   "output": "Special Carrot Juice",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Special Carrot",
+     "qty": 1
+    },
+    {
+     "item": "Flour",
+     "qty": 3,
+     "any": [
+      "Wheat Flour",
+      "Barley Flour",
+      "Corn Flour",
+      "Potato Flour",
+      "Sweet Potato Flour"
+     ]
+    },
+    {
+     "item": "Sugar",
+     "qty": 3
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "special-drieghanese-meal",
+   "name": {
+    "pt": "Special Drieghanese Meal",
+    "en": "Special Drieghanese Meal"
+   },
+   "output": "Special Drieghanese Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Skewered Llama Cheese Melt",
+     "qty": 1
+    },
+    {
+     "item": "Stir-Fried Bracken",
+     "qty": 1
+    },
+    {
+     "item": "Roast Marmot",
+     "qty": 1
+    },
+    {
+     "item": "Ghormeh Sabzi",
+     "qty": 1
+    },
+    {
+     "item": "Honey Wine",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "special-eilton-specialty-meal",
+   "name": {
+    "pt": "Special Eilton Specialty Meal",
+    "en": "Special Eilton Specialty Meal"
+   },
+   "output": "Special Eilton Specialty Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Citron Cider",
+     "qty": 2
+    },
+    {
+     "item": "Chanterelle Porridge",
+     "qty": 2
+    },
+    {
+     "item": "Pickled Citron and Onions",
+     "qty": 1
+    },
+    {
+     "item": "Chanterelle Stew",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "steamed-bird",
+   "name": {
+    "pt": "Steamed Bird",
+    "en": "Steamed Bird"
+   },
+   "output": "Steamed Bird",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Bird Meat",
+     "qty": 5
+    },
+    {
+     "item": "Vegetable",
+     "qty": 3,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot",
+      "Wild Herb"
+     ]
+    },
+    {
+     "item": "Essence of Liquor",
+     "qty": 2
+    },
+    {
+     "item": "Vinegar",
+     "qty": 2
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "steamed-fish",
+   "name": {
+    "pt": "Steamed Fish",
+    "en": "Steamed Fish"
+   },
+   "output": "Steamed Fish",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fish",
+     "qty": 1
+    },
+    {
+     "item": "Garlic",
+     "qty": 2
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 3
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "steamed-prawn",
+   "name": {
+    "pt": "Steamed Prawn",
+    "en": "Steamed Prawn"
+   },
+   "output": "Steamed Prawn",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Shrimp",
+     "qty": 4
+    },
+    {
+     "item": "Paprika",
+     "qty": 3
+    },
+    {
+     "item": "Hot Pepper",
+     "qty": 2
+    },
+    {
+     "item": "Cooking Wine",
+     "qty": 3
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "steamed-seafood",
+   "name": {
+    "pt": "Steamed Seafood",
+    "en": "Steamed Seafood"
+   },
+   "output": "Steamed Seafood",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Seafood",
+     "qty": 2,
+     "any": [
+      "Octopus",
+      "Squid",
+      "Crab Meat",
+      "Shrimp",
+      "Clam Meat",
+      "Oyster"
+     ]
+    },
+    {
+     "item": "Hot Pepper",
+     "qty": 3
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 6
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "steamed-whale-meat",
+   "name": {
+    "pt": "Steamed Whale Meat",
+    "en": "Steamed Whale Meat"
+   },
+   "output": "Steamed Whale Meat",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Blue Whale Meat",
+     "qty": 1
+    },
+    {
+     "item": "Honey Wine",
+     "qty": 1
+    },
+    {
+     "item": "Garlic",
+     "qty": 4
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 6
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "stir-fried-bird",
+   "name": {
+    "pt": "Stir-Fried Bird",
+    "en": "Stir-Fried Bird"
+   },
+   "output": "Stir-Fried Bird",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Chicken Meat",
+     "qty": 5
+    },
+    {
+     "item": "Starch",
+     "qty": 5,
+     "any": [
+      "Wheat",
+      "Barley",
+      "Corn",
+      "Potato",
+      "Sweet Potato"
+     ]
+    },
+    {
+     "item": "Onion",
+     "qty": 3
+    },
+    {
+     "item": "Deep Frying Oil",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "stir-fried-bracken",
+   "name": {
+    "pt": "Stir-Fried Bracken",
+    "en": "Stir-Fried Bracken"
+   },
+   "output": "Stir-Fried Bracken",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Bracken",
+     "qty": 8
+    },
+    {
+     "item": "Garlic",
+     "qty": 5
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 5
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "stir-fried-bracken-and-meat",
+   "name": {
+    "pt": "Stir-Fried Bracken and Meat",
+    "en": "Stir-Fried Bracken and Meat"
+   },
+   "output": "Stir-Fried Bracken and Meat",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Bracken",
+     "qty": 3
+    },
+    {
+     "item": "Meat",
+     "qty": 6,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Garlic",
+     "qty": 3
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 2
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "stir-fried-chanterelle-and-meat",
+   "name": {
+    "pt": "Stir-Fried Chanterelle and Meat",
+    "en": "Stir-Fried Chanterelle and Meat"
+   },
+   "output": "Stir-Fried Chanterelle and Meat",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Chanterelle",
+     "qty": 3
+    },
+    {
+     "item": "Pork",
+     "qty": 5
+    },
+    {
+     "item": "Base Sauce",
+     "qty": 2
+    },
+    {
+     "item": "Pepper",
+     "qty": 2,
+     "any": [
+      "Hot Pepper",
+      "Chili Pepper"
+     ]
+    },
+    {
+     "item": "Salt",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "stir-fried-meat",
+   "name": {
+    "pt": "Stir-Fried Meat",
+    "en": "Stir-Fried Meat"
+   },
+   "output": "Stir-Fried Meat",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Meat",
+     "qty": 7,
+     "any": [
+      "Chicken Meat",
+      "Deer Meat",
+      "Lamb Meat",
+      "Pork",
+      "Bird Meat",
+      "Waragon Meat",
+      "Lion Meat"
+     ]
+    },
+    {
+     "item": "Onion",
+     "qty": 2
+    },
+    {
+     "item": "Hot Pepper",
+     "qty": 3
+    },
+    {
+     "item": "Base Sauce",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "stir-fried-seafood",
+   "name": {
+    "pt": "Stir-Fried Seafood",
+    "en": "Stir-Fried Seafood"
+   },
+   "output": "Stir-Fried Seafood",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Seafood",
+     "qty": 1,
+     "any": [
+      "Octopus",
+      "Squid",
+      "Crab Meat",
+      "Shrimp",
+      "Clam Meat",
+      "Oyster"
+     ]
+    },
+    {
+     "item": "Vegetable",
+     "qty": 4,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot",
+      "Wild Herb"
+     ]
+    },
+    {
+     "item": "White Sauce",
+     "qty": 2
+    },
+    {
+     "item": "Hot Pepper",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "sungnyung",
+   "name": {
+    "pt": "Sungnyung",
+    "en": "Sungnyung"
+   },
+   "output": "Sungnyung",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Nurungji",
+     "qty": 2
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "sute-tea",
+   "name": {
+    "pt": "Sute Tea",
+    "en": "Sute Tea"
+   },
+   "output": "Sute Tea",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Tea With Fine Scent",
+     "qty": 2
+    },
+    {
+     "item": "Butter",
+     "qty": 2
+    },
+    {
+     "item": "Milk",
+     "qty": 3
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "sweet-honey-wine",
+   "name": {
+    "pt": "Sweet Honey Wine",
+    "en": "Sweet Honey Wine"
+   },
+   "output": "Sweet Honey Wine",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Top-Quality Cooking Honey",
+     "qty": 2
+    },
+    {
+     "item": "Full-bodied Makgeolli",
+     "qty": 4
+    },
+    {
+     "item": "Sugar",
+     "qty": 10
+    },
+    {
+     "item": "Fruit",
+     "qty": 2,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "tea-with-fine-scent",
+   "name": {
+    "pt": "Tea With Fine Scent",
+    "en": "Tea With Fine Scent"
+   },
+   "output": "Tea With Fine Scent",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Plants",
+     "qty": 4
+    },
+    {
+     "item": "Fruit",
+     "qty": 4,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    },
+    {
+     "item": "Honey",
+     "qty": 3,
+     "any": [
+      "Cooking Honey",
+      "Wild Honey"
+     ]
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 7
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "teff-bread",
+   "name": {
+    "pt": "Teff Bread",
+    "en": "Teff Bread"
+   },
+   "output": "Teff Bread",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Teff Flour",
+     "qty": 5
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 3
+    },
+    {
+     "item": "Salt",
+     "qty": 2
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "teff-sandwich",
+   "name": {
+    "pt": "Teff Sandwich",
+    "en": "Teff Sandwich"
+   },
+   "output": "Teff Sandwich",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Teff Bread",
+     "qty": 1
+    },
+    {
+     "item": "Grilled Scorpion",
+     "qty": 1
+    },
+    {
+     "item": "Freekeh Snake Stew",
+     "qty": 1
+    },
+    {
+     "item": "Red Sauce",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "twice-brewed-mesima-tea",
+   "name": {
+    "pt": "Twice-brewed Mesima Tea",
+    "en": "Twice-brewed Mesima Tea"
+   },
+   "output": "Twice-brewed Mesima Tea",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Single-brewed Mesima Tea",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "vinegar",
+   "name": {
+    "pt": "Vinegar",
+    "en": "Vinegar"
+   },
+   "output": "Vinegar",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fruit",
+     "qty": 1,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    },
+    {
+     "item": "Starch",
+     "qty": 1,
+     "any": [
+      "Wheat",
+      "Barley",
+      "Corn",
+      "Potato",
+      "Sweet Potato"
+     ]
+    },
+    {
+     "item": "Leavening Agent",
+     "qty": 1
+    },
+    {
+     "item": "Sugar",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "well-brewed-mesima-tea",
+   "name": {
+    "pt": "Well-brewed Mesima Tea",
+    "en": "Well-brewed Mesima Tea"
+   },
+   "output": "Well-brewed Mesima Tea",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Twice-brewed Mesima Tea",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "whale-meat-salad",
+   "name": {
+    "pt": "Whale Meat Salad",
+    "en": "Whale Meat Salad"
+   },
+   "output": "Whale Meat Salad",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Blue Whale Meat",
+     "qty": 1
+    },
+    {
+     "item": "Vegetable",
+     "qty": 6,
+     "any": [
+      "Cabbage",
+      "Pumpkin",
+      "Paprika",
+      "Onion",
+      "Potato",
+      "Tomato",
+      "Carrot",
+      "Wild Herb"
+     ]
+    },
+    {
+     "item": "Dressing",
+     "qty": 2
+    },
+    {
+     "item": "Egg",
+     "qty": 3
+    },
+    {
+     "item": "Pepper",
+     "qty": 4,
+     "any": [
+      "Hot Pepper",
+      "Chili Pepper"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "white-kimchi",
+   "name": {
+    "pt": "White Kimchi",
+    "en": "White Kimchi"
+   },
+   "output": "White Kimchi",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Napa Cabbage",
+     "qty": 5
+    },
+    {
+     "item": "Onion",
+     "qty": 1
+    },
+    {
+     "item": "Garlic",
+     "qty": 4
+    },
+    {
+     "item": "Salt",
+     "qty": 1
+    },
+    {
+     "item": "Mineral Water",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "white-sauce",
+   "name": {
+    "pt": "White Sauce",
+    "en": "White Sauce"
+   },
+   "output": "White Sauce",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Fruit",
+     "qty": 1,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    },
+    {
+     "item": "Milk",
+     "qty": 1
+    },
+    {
+     "item": "Base Sauce",
+     "qty": 1
+    },
+    {
+     "item": "Cooking Wine",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "adaptation-draught",
+   "name": {
+    "pt": "Adaptation Draught",
+    "en": "Adaptation Draught"
+   },
+   "output": "Adaptation Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Life",
+     "qty": 30
+    },
+    {
+     "item": "Defense Elixir",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Endurance",
+     "qty": 30
+    },
+    {
+     "item": "Helix Elixir",
+     "qty": 30
+    },
+    {
+     "item": "Spellbound Catalyst",
+     "qty": 10
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "antidote-elixir",
+   "name": {
+    "pt": "Antidote Elixir",
+    "en": "Antidote Elixir"
+   },
+   "output": "Antidote Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Weeds",
+     "qty": 1
+    },
+    {
+     "item": "Blood 2",
+     "qty": 2,
+     "any": [
+      "Pig Blood",
+      "Ox Blood",
+      "Deer Blood"
+     ]
+    },
+    {
+     "item": "Olive Oil",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "ardan-s-jewel",
+   "name": {
+    "pt": "Ardan's Jewel",
+    "en": "Ardan's Jewel"
+   },
+   "output": "Ardan's Jewel",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Ardan's Broken Jewel I",
+     "qty": 1
+    },
+    {
+     "item": "Ardan's Broken Jewel II",
+     "qty": 1
+    },
+    {
+     "item": "Ardan's Broken Jewel III",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "armor-draught",
+   "name": {
+    "pt": "Armor Draught",
+    "en": "Armor Draught"
+   },
+   "output": "Armor Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Will",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Life",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Armor",
+     "qty": 30
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 10
+    },
+    {
+     "item": "Ibellab&#039;s Essence",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "askasha-s-repaired-magic-weapon",
+   "name": {
+    "pt": "Askasha's Repaired Magic Weapon",
+    "en": "Askasha's Repaired Magic Weapon"
+   },
+   "output": "Askasha's Repaired Magic Weapon",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Askasha's Broken Magic Weapon I",
+     "qty": 1
+    },
+    {
+     "item": "Askasha's Broken Magic Weapon II",
+     "qty": 1
+    },
+    {
+     "item": "Askasha's Broken Magic Weapon III",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "beast-039-s-draught",
+   "name": {
+    "pt": "Beast&#039;s Draught",
+    "en": "Beast&#039;s Draught"
+   },
+   "output": "Beast&#039;s Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Grim Reaper&#039;s Elixir",
+     "qty": 3
+    },
+    {
+     "item": "EXP Elixir",
+     "qty": 3
+    },
+    {
+     "item": "Elixir of Will",
+     "qty": 3
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "berserk-draught",
+   "name": {
+    "pt": "Berserk Draught",
+    "en": "Berserk Draught"
+   },
+   "output": "Berserk Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Assassination",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Detection",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Carnage",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Sky",
+     "qty": 30
+    },
+    {
+     "item": "Spellbound Catalyst",
+     "qty": 10
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "celerity-draught",
+   "name": {
+    "pt": "Celerity Draught",
+    "en": "Celerity Draught"
+   },
+   "output": "Celerity Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Training",
+     "qty": 36
+    },
+    {
+     "item": "Elixir of Time",
+     "qty": 36
+    },
+    {
+     "item": "Elixir of Wings",
+     "qty": 36
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 10
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "clown-s-blood",
+   "name": {
+    "pt": "Clown's Blood",
+    "en": "Clown's Blood"
+   },
+   "output": "Clown's Blood",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Spirit's Leaf",
+     "qty": 1
+    },
+    {
+     "item": "Powder of Darkness",
+     "qty": 1
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Blood 1",
+     "qty": 2,
+     "any": [
+      "Chicken Blood",
+      "Sheep Blood",
+      "Lamb Blood",
+      "Goat Blood"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "corrupt-oil-of-immortality",
+   "name": {
+    "pt": "Corrupt Oil of Immortality",
+    "en": "Corrupt Oil of Immortality"
+   },
+   "output": "Corrupt Oil of Immortality",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Turo Heart",
+     "qty": 1
+    },
+    {
+     "item": "Remnants of Burnt Spirits",
+     "qty": 1
+    },
+    {
+     "item": "Oil of Regeneration",
+     "qty": 20
+    },
+    {
+     "item": "Oil of Fortitude",
+     "qty": 20
+    },
+    {
+     "item": "Oil of Corruption",
+     "qty": 20
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "corruption-draught",
+   "name": {
+    "pt": "Corruption Draught",
+    "en": "Corruption Draught"
+   },
+   "output": "Corruption Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Draining",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Perforation",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Death",
+     "qty": 30
+    },
+    {
+     "item": "Grim Reaper&#039;s Elixir",
+     "qty": 30
+    },
+    {
+     "item": "Spellbound Catalyst",
+     "qty": 10
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "defense-elixir",
+   "name": {
+    "pt": "Defense Elixir",
+    "en": "Defense Elixir"
+   },
+   "output": "Defense Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Ash Sap",
+     "qty": 6
+    },
+    {
+     "item": "Blood 2",
+     "qty": 5,
+     "any": [
+      "Pig Blood",
+      "Ox Blood",
+      "Deer Blood"
+     ]
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "dragon-s-tears",
+   "name": {
+    "pt": "Dragon's Tears",
+    "en": "Dragon's Tears"
+   },
+   "output": "Dragon's Tears",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Distilled Water",
+     "qty": 50
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 50
+    },
+    {
+     "item": "Everlasting Herb",
+     "qty": 50
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 50
+    },
+    {
+     "item": "Magical Shard",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-advanced-concentration",
+   "name": {
+    "pt": "Elixir of Advanced Concentration",
+    "en": "Elixir of Advanced Concentration"
+   },
+   "output": "Elixir of Advanced Concentration",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Concentration",
+     "qty": 3
+    },
+    {
+     "item": "Blue Reagent",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-amity",
+   "name": {
+    "pt": "Elixir of Amity",
+    "en": "Elixir of Amity"
+   },
+   "output": "Elixir of Amity",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Legendary Beast's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Fire Flake Flower",
+     "qty": 5
+    },
+    {
+     "item": "Ash Sap",
+     "qty": 6
+    },
+    {
+     "item": "Black Stone Powder",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-armor",
+   "name": {
+    "pt": "Elixir of Armor",
+    "en": "Elixir of Armor"
+   },
+   "output": "Elixir of Armor",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Fortitude",
+     "qty": 3
+    },
+    {
+     "item": "Refined Delotia Reagent",
+     "qty": 3
+    },
+    {
+     "item": "Thornwood Sap",
+     "qty": 5
+    },
+    {
+     "item": "Thick Turo Blood",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-assassination",
+   "name": {
+    "pt": "Elixir of Assassination",
+    "en": "Elixir of Assassination"
+   },
+   "output": "Elixir of Assassination",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Regeneration",
+     "qty": 1
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 5
+    },
+    {
+     "item": "Amanita Mushroom",
+     "qty": 4
+    },
+    {
+     "item": "Red Tree Lump",
+     "qty": 2
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-brawn",
+   "name": {
+    "pt": "Elixir of Brawn",
+    "en": "Elixir of Brawn"
+   },
+   "output": "Elixir of Brawn",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Fortitude",
+     "qty": 1
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    },
+    {
+     "item": "Dictyophora",
+     "qty": 3
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 5
+    },
+    {
+     "item": "Powder of Earth",
+     "qty": 7
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-burn-removal",
+   "name": {
+    "pt": "Elixir of Burn Removal",
+    "en": "Elixir of Burn Removal"
+   },
+   "output": "Elixir of Burn Removal",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Purified Water",
+     "qty": 1
+    },
+    {
+     "item": "Fruit",
+     "qty": 2,
+     "any": [
+      "Grape",
+      "Strawberry",
+      "Banana",
+      "Apple",
+      "Fig",
+      "Pear",
+      "Cherry",
+      "Olive"
+     ]
+    },
+    {
+     "item": "Weeds",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-carnage",
+   "name": {
+    "pt": "Elixir of Carnage",
+    "en": "Elixir of Carnage"
+   },
+   "output": "Elixir of Carnage",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Corruption",
+     "qty": 1
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 7
+    },
+    {
+     "item": "Tiger Mushroom",
+     "qty": 2
+    },
+    {
+     "item": "Spirit's Leaf",
+     "qty": 2
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-concentration",
+   "name": {
+    "pt": "Elixir of Concentration",
+    "en": "Elixir of Concentration"
+   },
+   "output": "Elixir of Concentration",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Cloud Mushroom",
+     "qty": 3
+    },
+    {
+     "item": "Wild Grass",
+     "qty": 2
+    },
+    {
+     "item": "Blood 4",
+     "qty": 3,
+     "any": [
+      "Flamingo Blood",
+      "Tiger Blood",
+      "Buffalo Blood"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-death",
+   "name": {
+    "pt": "Elixir of Death",
+    "en": "Elixir of Death"
+   },
+   "output": "Elixir of Death",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Tranquility",
+     "qty": 1
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 6
+    },
+    {
+     "item": "Ancient Mushroom",
+     "qty": 2
+    },
+    {
+     "item": "Ash Sap",
+     "qty": 7
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-demihuman-hunt",
+   "name": {
+    "pt": "Elixir of Demihuman Hunt",
+    "en": "Elixir of Demihuman Hunt"
+   },
+   "output": "Elixir of Demihuman Hunt",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Sinner's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Arrow Mushroom",
+     "qty": 4
+    },
+    {
+     "item": "Fir Sap",
+     "qty": 4
+    },
+    {
+     "item": "Black Stone Powder",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-destruction",
+   "name": {
+    "pt": "Elixir of Destruction",
+    "en": "Elixir of Destruction"
+   },
+   "output": "Elixir of Destruction",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Storms",
+     "qty": 1
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 3
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 5
+    },
+    {
+     "item": "Powder of Flame",
+     "qty": 5
+    },
+    {
+     "item": "Snowfield Cedar Sap",
+     "qty": 7
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-detection",
+   "name": {
+    "pt": "Elixir of Detection",
+    "en": "Elixir of Detection"
+   },
+   "output": "Elixir of Detection",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Storms",
+     "qty": 1
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 6
+    },
+    {
+     "item": "Truffle Mushroom",
+     "qty": 3
+    },
+    {
+     "item": "Old Tree Bark",
+     "qty": 2
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-draining",
+   "name": {
+    "pt": "Elixir of Draining",
+    "en": "Elixir of Draining"
+   },
+   "output": "Elixir of Draining",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Fortitude",
+     "qty": 1
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 4
+    },
+    {
+     "item": "Hump Mushroom",
+     "qty": 3
+    },
+    {
+     "item": "Birch Sap",
+     "qty": 4
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-edania",
+   "name": {
+    "pt": "Elixir of Edania",
+    "en": "Elixir of Edania"
+   },
+   "output": "Elixir of Edania",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Sinner's Blood",
+     "qty": 2
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 4
+    },
+    {
+     "item": "Old Tree Bark",
+     "qty": 6
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 6
+    },
+    {
+     "item": "Caphras Tree Sap",
+     "qty": 6
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-endurance",
+   "name": {
+    "pt": "Elixir of Endurance",
+    "en": "Elixir of Endurance"
+   },
+   "output": "Elixir of Endurance",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Dwarf Mushroom",
+     "qty": 2
+    },
+    {
+     "item": "Birch Sap",
+     "qty": 5
+    },
+    {
+     "item": "Blood 4",
+     "qty": 4,
+     "any": [
+      "Flamingo Blood",
+      "Tiger Blood",
+      "Buffalo Blood"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-energy",
+   "name": {
+    "pt": "Elixir of Energy",
+    "en": "Elixir of Energy"
+   },
+   "output": "Elixir of Energy",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Blood 3",
+     "qty": 4,
+     "any": [
+      "Bear Blood",
+      "Wolf Blood",
+      "Waragon Blood"
+     ]
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    },
+    {
+     "item": "MP Potion (Small)",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-fond-memories",
+   "name": {
+    "pt": "Elixir of Fond Memories",
+    "en": "Elixir of Fond Memories"
+   },
+   "output": "Elixir of Fond Memories",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Incomplete First Element",
+     "qty": 1
+    },
+    {
+     "item": "Arenda's Special Base",
+     "qty": 1
+    },
+    {
+     "item": "Oil of Regeneration",
+     "qty": 1
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-fury",
+   "name": {
+    "pt": "Elixir of Fury",
+    "en": "Elixir of Fury"
+   },
+   "output": "Elixir of Fury",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Dwarf Mushroom",
+     "qty": 4
+    },
+    {
+     "item": "Ash Sap",
+     "qty": 1
+    },
+    {
+     "item": "Blood 4",
+     "qty": 4,
+     "any": [
+      "Flamingo Blood",
+      "Tiger Blood",
+      "Buffalo Blood"
+     ]
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-hemostasis",
+   "name": {
+    "pt": "Elixir of Hemostasis",
+    "en": "Elixir of Hemostasis"
+   },
+   "output": "Elixir of Hemostasis",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Cloud Mushroom",
+     "qty": 1
+    },
+    {
+     "item": "Ash Sap",
+     "qty": 1
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-human-hunt",
+   "name": {
+    "pt": "Elixir of Human Hunt",
+    "en": "Elixir of Human Hunt"
+   },
+   "output": "Elixir of Human Hunt",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Clown's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Fortune Teller Mushroom",
+     "qty": 4
+    },
+    {
+     "item": "Maple Sap",
+     "qty": 4
+    },
+    {
+     "item": "Black Stone Powder",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-labor",
+   "name": {
+    "pt": "Elixir of Labor",
+    "en": "Elixir of Labor"
+   },
+   "output": "Elixir of Labor",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Sinner's Blood",
+     "qty": 2
+    },
+    {
+     "item": "Refined Delotia Reagent",
+     "qty": 2
+    },
+    {
+     "item": "Powder of Time",
+     "qty": 2
+    },
+    {
+     "item": "Thornwood Sap",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-mastery",
+   "name": {
+    "pt": "Elixir of Mastery",
+    "en": "Elixir of Mastery"
+   },
+   "output": "Elixir of Mastery",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Tranquility",
+     "qty": 2
+    },
+    {
+     "item": "Refined Delotia Reagent",
+     "qty": 3
+    },
+    {
+     "item": "Thornwood Sap",
+     "qty": 5
+    },
+    {
+     "item": "Everlasting Herb",
+     "qty": 5
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-mentality",
+   "name": {
+    "pt": "Elixir of Mentality",
+    "en": "Elixir of Mentality"
+   },
+   "output": "Elixir of Mentality",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Ash Sap",
+     "qty": 4
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    },
+    {
+     "item": "MP Potion (Small)",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-perforation",
+   "name": {
+    "pt": "Elixir of Perforation",
+    "en": "Elixir of Perforation"
+   },
+   "output": "Elixir of Perforation",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Corruption",
+     "qty": 1
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 4
+    },
+    {
+     "item": "Bluffer Mushroom",
+     "qty": 5
+    },
+    {
+     "item": "Pine Sap",
+     "qty": 5
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-persistence",
+   "name": {
+    "pt": "Elixir of Persistence",
+    "en": "Elixir of Persistence"
+   },
+   "output": "Elixir of Persistence",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Tranquility",
+     "qty": 1
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    },
+    {
+     "item": "Red-spotted Amanita",
+     "qty": 3
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 5
+    },
+    {
+     "item": "Powder of Time",
+     "qty": 7
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-resistance",
+   "name": {
+    "pt": "Elixir of Resistance",
+    "en": "Elixir of Resistance"
+   },
+   "output": "Elixir of Resistance",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Cloud Mushroom",
+     "qty": 3
+    },
+    {
+     "item": "Birch Sap",
+     "qty": 1
+    },
+    {
+     "item": "Blood 1",
+     "qty": 7,
+     "any": [
+      "Chicken Blood",
+      "Sheep Blood",
+      "Lamb Blood",
+      "Goat Blood"
+     ]
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-seal",
+   "name": {
+    "pt": "Elixir of Seal",
+    "en": "Elixir of Seal"
+   },
+   "output": "Elixir of Seal",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Dwarf Mushroom",
+     "qty": 3
+    },
+    {
+     "item": "Birch Sap",
+     "qty": 1
+    },
+    {
+     "item": "Blood 1",
+     "qty": 4,
+     "any": [
+      "Chicken Blood",
+      "Sheep Blood",
+      "Lamb Blood",
+      "Goat Blood"
+     ]
+    },
+    {
+     "item": "Purified Water",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-sharp-detection",
+   "name": {
+    "pt": "Elixir of Sharp Detection",
+    "en": "Elixir of Sharp Detection"
+   },
+   "output": "Elixir of Sharp Detection",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Storms",
+     "qty": 1
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 6
+    },
+    {
+     "item": "White Truffle Mushroom",
+     "qty": 3
+    },
+    {
+     "item": "Old Tree Bark",
+     "qty": 2
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-shock",
+   "name": {
+    "pt": "Elixir of Shock",
+    "en": "Elixir of Shock"
+   },
+   "output": "Elixir of Shock",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Clown's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Tiger Mushroom",
+     "qty": 5
+    },
+    {
+     "item": "Cedar Sap",
+     "qty": 7
+    },
+    {
+     "item": "Powder of Time",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-skill",
+   "name": {
+    "pt": "Elixir of Skill",
+    "en": "Elixir of Skill"
+   },
+   "output": "Elixir of Skill",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Wise Man's Blood",
+     "qty": 2
+    },
+    {
+     "item": "Delotia",
+     "qty": 5
+    },
+    {
+     "item": "Powder of Time",
+     "qty": 2
+    },
+    {
+     "item": "Thornwood Sap",
+     "qty": 5
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-sky",
+   "name": {
+    "pt": "Elixir of Sky",
+    "en": "Elixir of Sky"
+   },
+   "output": "Elixir of Sky",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Tranquility",
+     "qty": 1
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 6
+    },
+    {
+     "item": "Emperor Mushroom",
+     "qty": 5
+    },
+    {
+     "item": "Bloody Tree Knot",
+     "qty": 2
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-spells",
+   "name": {
+    "pt": "Elixir of Spells",
+    "en": "Elixir of Spells"
+   },
+   "output": "Elixir of Spells",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Tyrant's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Fire Flake Flower",
+     "qty": 5
+    },
+    {
+     "item": "Maple Sap",
+     "qty": 3
+    },
+    {
+     "item": "Powder of Darkness",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-swiftness",
+   "name": {
+    "pt": "Elixir of Swiftness",
+    "en": "Elixir of Swiftness"
+   },
+   "output": "Elixir of Swiftness",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Legendary Beast's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Arrow Mushroom",
+     "qty": 5
+    },
+    {
+     "item": "Birch Sap",
+     "qty": 5
+    },
+    {
+     "item": "Powder of Darkness",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-time",
+   "name": {
+    "pt": "Elixir of Time",
+    "en": "Elixir of Time"
+   },
+   "output": "Elixir of Time",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Wise Man's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Fire Flake Flower",
+     "qty": 6
+    },
+    {
+     "item": "Maple Sap",
+     "qty": 5
+    },
+    {
+     "item": "Powder of Time",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-training",
+   "name": {
+    "pt": "Elixir of Training",
+    "en": "Elixir of Training"
+   },
+   "output": "Elixir of Training",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Legendary Beast's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Silver Azalea",
+     "qty": 7
+    },
+    {
+     "item": "Pine Sap",
+     "qty": 4
+    },
+    {
+     "item": "Powder of Rifts",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-wind",
+   "name": {
+    "pt": "Elixir of Wind",
+    "en": "Elixir of Wind"
+   },
+   "output": "Elixir of Wind",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Wise Man's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Fortune Teller Mushroom",
+     "qty": 5
+    },
+    {
+     "item": "Pine Sap",
+     "qty": 5
+    },
+    {
+     "item": "Powder of Darkness",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "elixir-of-wings",
+   "name": {
+    "pt": "Elixir of Wings",
+    "en": "Elixir of Wings"
+   },
+   "output": "Elixir of Wings",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Silver Azalea",
+     "qty": 2
+    },
+    {
+     "item": "Ash Sap",
+     "qty": 1
+    },
+    {
+     "item": "Blood 4",
+     "qty": 4,
+     "any": [
+      "Flamingo Blood",
+      "Tiger Blood",
+      "Buffalo Blood"
+     ]
+    },
+    {
+     "item": "Purified Water",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "essence-of-abundance",
+   "name": {
+    "pt": "Essence of Abundance",
+    "en": "Essence of Abundance"
+   },
+   "output": "Essence of Abundance",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fruit of Nature",
+     "qty": 2
+    },
+    {
+     "item": "Cloud Mushroom",
+     "qty": 6
+    },
+    {
+     "item": "Birch Sap",
+     "qty": 6
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "essence-of-crimson-flame",
+   "name": {
+    "pt": "Essence of Crimson Flame",
+    "en": "Essence of Crimson Flame"
+   },
+   "output": "Essence of Crimson Flame",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fruit of Nature",
+     "qty": 2
+    },
+    {
+     "item": "Dwarf Mushroom",
+     "qty": 6
+    },
+    {
+     "item": "Ash Sap",
+     "qty": 6
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "essence-of-destruction",
+   "name": {
+    "pt": "Essence of Destruction",
+    "en": "Essence of Destruction"
+   },
+   "output": "Essence of Destruction",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fruit of Nature",
+     "qty": 2
+    },
+    {
+     "item": "Silver Azalea",
+     "qty": 6
+    },
+    {
+     "item": "Pine Sap",
+     "qty": 6
+    },
+    {
+     "item": "Powder of Flame",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "essence-of-enchantment",
+   "name": {
+    "pt": "Essence of Enchantment",
+    "en": "Essence of Enchantment"
+   },
+   "output": "Essence of Enchantment",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fruit of Nature",
+     "qty": 2
+    },
+    {
+     "item": "Fire Flake Flower",
+     "qty": 3
+    },
+    {
+     "item": "Ash Sap",
+     "qty": 4
+    },
+    {
+     "item": "Powder of Darkness",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "essence-of-magic-power",
+   "name": {
+    "pt": "Essence of Magic Power",
+    "en": "Essence of Magic Power"
+   },
+   "output": "Essence of Magic Power",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fruit of Nature",
+     "qty": 2
+    },
+    {
+     "item": "Dry Mane Grass",
+     "qty": 6
+    },
+    {
+     "item": "Birch Sap",
+     "qty": 6
+    },
+    {
+     "item": "Powder of Darkness",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "essence-of-nature",
+   "name": {
+    "pt": "Essence of Nature",
+    "en": "Essence of Nature"
+   },
+   "output": "Essence of Nature",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fruit of Nature",
+     "qty": 2
+    },
+    {
+     "item": "Fortune Teller Mushroom",
+     "qty": 6
+    },
+    {
+     "item": "Maple Sap",
+     "qty": 6
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "essence-of-perfection",
+   "name": {
+    "pt": "Essence of Perfection",
+    "en": "Essence of Perfection"
+   },
+   "output": "Essence of Perfection",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fruit of Nature",
+     "qty": 2
+    },
+    {
+     "item": "Sunrise Herb",
+     "qty": 6
+    },
+    {
+     "item": "Maple Sap",
+     "qty": 6
+    },
+    {
+     "item": "Powder of Flame",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "essence-of-the-sun",
+   "name": {
+    "pt": "Essence of the Sun",
+    "en": "Essence of the Sun"
+   },
+   "output": "Essence of the Sun",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fruit of Nature",
+     "qty": 2
+    },
+    {
+     "item": "Arrow Mushroom",
+     "qty": 6
+    },
+    {
+     "item": "Pine Sap",
+     "qty": 6
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "essence-of-tunta",
+   "name": {
+    "pt": "Essence of Tunta",
+    "en": "Essence of Tunta"
+   },
+   "output": "Essence of Tunta",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fruit of Nature",
+     "qty": 50
+    },
+    {
+     "item": "Refined Delotia Reagent",
+     "qty": 50
+    },
+    {
+     "item": "Fine Lightweight Plume",
+     "qty": 50
+    },
+    {
+     "item": "Black Gem Fragment",
+     "qty": 10
+    },
+    {
+     "item": "Latent Aura",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "exp-elixir",
+   "name": {
+    "pt": "EXP Elixir",
+    "en": "EXP Elixir"
+   },
+   "output": "EXP Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Clown's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Dry Mane Grass",
+     "qty": 7
+    },
+    {
+     "item": "Pine Sap",
+     "qty": 5
+    },
+    {
+     "item": "Powder of Flame",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fiery-celerity-draught",
+   "name": {
+    "pt": "Fiery Celerity Draught",
+    "en": "Fiery Celerity Draught"
+   },
+   "output": "Fiery Celerity Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Celerity Draught",
+     "qty": 1
+    },
+    {
+     "item": "Stonetail Tonic",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fisher-s-elixir",
+   "name": {
+    "pt": "Fisher's Elixir",
+    "en": "Fisher's Elixir"
+   },
+   "output": "Fisher's Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Wise Man's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Sunrise Herb",
+     "qty": 6
+    },
+    {
+     "item": "Fir Sap",
+     "qty": 3
+    },
+    {
+     "item": "Powder of Flame",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "flawless-spirit-stone",
+   "name": {
+    "pt": "Flawless Spirit Stone",
+    "en": "Flawless Spirit Stone"
+   },
+   "output": "Flawless Spirit Stone",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Tranquility",
+     "qty": 10
+    },
+    {
+     "item": "Tenacious Origin of Life",
+     "qty": 4
+    },
+    {
+     "item": "Rough Opulent Crystal",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "frenzy-draught",
+   "name": {
+    "pt": "Frenzy Draught",
+    "en": "Frenzy Draught"
+   },
+   "output": "Frenzy Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Frenzy",
+     "qty": 3
+    },
+    {
+     "item": "Elixir of Demihuman Hunt",
+     "qty": 3
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 1
+    },
+    {
+     "item": "Abyssal Essence",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "frenzy-draught-of-corruption",
+   "name": {
+    "pt": "Frenzy Draught of Corruption",
+    "en": "Frenzy Draught of Corruption"
+   },
+   "output": "Frenzy Draught of Corruption",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Frenzy Draught",
+     "qty": 1
+    },
+    {
+     "item": "Corrupted Breath",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "fury-draught",
+   "name": {
+    "pt": "Fury Draught",
+    "en": "Fury Draught"
+   },
+   "output": "Fury Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Frenzy",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Concentration",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Fury",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Destruction",
+     "qty": 30
+    },
+    {
+     "item": "Spellbound Catalyst",
+     "qty": 10
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "gem-polisher",
+   "name": {
+    "pt": "Gem Polisher",
+    "en": "Gem Polisher"
+   },
+   "output": "Gem Polisher",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Processed Coal",
+     "qty": 4
+    },
+    {
+     "item": "Purified Water",
+     "qty": 6
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "giant-039-s-draught",
+   "name": {
+    "pt": "Giant&#039;s Draught",
+    "en": "Giant&#039;s Draught"
+   },
+   "output": "Giant&#039;s Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Fury",
+     "qty": 3
+    },
+    {
+     "item": "Elixir of Shock",
+     "qty": 3
+    },
+    {
+     "item": "Elixir of Perforation",
+     "qty": 3
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "golden-hand-elixir",
+   "name": {
+    "pt": "Golden Hand Elixir",
+    "en": "Golden Hand Elixir"
+   },
+   "output": "Golden Hand Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Storms",
+     "qty": 1
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 4
+    },
+    {
+     "item": "Fog Mushroom",
+     "qty": 4
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 3
+    },
+    {
+     "item": "Fir Sap",
+     "qty": 6
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "griffon-s-elixir",
+   "name": {
+    "pt": "Griffon's Elixir",
+    "en": "Griffon's Elixir"
+   },
+   "output": "Griffon's Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Griffon Claw",
+     "qty": 1
+    },
+    {
+     "item": "Cedar Sap",
+     "qty": 6
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 3
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    },
+    {
+     "item": "Sinner's Blood",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "grim-reaper-s-elixir",
+   "name": {
+    "pt": "Grim Reaper's Elixir",
+    "en": "Grim Reaper's Elixir"
+   },
+   "output": "Grim Reaper's Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Fortitude",
+     "qty": 1
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 4
+    },
+    {
+     "item": "Sky Mushroom",
+     "qty": 2
+    },
+    {
+     "item": "Monk's Branch",
+     "qty": 2
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "harmony-draught",
+   "name": {
+    "pt": "Harmony Draught",
+    "en": "Harmony Draught"
+   },
+   "output": "Harmony Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fury Draught",
+     "qty": 10
+    },
+    {
+     "item": "Adaptation Draught",
+     "qty": 10
+    },
+    {
+     "item": "Potential Draught",
+     "qty": 10
+    },
+    {
+     "item": "Corruption Draught",
+     "qty": 10
+    },
+    {
+     "item": "Berserk Draught",
+     "qty": 10
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "helix-elixir",
+   "name": {
+    "pt": "Helix Elixir",
+    "en": "Helix Elixir"
+   },
+   "output": "Helix Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Thuja Sap",
+     "qty": 6
+    },
+    {
+     "item": "Monk's Branch",
+     "qty": 3
+    },
+    {
+     "item": "Clown's Blood",
+     "qty": 2
+    },
+    {
+     "item": "Powder of Flame",
+     "qty": 2
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "herbal-gunpowder",
+   "name": {
+    "pt": "Herbal Gunpowder",
+    "en": "Herbal Gunpowder"
+   },
+   "output": "Herbal Gunpowder",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Insectivore Plant Powder",
+     "qty": 1
+    },
+    {
+     "item": "Powder of Darkness",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "herbal-poison",
+   "name": {
+    "pt": "Herbal Poison",
+    "en": "Herbal Poison"
+   },
+   "output": "Herbal Poison",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Insectivore Plant Sap",
+     "qty": 1
+    },
+    {
+     "item": "Amanita Mushroom",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "immortal-armor-draught",
+   "name": {
+    "pt": "Immortal: Armor Draught",
+    "en": "Immortal: Armor Draught"
+   },
+   "output": "Immortal: Armor Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Armor Draught",
+     "qty": 1
+    },
+    {
+     "item": "Corrupt Oil of Immortality",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "immortal-beast-039-s-draught",
+   "name": {
+    "pt": "Immortal: Beast&#039;s Draught",
+    "en": "Immortal: Beast&#039;s Draught"
+   },
+   "output": "Immortal: Beast&#039;s Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Beast&#039;s Draught",
+     "qty": 1
+    },
+    {
+     "item": "Corrupt Oil of Immortality",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "immortal-frenzy-draught",
+   "name": {
+    "pt": "Immortal: Frenzy Draught",
+    "en": "Immortal: Frenzy Draught"
+   },
+   "output": "Immortal: Frenzy Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Frenzy Draught",
+     "qty": 1
+    },
+    {
+     "item": "Corrupt Oil of Immortality",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "immortal-giant-039-s-draught",
+   "name": {
+    "pt": "Immortal: Giant&#039;s Draught",
+    "en": "Immortal: Giant&#039;s Draught"
+   },
+   "output": "Immortal: Giant&#039;s Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Giant&#039;s Draught",
+     "qty": 1
+    },
+    {
+     "item": "Corrupt Oil of Immortality",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "immortal-savage-draught",
+   "name": {
+    "pt": "Immortal: Savage Draught",
+    "en": "Immortal: Savage Draught"
+   },
+   "output": "Immortal: Savage Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Savage Draught",
+     "qty": 1
+    },
+    {
+     "item": "Corrupt Oil of Immortality",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "imperfect-alchemy-stone",
+   "name": {
+    "pt": "Imperfect Alchemy Stone",
+    "en": "Imperfect Alchemy Stone"
+   },
+   "output": "Imperfect Alchemy Stone",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Shining Powder",
+     "qty": 10
+    },
+    {
+     "item": "Sinner's Blood",
+     "qty": 3
+    },
+    {
+     "item": "Powder of Time",
+     "qty": 5
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 10
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 10
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "kagtunak",
+   "name": {
+    "pt": "Kagtunak",
+    "en": "Kagtunak"
+   },
+   "output": "Kagtunak",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Red Essence",
+     "qty": 1
+    },
+    {
+     "item": "Oil of Fortitude",
+     "qty": 1
+    },
+    {
+     "item": "Thuja Sap",
+     "qty": 3
+    },
+    {
+     "item": "Powder of Rifts",
+     "qty": 10
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "leather-glaze",
+   "name": {
+    "pt": "Leather Glaze",
+    "en": "Leather Glaze"
+   },
+   "output": "Leather Glaze",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Maple Sap",
+     "qty": 3
+    },
+    {
+     "item": "Powder of Darkness",
+     "qty": 2
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 3
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "legendary-beast-s-blood",
+   "name": {
+    "pt": "Legendary Beast's Blood",
+    "en": "Legendary Beast's Blood"
+   },
+   "output": "Legendary Beast's Blood",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Spirit's Leaf",
+     "qty": 1
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 1
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Blood 5",
+     "qty": 2,
+     "any": [
+      "Cheetah Blood",
+      "Lion Blood",
+      "Rhino Blood"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "looney-elixir",
+   "name": {
+    "pt": "Looney Elixir",
+    "en": "Looney Elixir"
+   },
+   "output": "Looney Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Moss Tree Sap",
+     "qty": 4
+    },
+    {
+     "item": "Volcanic Umbrella Mushroom",
+     "qty": 2
+    },
+    {
+     "item": "Powder of Flame",
+     "qty": 3
+    },
+    {
+     "item": "Red Tree Lump",
+     "qty": 5
+    },
+    {
+     "item": "Violet Flower",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "marking-reagent",
+   "name": {
+    "pt": "Marking Reagent",
+    "en": "Marking Reagent"
+   },
+   "output": "Marking Reagent",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Sinner's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Magic Crystal - Vision",
+     "qty": 1
+    },
+    {
+     "item": "Herbal Gunpowder",
+     "qty": 1
+    },
+    {
+     "item": "Sticky Liquid",
+     "qty": 1
+    },
+    {
+     "item": "Black Stone Powder",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "marvelous-draught-of-persistence",
+   "name": {
+    "pt": "Marvelous Draught of Persistence",
+    "en": "Marvelous Draught of Persistence"
+   },
+   "output": "Marvelous Draught of Persistence",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Swiftness",
+     "qty": 90
+    },
+    {
+     "item": "Elixir of Endurance",
+     "qty": 90
+    },
+    {
+     "item": "Elixir of Persistence",
+     "qty": 90
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 30
+    },
+    {
+     "item": "Ouk Pill of Time and Tide",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "marvelous-draught-of-strength",
+   "name": {
+    "pt": "Marvelous Draught of Strength",
+    "en": "Marvelous Draught of Strength"
+   },
+   "output": "Marvelous Draught of Strength",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Swiftness",
+     "qty": 90
+    },
+    {
+     "item": "Elixir of Endurance",
+     "qty": 90
+    },
+    {
+     "item": "Elixir of Brawn",
+     "qty": 90
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 30
+    },
+    {
+     "item": "Ouk Pill of Time and Tide",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "metal-solvent",
+   "name": {
+    "pt": "Metal Solvent",
+    "en": "Metal Solvent"
+   },
+   "output": "Metal Solvent",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Melted Iron Shard",
+     "qty": 3
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 2
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Rough Stone",
+     "qty": 4
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "miloberry-s-apu-apu-waterstarwort",
+   "name": {
+    "pt": "Miloberry's Apu Apu Waterstarwort",
+    "en": "Miloberry's Apu Apu Waterstarwort"
+   },
+   "output": "Miloberry's Apu Apu Waterstarwort",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "00005140.webp",
+     "qty": 1
+    },
+    {
+     "item": "Fairy Powder",
+     "qty": 10
+    },
+    {
+     "item": "Essence of Liquor",
+     "qty": 10
+    },
+    {
+     "item": "Spirit's Leaf",
+     "qty": 10
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "oil-of-enchantment",
+   "name": {
+    "pt": "Oil of Enchantment",
+    "en": "Oil of Enchantment"
+   },
+   "output": "Oil of Enchantment",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fruit of Nature",
+     "qty": 1
+    },
+    {
+     "item": "Refined Delotia Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Purified Water",
+     "qty": 2
+    },
+    {
+     "item": "Everlasting Herb",
+     "qty": 2
+    },
+    {
+     "item": "Thick Turo Blood",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "oil-of-fortitude",
+   "name": {
+    "pt": "Oil of Fortitude",
+    "en": "Oil of Fortitude"
+   },
+   "output": "Oil of Fortitude",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Clown's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Monk's Branch",
+     "qty": 1
+    },
+    {
+     "item": "Fruit of Nature",
+     "qty": 1
+    },
+    {
+     "item": "Powder of Flame",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "oil-of-regeneration",
+   "name": {
+    "pt": "Oil of Regeneration",
+    "en": "Oil of Regeneration"
+   },
+   "output": "Oil of Regeneration",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Legendary Beast's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Red Tree Lump",
+     "qty": 1
+    },
+    {
+     "item": "Fruit of Nature",
+     "qty": 1
+    },
+    {
+     "item": "Powder of Rifts",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "oil-of-regeneration-2",
+   "name": {
+    "pt": "Oil of Regeneration 2",
+    "en": "Oil of Regeneration 2"
+   },
+   "output": "Oil of Regeneration 2",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Legendary Beast's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Fruit of Nature",
+     "qty": 1
+    },
+    {
+     "item": "Powder of Rifts",
+     "qty": 1
+    },
+    {
+     "item": "Everlasting Herb",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "oil-of-storms",
+   "name": {
+    "pt": "Oil of Storms",
+    "en": "Oil of Storms"
+   },
+   "output": "Oil of Storms",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Tyrant's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Old Tree Bark",
+     "qty": 1
+    },
+    {
+     "item": "Fruit of Nature",
+     "qty": 1
+    },
+    {
+     "item": "Powder of Time",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "oil-of-the-abyss",
+   "name": {
+    "pt": "Oil of the Abyss",
+    "en": "Oil of the Abyss"
+   },
+   "output": "Oil of the Abyss",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Tyrant's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Fruit of Nature",
+     "qty": 1
+    },
+    {
+     "item": "Powder of Time",
+     "qty": 2
+    },
+    {
+     "item": "Bloody Tree Knot",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "oil-of-tranquility",
+   "name": {
+    "pt": "Oil of Tranquility",
+    "en": "Oil of Tranquility"
+   },
+   "output": "Oil of Tranquility",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Wise Man's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Bloody Tree Knot",
+     "qty": 1
+    },
+    {
+     "item": "Fruit of Nature",
+     "qty": 1
+    },
+    {
+     "item": "Powder of Earth",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "perfume-of-charm",
+   "name": {
+    "pt": "Perfume of Charm",
+    "en": "Perfume of Charm"
+   },
+   "output": "Perfume of Charm",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of Enchantment",
+     "qty": 2
+    },
+    {
+     "item": "Shining Powder",
+     "qty": 3
+    },
+    {
+     "item": "Everlasting Herb",
+     "qty": 5
+    },
+    {
+     "item": "Delotia Essence",
+     "qty": 1
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "perfume-of-deep-sea",
+   "name": {
+    "pt": "Perfume of Deep Sea",
+    "en": "Perfume of Deep Sea"
+   },
+   "output": "Perfume of Deep Sea",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Oil of the Abyss",
+     "qty": 1
+    },
+    {
+     "item": "Coral Crystal",
+     "qty": 2
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 5
+    },
+    {
+     "item": "Arrow Mushroom",
+     "qty": 5
+    },
+    {
+     "item": "White Cedar Sap",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "perfume-of-envy",
+   "name": {
+    "pt": "Perfume of Envy",
+    "en": "Perfume of Envy"
+   },
+   "output": "Perfume of Envy",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Trace of Nature",
+     "qty": 5
+    },
+    {
+     "item": "Red Tree Lump",
+     "qty": 5
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 5
+    },
+    {
+     "item": "Oil of Corruption",
+     "qty": 6
+    },
+    {
+     "item": "Rusalka's Coral",
+     "qty": 30
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "perfume-of-insight",
+   "name": {
+    "pt": "Perfume of Insight",
+    "en": "Perfume of Insight"
+   },
+   "output": "Perfume of Insight",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Essence of Insight",
+     "qty": 1
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 3
+    },
+    {
+     "item": "Monk's Branch",
+     "qty": 3
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    },
+    {
+     "item": "Powder of Rifts",
+     "qty": 5
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "perfume-of-khalk",
+   "name": {
+    "pt": "Perfume of Khalk",
+    "en": "Perfume of Khalk"
+   },
+   "output": "Perfume of Khalk",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fugitive Khalk's Skin",
+     "qty": 1
+    },
+    {
+     "item": "White Cedar Sap",
+     "qty": 10
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 5
+    },
+    {
+     "item": "Purified Water",
+     "qty": 4
+    },
+    {
+     "item": "Oil of Corruption",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "perfume-of-spirits",
+   "name": {
+    "pt": "Perfume of Spirits",
+    "en": "Perfume of Spirits"
+   },
+   "output": "Perfume of Spirits",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Dead Tree Essence",
+     "qty": 1
+    },
+    {
+     "item": "Fruit of Nature",
+     "qty": 1
+    },
+    {
+     "item": "Loopy Tree Sap",
+     "qty": 10
+    },
+    {
+     "item": "Powder of Darkness",
+     "qty": 10
+    },
+    {
+     "item": "Violet Flower",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "perfume-of-swiftness",
+   "name": {
+    "pt": "Perfume of Swiftness",
+    "en": "Perfume of Swiftness"
+   },
+   "output": "Perfume of Swiftness",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Blue Whale Oil",
+     "qty": 1
+    },
+    {
+     "item": "Powder of Time",
+     "qty": 4
+    },
+    {
+     "item": "Everlasting Herb",
+     "qty": 6
+    },
+    {
+     "item": "Purified Water",
+     "qty": 4
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "perfume-of-tenacity",
+   "name": {
+    "pt": "Perfume of Tenacity",
+    "en": "Perfume of Tenacity"
+   },
+   "output": "Perfume of Tenacity",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Trace of Nature",
+     "qty": 5
+    },
+    {
+     "item": "Spirit's Leaf",
+     "qty": 5
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 5
+    },
+    {
+     "item": "Oil of Regeneration",
+     "qty": 6
+    },
+    {
+     "item": "Rusalka's Coral",
+     "qty": 30
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "plywood-hardener",
+   "name": {
+    "pt": "Plywood Hardener",
+    "en": "Plywood Hardener"
+   },
+   "output": "Plywood Hardener",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fir Sap",
+     "qty": 4
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Bloody Tree Knot",
+     "qty": 3
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 3
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "potential-draught",
+   "name": {
+    "pt": "Potential Draught",
+    "en": "Potential Draught"
+   },
+   "output": "Potential Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Wind",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Swiftness",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Spells",
+     "qty": 30
+    },
+    {
+     "item": "Elixir of Shock",
+     "qty": 30
+    },
+    {
+     "item": "Spellbound Catalyst",
+     "qty": 10
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "purified-lightstone-of-earth",
+   "name": {
+    "pt": "Purified Lightstone of Earth",
+    "en": "Purified Lightstone of Earth"
+   },
+   "output": "Purified Lightstone of Earth",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Imperfect Lightstone of Earth",
+     "qty": 1
+    },
+    {
+     "item": "Black Gem Fragment",
+     "qty": 10
+    },
+    {
+     "item": "Black Stone",
+     "qty": 10
+    },
+    {
+     "item": "Powder of Earth",
+     "qty": 50
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 50
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "purified-lightstone-of-fire",
+   "name": {
+    "pt": "Purified Lightstone of Fire",
+    "en": "Purified Lightstone of Fire"
+   },
+   "output": "Purified Lightstone of Fire",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Imperfect Lightstone of Fire",
+     "qty": 1
+    },
+    {
+     "item": "Black Gem Fragment",
+     "qty": 10
+    },
+    {
+     "item": "Black Stone",
+     "qty": 10
+    },
+    {
+     "item": "Powder of Flame",
+     "qty": 50
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 50
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "purified-lightstone-of-flora",
+   "name": {
+    "pt": "Purified Lightstone of Flora",
+    "en": "Purified Lightstone of Flora"
+   },
+   "output": "Purified Lightstone of Flora",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Imperfect Lightstone of Flora",
+     "qty": 1
+    },
+    {
+     "item": "Black Gem Fragment",
+     "qty": 10
+    },
+    {
+     "item": "Black Stone",
+     "qty": 10
+    },
+    {
+     "item": "Powder of Time",
+     "qty": 50
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 50
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "purified-lightstone-of-wind",
+   "name": {
+    "pt": "Purified Lightstone of Wind",
+    "en": "Purified Lightstone of Wind"
+   },
+   "output": "Purified Lightstone of Wind",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Imperfect Lightstone of Wind",
+     "qty": 1
+    },
+    {
+     "item": "Black Gem Fragment",
+     "qty": 10
+    },
+    {
+     "item": "Black Stone",
+     "qty": 10
+    },
+    {
+     "item": "Powder of Rifts",
+     "qty": 50
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 50
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "refined-delotia-reagent",
+   "name": {
+    "pt": "Refined Delotia Reagent",
+    "en": "Refined Delotia Reagent"
+   },
+   "output": "Refined Delotia Reagent",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Delotia Powder",
+     "qty": 3
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "resurrection-elixir",
+   "name": {
+    "pt": "Resurrection Elixir",
+    "en": "Resurrection Elixir"
+   },
+   "output": "Resurrection Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Sunrise Herb",
+     "qty": 3
+    },
+    {
+     "item": "Purified Water",
+     "qty": 3
+    },
+    {
+     "item": "HP Potion (Small)",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "rough-opulent-crystal",
+   "name": {
+    "pt": "Rough Opulent Crystal",
+    "en": "Rough Opulent Crystal"
+   },
+   "output": "Rough Opulent Crystal",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Translucent Crystal",
+     "qty": 50
+    },
+    {
+     "item": "Mud Crystal",
+     "qty": 50
+    },
+    {
+     "item": "Black Crystal",
+     "qty": 50
+    },
+    {
+     "item": "Blue Crystal",
+     "qty": 50
+    },
+    {
+     "item": "Violet Crystal",
+     "qty": 50
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "runn-light-fragment",
+   "name": {
+    "pt": "Runn Light Fragment",
+    "en": "Runn Light Fragment"
+   },
+   "output": "Runn Light Fragment",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Inextinguishable Stone",
+     "qty": 1
+    },
+    {
+     "item": "Stabilized Magical Black Stone",
+     "qty": 1
+    },
+    {
+     "item": "Cleansed Magical Black Stone",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "savage-draught",
+   "name": {
+    "pt": "Savage Draught",
+    "en": "Savage Draught"
+   },
+   "output": "Savage Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Weenie Elixir",
+     "qty": 3
+    },
+    {
+     "item": "Looney Elixir",
+     "qty": 3
+    },
+    {
+     "item": "Helix Elixir",
+     "qty": 3
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "shining-spirit-stone",
+   "name": {
+    "pt": "Shining Spirit Stone",
+    "en": "Shining Spirit Stone"
+   },
+   "output": "Shining Spirit Stone",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Flawless Spirit Stone",
+     "qty": 1
+    },
+    {
+     "item": "Mystical Spirit Powder",
+     "qty": 50
+    },
+    {
+     "item": "Metal Solvent",
+     "qty": 50
+    },
+    {
+     "item": "Cron Stone",
+     "qty": 5
+    },
+    {
+     "item": "Reagent of Harmonious Spirits",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "sinner-s-blood",
+   "name": {
+    "pt": "Sinner's Blood",
+    "en": "Sinner's Blood"
+   },
+   "output": "Sinner's Blood",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Bloody Tree Knot",
+     "qty": 1
+    },
+    {
+     "item": "Powder of Flame",
+     "qty": 1
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Blood 2",
+     "qty": 2,
+     "any": [
+      "Pig Blood",
+      "Ox Blood",
+      "Deer Blood"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "special-honey-jar",
+   "name": {
+    "pt": "Special Honey Jar",
+    "en": "Special Honey Jar"
+   },
+   "output": "Special Honey Jar",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Top-Quality Cooking Honey",
+     "qty": 2
+    },
+    {
+     "item": "Fruit of Nature",
+     "qty": 5
+    },
+    {
+     "item": "Essence of Liquor",
+     "qty": 1
+    },
+    {
+     "item": "Purified Water",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "spirit-stone-destruction",
+   "name": {
+    "pt": "Spirit Stone - Destruction",
+    "en": "Spirit Stone - Destruction"
+   },
+   "output": "Spirit Stone - Destruction",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Mystical Spirit Powder",
+     "qty": 50
+    },
+    {
+     "item": "Flawless Spirit Stone",
+     "qty": 5
+    },
+    {
+     "item": "Metal Solvent",
+     "qty": 50
+    },
+    {
+     "item": "Cron Stone",
+     "qty": 5
+    },
+    {
+     "item": "Reagent of Harmonious Spirits",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "spirit-stone-guardian",
+   "name": {
+    "pt": "Spirit Stone - Guardian",
+    "en": "Spirit Stone - Guardian"
+   },
+   "output": "Spirit Stone - Guardian",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Flawless Spirit Stone",
+     "qty": 5
+    },
+    {
+     "item": "Mystical Spirit Powder",
+     "qty": 50
+    },
+    {
+     "item": "Gem Polisher",
+     "qty": 50
+    },
+    {
+     "item": "Cron Stone",
+     "qty": 5
+    },
+    {
+     "item": "Reagent of Harmonious Spirits",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "tenacious-origin-of-life",
+   "name": {
+    "pt": "Tenacious Origin of Life",
+    "en": "Tenacious Origin of Life"
+   },
+   "output": "Tenacious Origin of Life",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Sunrise Herb",
+     "qty": 50
+    },
+    {
+     "item": "Silver Azalea",
+     "qty": 50
+    },
+    {
+     "item": "Fire Flake Flower",
+     "qty": 50
+    },
+    {
+     "item": "Dry Mane Grass",
+     "qty": 50
+    },
+    {
+     "item": "Silk Honey Grass",
+     "qty": 50
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "tidal-draught",
+   "name": {
+    "pt": "Tidal Draught",
+    "en": "Tidal Draught"
+   },
+   "output": "Tidal Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Fisher&#039;s Elixir",
+     "qty": 36
+    },
+    {
+     "item": "Elixir of Time",
+     "qty": 36
+    },
+    {
+     "item": "Elixir of Mastery",
+     "qty": 36
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 10
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "tyrant-s-blood",
+   "name": {
+    "pt": "Tyrant's Blood",
+    "en": "Tyrant's Blood"
+   },
+   "output": "Tyrant's Blood",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Monk's Branch",
+     "qty": 1
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 1
+    },
+    {
+     "item": "Pure Powder Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Blood 4",
+     "qty": 2,
+     "any": [
+      "Flamingo Blood",
+      "Tiger Blood",
+      "Buffalo Blood"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "unbridled-celerity-draught",
+   "name": {
+    "pt": "Unbridled Celerity Draught",
+    "en": "Unbridled Celerity Draught"
+   },
+   "output": "Unbridled Celerity Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Training",
+     "qty": 72
+    },
+    {
+     "item": "Elixir of Time",
+     "qty": 72
+    },
+    {
+     "item": "Elixir of Wings",
+     "qty": 72
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 20
+    },
+    {
+     "item": "Rumbling Earth Shard",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "vell-s-fine-powder",
+   "name": {
+    "pt": "Vell's Fine Powder",
+    "en": "Vell's Fine Powder"
+   },
+   "output": "Vell's Fine Powder",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Coral Piece",
+     "qty": 30
+    },
+    {
+     "item": "Blood 6",
+     "qty": 30,
+     "any": [
+      "Elephant Blood",
+      "Hyena Blood"
+     ]
+    },
+    {
+     "item": "Coral",
+     "qty": 10
+    },
+    {
+     "item": "Shining Powder",
+     "qty": 2
+    },
+    {
+     "item": "Alchemy Stone Shard",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "verdure-draught",
+   "name": {
+    "pt": "Verdure Draught",
+    "en": "Verdure Draught"
+   },
+   "output": "Verdure Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Worker&#039;s Elixir",
+     "qty": 3
+    },
+    {
+     "item": "Elixir of Time",
+     "qty": 3
+    },
+    {
+     "item": "Elixir of Swiftness",
+     "qty": 3
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "weenie-elixir",
+   "name": {
+    "pt": "Weenie Elixir",
+    "en": "Weenie Elixir"
+   },
+   "output": "Weenie Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Moss Tree Sap",
+     "qty": 4
+    },
+    {
+     "item": "Blue Umbrella Mushroom",
+     "qty": 2
+    },
+    {
+     "item": "Powder of Time",
+     "qty": 3
+    },
+    {
+     "item": "Monk's Branch",
+     "qty": 5
+    },
+    {
+     "item": "Sky Blue Flower",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "whale-tendon-elixir",
+   "name": {
+    "pt": "Whale Tendon Elixir",
+    "en": "Whale Tendon Elixir"
+   },
+   "output": "Whale Tendon Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Blue Whale Tendon",
+     "qty": 1
+    },
+    {
+     "item": "Clown's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Ash Sap",
+     "qty": 12
+    },
+    {
+     "item": "Purified Water",
+     "qty": 5
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "whale-tendon-potion",
+   "name": {
+    "pt": "Whale Tendon Potion",
+    "en": "Whale Tendon Potion"
+   },
+   "output": "Whale Tendon Potion",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Blue Whale Tendon",
+     "qty": 1
+    },
+    {
+     "item": "HP Potion (Medium)",
+     "qty": 3
+    },
+    {
+     "item": "MP Potion (Medium)",
+     "qty": 3
+    },
+    {
+     "item": "Purified Water",
+     "qty": 8
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "wise-man-s-blood",
+   "name": {
+    "pt": "Wise Man's Blood",
+    "en": "Wise Man's Blood"
+   },
+   "output": "Wise Man's Blood",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Monk's Branch",
+     "qty": 1
+    },
+    {
+     "item": "Trace of Nature",
+     "qty": 1
+    },
+    {
+     "item": "Clear Liquid Reagent",
+     "qty": 1
+    },
+    {
+     "item": "Blood 3",
+     "qty": 2,
+     "any": [
+      "Bear Blood",
+      "Wolf Blood",
+      "Waragon Blood"
+     ]
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "worker-s-elixir",
+   "name": {
+    "pt": "Worker's Elixir",
+    "en": "Worker's Elixir"
+   },
+   "output": "Worker's Elixir",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Sinner's Blood",
+     "qty": 1
+    },
+    {
+     "item": "Silver Azalea",
+     "qty": 6
+    },
+    {
+     "item": "Ash Sap",
+     "qty": 4
+    },
+    {
+     "item": "Powder of Flame",
+     "qty": 2
+    }
+   ],
+   "note": null
   }
  ]
 }

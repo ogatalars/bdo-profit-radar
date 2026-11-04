@@ -1,7 +1,8 @@
 // Check minimo: conta de dinheiro, gate de spot, integridade dos dados e i18n.
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { netRate, pricer, recipeProfit, resolveInput, spotFit, spotToday } from "../calc.js";
+import { netRate, pricer, recipeProfit, resolveInput, spotFit, spotToday,
+         recipeIndex, planRecipe } from "../calc.js";
 
 const read = (f) => JSON.parse(readFileSync(new URL(`../data/${f}`, import.meta.url), "utf8"));
 
@@ -43,6 +44,60 @@ const np = recipeProfit({ output: "Out", yield: 1, craftsPerHour: 1, inputs: [{ 
 assert.equal(np.priced, false);
 assert.deepEqual(np.missing, ["Fantasma"]);
 
+// --- calculadora: quantidades tem que fechar na mao
+{
+  // Fab: 1 craft usa 5 Raw e rende 2 -> 10 Fab precisa de 5 crafts e 25 Raw.
+  const idx = recipeIndex([
+    { output: "Fab", yield: 2, job: "cooking", craftsPerHour: 1, inputs: [{ item: "Raw", qty: 5 }] },
+  ]);
+  const fake2 = { names: { Raw: 1 }, items: { 1: { p: 100 } }, npc: {} };
+  const plan = planRecipe("Fab", 10, idx, pricer(fake2).priceOf);
+  assert.equal(plan.shopping.length, 1);
+  assert.equal(plan.shopping[0].item, "Raw");
+  assert.equal(plan.shopping[0].qty, 25, "10 unidades com yield 2 = 5 crafts = 25 insumos");
+  assert.equal(plan.cost, 2500);
+  assert.equal(plan.crafts[0].batches, 5);
+}
+{
+  // Cadeia de dois niveis: Final <- Meio <- Base, com quantidade propagada.
+  const idx = recipeIndex([
+    { output: "Final", yield: 1, job: "cooking", craftsPerHour: 1, inputs: [{ item: "Meio", qty: 2 }] },
+    { output: "Meio", yield: 1, job: "processing", craftsPerHour: 1, inputs: [{ item: "Base", qty: 3 }] },
+  ]);
+  const f = { names: { Base: 1 }, items: { 1: { p: 10 } }, npc: {} };
+  const plan = planRecipe("Final", 5, idx, pricer(f).priceOf);
+  assert.equal(plan.shopping[0].qty, 30, "5 Final = 10 Meio = 30 Base");
+  // O passo mais fundo vem primeiro: e a ordem em que se fabrica.
+  assert.equal(plan.crafts[0].item, "Meio");
+  assert.equal(plan.crafts.at(-1).item, "Final");
+}
+{
+  // Quando comprar o intermediario e mais barato, a calculadora compra...
+  const idx = recipeIndex([
+    { output: "Topo", yield: 1, job: "cooking", craftsPerHour: 1, inputs: [{ item: "Meio", qty: 1 }] },
+    { output: "Meio", yield: 1, job: "cooking", craftsPerHour: 1, inputs: [{ item: "Caro", qty: 10 }] },
+  ]);
+  const f = { names: { Meio: 1, Caro: 2 }, items: { 1: { p: 50 }, 2: { p: 100 } }, npc: {} };
+  const plan = planRecipe("Topo", 1, idx, pricer(f).priceOf);
+  assert.deepEqual(plan.shopping.map((s) => s.item), ["Meio"], "Meio custa 50 pronto e 1000 craftado");
+  // ...mas o item pedido nunca e "compre pronto": quem abriu a calculadora quer a receita.
+  const root = planRecipe("Meio", 1, idx, pricer(f).priceOf);
+  assert.deepEqual(root.shopping.map((s) => s.item), ["Caro"], "a raiz sempre e craftada");
+  // e com expandAll a arvore inteira abre
+  const full = planRecipe("Topo", 1, idx, pricer(f).priceOf, { expandAll: true });
+  assert.deepEqual(full.shopping.map((s) => s.item), ["Caro"]);
+}
+{
+  // Receita circular nao pode travar o navegador.
+  const idx = recipeIndex([
+    { output: "A", yield: 1, job: "cooking", craftsPerHour: 1, inputs: [{ item: "B", qty: 1 }] },
+    { output: "B", yield: 1, job: "cooking", craftsPerHour: 1, inputs: [{ item: "A", qty: 1 }] },
+  ]);
+  const f = { names: {}, items: {}, npc: {} };
+  const plan = planRecipe("A", 1, idx, pricer(f).priceOf);
+  assert.ok(plan.shopping.length > 0, "ciclo deve terminar comprando, nao em loop");
+}
+
 // --- gate de spot: Total Stat de AP e DP
 const zone = { stat: 1130, dpStat: 430, items: ["Out"] };
 assert.equal(spotFit(zone, { stat: 900, dpStat: 500 }).locked, true, "AP insuficiente trava");
@@ -69,7 +124,12 @@ const bilingual = (o, what) => {
   for (const l of ["pt", "en"]) assert.ok(o[l]?.length > 0, `${what}: falta traducao ${l}`);
 };
 for (const s of spots.spots) if (s.note) bilingual(s.note, `spot ${s.id}`);
-for (const r2 of recipes.recipes) { bilingual(r2.name, `receita ${r2.id}`); bilingual(r2.note, `receita ${r2.id}`); }
+// Nome e obrigatorio nas duas linguas; nota e opcional (as 276 importadas em
+// massa nao tem texto proprio), mas se existir precisa estar completa.
+for (const r2 of recipes.recipes) {
+  bilingual(r2.name, `receita ${r2.id}`);
+  if (r2.note) bilingual(r2.note, `receita ${r2.id}`);
+}
 
 // spots: schema vindo do Garmoth
 const ids = new Set();
@@ -110,7 +170,21 @@ for (const r2 of recipes.recipes) {
   }
   if (recipeProfit(r2, rp, netRate()).priced) priced++;
 }
-assert.ok(priced >= recipes.recipes.length * 0.5,
+// A calculadora precisa da arvore inteira: um intermediario faltando quebra a cadeia.
+{
+  const idx = recipeIndex(recipes.recipes);
+  const outs = new Set(recipes.recipes.map((r) => r.output));
+  const chained = new Set(recipes.recipes.flatMap((r) => r.inputs.map((i) => i.item)).filter((i) => outs.has(i)));
+  assert.ok(chained.size > 100, `poucas cadeias: ${chained.size}`);
+  // Nenhuma receita real pode estourar profundidade ou girar em ciclo.
+  for (const r of recipes.recipes) {
+    const plan = planRecipe(r.output, 10, idx, rp.priceOf);
+    assert.ok(plan.shopping.length > 0 || plan.crafts.length > 0, `${r.output}: plano vazio`);
+    assert.ok(plan.shopping.every((s) => s.qty > 0 && Number.isInteger(s.qty)),
+      `${r.output}: quantidade de compra tem que ser inteira e positiva`);
+  }
+}
+assert.ok(priced >= recipes.recipes.length * 0.3,
   `so ${priced}/${recipes.recipes.length} receitas tem preco completo`);
 
 // classes: specs do BDO Class Hub

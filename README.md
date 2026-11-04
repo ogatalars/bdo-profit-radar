@@ -1,8 +1,9 @@
 # BDO Profit Radar
 
 Site estático em **português** (com inglês opcional) que mostra, para Black Desert
-Online: o que o mercado central está negociando hoje, uma wiki de receitas de
-culinária, alquimia e processamento com o lucro de cada uma, qual spot rende mais
+Online: o que o mercado central está negociando hoje, uma wiki de 322 receitas de
+culinária, alquimia e processamento com o lucro de cada uma, uma calculadora que
+diz o que comprar para fabricar qualquer item, qual spot rende mais
 **silver** e qual rende mais **EXP** para os seus stats, e o tier de PvE de cada
 spec de classe.
 
@@ -49,6 +50,7 @@ comunidade e ficam todas em JSON para você corrigir:
 |---|---|
 | `data/spots.json` | `silver` por hora, `stat`/`dp` exigidos, `statCap` |
 | `data/recipes.json` | `yield` (rendimento por craft), `craftsPerHour`, ingredientes |
+| `data/generic-items.json` | o que vale como "Carne", "Grão", "Sangue 3"… |
 | `data/classes.json` | tier e ratings por spec |
 | `data/npc-prices.json` | itens que não passam pelo mercado central |
 | `data/i18n.json` | textos da interface em pt e en |
@@ -62,11 +64,35 @@ inglês porque é assim que o mercado os devolve — traduzir quebraria a busca.
 Os testes falham se uma chave existir em um idioma e faltar no outro, ou se um
 campo bilingue dos dados (`{pt, en}`) vier pela metade.
 
+## Calculadora de receitas
+
+Você diz o que quer fazer e quantas unidades; ela devolve **exatamente o que
+comprar no mercado**. Para 500 cervejas: 1.000 Barley, 1.200 Água Mineral, 400
+Fermento, 200 Açúcar — e os 200 crafts que isso dá.
+
+A expansão é recursiva porque **158 ingredientes do jogo são produzidos por
+outras receitas**. Balenos Meal, por exemplo, abre em 6 passos até chegar aos
+itens que você realmente compra.
+
+Duas decisões embutidas:
+
+- **O item pedido é sempre fabricado.** Quem abre a calculadora quer a receita,
+  não o conselho de comprar pronto. Só os intermediários decidem, e aí ela
+  compra quando sair mais barato que fabricar (marque *abrir tudo* para ver a
+  árvore inteira).
+- **Quantidades de compra são inteiras.** Ninguém compra 2,5 de trigo.
+
+Ciclos e cadeias muito profundas terminam em compra em vez de travar o
+navegador, e há teste para isso.
+
+`?make=Beer&qty=500` abre um cálculo pronto pela URL.
+
 ## Ingredientes genéricos
 
 Receitas como Cerveja pedem "Grão", não um grão específico. No jogo você usa o
-mais barato que tiver; o site faz o mesmo, escolhendo entre as alternativas
-listadas em `any` a de menor preço no dia. O card mostra qual foi escolhido.
+mais barato que tiver; o site faz o mesmo. O mapeamento de categoria para itens
+reais fica em `data/generic-items.json`, separado das receitas — a fonte já
+renomeou "Grain" para "Starch" uma vez, e o mapa sobrevive a isso.
 
 Se um número do site não bate com a sua hora real de grind, o errado é a taxa no
 JSON, não o preço. Ajuste e mande PR.
@@ -172,8 +198,9 @@ Vale saber antes de confiar no número:
 - **Classes**: [BDO Class Hub](https://bdoclasshub.com/tierlist.html) para tier
   de PvE, AoE, conforto e resistência por spec (lista do expert Choice);
   [Grumpy Green](https://grumpygreen.cricket/bdo-class-guide/) para armas.
-- **Receitas**: [Incendar](https://incendar.com/bdocookingrecipes.php) e
-  [BDO Codex](https://bdocodex.com) para ingredientes e quantidades.
+- **Receitas**: [Incendar](https://incendar.com/bdocookingrecipes.php)
+  (culinária e alquimia, importadas por `scripts/import-recipes.js`) e
+  [BDO Codex](https://bdocodex.com). Processing é escrito à mão.
 
 Não há API pública de grind spots: o Garmoth tem os dados mas bloqueia acesso
 programático, e Arsha/Velia Inn cobrem só o mercado. Por isso spots e classes são

@@ -87,3 +87,7 @@ ul.ing li b { color: var(--accent); font-variant-numeric: tabular-nums; }
 
 .note.warn { border-left-color: var(--down); }
 .tag.old { color: var(--down); border-color: #4e2220; }
+
+ol.steps { list-style: none; counter-reset: s; margin: 8px 0; padding: 0; }
+ol.steps li { padding: 5px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+ol.steps li:last-child { border-bottom: 0; }

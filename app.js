@@ -1,4 +1,5 @@
-import { netRate as calcNet, pricer, recipeProfit, spotFit, spotToday } from "./calc.js";
+import { netRate as calcNet, pricer, recipeProfit, spotFit, spotToday,
+         recipeIndex, planRecipe } from "./calc.js";
 
 const $ = (s) => document.querySelector(s);
 const spotName = (s) => tr(s.name);
@@ -66,6 +67,17 @@ function applyStatic() {
 
 function renderAll() {
   applyStatic();
+  // ?make=Beer&qty=500 abre a calculadora ja preenchida — serve para compartilhar
+  // um calculo pronto e para testar a pagina sem interagir.
+  const q = new URLSearchParams(location.search);
+  if (q.get("make") && !$("#calcItem").value) {
+    $("#calcItem").value = q.get("make");
+    if (q.get("qty")) $("#calcQty").value = q.get("qty");
+  }
+  if (!$("#all-outputs").children.length) {
+    const names = [...new Set(RECIPES.recipes.map((r) => r.output))].sort();
+    $("#all-outputs").innerHTML = names.map((n) => `<option value="${esc(n)}">`).join("");
+  }
   const when = new Date(DAILY.generatedAt);
   $("#status").innerHTML =
     t("subtitle", { r: `<b>${DAILY.region.toUpperCase()}</b>`, d: when.toLocaleString(loc()) }) +
@@ -74,7 +86,7 @@ function renderAll() {
       : `<span class="dim">${t("firstSnapshot")}</span>`);
   $("#netpct").innerHTML = t("youGet", { p: (netRate() * 100).toFixed(1).replace(".", LANG === "pt" ? "," : ".") + "%" });
   $("#classesNote").innerHTML = t("classesNote", { d: CLASSES._meta.listUpdated });
-  renderMarket(); renderRecipes(); renderSpots(); renderXp(); renderClasses();
+  renderMarket(); renderRecipes(); renderCalc(); renderSpots(); renderXp(); renderClasses();
 }
 
 function renderMarket() {
@@ -132,6 +144,57 @@ function renderRecipes() {
       <div class="breakdown"><i>${esc(tr(r.note))}</i></div>
     </div>`;
   }).join("") || `<p class="dim">—</p>`;
+}
+
+function renderCalc() {
+  const p = P();
+  const idx = recipeIndex(RECIPES.recipes);
+  const want = $("#calcItem").value.trim();
+  const qty = Math.max(1, +$("#calcQty").value || 1);
+  const out = $("#calc-out");
+
+  if (!want) { out.innerHTML = `<p class="dim">${t("pickItem")}</p>`; return; }
+  // Aceita o nome traduzido ou o nome de mercado, sem exigir acerto exato de caixa.
+  const match = [...idx.keys()].find((k) => k.toLowerCase() === want.toLowerCase()) ||
+    RECIPES.recipes.find((r) => tr(r.name).toLowerCase() === want.toLowerCase())?.output ||
+    [...idx.keys()].find((k) => k.toLowerCase().startsWith(want.toLowerCase()));
+  if (!match) { out.innerHTML = `<p class="dim">${t("noRecipe")}</p>`; return; }
+
+  const plan = planRecipe(match, qty, idx, p.priceOf, { expandAll: $("#calcExpand").checked });
+  const ready = plan.buyPrice ? plan.buyPrice * qty : null;
+  const diff = plan.cost != null && ready != null ? ((ready - plan.cost) / ready) * 100 : null;
+
+  const shop = plan.shopping.map((s) => `<tr>
+      <td class="name">${esc(s.item)}</td>
+      <td class="num"><b>${s.qty.toLocaleString(loc())}</b></td>
+      <td class="num dim">${s.price > 0 ? fmt(s.price) : "—"}</td>
+      <td class="num">${s.price > 0 ? fmt(s.price * s.qty) : "—"}</td></tr>`).join("");
+
+  const steps = plan.crafts.map((c, n) => `<li>
+      <span class="tag">${n + 1}</span> <b>${esc(c.item)}</b>
+      &middot; ${Math.ceil(c.batches).toLocaleString(loc())} ${t("batches")}
+      <span class="dim">(${t("makes")} ${Math.ceil(c.qty).toLocaleString(loc())})</span>
+      <span class="tag">${t(c.job)}</span></li>`).join("");
+
+  out.innerHTML = `
+    <div class="card">
+      <h3>${esc(match)} &times; ${qty.toLocaleString(loc())}</h3>
+      <div class="recipe-num" style="border:0;padding-top:0">
+        <span>${t("totalCost")}: <b class="${plan.cost != null ? "" : "dim"}">${plan.cost != null ? fmt(plan.cost) : "?"}</b></span>
+        ${ready != null ? `<span>${t("buyReady")}: <b>${fmt(ready)}</b></span>` : ""}
+        ${diff != null ? `<span class="${diff >= 0 ? "up" : "down"}"><b>${diff >= 0 ? t("youSave") : t("youLose")}
+           ${diff >= 0 ? pct(diff) : ""}</b></span>` : ""}
+      </div>
+      ${plan.cost == null ? `<div class="breakdown dim">${t("unknownCost")}</div>` : ""}
+    </div>
+    <div class="grid2">
+      <div><h3>${t("shoppingList")}</h3>
+        <table><thead><tr><th>${t("item")}</th><th class="num">${t("qty")}</th>
+          <th class="num">${t("unit")}</th><th class="num">${t("subtotal")}</th></tr></thead>
+          <tbody>${shop}</tbody></table></div>
+      <div><h3>${t("craftSteps")}</h3>
+        <ol class="steps">${steps || `<li class="dim">—</li>`}</ol></div>
+    </div>`;
 }
 
 function renderSpots() {
@@ -225,7 +288,7 @@ function renderClasses() {
     </div>`).join("") || `<p class="dim">${t("noClasses")}</p>`;
 }
 
-const TABS = ["market", "recipes", "spots", "xp", "classes"];
+const TABS = ["market", "recipes", "calc", "spots", "xp", "classes"];
 function showTab(name) {
   if (!TABS.includes(name)) name = "market";
   document.querySelectorAll("nav button").forEach((o) => o.setAttribute("aria-selected", o.dataset.tab === name));
@@ -246,6 +309,8 @@ $("#lang").addEventListener("change", () => {
   $(s).addEventListener("input", () => DAILY && renderSpots()));
 ["#xpStat", "#xpDp", "#xpHideLocked"].forEach((s) =>
   $(s).addEventListener("input", () => DAILY && renderXp()));
+["#calcItem", "#calcQty", "#calcExpand"].forEach((s) =>
+  $(s).addEventListener("input", () => DAILY && renderCalc()));
 ["#recSearch", "#recJob", "#recSort"].forEach((s) =>
   $(s).addEventListener("input", () => DAILY && renderRecipes()));
 ["#clsSearch", "#clsTier", "#clsAoe", "#clsTank"].forEach((s) =>
