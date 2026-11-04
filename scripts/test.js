@@ -113,6 +113,27 @@ const daily = read("daily.na.json"), rp = pricer(daily);
 const spots = read("spots.json"), recipes = read("recipes.json");
 const classes = read("classes.json"), i18n = read("i18n.json");
 
+// Nomes de item em pt: o jogo em pt-BR mostra "Minerio de Ferro", nao "Iron Ore".
+// Se a cobertura despencar, alguem quebrou o casamento en->pt por id no build.
+{
+  const pt = daily.ptNames || {};
+  const used = new Set(recipes.recipes.flatMap((r) => [r.output, ...r.inputs.map((i) => i.item)]));
+  const covered = [...used].filter((n) => pt[n]).length;
+  assert.ok(covered / used.size > 0.8,
+    `cobertura de nomes em pt caiu para ${((covered / used.size) * 100).toFixed(0)}%`);
+  // Itens comprados no NPC nao tem id de mercado; so traduzem se o build casar
+  // pelos dois dumps do catalogo. Esses tres sao a sentinela.
+  for (const n of ["Sugar", "Salt", "Mineral Water"])
+    assert.ok(pt[n], `item de NPC sem traducao: ${n}`);
+  // Categorias nao existem no catalogo: o rotulo vem de generic-items.json.
+  for (const n of ["Meat", "Flour"]) assert.ok(pt[n], `categoria sem rotulo em pt: ${n}`);
+  // Entidade HTML mal decodificada vira nome que nao casa com nada.
+  for (const r of recipes.recipes) {
+    assert.ok(!/&#?\w+;/.test(r.output), `${r.id}: entidade HTML no nome (${r.output})`);
+    for (const i of r.inputs) assert.ok(!/&#?\w+;/.test(i.item), `${r.id}: entidade HTML em ${i.item}`);
+  }
+}
+
 // i18n: as duas linguas precisam das mesmas chaves, senao a UI fica em branco
 const ptK = Object.keys(i18n.pt).sort(), enK = Object.keys(i18n.en).sort();
 assert.deepEqual(ptK, enK, "chaves de i18n divergentes entre pt e en");

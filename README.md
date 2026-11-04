@@ -58,8 +58,17 @@ comunidade e ficam todas em JSON para você corrigir:
 ## Idiomas
 
 Português é o padrão. O seletor no topo troca para inglês e grava a escolha no
-navegador; `?lang=en` força o idioma pela URL. Nomes de item ficam sempre em
-inglês porque é assim que o mercado os devolve — traduzir quebraria a busca.
+navegador; `?lang=en` força o idioma pela URL.
+
+**Nomes de item também são traduzidos.** A Arsha publica o mesmo catálogo em
+várias línguas com os mesmos ids, então o build casa `en → pt` por id e guarda
+o par dos ~600 itens que o site cita. O jogo em pt-BR mostra "Minério de Ferro",
+e o site passa a mostrar o mesmo. Casar por id (e não por nome) é o que faz
+funcionar para itens comprados no NPC, que nem id de mercado têm.
+
+As categorias (`Carne`, `Grão`, `Sangue 3`) não existem no catálogo: o rótulo
+delas vem de `data/generic-items.json`. A busca da calculadora aceita o nome nas
+duas línguas.
 
 Os testes falham se uma chave existir em um idioma e faltar no outro, ou se um
 campo bilingue dos dados (`{pt, en}`) vier pela metade.

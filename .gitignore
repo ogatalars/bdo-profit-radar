@@ -3,3 +3,5 @@ scripts/.itemdb-cache.json
 # snapshot do dia anterior: vive no cache do Actions, nao no git
 # (1 MB/dia commitado viraria ~365 MB/ano de historico)
 data/snapshot.*.json
+# catalogo de nomes baixado por execucao, nao versionado
+data/.catalog-*.json

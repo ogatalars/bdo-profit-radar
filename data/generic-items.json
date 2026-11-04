@@ -1,22 +1,129 @@
 {
- "_meta": "Ingredientes que o jogo aceita como categoria, nao como item fixo: 5 'Carne' pode ser qualquer carne. O site escolhe a alternativa mais barata do dia. Nomes vem das tabelas do Incendar.",
+ "_meta": "Ingredientes que o jogo aceita como categoria, nao como item fixo: 5 'Carne' pode ser qualquer carne. O site escolhe a alternativa mais barata do dia. Nomes vem das tabelas do Incendar. 'labels' traduz a categoria em si, que nao existe como item no catalogo da Arsha.",
  "generics": {
-  "Starch":    ["Wheat", "Barley", "Corn", "Potato", "Sweet Potato"],
-  "Grain":     ["Wheat", "Barley", "Corn", "Potato", "Sweet Potato"],
-  "Flour":     ["Wheat Flour", "Barley Flour", "Corn Flour", "Potato Flour", "Sweet Potato Flour"],
-  "Meat":      ["Chicken Meat", "Deer Meat", "Lamb Meat", "Pork", "Bird Meat", "Waragon Meat", "Lion Meat"],
-  "Vegetable": ["Cabbage", "Pumpkin", "Paprika", "Onion", "Potato", "Tomato", "Carrot", "Wild Herb"],
-  "Fruit":     ["Grape", "Strawberry", "Banana", "Apple", "Fig", "Pear", "Cherry", "Olive"],
-  "Seafood":   ["Octopus", "Squid", "Crab Meat", "Shrimp", "Clam Meat", "Oyster"],
-  "Honey":     ["Cooking Honey", "Wild Honey"],
-  "Pepper":    ["Hot Pepper", "Chili Pepper"],
-  "Cream":     ["Cream", "Milk"],
-  "Blood 1":   ["Chicken Blood", "Sheep Blood", "Lamb Blood", "Goat Blood"],
-  "Blood 2":   ["Pig Blood", "Ox Blood", "Deer Blood"],
-  "Blood 3":   ["Bear Blood", "Wolf Blood", "Waragon Blood"],
-  "Blood 4":   ["Flamingo Blood", "Tiger Blood", "Buffalo Blood"],
-  "Blood 5":   ["Cheetah Blood", "Lion Blood", "Rhino Blood"],
-  "Blood 6":   ["Elephant Blood", "Hyena Blood"],
-  "Blood 7":   ["Dinosaur Blood", "Troll Blood"]
+  "Starch": [
+   "Wheat",
+   "Barley",
+   "Corn",
+   "Potato",
+   "Sweet Potato"
+  ],
+  "Grain": [
+   "Wheat",
+   "Barley",
+   "Corn",
+   "Potato",
+   "Sweet Potato"
+  ],
+  "Flour": [
+   "Wheat Flour",
+   "Barley Flour",
+   "Corn Flour",
+   "Potato Flour",
+   "Sweet Potato Flour"
+  ],
+  "Meat": [
+   "Chicken Meat",
+   "Deer Meat",
+   "Lamb Meat",
+   "Pork",
+   "Bird Meat",
+   "Waragon Meat",
+   "Lion Meat"
+  ],
+  "Vegetable": [
+   "Cabbage",
+   "Pumpkin",
+   "Paprika",
+   "Onion",
+   "Potato",
+   "Tomato",
+   "Carrot",
+   "Wild Herb"
+  ],
+  "Fruit": [
+   "Grape",
+   "Strawberry",
+   "Banana",
+   "Apple",
+   "Fig",
+   "Pear",
+   "Cherry",
+   "Olive"
+  ],
+  "Seafood": [
+   "Octopus",
+   "Squid",
+   "Crab Meat",
+   "Shrimp",
+   "Clam Meat",
+   "Oyster"
+  ],
+  "Honey": [
+   "Cooking Honey",
+   "Wild Honey"
+  ],
+  "Pepper": [
+   "Hot Pepper",
+   "Chili Pepper"
+  ],
+  "Cream": [
+   "Cream",
+   "Milk"
+  ],
+  "Blood 1": [
+   "Chicken Blood",
+   "Sheep Blood",
+   "Lamb Blood",
+   "Goat Blood"
+  ],
+  "Blood 2": [
+   "Pig Blood",
+   "Ox Blood",
+   "Deer Blood"
+  ],
+  "Blood 3": [
+   "Bear Blood",
+   "Wolf Blood",
+   "Waragon Blood"
+  ],
+  "Blood 4": [
+   "Flamingo Blood",
+   "Tiger Blood",
+   "Buffalo Blood"
+  ],
+  "Blood 5": [
+   "Cheetah Blood",
+   "Lion Blood",
+   "Rhino Blood"
+  ],
+  "Blood 6": [
+   "Elephant Blood",
+   "Hyena Blood"
+  ],
+  "Blood 7": [
+   "Dinosaur Blood",
+   "Troll Blood"
+  ]
+ },
+ "labels": {
+  "Starch": "Amido",
+  "Grain": "Grão",
+  "Flour": "Farinha",
+  "Meat": "Carne",
+  "Vegetable": "Vegetal",
+  "Fruit": "Fruta",
+  "Seafood": "Frutos do Mar",
+  "Honey": "Mel",
+  "Pepper": "Pimenta",
+  "Cream": "Creme",
+  "Fish": "Peixe",
+  "Blood 1": "Sangue 1",
+  "Blood 2": "Sangue 2",
+  "Blood 3": "Sangue 3",
+  "Blood 4": "Sangue 4",
+  "Blood 5": "Sangue 5",
+  "Blood 6": "Sangue 6",
+  "Blood 7": "Sangue 7"
  }
 }

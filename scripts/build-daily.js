@@ -139,10 +139,43 @@ for (const id of keep) {
   if (r) items[id] = { n: r.name, p: r.basePrice, s: r.currentStock, t: r.totalTrades };
 }
 
+// Nomes em portugues: a Arsha publica o mesmo catalogo em varias linguas e os
+// ids batem entre elas, entao casamos en->pt por id. Isso cobre tambem os itens
+// que nao tem id de mercado (sal, acucar, agua mineral: comprados no NPC).
+const ptNames = {};
+try {
+  // O catalogo e o mesmo para todas as regioes: baixa uma vez por execucao do
+  // workflow (3 regioes x 2 linguas x 4,6 MB sairia caro a toa).
+  const cached = async (lang) => {
+    const f = new URL(`../data/.catalog-${lang}.json`, import.meta.url);
+    if (existsSync(f)) return JSON.parse(readFileSync(f, "utf8"));
+    const db = await (await fetch(`https://api.arsha.io/util/db?lang=${lang}`)).json();
+    writeFileSync(f, JSON.stringify(db));
+    return db;
+  };
+  const [dbEn, dbPt] = await Promise.all([cached("en"), cached("pt")]);
+  const ptById = new Map(dbPt.map((x) => [x.id, x.name]));
+  const enToPt = new Map();
+  for (const x of dbEn) {
+    const pt = ptById.get(x.id);
+    if (pt && pt !== x.name && !enToPt.has(x.name)) enToPt.set(x.name, pt);
+  }
+  // So guardamos o que o site realmente cita.
+  const used = new Set([...wanted, ...Object.keys(npc)]);
+  for (const id of keep) { const r = byId.get(id); if (r) used.add(r.name); }
+  for (const n of used) { const pt = enToPt.get(n); if (pt) ptNames[n] = pt; }
+  // Categorias ("Carne", "Grao") nao existem no catalogo: o rotulo e nosso.
+  const labels = read("generic-items.json").labels || {};
+  for (const [en, pt] of Object.entries(labels)) ptNames[en] = pt;
+  console.log(`  nomes em pt: ${Object.keys(ptNames).length}/${used.size}`);
+} catch (e) {
+  console.warn(`  nao consegui os nomes em pt (${e.message}); o site cai para ingles`);
+}
+
 const now = new Date().toISOString();
 write(`daily.${REGION}.json`, {
   generatedAt: now, prevAt: prev?.generatedAt || null, region: REGION,
-  items, names, npc, coverage, changes,
+  items, names, npc, coverage, changes, ptNames,
   demand: demand.map((d) => ({ id: d.id, sold: d.sold })),
   movers: movers.map((d) => ({ id: d.id, dp: +d.dp.toFixed(2) })),
 });

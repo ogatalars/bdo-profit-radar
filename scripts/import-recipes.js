@@ -11,9 +11,15 @@ const UA = "Mozilla/5.0 (compatible; bdo-profit-radar/1.0)";
 const RECIPES = new URL("../data/recipes.json", import.meta.url);
 const dry = process.argv.includes("--dry");
 
-const strip = (h) => h.replace(/<[^>]+>/g, " ")
-  .replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/&#39;|&rsquo;|’/g, "'")
-  .replace(/&quot;/g, '"').replace(/\s+/g, " ").trim();
+const ENTITIES = { nbsp: " ", amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", rsquo: "'", lsquo: "'", ndash: "-", mdash: "-" };
+// &#039; e &#39; sao o mesmo apostrofo; sem decodificar os dois, "O'dyllita Meal"
+// vira um nome que nao casa com nada no catalogo.
+const decode = (s) => s
+  .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n))
+  .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCharCode(parseInt(n, 16)))
+  .replace(/&([a-z]+);/gi, (_, n) => ENTITIES[n.toLowerCase()] ?? `&${n};`)
+  .replace(/[\u2018\u2019]/g, "'").replace(/[\u201c\u201d]/g, '"');
+const strip = (h) => decode(h.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
 
 // "5 Aloe" -> { qty: 5, item: "Aloe" }
 const parseIngredient = (cell) => {

@@ -4555,41 +4555,6 @@
    "note": null
   },
   {
-   "id": "o-039-dyllita-meal",
-   "name": {
-    "pt": "O&#039;dyllita Meal",
-    "en": "O&#039;dyllita Meal"
-   },
-   "output": "O&#039;dyllita Meal",
-   "job": "cooking",
-   "method": "",
-   "yield": 2.5,
-   "craftsPerHour": 400,
-   "inputs": [
-    {
-     "item": "Delotia Pudding",
-     "qty": 1
-    },
-    {
-     "item": "Stir-Fried Bracken and Meat",
-     "qty": 1
-    },
-    {
-     "item": "Delotia Juice",
-     "qty": 2
-    },
-    {
-     "item": "Chicken Breast Salad",
-     "qty": 2
-    },
-    {
-     "item": "Stir-Fried Bird",
-     "qty": 2
-    }
-   ],
-   "note": null
-  },
-  {
    "id": "oatmeal",
    "name": {
     "pt": "Oatmeal",
@@ -6715,7 +6680,7 @@
      "qty": 10
     },
     {
-     "item": "Ibellab&#039;s Essence",
+     "item": "Ibellab's Essence",
      "qty": 1
     }
    ],
@@ -6743,37 +6708,6 @@
     },
     {
      "item": "Askasha's Broken Magic Weapon III",
-     "qty": 1
-    }
-   ],
-   "note": null
-  },
-  {
-   "id": "beast-039-s-draught",
-   "name": {
-    "pt": "Beast&#039;s Draught",
-    "en": "Beast&#039;s Draught"
-   },
-   "output": "Beast&#039;s Draught",
-   "job": "alchemy",
-   "method": "",
-   "yield": 2.5,
-   "craftsPerHour": 350,
-   "inputs": [
-    {
-     "item": "Grim Reaper&#039;s Elixir",
-     "qty": 3
-    },
-    {
-     "item": "EXP Elixir",
-     "qty": 3
-    },
-    {
-     "item": "Elixir of Will",
-     "qty": 3
-    },
-    {
-     "item": "Tears of the Falling Moon",
      "qty": 1
     }
    ],
@@ -6942,7 +6876,7 @@
      "qty": 30
     },
     {
-     "item": "Grim Reaper&#039;s Elixir",
+     "item": "Grim Reaper's Elixir",
      "qty": 30
     },
     {
@@ -8781,37 +8715,6 @@
    "note": null
   },
   {
-   "id": "giant-039-s-draught",
-   "name": {
-    "pt": "Giant&#039;s Draught",
-    "en": "Giant&#039;s Draught"
-   },
-   "output": "Giant&#039;s Draught",
-   "job": "alchemy",
-   "method": "",
-   "yield": 2.5,
-   "craftsPerHour": 350,
-   "inputs": [
-    {
-     "item": "Elixir of Fury",
-     "qty": 3
-    },
-    {
-     "item": "Elixir of Shock",
-     "qty": 3
-    },
-    {
-     "item": "Elixir of Perforation",
-     "qty": 3
-    },
-    {
-     "item": "Tears of the Falling Moon",
-     "qty": 1
-    }
-   ],
-   "note": null
-  },
-  {
    "id": "golden-hand-elixir",
    "name": {
     "pt": "Golden Hand Elixir",
@@ -9056,29 +8959,6 @@
    "note": null
   },
   {
-   "id": "immortal-beast-039-s-draught",
-   "name": {
-    "pt": "Immortal: Beast&#039;s Draught",
-    "en": "Immortal: Beast&#039;s Draught"
-   },
-   "output": "Immortal: Beast&#039;s Draught",
-   "job": "alchemy",
-   "method": "",
-   "yield": 2.5,
-   "craftsPerHour": 350,
-   "inputs": [
-    {
-     "item": "Beast&#039;s Draught",
-     "qty": 1
-    },
-    {
-     "item": "Corrupt Oil of Immortality",
-     "qty": 1
-    }
-   ],
-   "note": null
-  },
-  {
    "id": "immortal-frenzy-draught",
    "name": {
     "pt": "Immortal: Frenzy Draught",
@@ -9092,29 +8972,6 @@
    "inputs": [
     {
      "item": "Frenzy Draught",
-     "qty": 1
-    },
-    {
-     "item": "Corrupt Oil of Immortality",
-     "qty": 1
-    }
-   ],
-   "note": null
-  },
-  {
-   "id": "immortal-giant-039-s-draught",
-   "name": {
-    "pt": "Immortal: Giant&#039;s Draught",
-    "en": "Immortal: Giant&#039;s Draught"
-   },
-   "output": "Immortal: Giant&#039;s Draught",
-   "job": "alchemy",
-   "method": "",
-   "yield": 2.5,
-   "craftsPerHour": 350,
-   "inputs": [
-    {
-     "item": "Giant&#039;s Draught",
      "qty": 1
     },
     {
@@ -10560,7 +10417,7 @@
    "craftsPerHour": 350,
    "inputs": [
     {
-     "item": "Fisher&#039;s Elixir",
+     "item": "Fisher's Elixir",
      "qty": 36
     },
     {
@@ -10701,7 +10558,7 @@
    "craftsPerHour": 350,
    "inputs": [
     {
-     "item": "Worker&#039;s Elixir",
+     "item": "Worker's Elixir",
      "qty": 3
     },
     {
@@ -10883,6 +10740,149 @@
     {
      "item": "Powder of Flame",
      "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "o-dyllita-meal",
+   "name": {
+    "pt": "O'dyllita Meal",
+    "en": "O'dyllita Meal"
+   },
+   "output": "O'dyllita Meal",
+   "job": "cooking",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 400,
+   "inputs": [
+    {
+     "item": "Delotia Pudding",
+     "qty": 1
+    },
+    {
+     "item": "Stir-Fried Bracken and Meat",
+     "qty": 1
+    },
+    {
+     "item": "Delotia Juice",
+     "qty": 2
+    },
+    {
+     "item": "Chicken Breast Salad",
+     "qty": 2
+    },
+    {
+     "item": "Stir-Fried Bird",
+     "qty": 2
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "beast-s-draught",
+   "name": {
+    "pt": "Beast's Draught",
+    "en": "Beast's Draught"
+   },
+   "output": "Beast's Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Grim Reaper's Elixir",
+     "qty": 3
+    },
+    {
+     "item": "EXP Elixir",
+     "qty": 3
+    },
+    {
+     "item": "Elixir of Will",
+     "qty": 3
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "giant-s-draught",
+   "name": {
+    "pt": "Giant's Draught",
+    "en": "Giant's Draught"
+   },
+   "output": "Giant's Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Elixir of Fury",
+     "qty": 3
+    },
+    {
+     "item": "Elixir of Shock",
+     "qty": 3
+    },
+    {
+     "item": "Elixir of Perforation",
+     "qty": 3
+    },
+    {
+     "item": "Tears of the Falling Moon",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "immortal-beast-s-draught",
+   "name": {
+    "pt": "Immortal: Beast's Draught",
+    "en": "Immortal: Beast's Draught"
+   },
+   "output": "Immortal: Beast's Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Beast's Draught",
+     "qty": 1
+    },
+    {
+     "item": "Corrupt Oil of Immortality",
+     "qty": 1
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "immortal-giant-s-draught",
+   "name": {
+    "pt": "Immortal: Giant's Draught",
+    "en": "Immortal: Giant's Draught"
+   },
+   "output": "Immortal: Giant's Draught",
+   "job": "alchemy",
+   "method": "",
+   "yield": 2.5,
+   "craftsPerHour": 350,
+   "inputs": [
+    {
+     "item": "Giant's Draught",
+     "qty": 1
+    },
+    {
+     "item": "Corrupt Oil of Immortality",
+     "qty": 1
     }
    ],
    "note": null
