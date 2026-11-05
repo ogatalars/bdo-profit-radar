@@ -49,7 +49,7 @@ comunidade e ficam todas em JSON para você corrigir:
 | arquivo | o que ajustar |
 |---|---|
 | `data/spots.json` | `silver` por hora, `stat`/`dp` exigidos, `statCap` |
-| `data/recipes.json` | `yield` (rendimento por craft), `craftsPerHour`, ingredientes |
+| `data/recipes.json` | `yield` (rendimento base por craft), `craftsPerHour`, ingredientes |
 | `data/generic-items.json` | o que vale como "Carne", "Grão", "Sangue 3"… |
 | `data/classes.json` | tier e ratings por spec |
 | `data/npc-prices.json` | itens que não passam pelo mercado central |
@@ -95,6 +95,23 @@ Ciclos e cadeias muito profundas terminam em compra em vez de travar o
 navegador, e há teste para isso.
 
 `?make=Beer&qty=500` abre um cálculo pronto pela URL.
+
+## Rendimento por craft
+
+`yield` é o rendimento **base garantido**: `1` para culinária e alquimia, `2.5`
+para processing (5 insumos viram 1-3 saídas, e 2,5 é a média desse lote).
+
+Maestria aumenta o rendimento de culinária e alquimia por proc, mas isso varia
+por personagem, então o multiplicador fica num seletor na interface. **O padrão
+é 1 — o pior caso** — para a lista de compras nunca pedir *menos* material do
+que o necessário. Errar para baixo é o pior erro possível numa calculadora de
+materiais: você vai até o mercado e volta sem conseguir fabricar.
+
+Houve uma versão em que todas as 322 receitas tinham `yield: 2.5`, um chute meu
+aplicado uniformemente. Ficava absurdo em receitas de transformação — "Imortal:
+Fármaco do Gigante" consome 1 draught + 1 óleo e obviamente produz 1, não 2,5 —
+e fazia a calculadora pedir 2,5× menos ingrediente. Há teste que falha se
+alguma receita de culinária ou alquimia voltar a ter rendimento diferente de 1.
 
 ## Ingredientes genéricos
 

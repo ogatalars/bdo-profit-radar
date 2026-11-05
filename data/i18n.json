@@ -124,7 +124,13 @@
   "fromMarket": "do mercado",
   "craftIt": "fabricar",
   "orBuy": "ou comprar por",
-  "deepChain": "cadeia profunda: parou em {n} níveis"
+  "deepChain": "cadeia profunda: parou em {n} níveis",
+  "mastery": "Rendimento por craft",
+  "mastery1": "1 — sem maestria",
+  "mastery15": "1,5 — maestria baixa",
+  "mastery2": "2 — maestria média",
+  "mastery25": "2,5 — maestria alta",
+  "masteryNote": "Culinária e alquimia produzem <b>1 por craft</b> na base; maestria dá procs que aumentam isso. O padrão aqui é 1 — o pior caso — para a lista de compras nunca pedir <i>menos</i> material do que você precisa. Ajuste se souber seu rendimento real. Processing é fixo em 2,5 (5 insumos viram 1-3 saídas)."
  },
  "en": {
   "lang": "English",
@@ -251,6 +257,12 @@
   "fromMarket": "from market",
   "craftIt": "craft",
   "orBuy": "or buy for",
-  "deepChain": "deep chain: stopped at {n} levels"
+  "deepChain": "deep chain: stopped at {n} levels",
+  "mastery": "Output per craft",
+  "mastery1": "1 — no mastery",
+  "mastery15": "1.5 — low mastery",
+  "mastery2": "2 — mid mastery",
+  "mastery25": "2.5 — high mastery",
+  "masteryNote": "Cooking and alchemy produce <b>1 per craft</b> at base; mastery adds procs on top. The default here is 1 — the worst case — so the shopping list never asks for <i>less</i> material than you need. Adjust it if you know your real output. Processing is fixed at 2.5 (5 inputs become 1-3 outputs)."
  }
 }

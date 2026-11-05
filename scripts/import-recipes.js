@@ -56,7 +56,8 @@ for (const [job, url] of Object.entries(PAGES)) {
     }
     doc.recipes.push({
       id: slug(output), name: { pt: output, en: output }, output, job, method: "",
-      yield: 2.5, craftsPerHour: job === "cooking" ? 400 : 350,
+      // Rendimento base garantido; maestria entra como multiplicador na UI.
+      yield: 1, craftsPerHour: job === "cooking" ? 400 : 350,
       inputs, note: null,
     });
     added.push(output);

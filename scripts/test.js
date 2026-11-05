@@ -2,7 +2,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { netRate, pricer, recipeProfit, resolveInput, spotFit, spotToday,
-         recipeIndex, planRecipe } from "../calc.js";
+         recipeIndex, planRecipe, effectiveYield } from "../calc.js";
 
 const read = (f) => JSON.parse(readFileSync(new URL(`../data/${f}`, import.meta.url), "utf8"));
 
@@ -43,6 +43,29 @@ assert.equal(recipeProfit({ output: "Vendor", yield: 1, craftsPerHour: 1, inputs
 const np = recipeProfit({ output: "Out", yield: 1, craftsPerHour: 1, inputs: [{ item: "Fantasma", qty: 1 }] }, p, 0.65);
 assert.equal(np.priced, false);
 assert.deepEqual(np.missing, ["Fantasma"]);
+
+// --- rendimento: culinaria e alquimia rendem 1 na base, maestria multiplica.
+// Aplicar 2,5 a tudo fazia a lista de compras pedir 2,5x menos material.
+{
+  const cook = { output: "X", job: "cooking", yield: 1, craftsPerHour: 1, inputs: [] };
+  const proc = { output: "Y", job: "processing", yield: 2.5, craftsPerHour: 1, inputs: [] };
+  assert.equal(effectiveYield(cook, 1), 1);
+  assert.equal(effectiveYield(cook, 2.5), 2.5, "maestria multiplica culinaria");
+  assert.equal(effectiveYield(proc, 2.5), 2.5, "processing ja traz a media do lote e nao escala");
+}
+{
+  // Sem maestria, 500 unidades de uma receita 5:1 pedem 2500 insumos.
+  const idx = recipeIndex([
+    { output: "Cerveja", job: "cooking", yield: 1, craftsPerHour: 1, inputs: [{ item: "Grao", qty: 5 }] },
+  ]);
+  const f = { names: { Grao: 1 }, items: { 1: { p: 10 } }, npc: {} };
+  const base = planRecipe("Cerveja", 500, idx, pricer(f).priceOf);
+  assert.equal(base.shopping[0].qty, 2500, "yield 1: 500 crafts, 2500 insumos");
+  const alta = planRecipe("Cerveja", 500, idx, pricer(f).priceOf, { mastery: 2.5 });
+  assert.equal(alta.shopping[0].qty, 1000, "yield 2,5: 200 crafts, 1000 insumos");
+  // A lista nunca pode pedir MENOS que o pior caso sem maestria declarada.
+  assert.ok(base.shopping[0].qty >= alta.shopping[0].qty);
+}
 
 // --- calculadora: quantidades tem que fechar na mao
 {
@@ -204,6 +227,13 @@ for (const r2 of recipes.recipes) {
     assert.ok(plan.shopping.every((s) => s.qty > 0 && Number.isInteger(s.qty)),
       `${r.output}: quantidade de compra tem que ser inteira e positiva`);
   }
+}
+// Rendimento tem que ser o base, nao um chute uniforme: receita de
+// transformacao (1 insumo caro -> 1 saida) nunca rende 2,5.
+for (const r2 of recipes.recipes) {
+  assert.ok(r2.yield > 0, `${r2.id}: yield invalido`);
+  if (r2.job !== "processing")
+    assert.equal(r2.yield, 1, `${r2.id}: culinaria/alquimia tem rendimento base 1`);
 }
 assert.ok(priced >= recipes.recipes.length * 0.3,
   `so ${priced}/${recipes.recipes.length} receitas tem preco completo`);

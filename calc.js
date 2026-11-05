@@ -28,11 +28,16 @@ export function resolveInput(i, priceOf) {
               : { name: i.item, price: 0, qty: i.qty, generic: null };
 }
 
-export function recipeProfit(r, { priceOf, isNpc }, rate) {
+// Maestria so afeta culinaria e alquimia: em processing o 2,5 ja e a media do
+// lote de 5 insumos.
+export const effectiveYield = (r, mastery = 1) =>
+  r.job === "processing" ? r.yield : r.yield * mastery;
+
+export function recipeProfit(r, { priceOf, isNpc }, rate, mastery = 1) {
   const parts = r.inputs.map((i) => resolveInput(i, priceOf));
   const cost = parts.reduce((s, p) => s + p.price * p.qty, 0);
   const outPrice = priceOf(r.output);
-  const revenue = r.yield * outPrice * (isNpc(r.output) ? 1 : rate);
+  const revenue = effectiveYield(r, mastery) * outPrice * (isNpc(r.output) ? 1 : rate);
   const perCraft = revenue - cost;
   const missing = parts.filter((p) => p.price <= 0).map((p) => p.name);
   return {
@@ -97,7 +102,7 @@ const MAX_DEPTH = 10;
 
 // Custo unitario de PRODUZIR um item, memoizado. Null quando nao da para fechar
 // a conta (algum insumo sem preco e sem receita).
-function craftUnitCost(item, index, priceOf, memo, path) {
+function craftUnitCost(item, index, priceOf, memo, path, mastery = 1) {
   if (memo.has(item)) return memo.get(item);
   const r = index.get(item);
   if (!r || path.has(item) || path.size > MAX_DEPTH) return null;
@@ -106,13 +111,13 @@ function craftUnitCost(item, index, priceOf, memo, path) {
   for (const i of r.inputs) {
     const picked = resolveInput(i, priceOf);
     const buy = picked.price > 0 ? picked.price : null;
-    const make = craftUnitCost(picked.name, index, priceOf, memo, path);
+    const make = craftUnitCost(picked.name, index, priceOf, memo, path, mastery);
     const unit = buy != null && make != null ? Math.min(buy, make) : (buy ?? make);
     if (unit == null) { ok = false; break; }
     total += unit * i.qty;
   }
   path.delete(item);
-  const per = ok ? total / r.yield : null;
+  const per = ok ? total / effectiveYield(r, mastery) : null;
   memo.set(item, per);
   return per;
 }
@@ -122,7 +127,7 @@ function craftUnitCost(item, index, priceOf, memo, path) {
  * `shopping` sao os itens que voce realmente compra (folhas da decisao),
  * `crafts` sao os passos intermediarios na ordem de execucao.
  */
-export function planRecipe(output, qty, index, priceOf, { expandAll = false } = {}) {
+export function planRecipe(output, qty, index, priceOf, { expandAll = false, mastery = 1 } = {}) {
   const memo = new Map();
   const shopping = new Map();
   const crafts = new Map();
@@ -130,7 +135,7 @@ export function planRecipe(output, qty, index, priceOf, { expandAll = false } = 
   const walk = (item, need, depth, path) => {
     const r = index.get(item);
     const buy = priceOf(item) || null;
-    const make = r ? craftUnitCost(item, index, priceOf, memo, new Set(path)) : null;
+    const make = r ? craftUnitCost(item, index, priceOf, memo, new Set(path), mastery) : null;
     const cyclic = path.has(item);
     // Sem receita, ciclo ou fundo do poco: compra.
     const mustBuy = !r || cyclic || depth >= MAX_DEPTH;
@@ -148,9 +153,9 @@ export function planRecipe(output, qty, index, priceOf, { expandAll = false } = 
       return node;
     }
     node.action = "craft";
-    const batches = need / r.yield;
+    const batches = need / effectiveYield(r, mastery);
     node.batches = batches;
-    const prev = crafts.get(item) || { item, qty: 0, batches: 0, yield: r.yield, job: r.job, depth, isRoot };
+    const prev = crafts.get(item) || { item, qty: 0, batches: 0, yield: effectiveYield(r, mastery), job: r.job, depth, isRoot };
     prev.qty += need; prev.batches += batches; prev.depth = Math.max(prev.depth, depth);
     crafts.set(item, prev);
     const next = new Set(path).add(item);

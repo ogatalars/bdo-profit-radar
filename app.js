@@ -1,5 +1,5 @@
 import { netRate as calcNet, pricer, recipeProfit, spotFit, spotToday,
-         recipeIndex, planRecipe } from "./calc.js";
+         recipeIndex, planRecipe, effectiveYield } from "./calc.js";
 
 const $ = (s) => document.querySelector(s);
 const spotName = (s) => tr(s.name);
@@ -119,7 +119,8 @@ function renderRecipes() {
   // Um ingrediente que e saida de outra receita vira link da cadeia de producao.
   const madeBy = new Map(RECIPES.recipes.map((r) => [r.output, r]));
 
-  let rows = RECIPES.recipes.map((r) => ({ r, ...recipeProfit(r, p, rate) }));
+  const mastery = +$("#mastery").value;
+  let rows = RECIPES.recipes.map((r) => ({ r, ...recipeProfit(r, p, rate, mastery) }));
   rows = rows.filter(({ r }) => (!job || r.job === job) &&
     (!q || `${recipeName(r)} ${r.output} ${r.inputs.map((i) => itemName(i.item) + " " + i.item).join(" ")}`
       .toLowerCase().includes(q)));
@@ -171,7 +172,8 @@ function renderCalc() {
     keys.find((k) => itemName(k).toLowerCase().includes(low));
   if (!match) { out.innerHTML = `<p class="dim">${t("noRecipe")}</p>`; return; }
 
-  const plan = planRecipe(match, qty, idx, p.priceOf, { expandAll: $("#calcExpand").checked });
+  const plan = planRecipe(match, qty, idx, p.priceOf,
+    { expandAll: $("#calcExpand").checked, mastery: +$("#calcMastery").value });
   const ready = plan.buyPrice ? plan.buyPrice * qty : null;
   const diff = plan.cost != null && ready != null ? ((ready - plan.cost) / ready) * 100 : null;
 
@@ -320,9 +322,9 @@ $("#lang").addEventListener("change", () => {
   $(s).addEventListener("input", () => DAILY && renderSpots()));
 ["#xpStat", "#xpDp", "#xpHideLocked"].forEach((s) =>
   $(s).addEventListener("input", () => DAILY && renderXp()));
-["#calcItem", "#calcQty", "#calcExpand"].forEach((s) =>
+["#calcItem", "#calcQty", "#calcExpand", "#calcMastery"].forEach((s) =>
   $(s).addEventListener("input", () => DAILY && renderCalc()));
-["#recSearch", "#recJob", "#recSort"].forEach((s) =>
+["#recSearch", "#recJob", "#recSort", "#mastery"].forEach((s) =>
   $(s).addEventListener("input", () => DAILY && renderRecipes()));
 ["#clsSearch", "#clsTier", "#clsAoe", "#clsTank"].forEach((s) =>
   $(s).addEventListener("input", () => DAILY && renderClasses()));

@@ -55,6 +55,7 @@
 
   <section id="tab-recipes" hidden>
     <div class="note" data-i18n="recipesNote"></div>
+    <div class="note" data-i18n="masteryNote"></div>
     <div class="controls">
       <label><span data-i18n="search"></span><input type="search" id="recSearch"></label>
       <label><span data-i18n="job"></span><select id="recJob">
@@ -62,6 +63,11 @@
         <option value="cooking" data-i18n="cooking"></option>
         <option value="alchemy" data-i18n="alchemy"></option>
         <option value="processing" data-i18n="processing"></option></select></label>
+      <label><span data-i18n="mastery"></span><select id="mastery">
+        <option value="1" data-i18n="mastery1"></option>
+        <option value="1.5" data-i18n="mastery15"></option>
+        <option value="2" data-i18n="mastery2"></option>
+        <option value="2.5" data-i18n="mastery25"></option></select></label>
       <label><span data-i18n="sortBy"></span><select id="recSort">
         <option value="profit" data-i18n="sortProfit"></option>
         <option value="name" data-i18n="sortName"></option></select></label>
@@ -71,12 +77,18 @@
 
   <section id="tab-calc" hidden>
     <div class="note" data-i18n="calcNote"></div>
+    <div class="note" data-i18n="masteryNote"></div>
     <div class="controls">
       <label><span data-i18n="whatToMake"></span>
         <input list="all-outputs" id="calcItem" autocomplete="off" style="min-width:230px"></label>
       <datalist id="all-outputs"></datalist>
       <label><span data-i18n="howMany"></span>
         <input type="number" id="calcQty" value="100" min="1" max="100000" step="1"></label>
+      <label><span data-i18n="mastery"></span><select id="calcMastery">
+        <option value="1" data-i18n="mastery1"></option>
+        <option value="1.5" data-i18n="mastery15"></option>
+        <option value="2" data-i18n="mastery2"></option>
+        <option value="2.5" data-i18n="mastery25"></option></select></label>
       <label class="inline"><input type="checkbox" id="calcExpand"> <span data-i18n="expandAll"></span></label>
     </div>
     <div id="calc-out"></div>

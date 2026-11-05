@@ -1,8 +1,8 @@
 {
  "_meta": {
   "note": {
-   "pt": "Rendimento (yield) medio de 2,5 por craft vale para Processing em nivel Mestre/Guru; ajuste para o seu nivel. Ingrediente com 'any' aceita varios itens: o site usa o mais barato do dia.",
-   "en": "Average yield of 2.5 per craft applies to Master/Guru Processing; adjust for your level. An ingredient with 'any' accepts several items: the site picks the cheapest of the day."
+   "pt": "'yield' e o rendimento BASE por craft: 1 para culinaria e alquimia, 2,5 para processing (5 insumos viram 1-3 saidas). Maestria aumenta o rendimento de culinaria e alquimia via proc, e o site deixa esse multiplicador na mao de quem usa — o padrao 1 e o pior caso, entao a lista de compras nunca pede menos material do que o necessario. Ingrediente com 'any' aceita varios itens: o site usa o mais barato do dia.",
+   "en": "'yield' is the BASE output per craft: 1 for cooking and alchemy, 2.5 for processing (5 inputs become 1-3 outputs). Mastery raises cooking and alchemy output through procs, and the site leaves that multiplier to the user — the default of 1 is the worst case, so the shopping list never asks for less material than needed."
   },
   "sources": [
    "https://incendar.com/bdocookingrecipes.php",
@@ -583,7 +583,7 @@
    "output": "Beer",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -624,7 +624,7 @@
    "output": "Meat Stew",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -674,7 +674,7 @@
    "output": "Fried Fish",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -711,7 +711,7 @@
    "output": "Stir-Fried Vegetables",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -755,7 +755,7 @@
    "output": "Meat Croquette",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -809,7 +809,7 @@
    "output": "Cheese Pie",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -843,7 +843,7 @@
    "output": "Milk Tea",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -888,7 +888,7 @@
    "output": "Honey Wine",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -926,7 +926,7 @@
    "output": "Fruit Wine",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -970,7 +970,7 @@
    "output": "Steak",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1013,7 +1013,7 @@
    "output": "Grilled Bird Meat",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1047,7 +1047,7 @@
    "output": "Balenos Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 120,
    "inputs": [
     {
@@ -1085,7 +1085,7 @@
    "output": "Serendia Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 120,
    "inputs": [
     {
@@ -1123,7 +1123,7 @@
    "output": "Valencia Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 120,
    "inputs": [
     {
@@ -1161,7 +1161,7 @@
    "output": "Clear Liquid Reagent",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1195,7 +1195,7 @@
    "output": "Pure Powder Reagent",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1229,7 +1229,7 @@
    "output": "Elixir of Life",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -1268,7 +1268,7 @@
    "output": "Elixir of Will",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -1308,7 +1308,7 @@
    "output": "Oil of Corruption",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -1342,7 +1342,7 @@
    "output": "Perfume of Courage",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 300,
    "inputs": [
     {
@@ -1380,7 +1380,7 @@
    "output": "Elixir of Frenzy",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 300,
    "inputs": [
     {
@@ -1418,7 +1418,7 @@
    "output": "Aloe Cookie",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1453,7 +1453,7 @@
    "output": "Aloe Yogurt",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1484,7 +1484,7 @@
    "output": "Assorted Side Dishes",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1533,7 +1533,7 @@
    "output": "Balacs Lunchbox",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1560,7 +1560,7 @@
    "output": "Bean Sprout Salad",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1591,7 +1591,7 @@
    "output": "Boiled Bird Eggs",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1622,7 +1622,7 @@
    "output": "Borscht",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1653,7 +1653,7 @@
    "output": "Buckwheat Jelly",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1684,7 +1684,7 @@
    "output": "Butter-Roasted Lobster",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1719,7 +1719,7 @@
    "output": "Byeot County Gukbap",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1754,7 +1754,7 @@
    "output": "Calpheon Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1789,7 +1789,7 @@
    "output": "Carrot Confit",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1824,7 +1824,7 @@
    "output": "Chanterelle and Potato Stew",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1859,7 +1859,7 @@
    "output": "Chanterelle Porridge",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1894,7 +1894,7 @@
    "output": "Chanterelle Risotto",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1929,7 +1929,7 @@
    "output": "Chanterelle Stew",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -1960,7 +1960,7 @@
    "output": "Cheese Gratin",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2005,7 +2005,7 @@
    "output": "Chicken Breast Salad",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2060,7 +2060,7 @@
    "output": "Chowder",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2108,7 +2108,7 @@
    "output": "Citron Candy",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2135,7 +2135,7 @@
    "output": "Citron Cider",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2166,7 +2166,7 @@
    "output": "Citron Juice",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2197,7 +2197,7 @@
    "output": "Citron Vinegar",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2228,7 +2228,7 @@
    "output": "Coconut Cocktail",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2273,7 +2273,7 @@
    "output": "Coconut Fried Fish",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2308,7 +2308,7 @@
    "output": "Coconut Pasta",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2343,7 +2343,7 @@
    "output": "Cooked Rice",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2366,7 +2366,7 @@
    "output": "Couscous",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2407,7 +2407,7 @@
    "output": "Dalbeol Gukbap",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2442,7 +2442,7 @@
    "output": "Dark Pudding",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2478,7 +2478,7 @@
    "output": "Date Palm Wine",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2509,7 +2509,7 @@
    "output": "Delotia Juice",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2550,7 +2550,7 @@
    "output": "Delotia Milk Tea",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2581,7 +2581,7 @@
    "output": "Delotia Pudding",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2616,7 +2616,7 @@
    "output": "Delotia Tart",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2658,7 +2658,7 @@
    "output": "Desert Dumpling",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2689,7 +2689,7 @@
    "output": "Dongchimi",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2720,7 +2720,7 @@
    "output": "Dressing",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2751,7 +2751,7 @@
    "output": "Eilton Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2786,7 +2786,7 @@
    "output": "Eilton Sandwich",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2817,7 +2817,7 @@
    "output": "Energizing Cron Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2848,7 +2848,7 @@
    "output": "Essence of Liquor",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2892,7 +2892,7 @@
    "output": "Exquisite Cron Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2923,7 +2923,7 @@
    "output": "Fig Pie",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2954,7 +2954,7 @@
    "output": "Fish Fillet Chips",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -2992,7 +2992,7 @@
    "output": "Fish Fillet Salad",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3023,7 +3023,7 @@
    "output": "Fish Soup",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3065,7 +3065,7 @@
    "output": "Five-Grain Chicken Porridge",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3099,7 +3099,7 @@
    "output": "Frank Sandwich",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3140,7 +3140,7 @@
    "output": "Freekeh Snake Stew",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3171,7 +3171,7 @@
    "output": "Fried Bird",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3213,7 +3213,7 @@
    "output": "Fried Vegetables",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3254,7 +3254,7 @@
    "output": "Fruit and Vegetable Salad",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3305,7 +3305,7 @@
    "output": "Fruit Juice",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3346,7 +3346,7 @@
    "output": "Fruit Pie",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3391,7 +3391,7 @@
    "output": "Fruit Pudding",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3436,7 +3436,7 @@
    "output": "Fruit Sherbet",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3463,7 +3463,7 @@
    "output": "Garaetteok",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3490,7 +3490,7 @@
    "output": "Ghormeh Sabzi",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3532,7 +3532,7 @@
    "output": "Good Feed",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3579,7 +3579,7 @@
    "output": "Grain Soup",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3617,7 +3617,7 @@
    "output": "Grilled Sausage",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3661,7 +3661,7 @@
    "output": "Grilled Scorpion",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3692,7 +3692,7 @@
    "output": "Ham Sandwich",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3733,7 +3733,7 @@
    "output": "Hard-Boiled Shellfish",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3776,7 +3776,7 @@
    "output": "High-Quality Carrot Juice",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3814,7 +3814,7 @@
    "output": "Honeycomb Cookie",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3849,7 +3849,7 @@
    "output": "Hunters Salad",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3880,7 +3880,7 @@
    "output": "Jujube Tea",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3907,7 +3907,7 @@
    "output": "Kamasylvia Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3942,7 +3942,7 @@
    "output": "Khalks Fermented Wine",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -3977,7 +3977,7 @@
    "output": "King of Jungle Hamburg",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4008,7 +4008,7 @@
    "output": "Knight Combat Rations",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4039,7 +4039,7 @@
    "output": "Lean Meat Salad",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4083,7 +4083,7 @@
    "output": "Lizard Kebab",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4121,7 +4121,7 @@
    "output": "Makgeolli",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4152,7 +4152,7 @@
    "output": "Margoria Seafood Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4187,7 +4187,7 @@
    "output": "Meat Pasta",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4231,7 +4231,7 @@
    "output": "Meat Pie",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4271,7 +4271,7 @@
    "output": "Meat Sandwich",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4321,7 +4321,7 @@
    "output": "Meat Soup",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4369,7 +4369,7 @@
    "output": "Mediah Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4404,7 +4404,7 @@
    "output": "Mesima Chicken Soup",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4439,7 +4439,7 @@
    "output": "Mesima Rice Wine",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4470,7 +4470,7 @@
    "output": "Moodle Gukbap",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4505,7 +4505,7 @@
    "output": "Mungbean Jeon",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4540,7 +4540,7 @@
    "output": "Nurungji",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4563,7 +4563,7 @@
    "output": "Oatmeal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4605,7 +4605,7 @@
    "output": "Omelet",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4643,7 +4643,7 @@
    "output": "Organic Feed",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4683,7 +4683,7 @@
    "output": "Pan-Fried Oyster",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4725,7 +4725,7 @@
    "output": "Pickled Citron and Onions",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4756,7 +4756,7 @@
    "output": "Pickled Fish",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4787,7 +4787,7 @@
    "output": "Pickled Vegetables",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4828,7 +4828,7 @@
    "output": "Pistachio Fried Rice",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4859,7 +4859,7 @@
    "output": "Prawn Salad",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4894,7 +4894,7 @@
    "output": "RB Mushroom Cheese Melt",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4938,7 +4938,7 @@
    "output": "RB Mushroom Sandwich",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -4977,7 +4977,7 @@
    "output": "Red Bean Porridge",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5008,7 +5008,7 @@
    "output": "Red Bean Sirutteok",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5039,7 +5039,7 @@
    "output": "Red Sauce",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5079,7 +5079,7 @@
    "output": "Roast Marmot",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5114,7 +5114,7 @@
    "output": "Roasted Ginkgo",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5141,7 +5141,7 @@
    "output": "Savory Cron Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5172,7 +5172,7 @@
    "output": "Savory Steak",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5207,7 +5207,7 @@
    "output": "Seafood Cron Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5238,7 +5238,7 @@
    "output": "Seafood Grilled With Butter",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5277,7 +5277,7 @@
    "output": "Seafood Mushroom Salad",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5312,7 +5312,7 @@
    "output": "Seafood Pasta",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5351,7 +5351,7 @@
    "output": "Simple Cron Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5382,7 +5382,7 @@
    "output": "Single-brewed Mesima Tea",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5405,7 +5405,7 @@
    "output": "Skewer",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5440,7 +5440,7 @@
    "output": "Skewered Llama Cheese Melt",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5479,7 +5479,7 @@
    "output": "Smoked Fish Steak",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5506,7 +5506,7 @@
    "output": "Soft Bread",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5537,7 +5537,7 @@
    "output": "Soybean Jjigae",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5572,7 +5572,7 @@
    "output": "Special Arehaza Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5607,7 +5607,7 @@
    "output": "Special Carrot Juice",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5645,7 +5645,7 @@
    "output": "Special Drieghanese Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5680,7 +5680,7 @@
    "output": "Special Eilton Specialty Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5711,7 +5711,7 @@
    "output": "Steamed Bird",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5756,7 +5756,7 @@
    "output": "Steamed Fish",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5787,7 +5787,7 @@
    "output": "Steamed Prawn",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5822,7 +5822,7 @@
    "output": "Steamed Seafood",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5861,7 +5861,7 @@
    "output": "Steamed Whale Meat",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5896,7 +5896,7 @@
    "output": "Stir-Fried Bird",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5934,7 +5934,7 @@
    "output": "Stir-Fried Bracken",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -5969,7 +5969,7 @@
    "output": "Stir-Fried Bracken and Meat",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6013,7 +6013,7 @@
    "output": "Stir-Fried Chanterelle and Meat",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6052,7 +6052,7 @@
    "output": "Stir-Fried Meat",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6092,7 +6092,7 @@
    "output": "Stir-Fried Seafood",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6141,7 +6141,7 @@
    "output": "Sungnyung",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6164,7 +6164,7 @@
    "output": "Sute Tea",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6195,7 +6195,7 @@
    "output": "Sweet Honey Wine",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6236,7 +6236,7 @@
    "output": "Tea With Fine Scent",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6281,7 +6281,7 @@
    "output": "Teff Bread",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6312,7 +6312,7 @@
    "output": "Teff Sandwich",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6343,7 +6343,7 @@
    "output": "Twice-brewed Mesima Tea",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6366,7 +6366,7 @@
    "output": "Vinegar",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6414,7 +6414,7 @@
    "output": "Well-brewed Mesima Tea",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6437,7 +6437,7 @@
    "output": "Whale Meat Salad",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6486,7 +6486,7 @@
    "output": "White Kimchi",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6521,7 +6521,7 @@
    "output": "White Sauce",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -6562,7 +6562,7 @@
    "output": "Adaptation Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6597,7 +6597,7 @@
    "output": "Antidote Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6633,7 +6633,7 @@
    "output": "Ardan's Jewel",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6660,7 +6660,7 @@
    "output": "Armor Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6695,7 +6695,7 @@
    "output": "Askasha's Repaired Magic Weapon",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6722,7 +6722,7 @@
    "output": "Berserk Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6757,7 +6757,7 @@
    "output": "Celerity Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6788,7 +6788,7 @@
    "output": "Clown's Blood",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6825,7 +6825,7 @@
    "output": "Corrupt Oil of Immortality",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6860,7 +6860,7 @@
    "output": "Corruption Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6895,7 +6895,7 @@
    "output": "Defense Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6931,7 +6931,7 @@
    "output": "Dragon's Tears",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6966,7 +6966,7 @@
    "output": "Elixir of Advanced Concentration",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -6989,7 +6989,7 @@
    "output": "Elixir of Amity",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7020,7 +7020,7 @@
    "output": "Elixir of Armor",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7051,7 +7051,7 @@
    "output": "Elixir of Assassination",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7086,7 +7086,7 @@
    "output": "Elixir of Brawn",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7121,7 +7121,7 @@
    "output": "Elixir of Burn Removal",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7162,7 +7162,7 @@
    "output": "Elixir of Carnage",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7197,7 +7197,7 @@
    "output": "Elixir of Concentration",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7233,7 +7233,7 @@
    "output": "Elixir of Death",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7268,7 +7268,7 @@
    "output": "Elixir of Demihuman Hunt",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7299,7 +7299,7 @@
    "output": "Elixir of Destruction",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7334,7 +7334,7 @@
    "output": "Elixir of Detection",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7369,7 +7369,7 @@
    "output": "Elixir of Draining",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7404,7 +7404,7 @@
    "output": "Elixir of Edania",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7439,7 +7439,7 @@
    "output": "Elixir of Endurance",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7475,7 +7475,7 @@
    "output": "Elixir of Energy",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7511,7 +7511,7 @@
    "output": "Elixir of Fond Memories",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7542,7 +7542,7 @@
    "output": "Elixir of Fury",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7578,7 +7578,7 @@
    "output": "Elixir of Hemostasis",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7609,7 +7609,7 @@
    "output": "Elixir of Human Hunt",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7640,7 +7640,7 @@
    "output": "Elixir of Labor",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7671,7 +7671,7 @@
    "output": "Elixir of Mastery",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7706,7 +7706,7 @@
    "output": "Elixir of Mentality",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7737,7 +7737,7 @@
    "output": "Elixir of Perforation",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7772,7 +7772,7 @@
    "output": "Elixir of Persistence",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7807,7 +7807,7 @@
    "output": "Elixir of Resistance",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7844,7 +7844,7 @@
    "output": "Elixir of Seal",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7881,7 +7881,7 @@
    "output": "Elixir of Sharp Detection",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7916,7 +7916,7 @@
    "output": "Elixir of Shock",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7947,7 +7947,7 @@
    "output": "Elixir of Skill",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -7982,7 +7982,7 @@
    "output": "Elixir of Sky",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8017,7 +8017,7 @@
    "output": "Elixir of Spells",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8048,7 +8048,7 @@
    "output": "Elixir of Swiftness",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8079,7 +8079,7 @@
    "output": "Elixir of Time",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8110,7 +8110,7 @@
    "output": "Elixir of Training",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8141,7 +8141,7 @@
    "output": "Elixir of Wind",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8172,7 +8172,7 @@
    "output": "Elixir of Wings",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8208,7 +8208,7 @@
    "output": "Essence of Abundance",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8239,7 +8239,7 @@
    "output": "Essence of Crimson Flame",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8270,7 +8270,7 @@
    "output": "Essence of Destruction",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8301,7 +8301,7 @@
    "output": "Essence of Enchantment",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8332,7 +8332,7 @@
    "output": "Essence of Magic Power",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8363,7 +8363,7 @@
    "output": "Essence of Nature",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8394,7 +8394,7 @@
    "output": "Essence of Perfection",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8425,7 +8425,7 @@
    "output": "Essence of the Sun",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8456,7 +8456,7 @@
    "output": "Essence of Tunta",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8491,7 +8491,7 @@
    "output": "EXP Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8522,7 +8522,7 @@
    "output": "Fiery Celerity Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8545,7 +8545,7 @@
    "output": "Fisher's Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8576,7 +8576,7 @@
    "output": "Flawless Spirit Stone",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8603,7 +8603,7 @@
    "output": "Frenzy Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8634,7 +8634,7 @@
    "output": "Frenzy Draught of Corruption",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8657,7 +8657,7 @@
    "output": "Fury Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8692,7 +8692,7 @@
    "output": "Gem Polisher",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8723,7 +8723,7 @@
    "output": "Golden Hand Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8758,7 +8758,7 @@
    "output": "Griffon's Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8793,7 +8793,7 @@
    "output": "Grim Reaper's Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8828,7 +8828,7 @@
    "output": "Harmony Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8863,7 +8863,7 @@
    "output": "Helix Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8898,7 +8898,7 @@
    "output": "Herbal Gunpowder",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8921,7 +8921,7 @@
    "output": "Herbal Poison",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8944,7 +8944,7 @@
    "output": "Immortal: Armor Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8967,7 +8967,7 @@
    "output": "Immortal: Frenzy Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -8990,7 +8990,7 @@
    "output": "Immortal: Savage Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9013,7 +9013,7 @@
    "output": "Imperfect Alchemy Stone",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9048,7 +9048,7 @@
    "output": "Kagtunak",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9079,7 +9079,7 @@
    "output": "Leather Glaze",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9110,7 +9110,7 @@
    "output": "Legendary Beast's Blood",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9146,7 +9146,7 @@
    "output": "Looney Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9181,7 +9181,7 @@
    "output": "Marking Reagent",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9216,7 +9216,7 @@
    "output": "Marvelous Draught of Persistence",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9251,7 +9251,7 @@
    "output": "Marvelous Draught of Strength",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9286,7 +9286,7 @@
    "output": "Metal Solvent",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9317,7 +9317,7 @@
    "output": "Miloberry's Apu Apu Waterstarwort",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9348,7 +9348,7 @@
    "output": "Oil of Enchantment",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9383,7 +9383,7 @@
    "output": "Oil of Fortitude",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9414,7 +9414,7 @@
    "output": "Oil of Regeneration",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9445,7 +9445,7 @@
    "output": "Oil of Regeneration 2",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9476,7 +9476,7 @@
    "output": "Oil of Storms",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9507,7 +9507,7 @@
    "output": "Oil of the Abyss",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9538,7 +9538,7 @@
    "output": "Oil of Tranquility",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9569,7 +9569,7 @@
    "output": "Perfume of Charm",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9604,7 +9604,7 @@
    "output": "Perfume of Deep Sea",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9639,7 +9639,7 @@
    "output": "Perfume of Envy",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9674,7 +9674,7 @@
    "output": "Perfume of Insight",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9709,7 +9709,7 @@
    "output": "Perfume of Khalk",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9744,7 +9744,7 @@
    "output": "Perfume of Spirits",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9779,7 +9779,7 @@
    "output": "Perfume of Swiftness",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9814,7 +9814,7 @@
    "output": "Perfume of Tenacity",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9849,7 +9849,7 @@
    "output": "Plywood Hardener",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9880,7 +9880,7 @@
    "output": "Potential Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9915,7 +9915,7 @@
    "output": "Purified Lightstone of Earth",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9950,7 +9950,7 @@
    "output": "Purified Lightstone of Fire",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -9985,7 +9985,7 @@
    "output": "Purified Lightstone of Flora",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10020,7 +10020,7 @@
    "output": "Purified Lightstone of Wind",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10055,7 +10055,7 @@
    "output": "Refined Delotia Reagent",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10082,7 +10082,7 @@
    "output": "Resurrection Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10113,7 +10113,7 @@
    "output": "Rough Opulent Crystal",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10148,7 +10148,7 @@
    "output": "Runn Light Fragment",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10175,7 +10175,7 @@
    "output": "Savage Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10206,7 +10206,7 @@
    "output": "Shining Spirit Stone",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10241,7 +10241,7 @@
    "output": "Sinner's Blood",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10277,7 +10277,7 @@
    "output": "Special Honey Jar",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10308,7 +10308,7 @@
    "output": "Spirit Stone - Destruction",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10343,7 +10343,7 @@
    "output": "Spirit Stone - Guardian",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10378,7 +10378,7 @@
    "output": "Tenacious Origin of Life",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10413,7 +10413,7 @@
    "output": "Tidal Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10444,7 +10444,7 @@
    "output": "Tyrant's Blood",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10480,7 +10480,7 @@
    "output": "Unbridled Celerity Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10515,7 +10515,7 @@
    "output": "Vell's Fine Powder",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10554,7 +10554,7 @@
    "output": "Verdure Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10585,7 +10585,7 @@
    "output": "Weenie Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10620,7 +10620,7 @@
    "output": "Whale Tendon Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10655,7 +10655,7 @@
    "output": "Whale Tendon Potion",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10686,7 +10686,7 @@
    "output": "Wise Man's Blood",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10722,7 +10722,7 @@
    "output": "Worker's Elixir",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10753,7 +10753,7 @@
    "output": "O'dyllita Meal",
    "job": "cooking",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 400,
    "inputs": [
     {
@@ -10788,7 +10788,7 @@
    "output": "Beast's Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10819,7 +10819,7 @@
    "output": "Giant's Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10850,7 +10850,7 @@
    "output": "Immortal: Beast's Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
@@ -10873,7 +10873,7 @@
    "output": "Immortal: Giant's Draught",
    "job": "alchemy",
    "method": "",
-   "yield": 2.5,
+   "yield": 1,
    "craftsPerHour": 350,
    "inputs": [
     {
